@@ -15,14 +15,23 @@ class DumpFile
             return;
         }
 
-        $content_encoding = self::get_content_encoding();
+        $contents = file_get_contents($filename);
+        $etag = md5($contents);
 
+        if ($etag === filter_input(INPUT_SERVER, 'HTTP_IF_NONE_MATCH')) {
+            http_response_code(304);
+            return;
+        }
+
+        $content_encoding = self::get_content_encoding();
+        header("Etag: ".$etag);
         header("Content-Type: ".$content_type);
+
         if ($content_encoding !== FALSE) {
             header("Content-Encoding: ".$content_encoding);
-            readfile($filename);
+            echo $contents;
         } else {
-            readgzfile($filename);
+            echo gzdecode($contents);
         }
     }
 
