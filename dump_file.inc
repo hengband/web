@@ -5,10 +5,17 @@ class DumpFile
         $this->score_id = $score_id;
     }
 
-    public function show($dir, $ext, $content_type)
+
+    public function get_filename($dir, $ext)
     {
         $dirname = sprintf("%s/%d", $dir, floor($this->score_id / 1000) * 1000);
-        $filename = sprintf("%s/%d.%s.gz", $dirname, $this->score_id, $ext);
+        return sprintf("%s/%d.%s.gz", $dirname, $this->score_id, $ext);
+    }
+
+
+    public function show($dir, $ext, $content_type)
+    {
+        $filename = $this->get_filename($dir, $ext);
 
         if (!file_exists($filename)) {
             http_response_code(404);
@@ -34,6 +41,40 @@ class DumpFile
             echo gzdecode($contents);
         }
     }
+
+
+    public function save($dir, $ext, $contents)
+    {
+        if ($outputs === FALSE) return;
+
+        umask(2); // Group書き込み権限許可
+
+        $filename = $this->get_filename($dir, $ext);
+        $dirname = dirname($filename);
+
+        if (!file_exists($dirname)) {
+            mkdir($dirname, 02775, TRUE);
+        }
+
+        $zp = gzopen($filename, "w9");
+
+        foreach ($contents as $line) {
+            gzwrite($zp, $line);
+            gzwrite($zp, "\n");
+        }
+
+        gzclose($zp);
+    }
+
+
+    public function exists($dir, $ext)
+    {
+        $dirname = sprintf("%s/%d", $dir, floor($this->score_id / 1000) * 1000);
+        $filename = sprintf("%s/%d.%s.gz", $dirname, $this->score_id, $ext);
+
+        return file_exists($filename);
+    }
+
 
     private static function browser_accept_encodings()
     {
