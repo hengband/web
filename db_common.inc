@@ -222,14 +222,37 @@ EOM
         return $killers;
     }
 
-    private function update_statistics_tables() {
+
+    /**
+     * 統計情報のキャッシュテーブルを更新する
+     *
+     * 種族・職業・性格について各種統計情報を取得しキャッシュテーブルに保存する
+     * 通常の統計情報の取得はこのキャッシュテーブルから行う
+     *
+     * @return boolean 生成に成功したらTRUE、失敗したらFALSE
+     */
+    private function update_statistics_cache_tables() {
         $statistics_list = ['race', 'class', 'personality'];
 
         try {
             foreach ($statistics_list as $stat) {
                 $table_name = $stat."_statistics";
                 $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
-                $stmt = $this->dbh->query("CREATE TABLE ".$table_name." AS SELECT ".$stat."_id, count(sex=1 or NULL) AS male_count, count(sex=0 or NULL) AS female_count, count(*) AS total_count, count(winner=1 OR NULL) AS winner_count, avg(score) AS average_score, max(score) AS max_score from scores GROUP BY ".$stat."_id");
+                $stmt = $this->dbh->query(
+                    <<<EOM
+CREATE TABLE $table_name AS
+  SELECT
+    {$stat}_id,
+    count(sex=1 or NULL) AS male_count,
+    count(sex=0 or NULL) AS female_count,
+    count(*) AS total_count,
+    count(winner=1 OR NULL) AS winner_count,
+    avg(score) AS average_score,
+    max(score) AS max_score
+  FROM scores
+GROUP BY ${stat}_id
+EOM
+                );
             }
 
             return TRUE;
@@ -238,17 +261,25 @@ EOM
         }
     }
 
-    public function get_statistics_tables() {
+
+    /**
+     * 統計情報を取得する
+     *
+     * @param integer $sort_key_column 表示順序のキーとするカラムの名称
+     *
+     * @return array 統計情報
+     */
+    public function get_statistics_tables($sort_key_column) {
         if (!$this->get_cache_status('statistics_cache')) {
-            $this->update_statistics_tables();
-            $this->update_cache_status('statistics_cache', 1);
+            $result = $this->update_statistics_cache_tables();
+            $this->update_cache_status('statistics_cache', $result ? 1 : 0);
         }
 
         $stat = [];
 
         $this->dbh->beginTransaction();
         foreach ([['race', 'races'], ['class', 'classes'], ['personality', 'personalities']] as $kind) {
-            $stmt = $this->dbh->query("SELECT ${kind[0]}_id AS id, ${kind[0]}_name AS name, * FROM ${kind[0]}_statistics NATURAL JOIN ${kind[1]} ORDER BY total_count DESC");
+            $stmt = $this->dbh->query("SELECT ${kind[0]}_id AS id, ${kind[0]}_name AS name, * FROM ${kind[0]}_statistics NATURAL JOIN ${kind[1]} ORDER BY ${sort_key_column} DESC");
             $stat[$kind[0]] = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         $this->dbh->commit();

@@ -8,22 +8,30 @@ ini_set('zlib.output_compression', 'On');
 
 include "db_common.inc";
 
-function print_popularity_table($stat, $id_name, $name)
+function print_popularity_table($stat, $id_name, $name, $current_sort_key)
 {
     echo <<<EOM
 <table>
 <tr>
 <th>#</th>
 <th>$name</th>
-<th>計</th>
-<th>男性</th>
-<th>女性</th>
-<th>勝利</th>
-<th>平均スコア</th>
-<th>最大スコア</th>
-</tr>
-
 EOM;
+    
+    foreach ([
+        '計' => 'total_count',
+        '男性' => 'male_count',
+        '女性' => 'female_count',
+        '勝利' => 'winner_count',
+        '平均スコア' => 'average_score',
+        '最大スコア' => 'max_score',
+    ] as $name => $sort_key) {
+        if ($sort_key !== $current_sort_key)
+            echo "<th><a href='popularity_ranking.php?sort_key=${sort_key}'>${name}</a></th>";
+        else {
+            echo "<th><strong>${name}</strong></th>";
+        }
+    }
+    echo "</tr>\n";
 
     $rank = 0;
     foreach ($stat as $k => $s) {
@@ -52,7 +60,8 @@ $db = new ScoreDB();
 
 $time_start = microtime(true);
 
-$statistics = $db->get_statistics_tables();
+$sort_key_column = filter_input(INPUT_GET, 'sort_key') ?: 'total_count';
+$statistics = $db->get_statistics_tables($sort_key_column);
 
 $query_time = microtime(true) - $time_start;
 ?>
@@ -74,19 +83,19 @@ echo sprintf("(%.2f 秒)", $query_time);
 <h1>人気のある種族</h1>
 
 <?php
-print_popularity_table($statistics['race'], 'race_id', "種族");
+print_popularity_table($statistics['race'], 'race_id', "種族", $sort_key_column);
 ?>
 
 <hr>
 <h1>人気のある職業</h1>
 
 <?php
-print_popularity_table($statistics['class'], 'class_id', "職業");
+print_popularity_table($statistics['class'], 'class_id', "職業", $sort_key_column);
 ?>
 
 <hr>
 <h1>人気のある性格</h1>
 
 <?php
-print_popularity_table($statistics['personality'], 'personality_id', "性格");
+print_popularity_table($statistics['personality'], 'personality_id', "性格", $sort_key_column);
 ?>
