@@ -116,7 +116,6 @@ function print_score_table($scores, $rank_start)
 EOM;
 
     foreach($scores as $idx => $score) {
-        //$rank = $pageinfo['current'] * $pageinfo['data_count_per_page'] + $idx + 1;
         $rank = $rank_start + $idx + 1;
         $score_id = $score['score_id'];
         $date = substr($score['date'], 0, 10);
@@ -128,14 +127,15 @@ EOM;
 
         echo "<tr>\n";
         if ($dumpfile->exists('dumps', 'txt')) {
-            echo "<td><a href=\"show_dump.php?score_id={$score_id}\">{$rank}</a></td>\n";
+            $name = "<a href=\"show_dump.php?score_id={$score_id}\">{$score['personality_name']}{$score['name']}</a>\n";
         } else {
-            echo "<td>{$rank}</td>\n";
+            $name = "{$score['personality_name']}{$score['name']}";
         }
         echo <<<EOM
+<td>$rank</td>
 <td align="right">{$score['score']}</td>
 <td><nobr>$date</nobr></td>
-<td>{$score['personality_name']}{$score['name']}</td>
+<td>$name</td>
 <td>{$score['race_name']}</td>
 <td>{$score['class_name']}$realms</td>
 <td>$sex_str</td>
