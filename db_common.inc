@@ -301,18 +301,72 @@ EOM
         );
     }
 
-    private static function killer_normalize($killer)
+    public function register_new_score($score_data)
     {
-        if ($killer === "ripe") {
-            return "引退";
-        } else if ($killer === "Seppuku") {
-            return "切腹";
+        $insert_stmt = $this->dbh->prepare(
+            <<<EOM
+INSERT INTO scores
+ (version, score, name,
+  race_id, class_id, personality_id,
+  sex, level, depth, maxlv, maxdp,
+  au, turns, winner, killer)
+SELECT
+ :version, :score, :name,
+ race_id, class_id, personality_id,
+ :sex, :level, :depth, :maxlv, :maxdp,
+ :au, :turns, :winner, :killer
+FROM
+  races, classes, personalities
+WHERE
+  race_name = :race AND
+  class_name = :class AND
+  personality_name = :personality
+EOM
+        );
+ 
+        $realm_insert_stmt = $this->dbh->prepare(
+            <<<EOM
+INSERT INTO score_realms
+ (score_id, realm_id)
+SELECT
+  ?, realm_id
+FROM
+  realms
+WHERE
+  realm_name = ?
+EOM
+        );
+
+        try {
+            $this->dbh->beginTransaction();
+            if ($insert_stmt->execute($score_data['character_info']) === FALSE ||
+                $insert_stmt->rowCount() !== 1) {
+                $dbh->rollBack();
+                return FALSE;
+            }
+
+            // NOTE: score_idはINTEGER PRIMARY KEYなのでROWIDを参照している
+            //       したがってlastInsertIdで追加されたスコアのscore_idを取得可能
+            $score_id = $this->dbh->lastInsertId();
+
+            foreach ($score_data['realm_info'] as $realm_name) {
+                if ($realm_insert_stmt->execute([$score_id, $realm_name]) === FALSE ||
+                    $realm_insert_stmt->rowCount() !== 1) {
+                    $dbh->rollBack();
+                    return FALSE;
+                }
+            }
+
+            // スコアが追加されたので死因ランキング・人気ランキングのキャッシュをクリア
+            $this->update_cache_status('killers_cache', 0);
+            $this->update_cache_status('statistics_cache', 0);
+            $this->dbh->commit();
+
+            return $score_id;
+        } catch (PDOException $e) {
+            $dbh->rollBack();
         }
 
-        $n = str_replace("麻痺状態で", "", $killer);
-        $n = str_replace("彫像状態で", "", $n);
-
-        return $n;
+        return FALSE;
     }
-
 }
