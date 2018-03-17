@@ -1,9 +1,160 @@
 <?php
 class ScoreDB
 {
+    private static $sort_mode_list = ['default' => 'score', 'newcome'];
+
     public function __construct() {
         $this->dbh = new PDO('sqlite:db/score.db');
         $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $this->set_sort_mode(filter_input(INPUT_GET, 'sort'));
+    }
+
+    /**
+     * スコア表示モードを設定する
+     *
+     * @param string $mode 設定する表示モード
+     * 'score' - スコア順に表示(デフォルト)
+     * 'newcome' - 新着順に表示
+     * 存在しない表示モードが指定された場合デフォルトの表示モードが設定される
+     */
+    public function set_sort_mode($mode)
+    {
+        if ($mode !== NULL && in_array($mode, self::$sort_mode_list)) {
+            $this->sort_mode = $mode;
+        } else {
+            $this->sort_mode = self::$sort_mode_list['default'];
+        }
+    }
+
+
+    /**
+     * スコア表示モード名を取得する
+     *
+     * @return string スコア表示モード名
+     */
+    public function get_sort_mode_name()
+    {
+        switch ($this->sort_mode) {
+        case 'score':
+            return "スコア順";
+        case 'newcome':
+            return "新着順";
+        default:
+            return "不明";
+        }
+    }
+
+
+    /**
+     * スコア検索の絞り込み用WHERE句を取得する
+     *
+     * @return string スコア検索絞り込み用のWHERE句
+     */
+    private function get_where()
+    {
+        $last_days = filter_input(INPUT_GET, 'last_days', FILTER_VALIDATE_INT);
+        if ($last_days > 0) {
+            $wheres[] = "date >= datetime('now', 'localtime', '-{$last_days} days')";
+        }
+
+        foreach (['race_id', 'class_id', 'personality_id'] as $id_str) {
+            $id = filter_input(INPUT_GET, $id_str, FILTER_VALIDATE_INT); 
+            if ($id > 0) {
+                $wheres[] = "{$id_str} = {$id}";
+            }
+        }
+
+        $where = isset($wheres) ? 'WHERE '.implode(' AND ', $wheres) : '';
+
+        return $where;
+    }
+
+
+    /**
+     * スコアソート用のORDER BY句を取得する
+     *
+     * @return string スコアソート用のORDER BY句
+     */
+    private function get_order_by()
+    {
+        switch ($this->sort_mode) {
+        case "score":
+            $order_by = "ORDER BY score DESC";
+            break;
+        case "newcome":
+            $order_by = 'ORDER BY score_id DESC';
+            break;
+        }
+
+        return $order_by;
+    }
+
+
+    /**
+     * スコア検索用のSQLクエリを取得する
+     *
+     * @param integer $offset スコア取得開始位置
+     * @param integer $limit スコア取得最大件数
+     * @param string $where スコア検索に用いるWHERE句
+     * @param string $order_by スコアソートに用いるORDER BY句
+     * @return string スコア検索用SQLクエリ
+     */
+    private function get_search_query($offset, $limit, $where, $order_by)
+    {
+        switch ($this->sort_mode) {
+        case "score":
+            $query = "SELECT *, group_concat(realm_name) AS realms_name from (select * from scores ${where} {$order_by} LIMIT ${offset}, {$limit}) NATURAL JOIN races NATURAL JOIN classes NATURAL JOIN personalities NATURAL LEFT JOIN score_realms NATURAL LEFT JOIN realms GROUP BY score_id {$order_by}";
+            break;
+        case "newcome":
+            $query = "SELECT *, group_concat(realm_name) AS realms_name from (select * from scores ${where} {$order_by} LIMIT ${offset}, {$limit}) NATURAL JOIN races NATURAL JOIN classes NATURAL JOIN personalities NATURAL LEFT JOIN score_realms NATURAL LEFT JOIN realms GROUP BY score_id {$order_by}";
+            break;
+        }
+
+        return $query;
+    }
+
+
+    /**
+     * 検索でヒットしたスコアの総件数を取得する
+     *
+     * @param string $where スコア検索に用いるWHERE句
+     * @return integer スコア総件数
+     */
+    private function get_query_data_count($where)
+    {
+        $stmt = $this->dbh->query("SELECT count(*) AS data_count from scores {$where}");
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return intval($res[0]['data_count']);
+    }
+
+
+    /**
+     * スコアを検索する
+     *
+     * @param integer $start_num 検索するスコアの開始位置
+     * @param integer $count 検索するスコア数
+     *
+     * @return array 検索したスコアの配列と、条件に合致するスコアの総件数の連想配列
+     */
+    public function search_score($start_num, $count)
+    {
+        $where = $this->get_where();
+        $order_by = $this->get_order_by();
+        $query_sql = $this->get_search_query(intval($start_num / $count) * $count, $count, $where, $order_by);
+
+        $search_start_time = microtime(true);
+        $this->dbh->beginTransaction();
+
+        $score_stmt = $this->dbh->query($query_sql);
+        $result['scores'] = $score_stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result['total_data_count'] = $this->get_query_data_count($where);
+
+        $this->dbh->commit();
+        $result['elapsed_time'] = microtime(true) - $search_start_time;
+
+        return $result;
     }
 
     public function get_db_handle() {
