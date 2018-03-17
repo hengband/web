@@ -167,40 +167,38 @@ class ScoreDB
             $this->dbh->beginTransaction();
 
             $this->dbh->exec("DROP TABLE IF EXISTS killers_cache");
-            $this->dbh->exec("CREATE TABLE killers_cache (killer_name TEXT PRIMARY KEY, killer_count_total INTEGER, killer_count_normal INTEGER, killer_count_freeze INTEGER)");
-
-            // 通常状態、麻痺・彫像状態で別々に取得し、それぞれの回数と合計回数を計算しkillers_cacheテーブルに格納する
-            $killers['normal'] = $this->dbh->query("SELECT killer, count(*) AS killer_count FROM scores WHERE killer NOT LIKE '麻痺状態で%' AND killer NOT LIKE '彫像状態で%' GROUP BY killer")->fetchAll(PDO::FETCH_ASSOC);
-            $killers['freeze'] = $this->dbh->query("SELECT killer, count(*) AS killer_count FROM scores WHERE killer LIKE '麻痺状態で%' OR killer LIKE '彫像状態で%' GROUP BY killer")->fetchAll(PDO::FETCH_ASSOC);
-
-            $killer_count = [];
-            foreach ($killers['normal'] as $row) {
-                $killer = self::killer_normalize($row['killer']);
-                $killer_count[$killer]['normal'] = intval($row['killer_count']);
-            }
-
-            foreach ($killers['freeze'] as $row) {
-                $killer = self::killer_normalize($row['killer']);
-                $killer_count[$killer]['freeze'] = intval($row['killer_count']);
-            }
-
-            foreach ($killer_count as $k => $v) {
-                if (!isset($killer_count[$k]['normal'])) {
-                    $killer_count[$k]['normal'] = 0;
-                }
-                if (!isset($killer_count[$k]['freeze'])) {
-                    $killer_count[$k]['freeze'] = 0;
-                }
-            }
-            foreach ($killer_count as $k => $v) {
-                $killer_count[$k]['total'] = $v['normal'] + $v['freeze'];
-            }
-
-            $insert_stmt = $this->dbh->prepare("INSERT INTO killers_cache VALUES(?, ?, ?, ?)");
-            foreach ($killer_count as $k => $v) {
-                $insert_stmt->execute([$k, $v['total'], $v['normal'], $v['freeze']]);
-            }
-
+            $this->dbh->exec(<<<EOM
+CREATE TABLE
+  killers_cache
+AS
+SELECT
+  killer_name,
+  count(*) AS killer_count_total,
+  count(killed_status = 0 OR NULL) AS killer_count_normal,
+  count(killed_status != 0 OR NULL) AS killer_count_freeze
+FROM
+ (SELECT
+    CASE
+      WHEN killer LIKE '麻痺状態で%' THEN substr(killer, 6)
+      WHEN killer LIKE '彫像状態で%' THEN substr(killer, 6)
+      WHEN killer = 'ripe' THEN '引退'
+      WHEN killer = 'Seppuku' THEN '切腹'
+      ELSE killer
+    END AS killer_name,
+    CASE
+      WHEN killer LIKE '麻痺状態で%' THEN 1
+      WHEN killer LIKE '彫像状態で%' THEN 2
+      ELSE 0
+    END AS killed_status
+  FROM
+    scores
+ )
+GROUP BY
+  killer_name
+ORDER BY
+  killer_count_total DESC
+EOM
+            );
             $this->dbh->commit();
 
             return TRUE;
