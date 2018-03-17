@@ -8,37 +8,39 @@ ini_set('zlib.output_compression', 'On');
 
 include "db_common.inc";
 
-function print_popularity_table($stat, $name)
+function print_popularity_table($stat, $id_name, $name)
 {
-    echo <<< EOM
-        <table>
-    <tr>
-    <th>#
-    <th>$name
-    <th>計
-    <th>男性
-    <th>女性
-    <th>勝利
-    <th>平均スコア
-    <th>最大スコア
-    </tr>
+    echo <<<EOM
+<table>
+<tr>
+<th>#</th>
+<th>$name</th>
+<th>計</th>
+<th>男性</th>
+<th>女性</th>
+<th>勝利</th>
+<th>平均スコア</th>
+<th>最大スコア</th>
+</tr>
+
 EOM;
 
     $rank = 0;
-    foreach ($stat as $s) {
+    foreach ($stat as $k => $s) {
         $rank ++;
+        $name_link = "<a href='score_ranking.php?{$id_name}={$s['id']}'>{$s['name']}</a></td>";
         $average_score = floor($s['average_score']);
-        echo <<< EOM
+        echo <<<EOM
 <tr>
-            <td>$rank</td>
-        <td>{$s['name']}</td>
-        <td>{$s['total_count']}</td>
-        <td>{$s['male_count']}</td>
-        <td>{$s['female_count']}</td>
-        <td>{$s['winner_count']}</td>
-        <td>$average_score</td>
-        <td>{$s['max_score']}</td>
-        </tr>
+<td>$rank</td>
+<td>$name_link</td>
+<td>{$s['total_count']}</td>
+<td>{$s['male_count']}</td>
+<td>{$s['female_count']}</td>
+<td>{$s['winner_count']}</td>
+<td>$average_score</td>
+<td>{$s['max_score']}</td>
+</tr>
 EOM;
     }
 
@@ -63,24 +65,28 @@ $query_time = microtime(true) - $time_start;
 <title>変愚蛮怒 人気のある種族・職業・性格</title>
 </head>
 
-<small>クエリ時間<?php echo sprintf("%.3f msec", $query_time * 1000) ?></small>
+<small>
+<?php
+echo sprintf("(%.2f 秒)", $query_time);
+?>
+</small>
 <hr>
 <h1>人気のある種族</h1>
 
 <?php
-print_popularity_table($statistics['race'], "種族");
+print_popularity_table($statistics['race'], 'race_id', "種族");
 ?>
 
 <hr>
 <h1>人気のある職業</h1>
 
 <?php
-print_popularity_table($statistics['class'], "職業");
+print_popularity_table($statistics['class'], 'class_id', "職業");
 ?>
 
 <hr>
 <h1>人気のある性格</h1>
 
 <?php
-print_popularity_table($statistics['personality'], "性格");
+print_popularity_table($statistics['personality'], 'personality_id', "性格");
 ?>

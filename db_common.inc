@@ -247,13 +247,10 @@ EOM
         $stat = [];
 
         $this->dbh->beginTransaction();
-        $stmt = $this->dbh->query("SELECT race_name AS name, * from race_statistics NATURAL INNER JOIN races ORDER BY total_count DESC");
-        $stat['race'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt = $this->dbh->query("SELECT class_name AS name, * from class_statistics NATURAL INNER JOIN classes ORDER BY total_count DESC");
-        $stat['class'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt = $this->dbh->query("SELECT personality_name AS name, * from personality_statistics NATURAL INNER JOIN personalities ORDER BY total_count DESC");
-        $stat['personality'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        foreach ([['race', 'races'], ['class', 'classes'], ['personality', 'personalities']] as $kind) {
+            $stmt = $this->dbh->query("SELECT ${kind[0]}_id AS id, ${kind[0]}_name AS name, * FROM ${kind[0]}_statistics NATURAL JOIN ${kind[1]} ORDER BY total_count DESC");
+            $stat[$kind[0]] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
         $this->dbh->commit();
 
         return $stat;
