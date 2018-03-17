@@ -1,0 +1,223 @@
+
+a:link 		{ color: #99BB99;}
+a:visited	{ color: #99AA99;}
+a:active	{ color: #DDF0DD;}
+a:hover		{ color: #DDF0DD;}
+
+body {
+	min-height: 100vh;
+
+	color: #D0D0D0;
+	background-color: #300900;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: center;
+
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+	font-family:"メイリオ","Meiryo",Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica, sans-serif;
+	font-size: 1.0rem;
+	line-height: 1.2rem;
+}
+
+#wrapper{
+	background-color: #000000;
+	min-width: 400px;
+	max-width: 800px;
+	text-align: left;
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	border: 0px;
+	margin: 0 auto;
+}
+
+/* ヘッダ/フッタ ////////////////////////////////////////////////// */
+
+header{
+	background-color : #000000;
+	display: flex;
+	flex-direction: column;
+}
+
+footer
+{
+	background-color: #000000;
+	padding: 10px 10px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+footer > section
+{
+	font-size: 70%;
+	line-height: 100%;
+}
+
+
+/* タイトル系統 ////////////////////////////////////////////////// */
+
+section#title
+{
+	width: 80vw;
+	margin-right : auto;
+	margin-left  : auto;
+
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: end;
+}
+
+img#hengTitle
+{
+	width: 25vw;
+	height: auto;
+}
+
+img.tama4
+{
+	width: 8vw;
+}
+
+img.tama3
+{
+	width: 5vw;
+}
+
+img.tama2
+{
+	width: 2vw;
+}
+
+img.tama1
+{
+	width: 1vw;
+}
+
+
+
+/* メインメニュー系統 ////////////////////////////////////////////////// */
+
+section#mainMenu
+{
+	width: 100vw;
+	margin-right : auto;
+	margin-left  : auto;
+	background-color: #000000;
+
+	justify-content: center;
+	align-content: center;
+	display: flex;
+}
+
+section#mainMenu > a {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	background: #302010;
+	color: #FFFFFF;
+	border-radius: 0.3vw;
+	box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+	font-weight: bold;
+	border: solid 2px #d27d00;/*線色*/
+}
+
+section#mainMenu > span {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	color: #908080;
+	background: #442200;
+	border-radius: 0.3vw;
+	box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+	font-weight: bold;
+	border: solid 2px #d27d00;/*線色*/
+}
+
+section#mainMenu > a:hover
+{
+	background: #A06535;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.content
+{
+	padding: 10px;
+	margin:  10px 30px;
+}
+
+.update{
+	text-align: center;
+	padding: 6px;
+	margin:  30px 5px;
+}
+
+
+ul{
+	padding: 0px;
+	border:  0px;
+	margin:  0px 15px 0px 15px;
+}
+
+li{
+	padding: 0px;
+}
+
+.image {
+	text-align: center;
+	padding: 10px;
+}
+
+H2{
+	padding: 10px 10px 6px 10px;
+	border: 3px #554433 solid;
+	background-color: #000000;
+}
+
+H3{
+	padding: 5px 5px;
+	margin:  0px 5px;
+	border: 1px #554433 solid;
+	background-color: #000000;
+}
+
+H4{
+	padding: 5px 5px;
+	margin:  2px 2px;
+	background-color: #000000;
+}
+
+.strong
+{
+	font-weight: bold;
+}
+
+/* common footer */
+
+.footer_banner
+{
+	float: right;
+}
+
+
+.topimage
+{
+	border: 3px #554433 solid;
+	text-align: center;
+}
+
+pre {
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: pre-wrap;      /* CSS3 */
+	word-wrap: break-word;      /* IE 5.5+ */
+}
+
+
