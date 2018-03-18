@@ -6,6 +6,7 @@ ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
 require_once "db_common.inc";
 require_once "dump_file.inc";
+require_once "feed_maker.inc";
 
 // 登録が成功しない場合、HTTPレスポンスコード 400 Bad Request を返す
 http_response_code(400);
@@ -177,3 +178,6 @@ $dumpfile->save('screens', 'html', $split_contents[2]);
 
 // 登録成功、HTTPレスポンスコード 200 OK を返す
 http_response_code(200);
+
+$feed_maker = new FeedMaker($db);
+$feed_maker->make_atom_feed("feed/newcome-atom.xml");

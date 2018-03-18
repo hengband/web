@@ -76,6 +76,39 @@ class DumpFile
     }
 
 
+    /**
+     * キャラクタダンプの死ぬ直前のメッセージもしくは勝利メッセージを取得する
+     *
+     * @return array 死ぬ直前のメッセージもしくは勝利メッセージを1行1要素にした文字列の配列
+     */
+    public function get_last_message()
+    {
+        $zp = gzopen($this->get_filename('dumps', 'txt'), 'r');
+        if ($zp === FALSE) return [];
+
+        $in_message = FALSE;
+        $result = [];
+        while (!gzeof($zp)) {
+            $line = gzgets($zp);
+
+            if (preg_match('/^\s*\[(.*)\]\s*$/u', $line, $matches)) {
+                if ($matches[1] == '*勝利*メッセージ' ||
+                    $matches[1] == '死ぬ直前のメッセージ') {
+                    $in_message = TRUE;
+                }
+                else if ($in_message) {
+                    break;
+                }
+            }
+
+            if ($in_message) {
+                $result[] = rtrim($line, "\n");
+            }
+        }
+
+        return $result;
+    }
+
     private static function browser_accept_encodings()
     {
         $accept_encoding = filter_input(INPUT_SERVER, 'HTTP_ACCEPT_ENCODING');
