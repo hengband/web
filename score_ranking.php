@@ -155,26 +155,32 @@ $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 <title>変愚蛮怒 スコア ランキング</title>
 <link rel="alternate" title="変愚蛮怒 新着スコア" href="feed/newcome-atom.xml" type="application/atom+xml" />
+<link rel="stylesheet" type="text/css" href="/hengband.css">
 </head>
 
 <body>
-<h1>変愚蛮怒 歴代スコア (<?php echo $db->get_sort_mode_name(); ?>)</h1>
+<h2>変愚蛮怒 歴代スコア (<?php echo $db->get_sort_mode_name(); ?>)</h2>
 <!--3日以内のスコアは<font color=red>赤</font>、10日以内のスコアは<font color=blue>青</font>で表示されます。<br>-->
 <!--10日以内のスコアは<strong>強調表示</strong>されます。-->
+<div>
 <div align="right">
 <a href ="feed/newcome-atom.xml"><img src="feed/feed-icon-14x14.png">新着スコア購読</a>
 <!--<small>…スコア受信時に自動生成します。URLをRSSリーダー等に登録すると新着スコアをチェックできます。</small>-->
-</div>
-
-<hr>
+<br>
 <small>
 <?php
 echo sprintf("件数 %d 件 (%.2f 秒)", $search_result['total_data_count'], $search_result['elapsed_time']);
 ?>
 </small>
+</div>
+
 
 <?php
 print_navi_page_table($pageinfo);
 print_score_table($search_result['scores'], $pageinfo['current'] * $pageinfo['data_count_per_page']);
 print_navi_page_table($pageinfo);
 ?>
+</div>
+
+</body>
+</html>
