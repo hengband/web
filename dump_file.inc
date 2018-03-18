@@ -78,9 +78,10 @@ class DumpFile
 
     private static function browser_accept_encodings()
     {
-        if (!isset($_SERVER["HTTP_ACCEPT_ENCODING"])) return [];
+        $accept_encoding = filter_input(INPUT_SERVER, 'HTTP_ACCEPT_ENCODING');
+        if ($accept_encoding == NULL) return [];
 
-        return array_map('trim', explode(",", $_SERVER["HTTP_ACCEPT_ENCODING"]));
+        return array_map('trim', explode(",", $accept_encoding));
     }
 
 
