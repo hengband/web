@@ -47,7 +47,8 @@ function print_navi_page_table($pageinfo)
 {
     if (count($pageinfo['navi_list']) <= 1) return;
 
-    $href_base = preg_replace('/(&?start=\w+)/', '', filter_input(INPUT_SERVER, 'SCRIPT_NAME'));
+    $href_base = filter_input(INPUT_SERVER, 'SCRIPT_NAME')."?"
+               .preg_replace('/(&?start=\w+)/', '', filter_input(INPUT_SERVER, 'QUERY_STRING'));
     if (strpos($href_base, "?") === FALSE) {
         $href_base .= "?";
     }
