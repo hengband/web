@@ -154,8 +154,8 @@ section#mainMenu > a:hover
 
 div#main
 {
-	font-size: 0.8rem;
-	line-height: 1.3rem;
+	font-size: 0.85rem;
+	line-height: 1.25rem;
 	width: 70%;
 
 	display: flex;

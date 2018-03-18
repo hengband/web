@@ -1,0 +1,39 @@
+:lang: ja
+:doctype: article
+
+## コミュニティ
+
+変愚蛮怒の補足、関連コンテンツ、意見交換の場などを紹介します。
+
+### スポイラー・攻略Wiki
+
+link:http://hengband.sourceforge.jp/wiki/index.php?FrontPage[http://hengband.sourceforge.jp/wiki/index.php?FrontPage] で最新の攻略情報を追加、編集可能になっています。
+
+### OSDNフォーラム
+
+link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/projects/hengband/forums/] にフォーラムが置かれています。現在、不具合報告と追加要素募集を行っています。
+
+### 掲示板
+
+したらば掲示板 link:http://jbbs.livedoor.jp/game/9358/[「＠の溜まり場II」] が変愚蛮怒に限らず、ローグライク関係の掲示板の中で最も活発でしょう。書き込みはローカルルールに配慮して行なって下さい。
+
+### IRCチャンネル
+
+IRCチャンネルに「#ぐりっどばぐ」があります。現在も活発に意見交換や雑談が行われていますのでお気軽にお越しください。
+
+### 現在活動を行なっている開発者のTwitter
+
+意見や要望など直接に送れば、一番早く対応が来るかも知れません。以下HNアルファベット順敬称略。
+
+* link:https://twitter.com/deskull[deskull]
+* link:https://twitter.com/habu1010[habu]
+
+### Twitterの関連bot
+
+* link:https://twitter.com/hengband_speak[変愚セリフbot]
+
+### 動画サイト
+
+主に link:http://www.nicovideo.jp/tag/%E5%A4%89%E6%84%9A%E8%9B%AE%E6%80%92[ニコニコ動画で「変愚蛮怒」タグ] での検索を行うとプレイ動画などを見ることができます。 link:http://dic.nicovideo.jp/a/%E5%A4%89%E6%84%9A%E8%9B%AE%E6%80%92[ニコニコ大百科] 上にも記事があります。
+
+

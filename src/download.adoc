@@ -1,3 +1,5 @@
+:lang: ja
+:doctype: article
 
 ## ダウンロードとプレイする前に
 
