@@ -162,10 +162,22 @@ div#main
 	flex-direction: column;
 }
 
-.paragraph > p, .ulist
+.paragraph > p
 {
 	margin: 1rem 0.5rem;
 	padding: 0.2rem 0.2rem;
+}
+
+li > p
+{
+	margin: 0rem;;
+	padding: 0.2rem 0.2rem;
+}
+
+.ulist
+{
+	margin: 0.1rem 0.1rem;
+	padding: 0.1rem 0.1rem;
 }
 
 .content
@@ -189,11 +201,13 @@ div#main
 
 ul{
 	padding: 0px;
-	border:  0px;
-	margin:  0px 15px 0px 15px;
+	border: 0px;
+	margin: 0px 1.0rem;
+	padding: 0px;
 }
 
 li{
+	margin: 0px 1.0rem;
 	padding: 0px;
 }
 
