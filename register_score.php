@@ -4,8 +4,8 @@
 ini_set('log_errors', 'On');
 ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
-include "db_common.inc";
-include "dump_file.inc";
+require_once "db_common.inc";
+require_once "dump_file.inc";
 
 // 登録が成功しない場合、HTTPレスポンスコード 400 Bad Request を返す
 http_response_code(400);

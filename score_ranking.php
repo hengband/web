@@ -4,8 +4,8 @@
 ini_set('log_errors', 'On');
 ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
-include "db_common.inc";
-include "dump_file.inc";
+require_once "db_common.inc";
+require_once "dump_file.inc";
 
 ini_set('zlib.output_compression', 'On');
 

@@ -6,7 +6,7 @@ ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
 ini_set('zlib.output_compression', 'On');
 
-include "db_common.inc";
+require_once "db_common.inc";
 
 function print_popularity_table($stat, $id_name, $name, $current_sort_key)
 {
