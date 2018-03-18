@@ -66,6 +66,8 @@ footer > section
 section#title
 {
 	width: 80vw;
+    max-width: 60rem;
+    max-height: 40rem;
 	margin-right : auto;
 	margin-left  : auto;
 
@@ -157,6 +159,7 @@ div#main
 	font-size: 0.85rem;
 	line-height: 1.25rem;
 	width: 70%;
+	max-width: 50rem;
 
 	display: flex;
 	flex-direction: column;
