@@ -130,7 +130,7 @@ EOM;
         if ($dumpfile->exists('screens', 'html')) {
             echo "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>";
         } else {
-            echo "<td>{$death_reason}";
+            echo "<td>{$score['death_reason']}";
         }
         echo "<br>({$depth}{$score['version']})</td>\n";
         echo "</tr>\n";
