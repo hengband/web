@@ -1,0 +1,135 @@
+
+## ダウンロードとプレイする前に
+
+以下を確認の上、次項のリンクからダウンロードして下さい。
+
+### 開発版と安定版
+
+[line-through]#変愚蛮怒の開発で新機能を入れる度に重大なバグが入ってくるというのを避けるために、バグ修正だけを続ける安定版ブランチと新機能をどんどん追加する開発版ブランチの2つの系統に分けました。とにかく安心できる環境でじっくり楽しみたい方や、これから変愚蛮怒を始めようという方は安定版を使用してください。新機能を試したい方は開発版をどうぞ。バグを見付けたら掲示板で知らせてください。#
+
+上述の安定板と開発版の扱い方については現在見直しています。テストプレイの協力を募集することもあるかも知れません。続報をお待ちください。
+
+### Windows版の導入方法
+
+該当のzipファイルをダウンロード後展開し、hengband.exeを実行して下さい。
+
+### UNIX/Linux版の導入方法
+
+ソースをダウンロードします。そして、
+
+----
+tar -jxvf hengband-x.x.x.tar.bz2
+cd hengband-x.x.x
+./configure
+make install
+----
+
+でコンパイルできます(x.x.x はバージョン番号)。
+後は
+
+----
+./hengband -- -n
+----
+
+で遊べます。
+
+----
+#! /bin/csh
+setenv ANGBAND_X11_FONT '-*-*-medium-r-normal--24-*-*-*-*-*-iso8859-1,-*-*-medium-r-normal--24-*-*-*-*-*-jisx0208.1983-0'
+hengband -- -n
+----
+
+といった感じのスクリプトを使えば、フォントの指定ができます。
+同様に ANGBAND_X11_FONT_? を設定することによって、
+?番目のウィンドウのフォントを指定することができます。
+フォントセットを使用しない場合は日本語フォントはANGBAND_X11_KFONTで別に指定する
+必要があります。
+
+また、?番目のウィンドウの初期位置を ANGBAND_X11_AT_X_? と ANGBAND_X11_AT_Y_? で
+指定でき、サイズを ANGBAND_X11_COLS_? と ANGBAND_X11_ROWS_? で指定できます。
+(サイズの指定できるのはメインウィンドウ以外です)
+
+XFree86 4.0 でXIMを使うときは、環境変数 XMODIFIERS に "@im=skkinput" とか
+"@im=kinput2" と設定する必要があります。
+
+8x8のタイルはソースアーカイブに入っていますが、
+16x16タイル(heng-graf-16x16.tar.gz)は別配布になっています。
+lib/xtra/graf/以下に展開して、追加オプション -- -a を付けると使用できます。
+
+### Macintosh/iOS版の導入方法
+
+[line-through]#link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD] へどうぞ。ただし、XDDさんのバイナリはバージョンが少し古くなります。最新版については、 link:http://macband.tripod.co.jp/mac/download.html[kuwaさんがコンパイル] したものをどうぞ。#
+
+上述はいずれもリンク切れになってしましました。最新のiOSも含めて対応は検討していますが、もうしばらくお待ちください。
+
+
+### 16x16タイルの使い方
+
+WindowsとUNIX/Linuxなら heng-graf-16x16.tar.gz をダウンロードしてください。
+Macintoshなら heng-graf-16x16-mac.sit.bin をダウンロードしてください。
+
+解凍したファイルを hengband/lib/xtra/graf/ ディレクトリの中に置いてください。
+その後Windowsではメニューから「Adam Boltさんタイル」を選択。
+Macintoshでは「arg_graphics」と「Adam Bolt tile」を選択すると使えます。
+Linuxなら ./hengband -- -a という風にオプションを付けて実行してください。
+
+### スコアサーバの利用について
+
+スコアの送信はズルなしのプレイでお願いします。
+
+## ダウンロード
+
+ソースファイル及び実行ファイルはlink:https://sourceforge.jp/projects/hengband/files[OSDN] からダウンロードできます。ファイル名は以下の通りです。
+
+### 安定版
+
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=10333#10333[安定版 Windows用バイナリ (Stable Version Windows Ports)]
+** hengband-1.4.7-win.zip (旧安定版最終バージョン修正版)
+** hengband-1.6.x-win.zip (安定版)
+** hengband-2.0.0-win.zip (安定版)
+** hengband-2.2.0-win.zip (最新安定版)
+
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=10344#10344[安定版 Macintosh用バイナリ (Stable Version Mac OS Ports)]
+** hengband-1.4.7-68k.sit (旧安定版最終バージョン修正版680x0用)
+** hengband-1.4.7-ppc.sit (旧安定版最終バージョン修正版PowerPC用)
+** hengband-1.4.7-osx.sit (旧安定版最終バージョン修正版Mac OS X用)
+** hengband-1.6.x-68k.sit (新安定版680x0用)
+** hengband-1.6.x-ppc.sit (新安定版PowerPC用)
+** hengband-1.6.x-osx.sit (新安定版Mac OS X用)
+
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=10331#10331[安定版ソースファイル (Stable Version Source)]
+** hengband-1.4.7.tar.gz(または.tar.bz2) (旧安定版最終バージョン修正版)
+** hengband-1.6.x.tar.gz(または.tar.bz2) (新安定版)
+
+### 開発版
+
+最新開発版2.1.1をリリース中です。
+
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=6619#6619[新開発版 Windows用バイナリ (Old Development Version Windows Ports)]
+** hengband-2.1.x-win.zip
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=6619#6619[旧開発版 Windows用バイナリ (Old Development Version Windows Ports)]
+** hengband-1.5.x-win.zip
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=6619#6619[旧開発版 Windows用バイナリ (Old Development Version Windows Ports)]
+** hengband-1.5.x-win.zip
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=6514#6514[旧開発版 Macintosh用バイナリ (Old Development Version Mac OS Ports)]
+** hengband-1.5.x-68k.sit (680x0用)
+** hengband-1.5.x-ppc.sit (PowerPC用)
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=5474#5474[旧開発版ソースファイル (Old Development Version Source)]
+** hengband-1.5.x.tar.gz(または.tar.bz2)
+
+### タイル表示用ファイル
+
+* link:https://sourceforge.jp/projects/hengband/files/?release_id=5195#5195[16×16タイルグラフィックス (Tile Graphics 16x16)]
+** heng-graf-16x16.tar.gz(または.zip) (WindowsとLinux用)
+** heng-graf-16x16-mac.sit.bin (Macintosh用)
+
+上記以外の環境の実行ファイルや、その他の追加ファイルは以下の場所からダウンロードできます。
+
+### 派生物
+
+* link:http://towisweb.hp.infoseek.co.jp[Linux用 RPMパッケージはこちら(TOWさんのページ)]
+* link:http://www.coins.tsukuba.ac.jp/~iks/angband/index.html[変愚蛮怒 Windows用バイナリはこちら(iksさんのページ)]
+* link:http://www.boreas.dti.ne.jp/~xdd/index.html[変愚蛮怒 Mac OS X用バイナリはこちら(阿部さんのページ)]
+* link:http://macband.s15.xrea.com/[変愚蛮怒 Mac 68k, PPC用バイナリはこちら(桑崎さんのページ)]
+* link:http://mournblade.tripod.co.jp/[DOS(PC)用バイナリ(by mournblade?さん)]
+

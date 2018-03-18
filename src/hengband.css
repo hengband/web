@@ -72,7 +72,7 @@ section#title
 	display: flex;
 	justify-content: space-between;
 	align-content: center;
-	align-items: end;
+	align-items: flex-end;
 }
 
 img#hengTitle
@@ -151,6 +151,7 @@ section#mainMenu > a:hover
 
 
 /* 本文系統 ////////////////////////////////////////////////// */
+
 div#main
 {
 	font-size: 0.8rem;
@@ -163,7 +164,8 @@ div#main
 
 .paragraph > p, .ulist
 {
-	margin: 0.5rem 1.6rem;
+	margin: 1rem 0.5rem;
+	padding: 0.2rem 0.2rem;
 }
 
 .content
@@ -224,6 +226,12 @@ H4{
 	font-weight: bold;
 }
 
+.line-through
+{
+	text-decoration: line-through;
+}
+
+
 /* common footer */
 
 .footer_banner
@@ -239,12 +247,13 @@ H4{
 }
 
 pre {
-white-space: pre-wrap;
-word-wrap: break-word;
-background-color: #000000;
-padding: 1rem;
-margin: 1rem;
-font-family: ＭＳ 明朝, monospace;
+	width: 100%;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	background-color: #000000;
+	padding: 1rem;
+	margin: 0.2rem;
+	font-family: ＭＳ 明朝, monospace;
 }
 
 
