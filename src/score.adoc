@@ -1,0 +1,22 @@
+:lang: ja
+:doctype: article
+
+## 変愚蛮怒 スコア
+
+スコアには一度死んでバックアップから復活させたキャラクターは送らないで下さい。
+
+### 告知
+
+2017/03/18より、新スコアサーバに移行しました。旧サーバは放棄予定です。スコアの喪失を避けたい方は2.2.1の公式リリースまで送らないようによろしくお願いします。
+
+### スコア機能一覧
+
+現在機能拡張中です。順に増やしていくので更新情報をこまめに確認ください。
+
+* link:http://hengband.osdn.jp/score/score_ranking.php[全スコアランキング]
+* link:http://hengband.osdn.jp/score/score_ranking.php?&last_days=7[最近1週間のスコア]
+* link:http://hengband.osdn.jp/score/score_ranking.php?&last_days=30[最近1ヶ月のスコア]
+* link:http://hengband.osdn.jp/score/score_ranking.php?&sort=newcome[新着順]
+* link:http://hengband.osdn.jp/score/killer_ranking.php[死因ランキング]
+* link:http://hengband.osdn.jp/score/popularity_ranking.php[人気のある種族・職業・性格]
+

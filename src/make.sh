@@ -1,6 +1,6 @@
 #!/bin/bash
 
-list="index web_update jlicense link download lists history"
+list="index web_update jlicense link download lists history score"
 
 mkdir -p ../web
 cp -r image *.txt hengband.css ../web
