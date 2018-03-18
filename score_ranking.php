@@ -150,24 +150,27 @@ $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 <title>変愚蛮怒 スコア ランキング</title>
-<link rel="alternate" title="変愚蛮怒 新着スコア" href="html/newcome-rss.xml" type="application/rss+xml">
+<link rel="alternate" title="変愚蛮怒 新着スコア" href="feed/newcome-atom.xml" type="application/atom+xml" />
 </head>
 
 <body>
 <h1>変愚蛮怒 歴代スコア (<?php echo $db->get_sort_mode_name(); ?>)</h1>
 <!--3日以内のスコアは<font color=red>赤</font>、10日以内のスコアは<font color=blue>青</font>で表示されます。<br>-->
 <!--10日以内のスコアは<strong>強調表示</strong>されます。-->
-<!--<br><a href ="html/newcome-rss.xml">新着チェック用RSS</a><small>…スコア受信時に自動生成します。URLをRSSリーダー等に登録すると新着スコアをチェックできます。</small>-->
+<div align="right">
+<a href ="feed/newcome-atom.xml"><img src="feed/feed-icon-14x14.png">新着スコア購読</a>
+<!--<small>…スコア受信時に自動生成します。URLをRSSリーダー等に登録すると新着スコアをチェックできます。</small>-->
+</div>
+
+<hr>
 <small>
 <?php
 echo sprintf("件数 %d 件 (%.2f 秒)", $search_result['total_data_count'], $search_result['elapsed_time']);
 ?>
 </small>
-
-<hr>
 
 <?php
 print_navi_page_table($pageinfo);

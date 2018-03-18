@@ -1,0 +1,5 @@
+deny from all
+
+<Files ~ "(\.xml|\.png)$">
+allow from all
+</Files>
