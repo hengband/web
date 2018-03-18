@@ -161,7 +161,7 @@ div#main
 	flex-direction: column;
 }
 
-.paragraph > p
+.paragraph > p, .ulist
 {
 	margin: 0.5rem 1.6rem;
 }
@@ -239,11 +239,12 @@ H4{
 }
 
 pre {
-	white-space: -moz-pre-wrap; /* Mozilla */
-	white-space: -pre-wrap;     /* Opera 4-6 */
-	white-space: -o-pre-wrap;   /* Opera 7 */
-	white-space: pre-wrap;      /* CSS3 */
-	word-wrap: break-word;      /* IE 5.5+ */
+white-space: pre-wrap;
+word-wrap: break-word;
+background-color: #000000;
+padding: 1rem;
+margin: 1rem;
+font-family: ＭＳ 明朝, monospace;
 }
 
 

@@ -1,0 +1,23 @@
+:lang: ja
+:doctype: article
+
+## 著作権表記について
+
+以下の内容は古くなっています。2018年3月現在以下の点に留意して下さい。
+
+* Angband英語版のGPL2ライセンス化は達成されています。 
+** → link:http://rephial.org/[Angband公式] の link:http://rephial.org/help/copying[License information]を参照してください。
+* 現在の変愚蛮怒をGPLライセンス化するにはZangband他元バリアントのGNUライセンス化が前提となりますが、現在も目処は立っていません。
+* 変愚蛮怒2.2.0現在、いくつかの移植先実装については、対応不可能との判断から削除の形で改変されているものがあります。移植されたコードの正確な削除は不可能なため、著作権そのものは失われません。
+
+## 本文
+
+### jlicense.txt
+
+link:jlicense.txt[jlicense.txtのダウンロード]
+
+----
+include::jlicense.txt[]
+----
+
+
