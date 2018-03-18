@@ -102,15 +102,37 @@ class ScoreDB
      */
     private function get_search_query($offset, $limit, $where, $order_by)
     {
-        switch ($this->sort_mode) {
-        case "score":
-            $query = "SELECT *, group_concat(realm_name) AS realms_name from (select * from scores ${where} {$order_by} LIMIT ${offset}, {$limit}) NATURAL JOIN races NATURAL JOIN classes NATURAL JOIN personalities NATURAL LEFT JOIN score_realms NATURAL LEFT JOIN realms GROUP BY score_id {$order_by}";
-            break;
-        case "newcome":
-            $query = "SELECT *, group_concat(realm_name) AS realms_name from (select * from scores ${where} {$order_by} LIMIT ${offset}, {$limit}) NATURAL JOIN races NATURAL JOIN classes NATURAL JOIN personalities NATURAL LEFT JOIN score_realms NATURAL LEFT JOIN realms GROUP BY score_id {$order_by}";
-            break;
-        }
-
+        $query = <<<EOM
+SELECT
+  *,
+  group_concat(realm_name) AS realms_name,
+  CASE
+    WHEN killer = 'ripe' THEN '勝利の後引退'
+    WHEN killer = 'Seppuku' THEN '勝利の後切腹'
+    ELSE killer || 'に殺された'
+  END AS death_reason
+FROM
+ (SELECT
+    *
+  FROM
+    scores
+  {$where}
+  {$order_by}
+  LIMIT {$offset}, {$limit}) AS s
+NATURAL INNER JOIN
+  races
+NATURAL INNER JOIN
+  classes
+NATURAL INNER JOIN
+  personalities
+NATURAL LEFT JOIN
+  score_realms
+NATURAL LEFT JOIN
+  realms
+GROUP BY
+  score_id
+{$order_by}
+EOM;
         return $query;
     }
 

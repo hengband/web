@@ -9,18 +9,6 @@ include "dump_file.inc";
 
 ini_set('zlib.output_compression', 'On');
 
-function get_death_reason($killer)
-{
-    switch ($killer) {
-    case "ripe":
-        return "勝利の後引退";
-    case "Seppuku":
-        return "勝利の後切腹";
-    default:
-        return $killer."に殺された";
-    }
-}
-
 
 /**
  * ページ情報を計算する
@@ -117,17 +105,15 @@ EOM;
 
     foreach($scores as $idx => $score) {
         $rank = $rank_start + $idx + 1;
-        $score_id = $score['score_id'];
-        $date = substr($score['date'], 0, 10);
+        $date = substr($score['date'], 0, 10); // 日時から日付部分を取り出す
         $sex_str = $score['sex'] ? "男" : "女";
-        $death_reason = get_death_reason($score['killer']);
         $depth = !$score['winner'] ? $score['depth']."階, " : "";
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
-        $dumpfile = new DumpFile($score_id);
+        $dumpfile = new DumpFile($score['score_id']);
 
         echo "<tr>\n";
         if ($dumpfile->exists('dumps', 'txt')) {
-            $name = "<a href=\"show_dump.php?score_id={$score_id}\">{$score['personality_name']}{$score['name']}</a>\n";
+            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$score['personality_name']}{$score['name']}</a>\n";
         } else {
             $name = "{$score['personality_name']}{$score['name']}";
         }
@@ -142,7 +128,7 @@ EOM;
 
 EOM;
         if ($dumpfile->exists('screens', 'html')) {
-            echo "<td><a href=\"show_screen.php?score_id={$score_id}\">{$death_reason}</a>";
+            echo "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>";
         } else {
             echo "<td>{$death_reason}";
         }
