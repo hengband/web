@@ -25,7 +25,7 @@ class FeedMaker
 
         $feed->setTitle('変愚蛮怒 スコアランキング (新着順)');
         $feed->setDescription('変愚蛮怒新着スコア');
-        $feed->setLink("{$base_url}/score_ranking.php?mode=newcome");
+        $feed->setLink("{$base_url}/score_ranking.php?sort=newcome");
         $feed->setDate(new DateTime());
         $feed->setImage("http://".filter_input(INPUT_SERVER, 'SERVER_NAME')."/tama.gif");
         $feed->setSelfLink("{$base_url}/$feed_path");
