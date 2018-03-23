@@ -49,25 +49,47 @@ class ScoreDB
     /**
      * スコア検索の絞り込み用WHERE句を取得する
      *
-     * @return string スコア検索絞り込み用のWHERE句
+     * @return array スコア検索絞り込み用のWHERE句('where')とプレースホルダに渡すパラメータ配列('params')の連想配列
      */
-    private function get_where()
+    private function get_search_condition()
     {
         $last_days = filter_input(INPUT_GET, 'last_days', FILTER_VALIDATE_INT);
+        $params = [];
+
         if ($last_days > 0) {
             $wheres[] = "date >= datetime('now', 'localtime', '-{$last_days} days')";
         }
 
-        foreach (['race_id', 'class_id', 'personality_id'] as $id_str) {
-            $id = filter_input(INPUT_GET, $id_str, FILTER_VALIDATE_INT); 
-            if ($id > 0) {
-                $wheres[] = "{$id_str} = {$id}";
+        foreach (['race_id', 'class_id', 'personality_id'] as $key_column) {
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
+            if ($val > 0) {
+                $wheres[] = "{$key_column} = :{$key_column}";
+                $params[":{$key_column}"] = $val;
             }
         }
 
-        $where = isset($wheres) ? 'WHERE '.implode(' AND ', $wheres) : '';
+        foreach (['name'] as $key_column) {
+            $val = filter_input(INPUT_GET, $key_column);
+            if ($val !== NULL && strlen($val) > 0) {
+                $wheres[] = "{$key_column} = :{$key_column}";
+                $params[":{$key_column}"] = $val;
+            }
+        }
 
-        return $where;
+        foreach (['killer'] as $key_column) {
+            $val = filter_input(INPUT_GET, $key_column);
+            if ($val !== NULL && strlen($val) > 0) {
+                $wheres[] = "({$key_column} LIKE :{$key_column} OR {$key_column} = :{$key_column}1 OR {$key_column} = :{$key_column}2)";
+                $params[":{$key_column}"] = "%".$val."%";
+                $params[":{$key_column}1"] = "麻痺状態で".$val;
+                $params[":{$key_column}2"] = "彫像状態で".$val;
+            }
+        }
+
+        $result['where'] = isset($wheres) ? 'WHERE '.implode(' AND ', $wheres) : '';
+        $result['params'] = $params;
+
+        return $result;
     }
 
 
@@ -143,9 +165,10 @@ EOM;
      * @param string $where スコア検索に用いるWHERE句
      * @return integer スコア総件数
      */
-    private function get_query_data_count($where)
+    private function get_query_data_count($where, $params)
     {
-        $stmt = $this->dbh->query("SELECT count(*) AS data_count from scores {$where}");
+        $stmt = $this->dbh->prepare("SELECT count(*) AS data_count from scores {$where}");
+        $stmt->execute($params);
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return intval($res[0]['data_count']);
@@ -162,16 +185,17 @@ EOM;
      */
     public function search_score($start_num, $count)
     {
-        $where = $this->get_where();
+        $cond = $this->get_search_condition();
         $order_by = $this->get_order_by();
-        $query_sql = $this->get_search_query(intval($start_num / $count) * $count, $count, $where, $order_by);
+        $query_sql = $this->get_search_query(intval($start_num / $count) * $count, $count, $cond['where'], $order_by);
 
         $search_start_time = microtime(true);
         $this->dbh->beginTransaction();
 
-        $score_stmt = $this->dbh->query($query_sql);
+        $score_stmt = $this->dbh->prepare($query_sql);
+        $score_stmt->execute($cond['params']);
         $result['scores'] = $score_stmt->fetchAll(PDO::FETCH_ASSOC);
-        $result['total_data_count'] = $this->get_query_data_count($where);
+        $result['total_data_count'] = $this->get_query_data_count($cond['where'], $cond['params']);
 
         $this->dbh->commit();
         $result['elapsed_time'] = microtime(true) - $search_start_time;
