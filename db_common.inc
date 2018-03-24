@@ -10,6 +10,21 @@ class ScoreDB
         $this->set_sort_mode(filter_input(INPUT_GET, 'sort'));
     }
 
+    public function get_defines()
+    {
+        $id_define_array = [];
+        $tables = [['race', 'races'], ['class', 'classes'], ['personality', 'personalities'], ['realm', 'realms']];
+        foreach ($tables as $t) {
+            $id_define_array[$t[0]] = [];
+            $stmt = $this->dbh->query("SELECT {$t[0]}_id, {$t[0]}_name FROM {$t[1]} ORDER BY {$t[0]}_id");
+            foreach ($stmt->fetchAll(PDO::FETCH_NUM) as $row) {
+                $id_define_array[$t[0]][intval($row[0])] = $row[1];
+            }
+        }
+
+        return $id_define_array;
+    }
+
     /**
      * スコア表示モードを設定する
      *
