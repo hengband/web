@@ -179,5 +179,7 @@ $dumpfile->save('screens', 'html', $split_contents[2]);
 // 登録成功、HTTPレスポンスコード 200 OK を返す
 http_response_code(200);
 
+exec("nohup python tools/tweet_score.py -c tools/tweet_score.cfg -l tweet_score.log -s {$score_id} > /dev/null &");
+
 $feed_maker = new FeedMaker($db);
 $feed_maker->make_atom_feed("feed/newcome-atom.xml");
