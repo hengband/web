@@ -419,9 +419,9 @@ EOM
         $realm_insert_stmt = $this->dbh->prepare(
             <<<EOM
 INSERT INTO score_realms
- (score_id, realm_id)
+ (score_id, realm_id, realm_seq)
 SELECT
-  ?, realm_id
+  ?, realm_id, ?
 FROM
   realms
 WHERE
@@ -441,8 +441,8 @@ EOM
             //       したがってlastInsertIdで追加されたスコアのscore_idを取得可能
             $score_id = $this->dbh->lastInsertId();
 
-            foreach ($score_data['realm_info'] as $realm_name) {
-                if ($realm_insert_stmt->execute([$score_id, $realm_name]) === FALSE ||
+            foreach ($score_data['realm_info'] as $realm_seq => $realm_name) {
+                if ($realm_insert_stmt->execute([$score_id, $realm_seq + 1, $realm_name]) === FALSE ||
                     $realm_insert_stmt->rowCount() !== 1) {
                     $dbh->rollBack();
                     return FALSE;
