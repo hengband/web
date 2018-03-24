@@ -83,11 +83,21 @@ class ScoreDB
             }
         }
 
+        foreach (['realm_id1', 'realm_id2'] as $idx => $key_column) {
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
+            if ($val > 0) {
+                $seq = $idx + 1;
+                $wheres[] = "score_id IN (SELECT score_id FROM score_realms WHERE realm_id = :{$key_column} AND realm_seq = {$seq})";
+                $params[":{$key_column}"] = $val;
+            }
+        }
+
         foreach (['name'] as $key_column) {
             $val = filter_input(INPUT_GET, $key_column);
+            $match_mode = filter_input(INPUT_GET, $key_column."_match");
             if ($val !== NULL && strlen($val) > 0) {
-                $wheres[] = "{$key_column} = :{$key_column}";
-                $params[":{$key_column}"] = $val;
+                $wheres[] = "{$key_column} LIKE :{$key_column}";
+                $params[":{$key_column}"] = ($match_mode == "strict") ? $val : "%".$val."%";
             }
         }
 
