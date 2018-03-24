@@ -149,16 +149,46 @@ $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
 
 <!DOCTYPE html>
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-<title>変愚蛮怒 スコア ランキング</title>
-<link rel="alternate" title="変愚蛮怒 新着スコア" href="feed/newcome-atom.xml" type="application/atom+xml" />
-<link rel="stylesheet" type="text/css" href="/hengband.css">
-</head>
+<html lang="jp">
+        <head>
+                <meta charset="utf-8"/>
+                <link rev=made href="mailto:hengband-dev@lists.sourceforge.jp">
+                <link rel="stylesheet" type="text/css" href="/hengband.css">
+                <link rel="alternate" title="変愚蛮怒 新着スコア" href="feed/newcome-atom.xml" type="application/atom+xml" />
+                <title>変愚蛮怒 公式WEB スコアランキング</title>
+        </head>
 
-<body>
+        <body>
+
+                <header>
+
+                        <section id="title">
+                                <img class="tama1" src="/image/tama.gif" alt="tama">
+                                <img class="tama2" src="/image/tama.gif" alt="tama">
+                                <img class="tama3" src="/image/tama.gif" alt="tama">
+                                <img class="tama4" src="/image/tama.gif" alt="tama">
+                                <img id="hengTitle" src="/image/hengband_title.png" alt="変愚蛮怒 Hengband">
+                                <img class="tama4" src="/image/tama.gif" alt="tama">
+                                <img class="tama3" src="/image/tama.gif" alt="tama">
+                                <img class="tama2" src="/image/tama.gif" alt="tama">
+                                <img class="tama1" src="/image/tama.gif" alt="tama">
+                        </section>
+
+                        <section id="mainMenu">
+                                <a href="/index.html">トップ</a>
+                                <a href="/download.html">ダウンロード</a>
+                                <a href="/score.html">スコア</a>
+                                <a href="/lists.html">コミュニティ</a>
+                                <a href="/history.html">バージョン履歴</a>
+                                <a href="/link.html">関連リンク</a>
+                                <a href="/jlicense.html">著作権表記</a>
+                                <span>English (Coming Soon)</span>
+                        </section>
+
+                </header>
+ 
+                <div id="main">
+<!--main contents-->
 <h2>変愚蛮怒 歴代スコア (<?php echo $db->get_sort_mode_name(); ?>)</h2>
 <!--3日以内のスコアは<font color=red>赤</font>、10日以内のスコアは<font color=blue>青</font>で表示されます。<br>-->
 <!--10日以内のスコアは<strong>強調表示</strong>されます。-->
@@ -173,14 +203,29 @@ echo sprintf("件数 %d 件 (%.2f 秒)", $search_result['total_data_count'], $se
 ?>
 </small>
 </div>
-
-
 <?php
 print_navi_page_table($pageinfo);
 print_score_table($search_result['scores'], $pageinfo['current'] * $pageinfo['data_count_per_page']);
 print_navi_page_table($pageinfo);
 ?>
 </div>
+                </div>
 
-</body>
+                <footer>
+
+                        <section>
+                                各ページへのリンクは御自由にどうぞ。/ Link Free.<br>
+                                2018 Hengband Dev Team. <a href="mailto:hengband-dev@lists.sourceforge.jp">hengband-dev@lists.sourceforge.jp</a><br>
+                        </section>
+
+                        <section>
+                                Powered by <a href="https://ja.osdn.net/" class="footer_banner">
+                                <img src="https://ja.osdn.net/sflogo.php?group_id=541" border="0" alt="OSDN.jp">
+                                </a>
+                        </section>
+
+                </footer>
+
+        </body>
+
 </html>
