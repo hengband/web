@@ -8,39 +8,28 @@ ini_set('zlib.output_compression', 'On');
 
 require_once "db_common.inc";
 
-function print_popularity_table($stat, $id_name, $name, $current_sort_key)
+function print_popularity_table($stat, $id_name, $name)
 {
     echo <<<EOM
-<table>
+<table class="tablesorter statistics_table" id="${id_name}">
+<thead>
 <tr>
-<th>#</th>
 <th>$name</th>
 EOM;
     
     foreach ([
-        '計' => 'total_count',
-        '男性' => 'male_count',
-        '女性' => 'female_count',
-        '勝利' => 'winner_count',
-        '平均スコア' => 'average_score',
-        '最大スコア' => 'max_score',
-    ] as $name => $sort_key) {
-        if ($sort_key !== $current_sort_key)
-            echo "<th><a href='popularity_ranking.php?sort_key=${sort_key}'>${name}</a></th>";
-        else {
-            echo "<th><strong>${name}</strong></th>";
-        }
+        '計', '男性', '女性', '勝利', '平均スコア', '最大スコア',
+    ] as $name) {
+        echo "<th>${name}</th>";
     }
     echo "</tr>\n";
+    echo "</thead>\n";
 
-    $rank = 0;
     foreach ($stat as $k => $s) {
-        $rank ++;
         $name_link = "<a href='score_ranking.php?{$id_name}={$s['id']}'>{$s['name']}</a></td>";
         $average_score = floor($s['average_score']);
         echo <<<EOM
 <tr>
-<td>$rank</td>
 <td>$name_link</td>
 <td>{$s['total_count']}</td>
 <td>{$s['male_count']}</td>
@@ -60,42 +49,98 @@ $db = new ScoreDB();
 
 $time_start = microtime(true);
 
-$sort_key_column = filter_input(INPUT_GET, 'sort_key') ?: 'total_count';
-$statistics = $db->get_statistics_tables($sort_key_column);
+$statistics = $db->get_statistics_tables('total_count');
 
 $query_time = microtime(true) - $time_start;
 ?>
 
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-<title>変愚蛮怒 人気のある種族・職業・性格</title>
-</head>
 
+<html lang="jp">
+        <head>
+                <meta charset="utf-8"/>
+                <link rev=made href="mailto:hengband-dev@lists.sourceforge.jp">
+                <link rel="stylesheet" type="text/css" href="/hengband.css">
+                <link rel="stylesheet" type="text/css" href="tablesorter-theme/style.css">
+                <link rel="alternate" title="変愚蛮怒 新着スコア" href="feed/newcome-atom.xml" type="application/atom+xml" />
+                <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+
+                <script src="jquery.tablesorter.min.js" type="text/javascript"></script>
+                <script src="popularity_ranking.js" type="text/javascript"></script>
+                <title>変愚蛮怒 公式WEB スコアランキング 人気のある種族・職業・性格</title>
+        </head>
+
+        <body>
+
+                <header>
+
+                        <section id="title">
+                                <img class="tama1" src="/image/tama.gif" alt="tama">
+                                <img class="tama2" src="/image/tama.gif" alt="tama">
+                                <img class="tama3" src="/image/tama.gif" alt="tama">
+                                <img class="tama4" src="/image/tama.gif" alt="tama">
+                                <img id="hengTitle" src="/image/hengband_title.png" alt="変愚蛮怒 Hengband">
+                                <img class="tama4" src="/image/tama.gif" alt="tama">
+                                <img class="tama3" src="/image/tama.gif" alt="tama">
+                                <img class="tama2" src="/image/tama.gif" alt="tama">
+                                <img class="tama1" src="/image/tama.gif" alt="tama">
+                        </section>
+
+                        <section id="mainMenu">
+                                <a href="/index.html">トップ</a>
+                                <a href="/download.html">ダウンロード</a>
+                                <a href="/score.html">スコア</a>
+                                <a href="/lists.html">コミュニティ</a>
+                                <a href="/history.html">バージョン履歴</a>
+                                <a href="/link.html">関連リンク</a>
+                                <a href="/jlicense.html">著作権表記</a>
+                                <span>English (Coming Soon)</span>
+                        </section>
+
+                </header>
+ 
+                <div id="main">
+<!--main contents-->
+<h2>人気のある種族・職業・性格</h2>
+<!--
 <small>
 <?php
 echo sprintf("(%.2f 秒)", $query_time);
 ?>
 </small>
-<hr>
-<h1>人気のある種族</h1>
+-->
+<nobr>[ <a href="javascript:void(0)" class="table_select" id="race_id">種族</a> | <a href="javascript:void(0)" class="table_select" id="class_id">職業</a> | <a href="javascript:void(0)" class="table_select" id="personality_id">性格</a> ]</nobr>
 
 <?php
-print_popularity_table($statistics['race'], 'race_id', "種族", $sort_key_column);
+print_popularity_table($statistics['race'], 'race_id', "種族");
 ?>
-
-<hr>
-<h1>人気のある職業</h1>
-
 <?php
-print_popularity_table($statistics['class'], 'class_id', "職業", $sort_key_column);
+print_popularity_table($statistics['class'], 'class_id', "職業");
 ?>
-
-<hr>
-<h1>人気のある性格</h1>
-
 <?php
-print_popularity_table($statistics['personality'], 'personality_id', "性格", $sort_key_column);
+print_popularity_table($statistics['personality'], 'personality_id', "性格");
 ?>
+
+                </div>
+
+                <footer>
+
+                        <section>
+                                各ページへのリンクは御自由にどうぞ。/ Link Free.<br>
+                                2018 Hengband Dev Team. <a href="mailto:hengband-dev@lists.sourceforge.jp">hengband-dev@lists.sourceforge.jp</a><br>
+                        </section>
+
+                        <section>
+                                Powered by <a href="https://ja.osdn.net/" class="footer_banner">
+                                <img src="https://ja.osdn.net/sflogo.php?group_id=541" border="0" alt="OSDN.jp">
+                                </a>
+                        </section>
+
+                </footer>
+
+        </body>
+
+</html>

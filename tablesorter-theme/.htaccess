@@ -1,5 +1,5 @@
 deny from all
 
-<Files ~ "(\.php|\.js)$">
+<Files ~ "(\.gif|\.css)$">
 allow from all
 </Files>
