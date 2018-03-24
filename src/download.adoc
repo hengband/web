@@ -89,7 +89,8 @@ Linuxなら ./hengband -- -a という風にオプションを付けて実行し
 ** hengband-1.4.7-win.zip (旧安定版最終バージョン修正版)
 ** hengband-1.6.x-win.zip (安定版)
 ** hengband-2.0.0-win.zip (安定版)
-** hengband-2.2.0-win.zip (最新安定版)
+** hengband-2.2.0-win.zip (安定版)
+** hengband-2.2.1-win.zip (最新安定版)
 
 * link:https://sourceforge.jp/projects/hengband/files/?release_id=10344#10344[安定版 Macintosh用バイナリ (Stable Version Mac OS Ports)]
 ** hengband-1.4.7-68k.sit (旧安定版最終バージョン修正版680x0用)
