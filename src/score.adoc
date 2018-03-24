@@ -13,10 +13,10 @@
 
 現在機能拡張中です。順に増やしていくので更新情報をこまめに確認ください。
 
-* link:http://hengband.osdn.jp/score/score_ranking.php[全スコアランキング]
-* link:http://hengband.osdn.jp/score/score_ranking.php?&last_days=7[最近1週間のスコア]
-* link:http://hengband.osdn.jp/score/score_ranking.php?&last_days=30[最近1ヶ月のスコア]
-* link:http://hengband.osdn.jp/score/score_ranking.php?&sort=newcome[新着順]
-* link:http://hengband.osdn.jp/score/killer_ranking.php[死因ランキング]
-* link:http://hengband.osdn.jp/score/popularity_ranking.php[人気のある種族・職業・性格]
+* link:score/score_ranking.php[全スコアランキング]
+* link:score/score_ranking.php?&last_days=7[最近1週間のスコア]
+* link:score/score_ranking.php?&last_days=30[最近1ヶ月のスコア]
+* link:score/score_ranking.php?&sort=newcome[新着順]
+* link:score/killer_ranking.php[死因ランキング]
+* link:score/popularity_ranking.php[人気のある種族・職業・性格]
 
