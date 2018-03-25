@@ -1,0 +1,7 @@
+:lang: ja
+:doctype: article
+
+## 2000/09/08 Ver.0.3.3 (開発版)
+
+* 非公開
+
