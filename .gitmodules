@@ -1,0 +1,3 @@
+[submodule "score/FeedWriter"]
+	path = score/FeedWriter
+	url = https://github.com/mibe/FeedWriter.git
