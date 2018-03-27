@@ -163,11 +163,12 @@ div#main
 
 	display: flex;
 	flex-direction: column;
+	flex: 1 0 auto;
 }
 
 .paragraph > p
 {
-	margin: 1rem 0.5rem;
+	margin: 1rem 1.5rem;
 	padding: 0.2rem 0.2rem;
 }
 
@@ -201,11 +202,9 @@ li > p
 	margin:  30px 5px;
 }
 
-
 ul{
-	padding: 0px;
 	border: 0px;
-	margin: 0px 1.0rem;
+	margin: 0px 1.6rem;
 	padding: 0px;
 }
 
@@ -219,23 +218,28 @@ li{
 	padding: 10px;
 }
 
-H2{
-	padding: 10px 10px 6px 10px;
-	border: 3px #554433 solid;
+h2{
+	padding: 1.1rem;
+	margin: 1.5rem 0 0.7rem 0;
+	border: 0.5rem #775540 solid;
 	background-color: #000000;
+	border-radius: 0.8rem;
 }
 
-H3{
-	padding: 5px 5px;
-	margin:  0px 5px;
-	border: 1px #554433 solid;
-	background-color: #000000;
+h3{
+	padding: 0.7rem;
+	margin: 0.6rem;
+	border: 0.3rem #554433 solid;
+	border-radius: 0.9rem;
+	background-color: #100800;
 }
 
-H4{
-	padding: 5px 5px;
-	margin:  2px 2px;
-	background-color: #000000;
+h4{
+	padding: 0.5rem;
+	margin: 0.5rem 1.0rem;
+	border: 0.2rem #332010 solid;
+	border-radius: 1.0rem;
+	background-color: #201000;
 }
 
 .strong
