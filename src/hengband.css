@@ -277,4 +277,47 @@ pre {
 	font-family: ＭＳ 明朝, monospace;
 }
 
+.button {
+	text-decoration: none;
+	border-radius: 0.2rem;
+	margin: 0.2rem 0.2rem 0.4rem 0.2rem;
+	height: auto;
+	min-height: 4.6rem;
+	max-height: 6.5rem;
+	padding: 0.0rem 0.15rem;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row;
+	text-shadow: 0.1rem 0.1rem 0.1rem #FFFFFF, -0.1rem 0.1rem 0.1rem #FFFFFF, 0.1rem -0.1rem 0.1rem #FFFFFF, -0.1rem -0.1rem 0.1rem #FFFFFF;
+	justify-content: space-around;
+	align-items: center;
+	color: #000000;
+	border-top: solid 0.40rem #AF874D;
+	border-left: solid 0.40rem #AF874D;
+	border-right: solid 0.40rem #905020;
+	border-bottom: solid 0.40rem #905020;
+	background: -moz-linear-gradient(80% 28% 275deg, #FFF2E0, #FFFFFF 55%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 244, 223, 0.8)));
+	box-shadow: 0.4rem 0.4rem 0.15rem rgba(0, 0, 0, 0.9), 0.02rem 0.1rem 2.2rem rgba(255, 255, 255, 0.4);
+}
+
+.button > img
+{
+	width: auto;
+	max-height: 4.0rem;
+}
+
+.button > span
+{
+	font-size: 200%;
+	color: #000000;
+}
+
+/* スコア系統 ////////////////////////////////////////////////// */
+
+.scorelinks {
+	display: flex;
+	margin: 1rem;
+	padding: 1rem;
+}
 
