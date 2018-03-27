@@ -326,6 +326,32 @@ EOM
                 );
             }
 
+            foreach (range(1, 2) as $seq) {
+                $table_name = "realm{$seq}_statistics";
+                $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
+                $stmt = $this->dbh->query(
+                    <<<EOM
+CREATE TABLE $table_name AS
+SELECT
+  class_id, class_name,
+  realm_id, realm_name,
+  count(*) AS total_count,
+  count(sex=1 OR NULL) AS male_count,
+  count(sex=0 OR NULL) AS female_count,
+  count(winner=1 OR NULL) AS winner_count,
+  avg(score) AS average_score,
+  max(score) AS max_score
+FROM score_realms
+NATURAL INNER JOIN scores
+NATURAL INNER JOIN classes
+NATURAL INNER JOIN realms
+WHERE realm_seq={$seq}
+GROUP BY class_id, realm_id
+ORDER BY class_id, total_count DESC
+EOM
+                );
+            }
+
             return TRUE;
         } catch (PDOException $e) {
             return FALSE;
@@ -352,6 +378,10 @@ EOM
         foreach ([['race', 'races'], ['class', 'classes'], ['personality', 'personalities']] as $kind) {
             $stmt = $this->dbh->query("SELECT ${kind[0]}_id AS id, ${kind[0]}_name AS name, * FROM ${kind[0]}_statistics NATURAL JOIN ${kind[1]} ORDER BY ${sort_key_column} DESC");
             $stat[$kind[0]] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        foreach (['realm1', 'realm2'] as $realm) {
+            $stmt = $this->dbh->query("SELECT * FROM {$realm}_statistics;");
+            $stat[$realm] = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         $this->dbh->commit();
 
