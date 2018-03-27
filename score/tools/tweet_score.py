@@ -78,9 +78,9 @@ def create_tweet(score_data):
                u"{race_name} {class_name}{realms_name} {death_reason} {depth}階"
                ).format(**score_data)
 
-    dump_url = ("http://hengband.osdn.jp/score/show_dump.php?score_id={}"
+    dump_url = ("https://hengband.osdn.jp/score/show_dump.php?score_id={}"
                 ).format(score_data['score_id'])
-    screen_url = ("http://hengband.osdn.jp/score/show_screen.php?score_id={}"
+    screen_url = ("https://hengband.osdn.jp/score/show_screen.php?score_id={}"
                   ).format(score_data['score_id'])
 
     tweet = (u"{summary}\n\n"
