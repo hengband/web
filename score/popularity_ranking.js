@@ -1,7 +1,7 @@
 function select_table(table_id)
 {
     $("table.statistics_table").hide();
-    $("table.statistics_table#" + table_id).show();
+    $("div#" + table_id + " table.statistics_table").show();
 
     $("a.table_select").css('font-weight', 'normal').css('font-size', 'small');
     $("a.table_select#" + table_id).css('font-weight', 'bold').css('font-size', 'large');

@@ -11,7 +11,8 @@ require_once "db_common.inc";
 function print_popularity_table($stat, $id_name, $name)
 {
     echo <<<EOM
-<table class="tablesorter statistics_table" id="${id_name}">
+<div id="{$id_name}">
+<table class="tablesorter statistics_table">
 <thead>
 <tr>
 <th>$name</th>
@@ -42,8 +43,61 @@ EOM;
     }
 
     echo "</table>";
+    echo "</div>";
 }
 
+function print_realm_popularity_table($stat, $id_name)
+{
+    // 魔法領域の統計を職業ごとにグループ分け
+    $class_ids = array_unique(array_column($stat, "class_id"));
+    $class_realm_stat_list = array_fill_keys($class_ids, []);
+
+    foreach ($stat as $s) {
+        $class_realm_stat_list[intval($s["class_id"])][] = $s;
+    }
+
+    echo "<div id=\"{$id_name}\">";
+
+    // 職業ごとにテーブルを表示
+    foreach ($class_realm_stat_list as $class_id => $class_realm_stat) {
+        if (count($class_realm_stat) <= 1) continue; // 領域固定の職業は飛ばす
+
+        $class_name = $class_realm_stat[0]['class_name'];
+
+        echo <<<EOM
+<table class="tablesorter statistics_table" id="${id_name}">
+<thead>
+<tr>
+<th>{$class_name}</th>
+EOM;
+        foreach ([
+            '計', '男性', '女性', '勝利', '平均スコア', '最大スコア',
+        ] as $th_name) {
+            echo "<th>${th_name}</th>";
+        }
+        echo "</tr>\n";
+        echo "</thead>\n";
+
+        foreach ($class_realm_stat as $realm) {
+            $name_link = "<a href='score_ranking.php?class_id={$class_id}&{$id_name}={$realm['realm_id']}'>{$realm['realm_name']}</a></td>";
+            $average_score = floor($realm['average_score']);
+            echo <<<EOM
+<tr>
+<td>$name_link</td>
+<td>{$realm['total_count']}</td>
+<td>{$realm['male_count']}</td>
+<td>{$realm['female_count']}</td>
+<td>{$realm['winner_count']}</td>
+<td>$average_score</td>
+<td>{$realm['max_score']}</td>
+</tr>
+EOM;
+        }
+
+        echo "</table>";
+    }
+    echo "</div>";
+}
 
 $db = new ScoreDB();
 
@@ -70,7 +124,7 @@ $query_time = microtime(true) - $time_start;
 
                 <script src="jquery.tablesorter.min.js" type="text/javascript"></script>
                 <script src="popularity_ranking.js" type="text/javascript"></script>
-                <title>変愚蛮怒 公式WEB スコアランキング 人気のある種族・職業・性格</title>
+                <title>変愚蛮怒 公式WEB スコアランキング 人気のある種族・職業・性格・魔法領域</title>
         </head>
 
         <body>
@@ -104,7 +158,7 @@ $query_time = microtime(true) - $time_start;
  
                 <div id="main">
 <!--main contents-->
-<h2>人気のある種族・職業・性格</h2>
+<h2>人気のある種族・職業・性格・魔法領域</h2>
 <!--
 <small>
 <?php
@@ -112,7 +166,7 @@ echo sprintf("(%.2f 秒)", $query_time);
 ?>
 </small>
 -->
-<nobr>[ <a href="javascript:void(0)" class="table_select" id="race_id">種族</a> | <a href="javascript:void(0)" class="table_select" id="class_id">職業</a> | <a href="javascript:void(0)" class="table_select" id="personality_id">性格</a> ]</nobr>
+    <nobr>[ <a href="javascript:void(0)" class="table_select" id="race_id">種族</a> | <a href="javascript:void(0)" class="table_select" id="class_id">職業</a> | <a href="javascript:void(0)" class="table_select" id="personality_id">性格</a> ] [ <a href="javascript:void(0)" class="table_select" id="realm_id1">魔法領域1</a> | <a href="javascript:void(0)" class="table_select" id="realm_id2">魔法領域2</a> ]</nobr>
 
 <?php
 print_popularity_table($statistics['race'], 'race_id', "種族");
@@ -122,6 +176,12 @@ print_popularity_table($statistics['class'], 'class_id', "職業");
 ?>
 <?php
 print_popularity_table($statistics['personality'], 'personality_id', "性格");
+?>
+<?php
+print_realm_popularity_table($statistics['realm1'], 'realm_id1');
+?>
+<?php
+print_realm_popularity_table($statistics['realm2'], 'realm_id2');
 ?>
 
                 </div>
