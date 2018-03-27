@@ -34,7 +34,7 @@ class DumpFile
         header("Etag: ".$etag);
         header("Content-Type: ".$content_type);
 
-        if ($content_encoding !== FALSE) {
+        if ($content_encoding !== NULL) {
             header("Content-Encoding: ".$content_encoding);
             echo $contents;
         } else {
@@ -124,8 +124,7 @@ class DumpFile
             self::browser_accept_encodings(),
             ['gzip', 'x-gzip']);
 
-        return count($supported_gzip_encodings) > 0 ?
-            $supported_gzip_encodings[0] : FALSE;
+        return array_shift($supported_gzip_encodings);
     }
 
 }
