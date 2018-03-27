@@ -96,7 +96,7 @@ class ScoreDB
             $val = filter_input(INPUT_GET, $key_column);
             $match_mode = filter_input(INPUT_GET, $key_column."_match");
             if ($val !== NULL && strlen($val) > 0) {
-                $wheres[] = "{$key_column} LIKE :{$key_column}";
+                $wheres[] = ($match_mode == "strict") ? "{$key_column} = :{$key_column}" : "{$key_column} LIKE :{$key_column}";
                 $params[":{$key_column}"] = ($match_mode == "strict") ? $val : "%".$val."%";
             }
         }
@@ -234,11 +234,8 @@ EOM;
 
     private function update_killers_cache_table()
     {
-        try {
-            $this->dbh->beginTransaction();
-
-            $this->dbh->exec("DROP TABLE IF EXISTS killers_cache");
-            $this->dbh->exec(<<<EOM
+        $this->dbh->exec("DROP TABLE IF EXISTS killers_cache");
+        $this->dbh->exec(<<<EOM
 CREATE TABLE
   killers_cache
 AS
@@ -269,23 +266,20 @@ GROUP BY
 ORDER BY
   killer_count_total DESC
 EOM
-            );
-            $this->dbh->commit();
-
-            return TRUE;
-        } catch (PDOException $e) {
-            $this->dbh->rollBack();
-
-            return FALSE;
-        }
+        );
     }
 
     public function get_killers_table()
     {
-        //$this->update_cache_status('killers_cache', 0);
-        if (!$this->get_cache_status('killers_cache')) {
-            $this->update_killers_cache_table();
-            $this->update_cache_status('killers_cache', 1);
+        try {
+            $this->dbh->beginTransaction();
+            if (!$this->get_cache_status('killers_cache')) {
+                $this->update_killers_cache_table();
+                $this->update_cache_status('killers_cache', 1);
+            }
+            $this->dbh->commit();
+        } catch (PDOException $e) {
+            $this->dbh->rollBack();
         }
 
         $killers = $this->dbh->query("SELECT * FROM killers_cache ORDER BY killer_count_total DESC")->fetchAll(PDO::FETCH_ASSOC);
@@ -299,36 +293,63 @@ EOM
      *
      * 種族・職業・性格について各種統計情報を取得しキャッシュテーブルに保存する
      * 通常の統計情報の取得はこのキャッシュテーブルから行う
-     *
-     * @return boolean 生成に成功したらTRUE、失敗したらFALSE
      */
     private function update_statistics_cache_tables() {
         $statistics_list = ['race', 'class', 'personality'];
 
-        try {
-            foreach ($statistics_list as $stat) {
-                $table_name = $stat."_statistics";
-                $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
-                $stmt = $this->dbh->query(
-                    <<<EOM
+        foreach ($statistics_list as $stat) {
+            $table_name = $stat."_statistics";
+            $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
+            $this->dbh->exec(
+                <<<EOM
 CREATE TABLE $table_name AS
-  SELECT
-    {$stat}_id,
-    count(sex=1 or NULL) AS male_count,
-    count(sex=0 or NULL) AS female_count,
-    count(*) AS total_count,
-    count(winner=1 OR NULL) AS winner_count,
-    avg(score) AS average_score,
-    max(score) AS max_score
-  FROM scores
+SELECT
+  {$stat}_id,
+  count(sex=1 or NULL) AS male_count,
+  count(sex=0 or NULL) AS female_count,
+  count(*) AS total_count,
+  count(winner=1 OR NULL) AS winner_count,
+  avg(score) AS average_score,
+  max(score) AS max_score
+FROM scores
 GROUP BY ${stat}_id
 EOM
-                );
-            }
+            );
+        }
+    }
 
-            return TRUE;
-        } catch (PDOException $e) {
-            return FALSE;
+
+    /**
+     * 魔法領域統計情報のキャッシュテーブルを更新する
+     *
+     * 魔法領域1・魔法領域2について各種統計情報を取得しキャッシュテーブルに保存する
+     * 通常の統計情報の取得はこのキャッシュテーブルから行う
+     */
+    private function update_realm_statistics_cache_tables() {
+        foreach (range(1, 2) as $seq) {
+            $table_name = "realm{$seq}_statistics";
+            $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
+            $this->dbh->exec(
+                <<<EOM
+CREATE TABLE $table_name AS
+SELECT
+  class_id, class_name,
+  realm_id, realm_name,
+  count(*) AS total_count,
+  count(sex=1 OR NULL) AS male_count,
+  count(sex=0 OR NULL) AS female_count,
+  count(winner=1 OR NULL) AS winner_count,
+  avg(score) AS average_score,
+  max(score) AS max_score
+FROM score_realms
+NATURAL INNER JOIN scores
+NATURAL INNER JOIN classes
+NATURAL INNER JOIN realms
+WHERE realm_seq={$seq}
+GROUP BY class_id, realm_id
+ORDER BY class_id, total_count DESC
+EOM
+            );
         }
     }
 
@@ -341,9 +362,16 @@ EOM
      * @return array 統計情報
      */
     public function get_statistics_tables($sort_key_column) {
-        if (!$this->get_cache_status('statistics_cache')) {
-            $result = $this->update_statistics_cache_tables();
-            $this->update_cache_status('statistics_cache', $result ? 1 : 0);
+        try {
+            $this->dbh->beginTransaction();
+            if (!$this->get_cache_status('statistics_cache')) {
+                $this->update_statistics_cache_tables();
+                $this->update_realm_statistics_cache_tables();
+                $this->update_cache_status('statistics_cache', 1);
+            }
+            $this->dbh->commit();
+        } catch (PDOException $e) {
+            $this->dbh->rollBack();
         }
 
         $stat = [];
@@ -352,6 +380,10 @@ EOM
         foreach ([['race', 'races'], ['class', 'classes'], ['personality', 'personalities']] as $kind) {
             $stmt = $this->dbh->query("SELECT ${kind[0]}_id AS id, ${kind[0]}_name AS name, * FROM ${kind[0]}_statistics NATURAL JOIN ${kind[1]} ORDER BY ${sort_key_column} DESC");
             $stat[$kind[0]] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        foreach (['realm1', 'realm2'] as $realm) {
+            $stmt = $this->dbh->query("SELECT * FROM {$realm}_statistics;");
+            $stat[$realm] = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         $this->dbh->commit();
 
