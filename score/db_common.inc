@@ -96,7 +96,7 @@ class ScoreDB
             $val = filter_input(INPUT_GET, $key_column);
             $match_mode = filter_input(INPUT_GET, $key_column."_match");
             if ($val !== NULL && strlen($val) > 0) {
-                $wheres[] = "{$key_column} LIKE :{$key_column}";
+                $wheres[] = ($match_mode == "strict") ? "{$key_column} = :{$key_column}" : "{$key_column} LIKE :{$key_column}";
                 $params[":{$key_column}"] = ($match_mode == "strict") ? $val : "%".$val."%";
             }
         }
