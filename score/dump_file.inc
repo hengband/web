@@ -45,7 +45,7 @@ class DumpFile
 
     public function save($dir, $ext, $contents)
     {
-        if ($outputs === FALSE) return;
+        if ($contents === FALSE) return;
 
         umask(2); // Group書き込み権限許可
 
