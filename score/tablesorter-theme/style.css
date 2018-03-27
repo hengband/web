@@ -49,3 +49,7 @@ table.tablesorter thead tr .headerSortDown {
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
 	border: 3px ridge #d27d00;
 }
+
+table.statistics_table {
+    display: none;
+}
