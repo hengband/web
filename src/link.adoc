@@ -5,62 +5,67 @@
 
 現在リンクを整理中です。切れているリンクを確認しつつ、随時関連ページを追加していく予定です。
 
-* 日本語のサイト
-** link:https://sourceforge.jp/projects/hengband/[OSDN]
-*** SourceForge.jp改めOSDNにおける変愚蛮怒のプロジェクトページ
-** link:http://www.coins.tsukuba.ac.jp/~iks/rdl/[Roguelike Diary Links 2]
-*** ローグライク関連の日記のリンク集です。
-** link:http://jbbs.shitaraba.com/game/9358/[＠の溜まり場II]
-*** ローグライク総合掲示板。「＠の溜まり場」の後継。
-** link:http://hobbit.s41.xrea.com/[Swinging Nippon]
-*** 元祖「＠の溜まり場」の過去ログ、2chローグライク板の過去ログ、リンク集、ニュース等。
-** link:http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/index.html[ZANGBAND日本語化計画]
-*** 変愚蛮怒のもとにした日本語版Zangband。
-** link:http://plaza16.mbn.or.jp/~irisroom/jangband/jangband.html[日本語版アングバンドの部屋]
-*** しとしん(内海清秀)さんのページ。日本語化はここから始まりました。
-** link:http://www.kmc.gr.jp/~habu/[habuさんのページ]
-*** 開発中にずいぶん助けてもらいました。
-** link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD]
-*** Macで各種Angbandを日本語化している阿部さんのページ。MacOSX用の変愚蛮怒はここで。
-** link:http://macband.s15.xrea.com/[*band Fan Page(?)]
-*** 桑崎(Kuwa)さんのページ。Mac版変愚蛮怒を配布しています。ディレクトリまる見えの様に見えるのは「ジョーク」だそうで。変愚蛮怒の拡張サウンドセットが入手できます。
-** link:http://panyara.hp.infoseek.co.jp/[panyara's Homepage]
-*** Tower of Doom 日本語版やDiabloband Windowsバイナリがあります。
-** link:http://www.asahi-net.or.jp/~kh4s-smz/heng/[変*愚蛮怒メモ]
-*** Windows用の変愚蛮怒コンパイルキットがあります。
-** link:http://isweb41.infoseek.co.jp/play/towisweb/[変愚蛮怒 RPM パッケージ]
-*** TOWさんのページ。変愚蛮怒のRPMパッケージを配布していらっしゃいます。
-** link:http://hccweb1.bai.ne.jp/pekokichi/[不思議なホームページ]
-*** RogueLike狂騒曲に各種ローグライクゲームの日記があります。
-** link:http://felicity-web.hp.infoseek.co.jp/indax.shtml[Closing the door]
-*** ストレイツォ復活。各種Angband日記等。(現在は掲示板だけみたい。)
-** link:http://www.kmc.gr.jp/~henkma/heng/index.html[変愚蛮怒スポイラー]
-*** henkmaさんの変愚蛮怒データ集です。解説はかなり書き手の主観が入っています:-)。
-** link:http://www.hcn.zaq.ne.jp/kusunose/tome/[日本語版 T.o.M.E.(旧名：PernAngband)]
-*** Dark God さん作、何でもありのバリアント。非常に派手。先進的で実験的なシステムを多く取り入れ、もはやAngbandバリアントの域をはみ出しているとも。日本語版は楠瀬さん。
-** link:http://www.coins.tsukuba.ac.jp/~iks/xangband/[XAngband(旧名:簡単愚蛮怒)]
-*** ZAngband2.4.0の純和製バリアント。iksさんが開発しています。比較的簡単。
-** link:http://toband.sourceforge.jp/index.php[TOband]
-*** 変愚蛮怒から派生したバリアント。全く新しい雰囲気の*bandバリアントです。開発を受け継ぐ人募集中とか。
-** link:http://web.sfc.keio.ac.jp/~alba/DB/[*鑑定*の巻物]
-*** Albaさんのページ。アーティファクトデータベースがあります。
-** link:http://lousy.s53.xrea.com/[シラミ部屋]
-*** lousyさんのページ。*bandのリンク集、アップローダー等、色々便利です。*bandの前にシラミのコーナーでシラミ対策を万全に(？)。
-** link:http://www.hcn.zaq.ne.jp/kusunose/eyangband/[日本語版 EyAngband]
-*** Eytan Zweig さんが開発しているバリアント。耐性が 有る/無い の二値ではなく百分率になっている事等、独特な戦闘システム。日本語版は楠瀬さん。
-** link:http://www.goodkey.net/~kusunose/unangband/[日本語版 UnAngband]
-*** Andrew Doullさんが開発しているバリアント。雰囲気は地味ですが先進的なシステムを持ち、本当に指輪世界を冒険してる気分です。日本語版は楠瀬さん。
-** link:http://f25.aaacafe.ne.jp/~nullpo/[ぬるぽ堂 日本語版DungeonCrawl]
-*** *bandバリアントでは無いけれど、雰囲気は似ています。
-** link:http://www.unixuser.org/~ueno/bugs-ja.html[効果的にバグを報告するには]
-*** *bandに限らず、多くの人に読んでもらいたい(笑)
+### 開発
 
-* 英語のサイト
-** link:http://www.zangband.org/[www.zangband.org]
-*** 最新のZAngbandのページです。変愚蛮怒の元になったZAngband2.2.8とは完全に別のゲームになっていますが。
-** link:http://www.thangorodrim.net/[Thangorodrim - The Angband Page]
-*** 全てのAngbandバリアントの総本山です。総数50個近くのバリアントがあります。
-** link:http://www.deja.com/group/rec.games.roguelike.angband[rec.games.roguelike.angband]
-*** アングバンド関連のUSENETニュースグループです。
-** link:http://angband.oook.cz/[angband.oook.cz]
-*** 各種バリアントのキャラクターダンプやスクリーンショットの投稿を受け付けています。
+[cols="h,d"]
+|================
+|link:https://sourceforge.jp/projects/hengband/[OSDN]|SourceForge.jp改めOSDNにおける変愚蛮怒のプロジェクトページ
+|link:http://www.asahi-net.or.jp/~kh4s-smz/heng/[変*愚蛮怒メモ]|Windows用の変愚蛮怒旧コンパイルキットがあります。他にもシステムに関する情報がありますがいずれも古いため、あくまで参考までに。
+|link:https://www.chiark.greenend.org.uk/~sgtatham/bugs-jp.html[効果的にバグを報告するには]|*bandに限らず、多くの人に読んでもらいたい(笑)。2018年3月リンク変更しました。
+|================
+
+### 別途配布
+
+[cols="h,d"]
+|================
+|link:http://macband.s15.xrea.com/[*band Fan Page(?)]|桑崎(Kuwa)さんのページ。旧Mac版変愚蛮怒を配布しています。ディレクトリまる見えの様に見えるのは「ジョーク」だそうで。変愚蛮怒の拡張サウンドセットが入手できます。2005～2006年を最後に更新停止しています。掲示板も停止中です。
+|================
+
+### コミュニティ
+
+[cols="h,d"]
+|================
+|link:http://jbbs.shitaraba.com/game/9358/[＠の溜まり場II]|ローグライク総合掲示板「＠の溜まり場」の後継。
+|link:http://angband.oook.cz/[angband.oook.cz]|各種バリアントのキャラクターダンプやスクリーンショットの投稿を受け付けています。
+|link:http://hobbit.s41.xrea.com/[Swinging Nippon]|元祖「＠の溜まり場」の過去ログ、2chローグライク板の過去ログ、リンク集、ニュース等。2006年を最後に更新停止しています。
+|link:https://groups.google.com/forum/#!forum/rec.games.roguelike.angband[rec.games.roguelike.angband]|アングバンド関連のUSENETニュースグループ改め、Googleグループとなりました。
+|link:http://lousy.s53.xrea.com/[latest lousy diary(旧「シラミ部屋」)]|lousyさんのページ。*bandのリンク集、アップローダー等、色々便利です。*bandの前にシラミのコーナーでシラミ対策を万全に(？)。
+|link:http://hccweb1.bai.ne.jp/pekokichi/[不思議なホームページ]|RogueLike狂騒曲にプレイヤーから寄稿された各種ローグライクゲームの日記があります。2018年現在も20世紀めいたレトロなページとして存続中。未だ一部界隈で伝説となっているあのプレイヤーの日記も-more-
+|================
+
+### Angband系バリアント関連
+
+[cols="h,d"]
+|================
+|link:http://www.thangorodrim.net/[Thangorodrim - The Angband Page]|全てのAngbandバリアントの総本山です。総数50個近くのバリアントがあります。
+|link:http://www.zangband.org/[www.zangband.org]|最新のZAngbandのページです。変愚蛮怒のフォーク元であったZAngband2.2.8から大きな変更がありましたが、2003年を最後に更新を停止しています。
+|link:http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/index.html[Zangband 日本語版ＨＱ]|板倉氏による変愚蛮怒のフォーク元となった日本語版Zangband。2003年を最後に更新停止しています。
+|link:https://osdn.net/projects/xangband/[XAngband(旧名:簡単愚蛮怒)]|ZAngband2.4.0の純和製バリアント。iksさんが開発しています。比較的簡単。2018年リンク切れにつき、OSDNのリンクに変更しました。
+|link:https://osdn.net/projects/toband/[TOband]|変愚蛮怒から派生したオウガシリーズベースの全く新しい雰囲気の*bandバリアントです。開発を受け継ぐ人募集中とか。2018年リンク変更。
+|================
+
+
+### 古いリンク
+
+現在、リンク先が停止しているサイトですが資料として残しておきます。
+
+[cols="h,d"]
+|================
+|link:http://www.coins.tsukuba.ac.jp/~iks/rdl/[Roguelike Diary Links 2]|初期開発メンバーiksさんが運営していたローグライク関連の日記のリンク集です。
+|link:http://www.kmc.gr.jp/~habu/[habuさんのページ]|初期から尽力して下さっている開発メンバーhabuさんの旧WEBページです。現在連絡を取るならばlink:https://twitter.com/habu1010[twitter]へどうぞ。
+|link:http://www.kmc.gr.jp/~henkma/heng/index.html[変愚蛮怒スポイラー]|初期開発メンバーhenkmaさんの変愚蛮怒データ集です。解説はかなり書き手の主観が入っています:-)。実質旧スポイラーとしてお世話になっていましたが現在は消えています。
+|link:http://plaza16.mbn.or.jp/~irisroom/jangband/jangband.html[日本語版アングバンドの部屋]|しとしん(内海清秀)さんのページ。日本語化はここから始まりました。2018年3月現在サーバアクセス不能になっています。
+|link:http://panyara.hp.infoseek.co.jp/[panyara's Homepage]|Tower of Doom 日本語版やDiabloband Windowsバイナリがあります。InfoseekのWEBサービス終了につき消滅しました。
+|link:http://isweb41.infoseek.co.jp/play/towisweb/[変愚蛮怒 RPM パッケージ]|TOWさんのページ。変愚蛮怒のRPMパッケージを配布していらっしゃいましたが、同じくInfoseekのWEBサービス終了につき消滅しました。
+|link:http://felicity-web.hp.infoseek.co.jp/indax.shtml[Closing the door]|ストレイツォ復活。各種Angband日記等。(現在は掲示板だけみたい)例によってInfoseekのWEBサービス終了につき消滅しました。
+|link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD]|Macで各種Angbandを日本語化している阿部さんのページ。MacOSX用の変愚蛮怒はここで。2018年404確認。
+|link:http://www.hcn.zaq.ne.jp/kusunose/tome/[日本語版 T.o.M.E.(旧名：PernAngband)]|Dark God さん作、何でもありのバリアント。非常に派手。先進的で実験的なシステムを多く取り入れ、もはやAngbandバリアントの域をはみ出しているとも。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
+終了につき消滅しました。
+|link:http://www.hcn.zaq.ne.jp/kusunose/eyangband/[日本語版 EyAngband]|Eytan Zweig さんが開発しているバリアント。耐性が 有る/無い の二値ではなく百分率になっている事等、独特な戦闘システム。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
+終了につき消滅しました。
+|link:http://www.goodkey.net/~kusunose/unangband/[日本語版 UnAngband]|Andrew Doullさんが開発しているバリアント。雰囲気は地味ですが先進的なシステムを持ち、本当に指輪世界を冒険してる気分です。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
+終了につき消滅しました。
+|link:http://web.sfc.keio.ac.jp/~alba/DB/[*鑑定*の巻物]|Albaさんのページ。アーティファクトデータベースがあります。2018年404確認。
+|link:http://f25.aaacafe.ne.jp/~nullpo/[ぬるぽ堂 日本語版DungeonCrawl]|*bandバリアントでは無いけれど、雰囲気は似ています。2018年404確認。
+|================
+
