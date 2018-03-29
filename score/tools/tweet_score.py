@@ -22,6 +22,8 @@
 import sys
 import ConfigParser
 import sqlite3
+import gzip
+import re
 
 
 def get_config(config_file):
@@ -73,10 +75,41 @@ GROUP BY
     return score[0] if len(score) == 1 else None
 
 
-def create_tweet(score_data):
+def get_death_reason_detail(score_id):
+    '''
+    ダンプファイル内から詳細な死因を取得する
+    @param score_id ダンプファイルのスコアID
+    @return 詳細な死因を表す文字列。ダンプファイルが無い、もしくは詳細な死因が見つからなかった場合None。
+    '''
+    subdir = (score_id // 1000) * 1000
+    try:
+        with gzip.open("dumps/{0}/{1}.txt.gz"
+                       .format(subdir, score_id), 'r') as f:
+            dump = f.readlines()
+    except IOError:
+        return None
+
+    # NOTE: 死因の記述は31行目から始まる
+    death_reason = unicode(''.join([l.strip() for l in dump[30:33]]), "UTF-8")
+    match = re.search(u"…あなたは、?(.+)。", death_reason)
+
+    return match.group(1) if match else None
+
+
+def create_tweet(score_db, score_id):
+    score_data = get_score_data(score_db, options.score_id)
+    if score_data is None:
+        return None
+
+    death_reason_detail = get_death_reason_detail(score_id)
+    if death_reason_detail is None:
+        death_reason_detail = (u"{0} {1}階"
+                               .format(score_data['death_reason'],
+                                       score_data['depth']))
+
     summary = (u"【新着スコア】{personality_name}{name} Score:{score} "
-               u"{race_name} {class_name}{realms_name} {death_reason} {depth}階"
-               ).format(**score_data)
+               u"{race_name} {class_name}{realms_name} {death_reason_detail}"
+               ).format(death_reason_detail=death_reason_detail, **score_data)
 
     dump_url = ("https://hengband.osdn.jp/score/show_dump.php?score_id={}"
                 ).format(score_data['score_id'])
@@ -84,7 +117,7 @@ def create_tweet(score_data):
                   ).format(score_data['score_id'])
 
     tweet = (u"{summary}\n\n"
-             u"ダンプ: {dump_url}\n"
+             u"dump: {dump_url}\n"
              u"screen: {screen_url}\n"
              u"#hengband"
              ).format(summary=summary,
@@ -162,13 +195,13 @@ if __name__ == '__main__':
         config = get_config(options.config_file)
         if 'Python' in config:
             sys.path.append(config['Python']['local_lib_path'])
-        score_data = get_score_data(config['ScoreDB']['path'],
-                                    options.score_id)
-        if score_data is None:
+
+        tweet_contents = create_tweet(config['ScoreDB']['path'],
+                                      options.score_id)
+        if tweet_contents is None:
             logger.warning('No score data found.')
             sys.exit(1)
 
-        tweet_contents = create_tweet(score_data)
         if (options.dry_run):
             print(tweet_contents)
         else:
