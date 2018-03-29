@@ -1,42 +1,50 @@
 #!/usr/bin/python
 # -*- coding: utf-8
-#
-# OSDNのサーバでrequests_oauthlibを使う方法のメモ
-#
-# 1. 環境変数PYTHONUSERBASEでインストール先をWebコンテンツ上の任意のディレクトリに指定し、pipに--userオプションをつけてインストールを実行
-#    以下は /home/groups/h/he/hengband/htdocs/score/local 以下にインストールする例
-#
-#    `$ PYTHONUSERBASE=/home/groups/h/he/hengband/htdocs/score/local pip install --user requests_oauthlib`
-#
-# 2. パスは通っているはずなのにシステムにインストールされているrequestsとurllib3が何故か読み込みに失敗するので、上でインストールしたディレクトリにコピーする
-#
-#    `$ cp -a /usr/lib/python2.7/dist-packages/requests /usr/lib/python2.7/dist-packages/urllib3 /home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages`
-#
-# 3. sys.path.appendで上でインストールしたディレクトリにパスを通してからrequests_oauthlibをimportする
-#
-#    `import sys`
-#    `sys.path.append('/home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages')`
-#    `import requests_oauthlib`
-#
+
+'''スコアをツイートする
+
+OSDNのサーバでrequests_oauthlibを使う方法のメモ
+
+1. 環境変数PYTHONUSERBASEでインストール先をWebコンテンツ上の任意のディレクトリに指定し、
+   pipに--userオプションをつけてインストールを実行
+   以下は /home/groups/h/he/hengband/htdocs/score/local 以下にインストールする例
+
+   `$ PYTHONUSERBASE=/home/groups/h/he/hengband/htdocs/score/local
+      pip install --user requests_oauthlib`
+
+2. パスは通っているはずなのにシステムにインストールされているrequestsとurllib3が何故か読み込みに失敗するので、
+   上でインストールしたディレクトリにコピーする
+
+   `$ cp -a /usr/lib/python2.7/dist-packages/requests
+      /usr/lib/python2.7/dist-packages/urllib3
+      /home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages`
+
+3. sys.path.appendで上でインストールしたディレクトリにパスを通してからrequests_oauthlibをimportする
+
+   `import sys`
+   `sys.path.append('/home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages')`
+   `import requests_oauthlib`
+'''
 
 import sys
-import ConfigParser
 import sqlite3
 import gzip
 import re
-
-
-def get_config(config_file):
-    ini = ConfigParser.ConfigParser()
-    ini.read(config_file)
-
-    config = {s: {i[0]: i[1] for i in ini.items(s)}
-              for s in ini.sections()}
-
-    return config
+import config
 
 
 def get_score_data(score_db_path, score_id):
+    '''DBからスコアデータを取得する。
+
+    Args:
+        score_db_path: スコアデータが格納されているDBへのパスを表す文字列。
+        score_id: 取得するスコアのスコアID。
+            Noneの場合最新のスコアを取得する。
+
+    Returns:
+        取得したスコアのデータを格納した辞書。
+        指定のスコアIDに該当するスコアが見つからない場合None。
+    '''
     if score_id is None:
         cond = 'ORDER BY score_id DESC LIMIT 1'
     else:
@@ -76,10 +84,14 @@ GROUP BY
 
 
 def get_death_reason_detail(score_id):
-    '''
-    ダンプファイル内から詳細な死因を取得する
-    @param score_id ダンプファイルのスコアID
-    @return 詳細な死因を表す文字列。ダンプファイルが無い、もしくは詳細な死因が見つからなかった場合None。
+    '''ダンプファイル内から詳細な死因を取得する。
+
+    Args:
+        score_id: ダンプファイルのスコアID。
+
+    Returns:
+        詳細な死因を表す文字列。
+        ダンプファイルが無い、もしくは詳細な死因が見つからなかった場合None。
     '''
     subdir = (score_id // 1000) * 1000
     try:
@@ -96,8 +108,18 @@ def get_death_reason_detail(score_id):
     return match.group(1) if match else None
 
 
-def create_tweet(score_db, score_id):
-    score_data = get_score_data(score_db, options.score_id)
+def create_tweet(score_db_path, score_id):
+    '''ツイートするメッセージを生成する。
+
+    Args:
+        score_db: スコアデータが格納されているDBへのパスを表す文字列。
+        score_id: 指定するスコアID。
+
+    Returns:
+        生成したツイートメッセージ文字列。
+        なんらかの理由により生成できなかった場合None。
+    '''
+    score_data = get_score_data(score_db_path, options.score_id)
     if score_data is None:
         return None
 
@@ -127,6 +149,12 @@ def create_tweet(score_db, score_id):
 
 
 def tweet(oauth, tweet_contents):
+    '''ツイートする。
+
+    Args:
+        oauth: requests_oauthlib.OAuth1Sessionの引数に渡すOAuth認証パラメータ。
+        tweet_contents: ツイートする内容を表す文字列。
+    '''
     from requests_oauthlib import OAuth1Session
     from requests.adapters import HTTPAdapter
     from requests import codes
@@ -152,6 +180,11 @@ def tweet(oauth, tweet_contents):
 
 
 def parse_option():
+    '''コマンドライン引数をパースする。
+
+    Returns:
+        パースした結果を表す辞書。OptionParser.parse_args()のドキュメント参照。
+    '''
     from optparse import OptionParser
     parser = OptionParser()
     parser.add_option("-s", "--score-id",
@@ -173,6 +206,12 @@ def parse_option():
 
 
 def setup_logger(log_file):
+    '''ロガーをセットアップする。
+
+    Args:
+        log_file: ロガーの出力先ファイル名。
+            Noneの場合、ファイルには出力せず標準エラー出力のみに出力する。
+    '''
     from logging import getLogger, StreamHandler, FileHandler, Formatter, INFO
     logger = getLogger(__name__)
     logger.setLevel(INFO)
@@ -192,11 +231,11 @@ if __name__ == '__main__':
     logger = getLogger(__name__)
 
     try:
-        config = get_config(options.config_file)
-        if 'Python' in config:
-            sys.path.append(config['Python']['local_lib_path'])
+        config.parse(options.config_file)
+        if 'Python' in config.config:
+            sys.path.append(config.config['Python']['local_lib_path'])
 
-        tweet_contents = create_tweet(config['ScoreDB']['path'],
+        tweet_contents = create_tweet(config.config['ScoreDB']['path'],
                                       options.score_id)
         if tweet_contents is None:
             logger.warning('No score data found.')
@@ -205,7 +244,7 @@ if __name__ == '__main__':
         if (options.dry_run):
             print(tweet_contents)
         else:
-            tweet(config['TwitterOAuth'], tweet_contents)
+            tweet(config.config['TwitterOAuth'], tweet_contents)
     except Exception:
         from traceback import format_exc
         logger.critical(format_exc())
