@@ -6,6 +6,7 @@ ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
 require_once "db_common.inc";
 require_once "dump_file.inc";
+require_once "web_template.inc";
 
 ini_set('zlib.output_compression', 'On');
 
@@ -39,11 +40,12 @@ function calc_page_info($total_data_count, $start_num, $data_count_per_page)
 
 
 /**
- * ページナビゲーションテーブルを表示する
+ * ページナビゲーションテーブルを出力する
  *
+ * @param resource $fp 出力先リソースへのハンドル
  * @param array $pageinfo calc_page_info()関数で取得したページ情報を保持する連想配列
  */
-function print_navi_page_table($pageinfo)
+function print_navi_page_table($fp, $pageinfo)
 {
     if (count($pageinfo['navi_list']) <= 1) return;
 
@@ -53,43 +55,44 @@ function print_navi_page_table($pageinfo)
         $href_base .= "?";
     }
 
-    echo "<table align='center'>\n"
-        ."<tr>";
+    fwrite($fp, "<table align='center'>\n"
+           ."<tr>\n");
 
     if ($pageinfo['current'] > 0) {
         $href = $href_base . "&start=". ($pageinfo['current'] - 1) * $pageinfo['data_count_per_page'];
-        echo "<td><a href={$href}>&lt; 前へ</a></td>";
+        fwrite($fp, "<td><a href={$href}>&lt; 前へ</a></td>\n");
     }
 
     foreach ($pageinfo['navi_list'] as $page) {
         $page_num = $page + 1;
         $href = $href_base . "&start=". $page * $pageinfo['data_count_per_page'];
         if ($page === $pageinfo['current']) {
-            echo "<td>$page_num</td>";
+            fwrite($fp, "<td>$page_num</td>\n");
         } else {
-            echo "<td><a href={$href}>$page_num</a></td>";
+            fwrite($fp, "<td><a href={$href}>$page_num</a></td>\n");
         }
     }
 
     if ($pageinfo['current'] < $pageinfo['last']) {
         $href = $href_base . "&start=". ($pageinfo['current'] + 1) * $pageinfo['data_count_per_page'];
-        echo "<td><a href={$href}>次へ &gt;</a></td>";
+        fwrite($fp, "<td><a href={$href}>次へ &gt;</a></td>\n");
     }
 
-    echo "</tr>\n"
-        ."</table>\n";
+    fwrite($fp, "</tr>\n"
+           ."</table>\n");
 }
 
 
 /**
- * スコアランキングテーブルを表示する
+ * スコアランキングテーブルを出力する
  *
+ * @param resource $fp 出力先リソースへのハンドル
  * @param array $scores スコア
  * @param integer $rank_start 順位の開始番号(0オリジン)
  */
-function print_score_table($scores, $rank_start)
+function print_score_table($fp, $scores, $rank_start)
 {
-    echo <<<EOM
+    fwrite($fp, <<<EOM
 <table align='center' border=1>
 <tr>
 <th>順位</th>
@@ -102,7 +105,8 @@ function print_score_table($scores, $rank_start)
 <th>死因</th>
 </tr>
 
-EOM;
+EOM
+    );
 
     foreach($scores as $idx => $score) {
         $rank = $rank_start + $idx + 1;
@@ -112,13 +116,13 @@ EOM;
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
         $dumpfile = new DumpFile($score['score_id']);
 
-        echo "<tr>\n";
         if ($dumpfile->exists('dumps', 'txt')) {
-            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$score['personality_name']}{$score['name']}</a>\n";
+            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$score['personality_name']}{$score['name']}</a>";
         } else {
             $name = "{$score['personality_name']}{$score['name']}";
         }
-        echo <<<EOM
+        fwrite($fp, <<<EOM
+<tr>
 <td>$rank</td>
 <td align="right">{$score['score']}</td>
 <td><nobr>$date</nobr></td>
@@ -127,16 +131,17 @@ EOM;
 <td>{$score['class_name']}$realms</td>
 <td>$sex_str</td>
 
-EOM;
+EOM
+        );
         if ($dumpfile->exists('screens', 'html')) {
-            echo "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>";
+            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>");
         } else {
-            echo "<td>{$score['death_reason']}";
+            fwrite($fp, "<td>{$score['death_reason']}");
         }
-        echo "<br>({$depth}{$score['version']})</td>\n";
-        echo "</tr>\n";
+        fwrite($fp, "<br>({$depth}{$score['version']})</td>\n".
+               "</tr>\n");
     }
-    echo "</table>\n";
+    fwrite($fp, "</table>\n");
 }
 
 $db = new ScoreDB();
@@ -145,81 +150,25 @@ $start_num = filter_input(INPUT_GET, 'start', FILTER_VALIDATE_INT) ?: 0;
 $search_result = $db->search_score($start_num, 50);
 
 $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
-?>
 
-<!DOCTYPE html>
 
-<html lang="jp">
-        <head>
-                <meta charset="utf-8"/>
-                <link rev=made href="mailto:hengband-dev@lists.sourceforge.jp">
-                <link rel="stylesheet" type="text/css" href="/hengband.css">
-                <title>変愚蛮怒 公式WEB スコアランキング</title>
-        </head>
-
-        <body>
-
-                <header>
-
-                        <section id="title">
-                                <img class="tama1" src="/image/tama.gif" alt="tama">
-                                <img class="tama2" src="/image/tama.gif" alt="tama">
-                                <img class="tama3" src="/image/tama.gif" alt="tama">
-                                <img class="tama4" src="/image/tama.gif" alt="tama">
-                                <img id="hengTitle" src="/image/hengband_title.png" alt="変愚蛮怒 Hengband">
-                                <img class="tama4" src="/image/tama.gif" alt="tama">
-                                <img class="tama3" src="/image/tama.gif" alt="tama">
-                                <img class="tama2" src="/image/tama.gif" alt="tama">
-                                <img class="tama1" src="/image/tama.gif" alt="tama">
-                        </section>
-
-                        <section id="mainMenu">
-                                <a href="/index.html">トップ</a>
-                                <a href="/download.html">ダウンロード</a>
-                                <a href="/score.html">スコア</a>
-                                <a href="/lists.html">コミュニティ</a>
-                                <a href="/history.html">バージョン履歴</a>
-                                <a href="/link.html">関連リンク</a>
-                                <a href="/jlicense.html">著作権表記</a>
-                                <span>English (Coming Soon)</span>
-                        </section>
-
-                </header>
- 
-                <div id="main">
-<!--main contents-->
-<h2>変愚蛮怒 歴代スコア (<?php echo $db->get_sort_mode_name(); ?>)</h2>
+$wt = new WebTemplate();
+$wt->set_title("変愚蛮怒 スコアランキング");
+$fp = $wt->main_contents_fp();
+fprintf($fp, "<h2>変愚蛮怒 歴代スコア (%s)</h2>\n", $db->get_sort_mode_name());
+fprintf($fp, <<<EOM
 <div align="right">
 <small>
-<?php
-echo sprintf("件数 %d 件 (%.2f 秒)", $search_result['total_data_count'], $search_result['elapsed_time']);
-?>
+件数 %d 件 (%.2f 秒)
 </small>
 </div>
-<div>
-<?php
-print_navi_page_table($pageinfo);
-print_score_table($search_result['scores'], $pageinfo['current'] * $pageinfo['data_count_per_page']);
-print_navi_page_table($pageinfo);
-?>
-</div>
-                </div>
 
-                <footer>
+EOM
+        ,$search_result['total_data_count'], $search_result['elapsed_time']
+);
 
-                        <section>
-                                各ページへのリンクは御自由にどうぞ。/ Link Free.<br>
-                                2018 Hengband Dev Team. <a href="mailto:hengband-dev@lists.sourceforge.jp">hengband-dev@lists.sourceforge.jp</a><br>
-                        </section>
+print_navi_page_table($fp, $pageinfo);
+print_score_table($fp, $search_result['scores'], $pageinfo['current'] * $pageinfo['data_count_per_page']);
+print_navi_page_table($fp, $pageinfo);
 
-                        <section>
-                                Powered by <a href="https://ja.osdn.net/" class="footer_banner">
-                                <img src="https://ja.osdn.net/sflogo.php?group_id=541" border="0" alt="OSDN.jp">
-                                </a>
-                        </section>
-
-                </footer>
-
-        </body>
-
-</html>
+$wt->print_page();
