@@ -101,6 +101,14 @@ class ScoreDB
             }
         }
 
+        foreach (['sex'] as $key_column) {
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
+            if ($val !== FALSE && $val !== NULL) {
+                $wheres[] = "{$key_column} = :{$key_column}";
+                $params[":{$key_column}"] = $val;
+            }
+        }
+
         foreach (['killer'] as $key_column) {
             $val = filter_input(INPUT_GET, $key_column);
             if ($val !== NULL && strlen($val) > 0) {
