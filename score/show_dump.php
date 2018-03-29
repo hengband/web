@@ -6,5 +6,10 @@ ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
 require_once "dump_file.inc";
 
-$dump_file = new DumpFile($_GET['score_id']);
-$dump_file->show('dumps', 'txt', 'text/plain; charset=UTF-8');
+$score_id = filter_input(INPUT_GET, 'score_id', FILTER_VALIDATE_INT);
+if ($score_id === FALSE || $score_id === NULL) {
+    http_response_code(404);
+} else {
+    $dump_file = new DumpFile($score_id);
+    $dump_file->show('dumps', 'txt', 'text/plain; charset=UTF-8');
+}
