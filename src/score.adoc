@@ -7,6 +7,8 @@
 
 ### 告知
 
+link:score/custom_search.php[*カスタム検索機能*]*を追加しました*。より詳細な条件でスコアを検索可能です。
+
 2018/03/18より、新スコアサーバに移行しました。旧サーバは放棄予定です。スコアの喪失を避けたい方は2.2.1の公式リリースまで送らないようによろしくお願いします。
 
 ### スコア機能一覧
@@ -19,4 +21,5 @@
 * link:score/score_ranking.php?&sort=newcome[新着順]
 * link:score/killer_ranking.php[死因ランキング]
 * link:score/popularity_ranking.php[人気のある種族・職業・性格・魔法領域]
+* link:score/custom_search.php[カスタム検索]
 
