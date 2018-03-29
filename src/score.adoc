@@ -18,5 +18,5 @@
 * link:score/score_ranking.php?&last_days=30[最近1ヶ月のスコア]
 * link:score/score_ranking.php?&sort=newcome[新着順]
 * link:score/killer_ranking.php[死因ランキング]
-* link:score/popularity_ranking.php[人気のある種族・職業・性格]
+* link:score/popularity_ranking.php[人気のある種族・職業・性格・魔法領域]
 
