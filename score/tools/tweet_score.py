@@ -129,8 +129,9 @@ def create_tweet(score_db_path, score_id):
                                .format(score_data['death_reason'],
                                        score_data['depth']))
 
-    summary = (u"【新着スコア】{personality_name}{name} Score:{score} "
-               u"{race_name} {class_name}{realms_name} {death_reason_detail}"
+    summary = (u"【新着スコア】{personality_name}{name} Score:{score}\n"
+               u"{race_name} {class_name}{realms_name}\n"
+               u"{death_reason_detail}"
                ).format(death_reason_detail=death_reason_detail, **score_data)
 
     dump_url = ("https://hengband.osdn.jp/score/show_dump.php?score_id={}"
