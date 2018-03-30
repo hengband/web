@@ -4,6 +4,7 @@
 ini_set('log_errors', 'On');
 ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
+require_once "common.inc";
 require_once "db_common.inc";
 require_once "dump_file.inc";
 require_once "web_template.inc";
@@ -93,7 +94,8 @@ function print_navi_page_table($fp, $pageinfo)
 function print_score_table($fp, $scores, $rank_start)
 {
     fwrite($fp, <<<EOM
-<table align='center' border=1>
+<table class="score">
+<thead>
 <tr>
 <th>順位</th>
 <th>スコア</th>
@@ -104,10 +106,12 @@ function print_score_table($fp, $scores, $rank_start)
 <th>性別</th>
 <th>死因</th>
 </tr>
+</thead>
 
 EOM
     );
 
+    fwrite($fp, "<tbody>\n");
     foreach($scores as $idx => $score) {
         $rank = $rank_start + $idx + 1;
         $date = substr($score['date'], 0, 10); // 日時から日付部分を取り出す
@@ -116,15 +120,14 @@ EOM
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
         $dumpfile = new DumpFile($score['score_id']);
 
+        $name = h("{$score['personality_name']}{$score['name']}");
         if ($dumpfile->exists('dumps', 'txt')) {
-            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$score['personality_name']}{$score['name']}</a>";
-        } else {
-            $name = "{$score['personality_name']}{$score['name']}";
+            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$name}</a>";
         }
         fwrite($fp, <<<EOM
 <tr>
 <td>$rank</td>
-<td align="right">{$score['score']}</td>
+<td class="number">{$score['score']}</td>
 <td><nobr>$date</nobr></td>
 <td>$name</td>
 <td>{$score['race_name']}</td>
@@ -133,14 +136,16 @@ EOM
 
 EOM
         );
+        $death_reason = h($score['death_reason']);
         if ($dumpfile->exists('screens', 'html')) {
-            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>");
+            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$death_reason}</a>");
         } else {
-            fwrite($fp, "<td>{$score['death_reason']}");
+            fwrite($fp, "<td>{$death_reason}");
         }
-        fwrite($fp, "<br>({$depth}{$score['version']})</td>\n".
+        fwrite($fp, "<br>({$depth}".h($score['version']).")</td>\n".
                "</tr>\n");
     }
+    fwrite($fp, "</tbody>\n");
     fwrite($fp, "</table>\n");
 }
 
@@ -154,6 +159,7 @@ $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
 
 $wt = new WebTemplate();
 $wt->set_title("変愚蛮怒 スコアランキング");
+$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
 $fp = $wt->main_contents_fp();
 fprintf($fp, "<h2>変愚蛮怒 歴代スコア (%s)</h2>\n", $db->get_sort_mode_name());
 fprintf($fp, <<<EOM

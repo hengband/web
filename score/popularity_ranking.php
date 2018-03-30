@@ -13,7 +13,7 @@ function print_popularity_table($fp, $stat, $id_name, $name)
 {
     fwrite($fp, <<<EOM
 <div id="{$id_name}">
-<table class="tablesorter statistics_table">
+<table class="tablesorter score statistics_table">
 <thead>
 <tr>
 <th>$name</th>
@@ -31,16 +31,15 @@ EOM
 
     foreach ($stat as $k => $s) {
         $name_link = "<a href='score_ranking.php?{$id_name}={$s['id']}'>{$s['name']}</a></td>";
-        $average_score = floor($s['average_score']);
         fwrite($fp, <<<EOM
 <tr>
 <td>$name_link</td>
-<td>{$s['total_count']}</td>
-<td>{$s['male_count']}</td>
-<td>{$s['female_count']}</td>
-<td>{$s['winner_count']}</td>
-<td>$average_score</td>
-<td>{$s['max_score']}</td>
+<td class="number">{$s['total_count']}</td>
+<td class="number">{$s['male_count']}</td>
+<td class="number">{$s['female_count']}</td>
+<td class="number">{$s['winner_count']}</td>
+<td class="number">{$s['average_score']}</td>
+<td class="number">{$s['max_score']}</td>
 </tr>
 
 EOM
@@ -70,7 +69,7 @@ function print_realm_popularity_table($fp, $stat, $id_name)
         $class_name = $class_realm_stat[0]['class_name'];
 
         fwrite($fp, <<<EOM
-<table class="tablesorter statistics_table" id="${id_name}">
+<table class="tablesorter score statistics_table" id="${id_name}">
 <thead>
 <tr>
 <th>{$class_name}</th>
@@ -87,16 +86,15 @@ EOM
 
         foreach ($class_realm_stat as $realm) {
             $name_link = "<a href='score_ranking.php?class_id={$class_id}&{$id_name}={$realm['realm_id']}'>{$realm['realm_name']}</a></td>";
-            $average_score = floor($realm['average_score']);
             fwrite($fp, <<<EOM
 <tr>
 <td>$name_link</td>
-<td>{$realm['total_count']}</td>
-<td>{$realm['male_count']}</td>
-<td>{$realm['female_count']}</td>
-<td>{$realm['winner_count']}</td>
-<td>$average_score</td>
-<td>{$realm['max_score']}</td>
+<td class="number">{$realm['total_count']}</td>
+<td class="number">{$realm['male_count']}</td>
+<td class="number">{$realm['female_count']}</td>
+<td class="number">{$realm['winner_count']}</td>
+<td class="number">{$realm['average_score']}</td>
+<td class="number">{$realm['max_score']}</td>
 </tr>
 
 EOM
@@ -118,6 +116,7 @@ $query_time = microtime(true) - $time_start;
 
 $wt = new WebTemplate();
 
+$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
 $wt->add_head_contents('<link rel="stylesheet" type="text/css" href="tablesorter-theme/style.css">');
 $wt->add_head_contents(
     <<<EOM

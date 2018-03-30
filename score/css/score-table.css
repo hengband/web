@@ -1,0 +1,46 @@
+table.score
+{
+    width: 100%;
+}
+
+table.score thead tr th,
+table.score tfoot tr th
+{
+	  background-color: #302010;
+	  border: 1px solid #d27d00;
+	  padding: 4px;
+}
+
+table.score tbody td
+{
+	  color: black;
+	  padding: 4px;
+	  background-color: #e9967a;
+	  vertical-align: top;
+}
+
+table.score tbody tr:nth-child(odd) td
+{
+	  background-color: #f9b69a;
+}
+
+table.score tbody td.number
+{
+	  text-align: right;
+}
+
+table.score tbody td a:link
+{
+    color: black;
+}
+table.score tbody td a:visited {
+    color: gray;
+}
+table.score tbody td a:hover {
+    color: red;
+}
+
+table.statistics_table
+{
+    display: none;
+}

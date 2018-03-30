@@ -3,6 +3,7 @@ class DumpFile
 {
     public function __construct($score_id) {
         $this->score_id = $score_id;
+        $this->dump_lines = NULL;
     }
 
 
@@ -77,20 +78,41 @@ class DumpFile
 
 
     /**
+     * キャラクタダンプを配列に読み込む
+     * 読み込んだ配列はメンバ変数dump_linesに格納
+     *
+     * @return boolean 読み込みに成功した場合TRUE、失敗した場合FALSE
+     */
+    public function readlines()
+    {
+        if ($this->dump_lines !== NULL) {
+            return TRUE;
+        }
+
+        $lines = gzfile($this->get_filename('dumps', 'txt'));
+        if ($lines !== FALSE) {
+            $this->dump_lines = $lines;
+            return TRUE;
+        }
+
+        return FALSE;
+    }
+
+
+    /**
      * キャラクタダンプの死ぬ直前のメッセージもしくは勝利メッセージを取得する
      *
      * @return array 死ぬ直前のメッセージもしくは勝利メッセージを1行1要素にした文字列の配列
      */
     public function get_last_message()
     {
-        $zp = gzopen($this->get_filename('dumps', 'txt'), 'r');
-        if ($zp === FALSE) return [];
+        if ($this->readlines() === FALSE) {
+            return [];
+        }
 
         $in_message = FALSE;
         $result = [];
-        while (!gzeof($zp)) {
-            $line = gzgets($zp);
-
+        foreach ($this->dump_lines as $line) {
             if (preg_match('/^\s*\[(.*)\]\s*$/u', $line, $matches)) {
                 if ($matches[1] == '*勝利*メッセージ' ||
                     $matches[1] == '死ぬ直前のメッセージ') {
@@ -107,6 +129,28 @@ class DumpFile
         }
 
         return $result;
+    }
+
+
+    /**
+     * キャラクタダンプから死因の詳細を得る
+     *
+     * @return string 死因の詳細を表す文字列
+     */
+    public function get_death_reason_detail()
+    {
+        if ($this->readlines() === FALSE) {
+            return FALSE;
+        }
+
+        $death_reason_lines = array_slice($this->dump_lines, 30, 3);
+        $death_reason = implode("", array_map('trim', $death_reason_lines));
+
+        if (preg_match("/^…あなたは、?(.+)。/u", $death_reason, $matches)) {
+            return $matches[1];
+        } else {
+            return FALSE;
+        }
     }
 
     private static function browser_accept_encodings()
