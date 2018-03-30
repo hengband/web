@@ -1,5 +1,6 @@
 <?php
 
+require_once 'common.inc';
 require_once 'dump_file.inc';
 require_once 'FeedWriter/vendor/autoload.php';
 
@@ -36,16 +37,21 @@ class FeedMaker
         foreach ($search_result['scores'] as $s) {
             $item = $feed->createNewItem();
 
+            $dump_file = new DumpFile($s['score_id']);
+            $death_reason_detail = $dump_file->get_death_reason_detail();
+            if ($death_reason_detail === FALSE) {
+                $death_reason_detail = "{$s['death_reason']} @{$s['depth']}F";
+            }
+
             $dump_url = "${base_url}/show_dump.php?score_id={$s['score_id']}";
-            $item->setTitle("{$s['personality_name']}{$s['name']} Score:{$s['score']} {$s['race_name']} {$s['class_name']} {$s['death_reason']} @{$s['depth']}F");
+            $item->setTitle("{$s['personality_name']}{$s['name']} Score:{$s['score']} {$s['race_name']} {$s['class_name']} {$death_reason_detail}");
             $item->setLink($dump_url);
             $item->setDate($s['date']);
 
-            $dump_file = new DumpFile($s['score_id']);
             $contents = implode(
                 '',
                 array_map(function ($v) {
-                    return htmlentities($v).'<br>';
+                    return h($v).'<br>';
                 }, $dump_file->get_last_message())
             );
             $item->setContent($contents);
