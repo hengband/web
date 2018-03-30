@@ -243,7 +243,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         if (options.dry_run):
-            print(tweet_contents)
+            print(tweet_contents.encode("UTF-8"))
         else:
             tweet(config.config['TwitterOAuth'], tweet_contents)
     except Exception:
