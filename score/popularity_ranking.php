@@ -31,7 +31,6 @@ EOM
 
     foreach ($stat as $k => $s) {
         $name_link = "<a href='score_ranking.php?{$id_name}={$s['id']}'>{$s['name']}</a></td>";
-        $average_score = floor($s['average_score']);
         fwrite($fp, <<<EOM
 <tr>
 <td>$name_link</td>
@@ -39,7 +38,7 @@ EOM
 <td class="number">{$s['male_count']}</td>
 <td class="number">{$s['female_count']}</td>
 <td class="number">{$s['winner_count']}</td>
-<td class="number">$average_score</td>
+<td class="number">{$s['average_score']}</td>
 <td class="number">{$s['max_score']}</td>
 </tr>
 
@@ -87,7 +86,6 @@ EOM
 
         foreach ($class_realm_stat as $realm) {
             $name_link = "<a href='score_ranking.php?class_id={$class_id}&{$id_name}={$realm['realm_id']}'>{$realm['realm_name']}</a></td>";
-            $average_score = floor($realm['average_score']);
             fwrite($fp, <<<EOM
 <tr>
 <td>$name_link</td>
@@ -95,7 +93,7 @@ EOM
 <td class="number">{$realm['male_count']}</td>
 <td class="number">{$realm['female_count']}</td>
 <td class="number">{$realm['winner_count']}</td>
-<td class="number">$average_score</td>
+<td class="number">{$realm['average_score']}</td>
 <td class="number">{$realm['max_score']}</td>
 </tr>
 

@@ -317,7 +317,7 @@ SELECT
   count(sex=0 or NULL) AS female_count,
   count(*) AS total_count,
   count(winner=1 OR NULL) AS winner_count,
-  avg(score) AS average_score,
+  CAST(avg(score) AS INTEGER) AS average_score,
   max(score) AS max_score
 FROM scores
 GROUP BY ${stat}_id
@@ -347,7 +347,7 @@ SELECT
   count(sex=1 OR NULL) AS male_count,
   count(sex=0 OR NULL) AS female_count,
   count(winner=1 OR NULL) AS winner_count,
-  avg(score) AS average_score,
+  CAST(avg(score) AS INTEGER) AS average_score,
   max(score) AS max_score
 FROM score_realms
 NATURAL INNER JOIN scores
