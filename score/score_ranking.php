@@ -4,6 +4,7 @@
 ini_set('log_errors', 'On');
 ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
+require_once "common.inc";
 require_once "db_common.inc";
 require_once "dump_file.inc";
 require_once "web_template.inc";
@@ -119,10 +120,9 @@ EOM
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
         $dumpfile = new DumpFile($score['score_id']);
 
+        $name = h("{$score['personality_name']}{$score['name']}");
         if ($dumpfile->exists('dumps', 'txt')) {
-            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$score['personality_name']}{$score['name']}</a>";
-        } else {
-            $name = "{$score['personality_name']}{$score['name']}";
+            $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$name}</a>";
         }
         fwrite($fp, <<<EOM
 <tr>
@@ -136,12 +136,13 @@ EOM
 
 EOM
         );
+        $death_reason = h($score['death_reason']);
         if ($dumpfile->exists('screens', 'html')) {
-            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$score['death_reason']}</a>");
+            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$death_reason}</a>");
         } else {
-            fwrite($fp, "<td>{$score['death_reason']}");
+            fwrite($fp, "<td>{$death_reason}");
         }
-        fwrite($fp, "<br>({$depth}{$score['version']})</td>\n".
+        fwrite($fp, "<br>({$depth}".h($score['version']).")</td>\n".
                "</tr>\n");
     }
     fwrite($fp, "</tbody>\n");

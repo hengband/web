@@ -6,6 +6,7 @@ ini_set('error_log', 'errors/'.pathinfo(__FILE__, PATHINFO_FILENAME).'.log');
 
 ini_set('zlib.output_compression', 'On');
 
+require_once "common.inc";
 require_once "db_common.inc";
 require_once "web_template.inc";
 
@@ -39,11 +40,12 @@ EOM
 fwrite($fp, "<tboby>\n");
 foreach ($killers as $k) {
     //$freeze = $k['killer_count_freeze'] > 0 ? "(".$k['killer_count_freeze'].")" : "";
+    $killer_name = h($k['killer_name']);
     fwrite($fp, <<<EOM
 <tr>
 <td class="number">{$k['killer_count_total']}</td>
 <td class="number">{$k['killer_count_freeze']}</td>
-<td>{$k['killer_name']}</td>
+<td>$killer_name</td>
 </tr>
 
 EOM
