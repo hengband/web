@@ -58,12 +58,9 @@ XFree86 4.0 でXIMを使うときは、環境変数 XMODIFIERS に "@im=skkinput
 16x16タイル(heng-graf-16x16.tar.gz)は別配布になっています。
 lib/xtra/graf/以下に展開して、追加オプション -- -a を付けると使用できます。
 
-### Macintosh/iOS版の導入方法
+### MacOS版の導入方法
 
-[line-through]#link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD] へどうぞ。ただし、XDDさんのバイナリはバージョンが少し古くなります。最新版については、 link:http://macband.tripod.co.jp/mac/download.html[kuwaさんがコンパイル] したものをどうぞ。#
-
-上述はいずれもリンク切れになってしましました。最新のiOSも含めて対応は検討していますが、もうしばらくお待ちください。
-
+shimitei氏が、link:https://rlbuild.herokuapp.com/[ローグライク実験室]にて配布されています。
 
 ### 16x16タイルの使い方
 
@@ -74,10 +71,6 @@ Macintoshなら heng-graf-16x16-mac.sit.bin をダウンロードしてくださ
 その後Windowsではメニューから「Adam Boltさんタイル」を選択。
 Macintoshでは「arg_graphics」と「Adam Bolt tile」を選択すると使えます。
 Linuxなら ./hengband -- -a という風にオプションを付けて実行してください。
-
-### スコアサーバの利用について
-
-スコアの送信はズルなしのプレイでお願いします。
 
 ## ダウンロード
 
@@ -106,7 +99,9 @@ Linuxなら ./hengband -- -a という風にオプションを付けて実行し
 
 ### 開発版
 
-最新開発版2.1.1をリリース中です。
+現在開発版2.2.1.x()を検討しています。
+
+shimitei氏が、link:https://rlbuild.herokuapp.com/[ローグライク実験室]にて開発版を頻繁にビルドされています。ただし安定性は保証できませんのでセーブデータの破損などの問題も自己責任でよろしくお願いします。
 
 * link:https://sourceforge.jp/projects/hengband/files/?release_id=6619#6619[新開発版 Windows用バイナリ (Old Development Version Windows Ports)]
 ** hengband-2.1.x-win.zip
