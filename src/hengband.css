@@ -65,42 +65,53 @@ footer > section
 
 section#title
 {
-	width: 80vw;
-    max-width: 60rem;
-    max-height: 20rem;
+	width: 60vw;
+	max-width: 50rem;
+	min-height: 4rem;
+	max-height: 8rem;
 	margin-right : auto;
 	margin-left  : auto;
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-content: center;
 	align-items: flex-end;
 }
 
 img#hengTitle
 {
-	width: 25vw;
-	height: auto;
+	width: auto;
+	height: 12vh;
+	min-height: 4rem;
+	max-height: 8rem;
 }
 
 img.tama4
 {
-	width: 8vw;
+	height: 10vh;
+	min-height: 4rem;
+	max-height: 8rem;
 }
 
 img.tama3
 {
-	width: 5vw;
+	height: 5vh;
+	min-height: 2rem;
+	max-height: 4rem;
 }
 
 img.tama2
 {
-	width: 2vw;
+	height: 2.5vh;
+	min-height: 1rem;
+	max-height: 2rem;
 }
 
 img.tama1
 {
-	width: 1vw;
+	height: 1.25vh;
+	min-height: 0.5rem;
+	max-height: 1rem;
 }
 
 
