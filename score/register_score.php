@@ -146,6 +146,39 @@ function create_db_insert_score_data($info)
 }
 
 
+/**
+ * スクリーンダンプのバリデーションを行う
+ *
+ * スクリプト実行などの悪意を持ったスクリーンダンプを登録できないよう、
+ * 使用可能なタグをhtml,body,pre,fontに制限する
+ *
+ * @param array $screen_dump_lines スクリーンダンプの文字列の配列
+ * @return バリデーションに成功したらTRUE、失敗したらFALSE
+ */
+function validate_screen_dump($screen_dump_lines)
+{
+    if ($screen_dump_lines === FALSE) {
+        return FALSE;
+    }
+
+    $allow_tags = ['html', 'body', 'pre', 'font'];
+
+    $is_valid = TRUE;
+    foreach ($screen_dump_lines as $line) {
+        if (preg_match_all("|</?([^>\s]+)(\s*[^>]+)?>|", $line, $matches, PREG_SET_ORDER) > 0) {
+            $invalid_tag_matches = array_filter($matches, function($m) use($allow_tags) {
+                return !in_array($m[1], $allow_tags);
+            });
+            if (count($invalid_tag_matches) > 0) {
+                $is_valid = FALSE;
+            }
+        }
+    }
+
+    return $is_valid;
+}
+
+
 $recv_encoding = get_mb_encoding();
 if ($recv_encoding === FALSE) {
     exit;
@@ -174,7 +207,11 @@ if ($score_id === FALSE) {
 
 $dumpfile = new DumpFile($score_id);
 $dumpfile->save('dumps', 'txt', $split_contents[1]);
-$dumpfile->save('screens', 'html', $split_contents[2]);
+if (validate_screen_dump($split_contents[2])) {
+    $dumpfile->save('screens', 'html', $split_contents[2]);
+} else {
+    $dumpfile->save('screens', 'html.bad', $split_contents[2]);
+}
 
 // 登録成功、HTTPレスポンスコード 200 OK を返す
 http_response_code(200);
