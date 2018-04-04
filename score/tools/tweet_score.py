@@ -191,10 +191,17 @@ def create_daily_stats_tweet(year, month, day):
     '''
     daily_stats = get_daily_score_stats(year, month, day)
 
-    tweet = (u"{year}年{month}月{day}日のスコア\n"
-             u"全 {total_count} 件, 勝利 {winner_count} 件\n"
+    score_url = (
+        u"https://hengband.osdn.jp/score/score_ranking.php"
+        u"?fd={target_date}&td={target_date}"
+        .format(target_date=datetime.date(year, month, day).isoformat())
+    )
+
+    tweet = (u"{year}年{month}月{day}日のスコア一覧 "
+             u"(全 {total_count} 件, 勝利 {winner_count} 件)\n"
+             u"{score_url}\n"
              u"#hengband"
-             ).format(year=year, month=month, day=day,
+             ).format(year=year, month=month, day=day, score_url=score_url,
                       **daily_stats)
 
     return tweet
