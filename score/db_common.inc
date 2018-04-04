@@ -75,6 +75,16 @@ class ScoreDB
             $wheres[] = "date >= datetime('now', 'localtime', '-{$last_days} days')";
         }
 
+        $from_date = filter_input(INPUT_GET, 'fd');
+        $to_date = filter_input(INPUT_GET, 'td');
+
+        if ($from_date !== NULL && $to_date !== NULL &&
+            strlen($from_date) > 0 && strlen($to_date) > 0) {
+            $wheres[] = "(date >= date(:from_date) AND date < date(:to_date, '+1 days'))";
+            $params[":from_date"] = $from_date;
+            $params[":to_date"] = $to_date;
+        }
+
         foreach (['race_id', 'class_id', 'personality_id'] as $key_column) {
             $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
             if ($val > 0) {
