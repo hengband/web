@@ -27,17 +27,17 @@ OSDNのサーバでrequests_oauthlibを使う方法のメモ
 '''
 
 import sys
+import datetime
 import sqlite3
 import gzip
 import re
 import config
 
 
-def get_score_data(score_db_path, score_id):
+def get_score_data(score_id):
     '''DBからスコアデータを取得する。
 
     Args:
-        score_db_path: スコアデータが格納されているDBへのパスを表す文字列。
         score_id: 取得するスコアのスコアID。
             Noneの場合最新のスコアを取得する。
 
@@ -50,7 +50,7 @@ def get_score_data(score_db_path, score_id):
     else:
         cond = 'WHERE score_id = :score_id'
 
-    with sqlite3.connect(score_db_path) as con:
+    with sqlite3.connect(config.config['ScoreDB']['path']) as con:
         con.row_factory = sqlite3.Row
         sql = '''
 SELECT
@@ -83,6 +83,35 @@ GROUP BY
     return score[0] if len(score) == 1 else None
 
 
+def get_daily_score_stats(year, month, day):
+    '''DBから指定した日付のスコア統計データを得る
+
+    Args:
+        year: 指定する年。
+        month: 指定する月。
+        day: 指定する日。
+
+    Returns:
+        取得したスコア統計データを格納した辞書。
+        'total_count': 総スコア件数, 'winner_count': 勝利スコア件数
+    '''
+    with sqlite3.connect(config.config['ScoreDB']['path']) as con:
+        con.row_factory = sqlite3.Row
+        sql = '''
+SELECT
+  count(*) AS total_count,
+  count(winner = 1 OR NULL) AS winner_count
+FROM
+  scores
+WHERE
+  date >= date('{target_date}') AND date < date('{target_date}', '+1 day')
+'''.format(target_date=datetime.date(year, month, day).isoformat())
+        c = con.execute(sql, {})
+        score = c.fetchall()
+
+    return score[0]
+
+
 def get_death_reason_detail(score_id):
     '''ダンプファイル内から詳細な死因を取得する。
 
@@ -108,22 +137,21 @@ def get_death_reason_detail(score_id):
     return match.group(1) if match else None
 
 
-def create_tweet(score_db_path, score_id):
+def create_tweet(score_id):
     '''ツイートするメッセージを生成する。
 
     Args:
-        score_db: スコアデータが格納されているDBへのパスを表す文字列。
-        score_id: 指定するスコアID。
+        score_id: 指定するスコアID。Noneの場合最新のスコアを取得する。
 
     Returns:
         生成したツイートメッセージ文字列。
         なんらかの理由により生成できなかった場合None。
     '''
-    score_data = get_score_data(score_db_path, options.score_id)
+    score_data = get_score_data(score_id)
     if score_data is None:
         return None
 
-    death_reason_detail = get_death_reason_detail(score_id)
+    death_reason_detail = get_death_reason_detail(score_data['score_id'])
     if death_reason_detail is None:
         death_reason_detail = (u"{0} {1}階"
                                .format(score_data['death_reason'],
@@ -149,7 +177,37 @@ def create_tweet(score_db_path, score_id):
     return tweet
 
 
-def tweet(oauth, tweet_contents):
+def create_daily_stats_tweet(year, month, day):
+    '''デイリースコア統計データのツイートを生成する
+
+    Args:
+        year: 指定する年。
+        month: 指定する月。
+        day: 指定する日。
+
+    Returns:
+        生成したツイートメッセージ文字列。
+        なんらかの理由により生成できなかった場合None。
+    '''
+    daily_stats = get_daily_score_stats(year, month, day)
+
+    score_url = (
+        u"https://hengband.osdn.jp/score/score_ranking.php"
+        u"?fd={target_date}&td={target_date}"
+        .format(target_date=datetime.date(year, month, day).isoformat())
+    )
+
+    tweet = (u"{year}年{month}月{day}日のスコア一覧 "
+             u"(全 {total_count} 件, 勝利 {winner_count} 件)\n"
+             u"{score_url}\n"
+             u"#hengband"
+             ).format(year=year, month=month, day=day, score_url=score_url,
+                      **daily_stats)
+
+    return tweet
+
+
+def tweet(tweet_contents):
     '''ツイートする。
 
     Args:
@@ -162,7 +220,7 @@ def tweet(oauth, tweet_contents):
     from logging import getLogger
     logger = getLogger(__name__)
 
-    twitter = OAuth1Session(**oauth)
+    twitter = OAuth1Session(**config.config['TwitterOAuth'])
 
     url = "https://api.twitter.com/1.1/statuses/update.json"
 
@@ -188,10 +246,15 @@ def parse_option():
     '''
     from optparse import OptionParser
     parser = OptionParser()
-    parser.add_option("-s", "--score-id",
-                      type="int", dest="score_id",
-                      help="Target score id.\n"
-                           "If this option is not set, latest score is used.")
+    parser.add_option(
+        "-s", "--score-id",
+        type="int", dest="score_id",
+        help="Tweet score with specified id.\n"
+             "When this option and -d are not set, latest score is specified.")
+    parser.add_option(
+        "-d", "--daily-stats",
+        type="string", dest="stats_date",
+        help="Tweet statistics of the score of the specified day.")
     parser.add_option("-c", "--config",
                       type="string", dest="config_file",
                       default="tweet_score.cfg",
@@ -236,8 +299,17 @@ if __name__ == '__main__':
         if 'Python' in config.config:
             sys.path.append(config.config['Python']['local_lib_path'])
 
-        tweet_contents = create_tweet(config.config['ScoreDB']['path'],
-                                      options.score_id)
+        if options.stats_date:
+            target_datetime = datetime.datetime.strptime(
+                options.stats_date, "%Y-%m-%d")
+            tweet_contents = create_daily_stats_tweet(
+                target_datetime.year,
+                target_datetime.month,
+                target_datetime.day
+            )
+        else:
+            tweet_contents = create_tweet(options.score_id)
+
         if tweet_contents is None:
             logger.warning('No score data found.')
             sys.exit(1)
@@ -245,7 +317,7 @@ if __name__ == '__main__':
         if (options.dry_run):
             print(tweet_contents.encode("UTF-8"))
         else:
-            tweet(config.config['TwitterOAuth'], tweet_contents)
+            tweet(tweet_contents)
     except Exception:
         from traceback import format_exc
         logger.critical(format_exc())

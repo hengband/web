@@ -19,6 +19,7 @@ $killers = $db->get_killers_table();
 $query_time = microtime(true) - $time_start;
 
 $wt = new WebTemplate();
+$wt->add_head_contents('<meta name="robots" content="none" />');
 $wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
 $wt->set_title("変愚蛮怒 スコア 死因ランキング");
 
