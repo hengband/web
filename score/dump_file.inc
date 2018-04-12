@@ -153,6 +153,35 @@ class DumpFile
         }
     }
 
+
+    /**
+     * キャラクタダンプから死んだ場所を得る
+     *
+     * @return string|FALSE 死んだ場所を表す文字列。
+     *                死んだ場所が得られなかった場合FALSE。
+     */
+    public function get_dead_place()
+    {
+
+        $death_reason_detail = $this->get_death_reason_detail();
+        if ($death_reason_detail === FALSE) {
+            return FALSE;
+        }
+        $places = implode("|", [
+            "階", "荒野", "地上", "街",
+            "辺境の地", "モリバント", "アングウィル", "テルモラ", "ズル",
+            "クエスト「.+」", "クエスト",
+        ]);
+
+        if (preg_match("/^(.*(?:{$places})\s*)で.+$/u",
+                        $death_reason_detail, $matches)) {
+            return $matches[1];
+        } else {
+            return FALSE;
+        }
+    }
+
+
     private static function browser_accept_encodings()
     {
         $accept_encoding = filter_input(INPUT_SERVER, 'HTTP_ACCEPT_ENCODING');

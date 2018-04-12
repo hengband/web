@@ -521,4 +521,36 @@ EOM
 
         return FALSE;
     }
+
+
+    /**
+     * 死亡場所を更新する
+     *
+     * @param integer $score_id 死亡場所を更新するスコアのscore_id
+     * @param string|FALSE $dead_place 死亡場所を表す文字列。
+     *                     FALSEの場合はなにもしない。
+     *
+     * @return integer 更新した行数。
+     */
+    public function update_dead_place($score_id, $dead_place)
+    {
+        if ($dead_place === FALSE) {
+            return FALSE;
+}
+        $stmt = $this->dbh->prepare(
+            <<<EOM
+UPDATE scores
+SET dead_place = :dead_place
+WHERE score_id = :score_id
+EOM
+        );
+
+        $result = $stmt->execute(
+            [':score_id' => $score_id,
+             ':dead_place' => $dead_place,
+             ]
+        );
+
+        return $result;
+    }
 }

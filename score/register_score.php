@@ -205,6 +205,9 @@ if ($score_id === FALSE) {
     exit;
 }
 
+// 登録成功、HTTPレスポンスコード 200 OK を返す
+http_response_code(200);
+
 $dumpfile = new DumpFile($score_id);
 $dumpfile->save('dumps', 'txt', $split_contents[1]);
 if (validate_screen_dump($split_contents[2])) {
@@ -213,8 +216,8 @@ if (validate_screen_dump($split_contents[2])) {
     $dumpfile->save('screens', 'html.bad', $split_contents[2]);
 }
 
-// 登録成功、HTTPレスポンスコード 200 OK を返す
-http_response_code(200);
+$dead_place = $dumpfile->get_dead_place();
+$db->update_dead_place($score_id, $dead_place);
 
 exec("nohup python tools/tweet_score.py -c tools/tweet_score.cfg -l tweet_score.log -s {$score_id} > /dev/null &");
 
