@@ -3,7 +3,8 @@ class ScoreDB
 {
     private static $sort_mode_list = ['default' => 'score', 'newcome'];
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->dbh = new PDO('sqlite:db/score.db');
         $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -35,7 +36,7 @@ class ScoreDB
      */
     public function set_sort_mode($mode)
     {
-        if ($mode !== NULL && in_array($mode, self::$sort_mode_list)) {
+        if ($mode !== null && in_array($mode, self::$sort_mode_list)) {
             $this->sort_mode = $mode;
         } else {
             $this->sort_mode = self::$sort_mode_list['default'];
@@ -78,7 +79,7 @@ class ScoreDB
         $from_date = filter_input(INPUT_GET, 'fd');
         $to_date = filter_input(INPUT_GET, 'td');
 
-        if ($from_date !== NULL && $to_date !== NULL &&
+        if ($from_date !== null && $to_date !== null &&
             strlen($from_date) > 0 && strlen($to_date) > 0) {
             $wheres[] = "(date >= date(:from_date) AND date < date(:to_date, '+1 days'))";
             $params[":from_date"] = $from_date;
@@ -86,7 +87,7 @@ class ScoreDB
         }
 
         foreach (['race_id', 'class_id', 'personality_id'] as $key_column) {
-            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT);
             if ($val > 0) {
                 $wheres[] = "{$key_column} = :{$key_column}";
                 $params[":{$key_column}"] = $val;
@@ -94,7 +95,7 @@ class ScoreDB
         }
 
         foreach (['realm_id1', 'realm_id2'] as $idx => $key_column) {
-            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT);
             if ($val > 0) {
                 $seq = $idx + 1;
                 $wheres[] = "score_id IN (SELECT score_id FROM score_realms WHERE realm_id = :{$key_column} AND realm_seq = {$seq})";
@@ -105,15 +106,15 @@ class ScoreDB
         foreach (['name'] as $key_column) {
             $val = filter_input(INPUT_GET, $key_column);
             $match_mode = filter_input(INPUT_GET, $key_column."_match");
-            if ($val !== NULL && strlen($val) > 0) {
+            if ($val !== null && strlen($val) > 0) {
                 $wheres[] = ($match_mode == "strict") ? "{$key_column} = :{$key_column}" : "{$key_column} LIKE :{$key_column}";
                 $params[":{$key_column}"] = ($match_mode == "strict") ? $val : "%".$val."%";
             }
         }
 
         foreach (['sex'] as $key_column) {
-            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT); 
-            if ($val !== FALSE && $val !== NULL) {
+            $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT);
+            if ($val !== false && $val !== null) {
                 $wheres[] = "{$key_column} = :{$key_column}";
                 $params[":{$key_column}"] = $val;
             }
@@ -121,7 +122,7 @@ class ScoreDB
 
         foreach (['killer'] as $key_column) {
             $val = filter_input(INPUT_GET, $key_column);
-            if ($val !== NULL && strlen($val) > 0) {
+            if ($val !== null && strlen($val) > 0) {
                 $wheres[] = "({$key_column} LIKE :{$key_column} OR {$key_column} = :{$key_column}1 OR {$key_column} = :{$key_column}2)";
                 $params[":{$key_column}"] = "%".$val."%";
                 $params[":{$key_column}1"] = "麻痺状態で".$val;
@@ -256,14 +257,16 @@ EOM;
         return $result;
     }
 
-    public function get_db_handle() {
+    public function get_db_handle()
+    {
         return $this->dbh;
     }
 
     private function update_killers_cache_table()
     {
         $this->dbh->exec("DROP TABLE IF EXISTS killers_cache");
-        $this->dbh->exec(<<<EOM
+        $this->dbh->exec(
+            <<<EOM
 CREATE TABLE
   killers_cache
 AS
@@ -322,7 +325,8 @@ EOM
      * 種族・職業・性格について各種統計情報を取得しキャッシュテーブルに保存する
      * 通常の統計情報の取得はこのキャッシュテーブルから行う
      */
-    private function update_statistics_cache_tables() {
+    private function update_statistics_cache_tables()
+    {
         $statistics_list = ['race', 'class', 'personality'];
 
         foreach ($statistics_list as $stat) {
@@ -353,7 +357,8 @@ EOM
      * 魔法領域1・魔法領域2について各種統計情報を取得しキャッシュテーブルに保存する
      * 通常の統計情報の取得はこのキャッシュテーブルから行う
      */
-    private function update_realm_statistics_cache_tables() {
+    private function update_realm_statistics_cache_tables()
+    {
         foreach (range(1, 2) as $seq) {
             $table_name = "realm{$seq}_statistics";
             $this->dbh->exec("DROP TABLE IF EXISTS ".$table_name);
@@ -389,7 +394,8 @@ EOM
      *
      * @return array 統計情報
      */
-    public function get_statistics_tables($sort_key_column) {
+    public function get_statistics_tables($sort_key_column)
+    {
         try {
             $this->dbh->beginTransaction();
             if (!$this->get_cache_status('statistics_cache')) {
@@ -455,7 +461,8 @@ EOM
 
     public function create_cache_status_table()
     {
-        $this->dbh->exec(<<<EOM
+        $this->dbh->exec(
+            <<<EOM
 CREATE TABLE cache_status_table
   (table_name TEXT PRIMARY KEY,
    cached BOOLEAN)
@@ -501,10 +508,10 @@ EOM
 
         try {
             $this->dbh->beginTransaction();
-            if ($insert_stmt->execute($score_data['character_info']) === FALSE ||
+            if ($insert_stmt->execute($score_data['character_info']) === false ||
                 $insert_stmt->rowCount() !== 1) {
                 $dbh->rollBack();
-                return FALSE;
+                return false;
             }
 
             // NOTE: score_idはINTEGER PRIMARY KEYなのでROWIDを参照している
@@ -512,10 +519,10 @@ EOM
             $score_id = $this->dbh->lastInsertId();
 
             foreach ($score_data['realm_info'] as $realm_seq => $realm_name) {
-                if ($realm_insert_stmt->execute([$score_id, $realm_seq + 1, $realm_name]) === FALSE ||
+                if ($realm_insert_stmt->execute([$score_id, $realm_seq + 1, $realm_name]) === false ||
                     $realm_insert_stmt->rowCount() !== 1) {
                     $dbh->rollBack();
-                    return FALSE;
+                    return false;
                 }
             }
 
@@ -529,7 +536,7 @@ EOM
             $dbh->rollBack();
         }
 
-        return FALSE;
+        return false;
     }
 
 
@@ -544,8 +551,8 @@ EOM
      */
     public function update_dead_place($score_id, $dead_place)
     {
-        if ($dead_place === FALSE) {
-            return FALSE;
+        if ($dead_place === false) {
+            return false;
         }
         $stmt = $this->dbh->prepare(
             <<<EOM

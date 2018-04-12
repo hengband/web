@@ -20,15 +20,20 @@ http_response_code(400);
  * @return string|false 送られてきたスコアの、PHPのマルチバイト文字処理における文字エンコーディングを表す文字列
  *                      取得できなかった場合はFALSE
  */
-function get_mb_encoding(){
+function get_mb_encoding()
+{
     $content_type = filter_input(INPUT_SERVER, 'CONTENT_TYPE');
-    if ($content_type == NULL) return FALSE;
+    if ($content_type == null) {
+        return false;
+    }
 
     $s = explode(';', $content_type);
 
     if (count($s) != 2 ||
         $s[0] !== "text/plain" ||
-        strpos(trim($s[1]), "charset=") !== 0) return FALSE;
+        strpos(trim($s[1]), "charset=") !== 0) {
+        return false;
+    }
 
     $c = explode('=', $s[1]);
 
@@ -40,7 +45,7 @@ function get_mb_encoding(){
     case "utf-8":
         return "UTF-8";
     default:
-        return FALSE;
+        return false;
     }
 }
 
@@ -62,20 +67,22 @@ function split_recv_contents($recv_contents)
     $dump_info_end_line = array_search('-----charcter dump-----', $recv_lines);
     $dump_txt_end_line = array_search('-----screen shot-----', $recv_lines);
 
-    if ($dump_info_end_line === FALSE) return FALSE;
+    if ($dump_info_end_line === false) {
+        return false;
+    }
 
     $info_lines = array_slice($recv_lines, 0, $dump_info_end_line);
     $dump_lines = array_slice(
         $recv_lines,
         $dump_info_end_line + 1,
-        $dump_txt_end_line ? $dump_txt_end_line - $dump_info_end_line - 1: NULL
+        $dump_txt_end_line ? $dump_txt_end_line - $dump_info_end_line - 1: null
     );
     $screen_lines = $dump_txt_end_line ?
                   array_slice(
                       $recv_lines,
                       $dump_txt_end_line + 1,
-                      NULL
-                  ) : FALSE;
+                      null
+                  ) : false;
 
     return [$info_lines, $dump_lines, $screen_lines];
 }
@@ -96,7 +103,7 @@ function parse_character_info($info_lines)
     $info = [];
     foreach ($info_lines as $l) {
         $splitpos = strpos($l, ':');
-        if ($splitpos !== FALSE) {
+        if ($splitpos !== false) {
             $key = substr($l, 0, $splitpos);
             $val = substr($l, $splitpos + 1);
             $info[$key] = trim($val);
@@ -136,7 +143,10 @@ function create_db_insert_score_data($info)
     $realm_info_array = array_values(
         array_filter(
             [$info['realm1'], $info['realm2']],
-            function($v) {return $v !== '魔法なし';})
+            function ($v) {
+                return $v !== '魔法なし';
+            }
+        )
     );
 
     return [
@@ -157,20 +167,23 @@ function create_db_insert_score_data($info)
  */
 function validate_screen_dump($screen_dump_lines)
 {
-    if ($screen_dump_lines === FALSE) {
-        return FALSE;
+    if ($screen_dump_lines === false) {
+        return false;
     }
 
     $allow_tags = ['html', 'body', 'pre', 'font'];
 
-    $is_valid = TRUE;
+    $is_valid = true;
     foreach ($screen_dump_lines as $line) {
         if (preg_match_all("|</?([^>\s]+)(\s*[^>]+)?>|", $line, $matches, PREG_SET_ORDER) > 0) {
-            $invalid_tag_matches = array_filter($matches, function($m) use($allow_tags) {
-                return !in_array($m[1], $allow_tags);
-            });
+            $invalid_tag_matches = array_filter(
+                $matches,
+                function ($m) use ($allow_tags) {
+                    return !in_array($m[1], $allow_tags);
+                }
+            );
             if (count($invalid_tag_matches) > 0) {
-                $is_valid = FALSE;
+                $is_valid = false;
             }
         }
     }
@@ -180,7 +193,7 @@ function validate_screen_dump($screen_dump_lines)
 
 
 $recv_encoding = get_mb_encoding();
-if ($recv_encoding === FALSE) {
+if ($recv_encoding === false) {
     exit;
 }
 
@@ -192,7 +205,7 @@ if (strlen($recv_contents) !== filter_input(INPUT_SERVER, 'CONTENT_LENGTH', FILT
 $recv_contents = mb_convert_encoding($recv_contents, "UTF-8", $recv_encoding);
 
 $split_contents = split_recv_contents($recv_contents);
-if ($split_contents === FALSE) {
+if ($split_contents === false) {
     exit;
 }
 
@@ -201,7 +214,7 @@ $char_info = parse_character_info($split_contents[0]);
 $db = new ScoreDB();
 $score_id = $db->register_new_score(create_db_insert_score_data($char_info));
 
-if ($score_id === FALSE) {
+if ($score_id === false) {
     exit;
 }
 

@@ -12,7 +12,8 @@ class WebTemplate
 {
     private static $template_dir = "../template";
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->template = file(self::$template_dir."/template.html");
         $this->head = file(self::$template_dir."/head.html");
         $this->header = file(self::$template_dir."/header.html");
@@ -61,7 +62,8 @@ class WebTemplate
     /**
      * Webページを出力する
      */
-    public function print_page() {
+    public function print_page()
+    {
         rewind($this->main_contents_fp);
         $this->main_contents = [stream_get_contents($this->main_contents_fp)];
         foreach ($this->template as $line) {
@@ -83,9 +85,10 @@ class WebTemplate
         }
     }
 
-    private static function print_page_sub($lines) {
-        foreach ($lines as $line){
+    private static function print_page_sub($lines)
+    {
+        foreach ($lines as $line) {
             echo $line;
-        } 
+        }
     }
 }

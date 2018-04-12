@@ -48,11 +48,13 @@ function calc_page_info($total_data_count, $start_num, $data_count_per_page)
  */
 function print_navi_page_table($fp, $pageinfo)
 {
-    if (count($pageinfo['navi_list']) <= 1) return;
+    if (count($pageinfo['navi_list']) <= 1) {
+        return;
+    }
 
     $href_base = filter_input(INPUT_SERVER, 'SCRIPT_NAME')."?"
                .preg_replace('/(&?start=\w+)/', '', filter_input(INPUT_SERVER, 'QUERY_STRING'));
-    if (strpos($href_base, "?") === FALSE) {
+    if (strpos($href_base, "?") === false) {
         $href_base .= "?";
     }
 
@@ -93,7 +95,9 @@ function print_navi_page_table($fp, $pageinfo)
  */
 function print_score_table($fp, $scores, $rank_start)
 {
-    fwrite($fp, <<<EOM
+    fwrite(
+        $fp,
+        <<<EOM
 <table class="score">
 <thead>
 <tr>
@@ -112,7 +116,7 @@ EOM
     );
 
     fwrite($fp, "<tbody>\n");
-    foreach($scores as $idx => $score) {
+    foreach ($scores as $idx => $score) {
         $rank = $rank_start + $idx + 1;
         $date = substr($score['date'], 0, 10); // 日時から日付部分を取り出す
         $sex_str = $score['sex'] ? "男" : "女";
@@ -124,7 +128,9 @@ EOM
         if ($dumpfile->exists('dumps', 'txt')) {
             $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$name}</a>";
         }
-        fwrite($fp, <<<EOM
+        fwrite(
+            $fp,
+            <<<EOM
 <tr>
 <td>$rank</td>
 <td class="number">{$score['score']}</td>
@@ -163,7 +169,9 @@ $wt->add_head_contents('<meta name="robots" content="none" />');
 $wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
 $fp = $wt->main_contents_fp();
 fprintf($fp, "<h2>変愚蛮怒 歴代スコア (%s)</h2>\n", $db->get_sort_mode_name());
-fprintf($fp, <<<EOM
+fprintf(
+    $fp,
+    <<<EOM
 <div align="right">
 <small>
 件数 %d 件 (%.2f 秒)
@@ -171,7 +179,9 @@ fprintf($fp, <<<EOM
 </div>
 
 EOM
-        ,$search_result['total_data_count'], $search_result['elapsed_time']
+    ,
+    $search_result['total_data_count'],
+    $search_result['elapsed_time']
 );
 
 print_navi_page_table($fp, $pageinfo);

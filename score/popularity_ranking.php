@@ -11,7 +11,9 @@ require_once "web_template.inc";
 
 function print_popularity_table($fp, $stat, $id_name, $name)
 {
-    fwrite($fp, <<<EOM
+    fwrite(
+        $fp,
+        <<<EOM
 <div id="{$id_name}">
 <table class="tablesorter score statistics_table">
 <thead>
@@ -20,7 +22,7 @@ function print_popularity_table($fp, $stat, $id_name, $name)
 
 EOM
     );
-    
+
     foreach ([
         '計', '男性', '女性', '勝利', '平均スコア', '最大スコア',
     ] as $name) {
@@ -31,7 +33,9 @@ EOM
 
     foreach ($stat as $k => $s) {
         $name_link = "<a href='score_ranking.php?{$id_name}={$s['id']}'>{$s['name']}</a></td>";
-        fwrite($fp, <<<EOM
+        fwrite(
+            $fp,
+            <<<EOM
 <tr>
 <td>$name_link</td>
 <td class="number">{$s['total_count']}</td>
@@ -64,11 +68,15 @@ function print_realm_popularity_table($fp, $stat, $id_name)
 
     // 職業ごとにテーブルを表示
     foreach ($class_realm_stat_list as $class_id => $class_realm_stat) {
-        if (count($class_realm_stat) <= 1) continue; // 領域固定の職業は飛ばす
+        if (count($class_realm_stat) <= 1) {
+            continue; // 領域固定の職業は飛ばす
+        }
 
         $class_name = $class_realm_stat[0]['class_name'];
 
-        fwrite($fp, <<<EOM
+        fwrite(
+            $fp,
+            <<<EOM
 <table class="tablesorter score statistics_table" id="${id_name}">
 <thead>
 <tr>
@@ -86,7 +94,9 @@ EOM
 
         foreach ($class_realm_stat as $realm) {
             $name_link = "<a href='score_ranking.php?class_id={$class_id}&{$id_name}={$realm['realm_id']}'>{$realm['realm_name']}</a></td>";
-            fwrite($fp, <<<EOM
+            fwrite(
+                $fp,
+                <<<EOM
 <tr>
 <td>$name_link</td>
 <td class="number">{$realm['total_count']}</td>
@@ -134,7 +144,9 @@ $wt->set_title("変愚蛮怒 スコアランキング 人気のある種族・�
 $fp = $wt->main_contents_fp();
 fwrite($fp, "<h2>人気のある種族・職業・性格・魔法領域</h2>\n");
 //fprintf($fp, "<small>(%.2f 秒)</small>", $query_time);
-fwrite($fp, <<<EOM
+fwrite(
+    $fp,
+    <<<EOM
 <nobr>[ <a href="javascript:void(0)" class="table_select" id="race_id">種族</a> | <a href="javascript:void(0)" class="table_select" id="class_id">職業</a> | <a href="javascript:void(0)" class="table_select" id="personality_id">性格</a> ] [ <a href="javascript:void(0)" class="table_select" id="realm_id1">魔法領域1</a> | <a href="javascript:void(0)" class="table_select" id="realm_id2">魔法領域2</a> ]</nobr>
 
 EOM

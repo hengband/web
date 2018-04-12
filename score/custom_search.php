@@ -29,7 +29,9 @@ $wt = new WebTemplate();
 $wt->set_title("変愚蛮怒 スコア カスタム検索");
 $fp = $wt->main_contents_fp();
 
-fwrite($fp, <<<EOM
+fwrite(
+    $fp,
+    <<<EOM
 <h2>変愚蛮怒 スコア カスタム検索</h2>
 <form action="score_ranking.php" method="GET">
 <p>
@@ -53,7 +55,9 @@ fwrite($fp, " <label for=\"realm_id2\">領域2:</label>");
 print_select_form($fp, $defines['realm'], 'realm_id2');
 fwrite($fp, "</p>\n");
 
-fwrite($fp, <<<EOM
+fwrite(
+    $fp,
+    <<<EOM
 <p>
 <label for="name">キャラクター名:</label>
 <input type="text" name="name">

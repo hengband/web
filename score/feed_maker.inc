@@ -39,7 +39,7 @@ class FeedMaker
 
             $dump_file = new DumpFile($s['score_id']);
             $death_reason_detail = $dump_file->get_death_reason_detail();
-            if ($death_reason_detail === FALSE) {
+            if ($death_reason_detail === false) {
                 $death_reason_detail = "{$s['death_reason']} @{$s['depth']}F";
             }
 

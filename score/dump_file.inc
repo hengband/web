@@ -1,9 +1,10 @@
 <?php
 class DumpFile
 {
-    public function __construct($score_id) {
+    public function __construct($score_id)
+    {
         $this->score_id = $score_id;
-        $this->dump_lines = NULL;
+        $this->dump_lines = null;
     }
 
 
@@ -35,7 +36,7 @@ class DumpFile
         header("Etag: ".$etag);
         header("Content-Type: ".$content_type);
 
-        if ($content_encoding !== NULL) {
+        if ($content_encoding !== null) {
             header("Content-Encoding: ".$content_encoding);
             echo $contents;
         } else {
@@ -46,7 +47,9 @@ class DumpFile
 
     public function save($dir, $ext, $contents)
     {
-        if ($contents === FALSE) return;
+        if ($contents === false) {
+            return;
+        }
 
         umask(2); // Group書き込み権限許可
 
@@ -54,7 +57,7 @@ class DumpFile
         $dirname = dirname($filename);
 
         if (!file_exists($dirname)) {
-            mkdir($dirname, 02775, TRUE);
+            mkdir($dirname, 02775, true);
         }
 
         $zp = gzopen($filename, "w9");
@@ -85,17 +88,17 @@ class DumpFile
      */
     private function readlines()
     {
-        if ($this->dump_lines !== NULL) {
-            return TRUE;
+        if ($this->dump_lines !== null) {
+            return true;
         }
 
         $lines = gzfile($this->get_filename('dumps', 'txt'));
-        if ($lines !== FALSE) {
+        if ($lines !== false) {
             $this->dump_lines = $lines;
-            return TRUE;
+            return true;
         }
 
-        return FALSE;
+        return false;
     }
 
 
@@ -106,19 +109,18 @@ class DumpFile
      */
     public function get_last_message()
     {
-        if ($this->readlines() === FALSE) {
+        if ($this->readlines() === false) {
             return [];
         }
 
-        $in_message = FALSE;
+        $in_message = false;
         $result = [];
         foreach ($this->dump_lines as $line) {
             if (preg_match('/^\s*\[(.*)\]\s*$/u', $line, $matches)) {
                 if ($matches[1] == '*勝利*メッセージ' ||
                     $matches[1] == '死ぬ直前のメッセージ') {
-                    $in_message = TRUE;
-                }
-                else if ($in_message) {
+                    $in_message = true;
+                } elseif ($in_message) {
                     break;
                 }
             }
@@ -139,8 +141,8 @@ class DumpFile
      */
     public function get_death_reason_detail()
     {
-        if ($this->readlines() === FALSE) {
-            return FALSE;
+        if ($this->readlines() === false) {
+            return false;
         }
 
         $death_reason_lines = array_slice($this->dump_lines, 30, 3);
@@ -149,7 +151,7 @@ class DumpFile
         if (preg_match("/^…あなたは、?(.+)。/u", $death_reason, $matches)) {
             return $matches[1];
         } else {
-            return FALSE;
+            return false;
         }
     }
 
@@ -162,10 +164,9 @@ class DumpFile
      */
     public function get_dead_place()
     {
-
         $death_reason_detail = $this->get_death_reason_detail();
-        if ($death_reason_detail === FALSE) {
-            return FALSE;
+        if ($death_reason_detail === false) {
+            return false;
         }
         $places = implode("|", [
             "階", "荒野", "地上", "街",
@@ -173,11 +174,14 @@ class DumpFile
             "クエスト「.+」", "クエスト",
         ]);
 
-        if (preg_match("/^(.*(?:{$places})\s*)で.+$/u",
-                        $death_reason_detail, $matches)) {
+        if (preg_match(
+            "/^(.*(?:{$places})\s*)で.+$/u",
+            $death_reason_detail,
+            $matches
+        )) {
             return $matches[1];
         } else {
-            return FALSE;
+            return false;
         }
     }
 
@@ -185,7 +189,9 @@ class DumpFile
     private static function browser_accept_encodings()
     {
         $accept_encoding = filter_input(INPUT_SERVER, 'HTTP_ACCEPT_ENCODING');
-        if ($accept_encoding == NULL) return [];
+        if ($accept_encoding == null) {
+            return [];
+        }
 
         return array_map('trim', explode(",", $accept_encoding));
     }
@@ -195,9 +201,9 @@ class DumpFile
     {
         $supported_gzip_encodings = array_intersect(
             self::browser_accept_encodings(),
-            ['gzip', 'x-gzip']);
+            ['gzip', 'x-gzip']
+        );
 
         return array_shift($supported_gzip_encodings);
     }
-
 }

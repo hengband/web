@@ -24,7 +24,9 @@ $wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-t
 $wt->set_title("変愚蛮怒 スコア 死因ランキング");
 
 $fp = $wt->main_contents_fp();
-fwrite($fp, <<<EOM
+fwrite(
+    $fp,
+    <<<EOM
 <h2>変愚蛮怒 死因ランキング</h2>
 <table class="score">
 <thead>
@@ -42,7 +44,9 @@ fwrite($fp, "<tboby>\n");
 foreach ($killers as $k) {
     //$freeze = $k['killer_count_freeze'] > 0 ? "(".$k['killer_count_freeze'].")" : "";
     $killer_name = h($k['killer_name']);
-    fwrite($fp, <<<EOM
+    fwrite(
+        $fp,
+        <<<EOM
 <tr>
 <td class="number">{$k['killer_count_total']}</td>
 <td class="number">{$k['killer_count_freeze']}</td>
