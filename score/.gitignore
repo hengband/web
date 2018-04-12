@@ -2,3 +2,7 @@ db
 dumps
 errors
 screens
+*.pyc
+*.bak
+*.log
+*.db
