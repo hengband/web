@@ -83,7 +83,7 @@ class DumpFile
      *
      * @return boolean 読み込みに成功した場合TRUE、失敗した場合FALSE
      */
-    public function readlines()
+    private function readlines()
     {
         if ($this->dump_lines !== NULL) {
             return TRUE;
