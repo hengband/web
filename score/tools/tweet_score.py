@@ -2,28 +2,6 @@
 # -*- coding: utf-8
 
 '''スコアをツイートする
-
-OSDNのサーバでrequests_oauthlibを使う方法のメモ
-
-1. 環境変数PYTHONUSERBASEでインストール先をWebコンテンツ上の任意のディレクトリに指定し、
-   pipに--userオプションをつけてインストールを実行
-   以下は /home/groups/h/he/hengband/htdocs/score/local 以下にインストールする例
-
-   `$ PYTHONUSERBASE=/home/groups/h/he/hengband/htdocs/score/local
-      pip install --user requests_oauthlib`
-
-2. パスは通っているはずなのにシステムにインストールされているrequestsとurllib3が何故か読み込みに失敗するので、
-   上でインストールしたディレクトリにコピーする
-
-   `$ cp -a /usr/lib/python2.7/dist-packages/requests
-      /usr/lib/python2.7/dist-packages/urllib3
-      /home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages`
-
-3. sys.path.appendで上でインストールしたディレクトリにパスを通してからrequests_oauthlibをimportする
-
-   `import sys`
-   `sys.path.append('/home/groups/h/he/hengband/htdocs/score/local/lib/python2.7/site-packages')`
-   `import requests_oauthlib`
 '''
 
 import sys
@@ -32,6 +10,7 @@ import sqlite3
 import gzip
 import re
 import config
+import twitter
 
 
 def get_score_data(score_id):
@@ -137,7 +116,7 @@ def get_death_reason_detail(score_id):
     return match.group(1) if match else None
 
 
-def create_tweet(score_id):
+def create_score_tweet(score_id):
     '''ツイートするメッセージを生成する。
 
     Args:
@@ -205,37 +184,6 @@ def create_daily_stats_tweet(year, month, day):
                       **daily_stats)
 
     return tweet
-
-
-def tweet(tweet_contents):
-    '''ツイートする。
-
-    Args:
-        oauth: requests_oauthlib.OAuth1Sessionの引数に渡すOAuth認証パラメータ。
-        tweet_contents: ツイートする内容を表す文字列。
-    '''
-    from requests_oauthlib import OAuth1Session
-    from requests.adapters import HTTPAdapter
-    from requests import codes
-    from logging import getLogger
-    logger = getLogger(__name__)
-
-    twitter = OAuth1Session(**config.config['TwitterOAuth'])
-
-    url = "https://api.twitter.com/1.1/statuses/update.json"
-
-    params = {"status": tweet_contents}
-    twitter.mount("https://", HTTPAdapter(max_retries=5))
-
-    logger.info("Posting to Twitter...")
-    logger.info(u"Tweet contents:\n{}".format(tweet_contents))
-    res = twitter.post(url, params=params)
-
-    if res.status_code == codes.ok:
-        logger.info("Success.")
-    else:
-        logger.warning("Failed to post: {code}, {json}"
-                       .format(code=res.status_code, json=res.json()))
 
 
 def parse_option():
@@ -308,16 +256,23 @@ if __name__ == '__main__':
                 target_datetime.day
             )
         else:
-            tweet_contents = create_tweet(options.score_id)
+            tweet_contents = create_score_tweet(options.score_id)
 
         if tweet_contents is None:
             logger.warning('No score data found.')
             sys.exit(1)
 
         if (options.dry_run):
-            print(tweet_contents.encode("UTF-8"))
+            if isinstance(tweet_contents, basestring):
+                tweet_contents = [tweet_contents]
+            for tw in tweet_contents:
+                print(tw.encode("UTF-8"))
         else:
-            tweet(tweet_contents)
+            twitter = twitter.Twitter(
+                logger=logger,
+                **config.config['TwitterOAuth']
+            )
+            twitter.post_tweet(tweet_contents)
     except Exception:
         from traceback import format_exc
         logger.critical(format_exc())
