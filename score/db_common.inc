@@ -168,34 +168,44 @@ class ScoreDB
     private function get_search_query($offset, $limit, $where, $order_by)
     {
         $query = <<<EOM
-SELECT
-  *,
-  group_concat(realm_name) AS realms_name,
-  CASE
-    WHEN killer = 'ripe' THEN '勝利の後引退'
-    WHEN killer = 'Seppuku' THEN '勝利の後切腹'
-    ELSE killer || 'に殺された'
-  END AS death_reason
-FROM
+WITH
+  target_score_ids
+AS
  (SELECT
-    *
+    score_id
   FROM
     scores
   {$where}
   {$order_by}
-  LIMIT {$offset}, {$limit}) AS s
+  LIMIT {$offset}, {$limit})
+SELECT
+  *,
+  CASE
+    WHEN killer = 'ripe' THEN '勝利の後引退'
+    WHEN killer = 'Seppuku' THEN '勝利の後切腹'
+    WHEN dead_place IS NULL THEN killer || 'に殺された'
+    ELSE dead_place || 'で' || killer || 'に殺された'
+  END AS death_reason
+FROM
+ (SELECT
+    score_id,
+    group_concat(realm_name) AS realms_name
+  FROM
+    target_score_ids
+  NATURAL LEFT JOIN
+    score_realms
+  NATURAL LEFT JOIN
+    realms
+  GROUP BY
+    score_id)
+NATURAL INNER JOIN
+  scores
 NATURAL INNER JOIN
   races
 NATURAL INNER JOIN
   classes
 NATURAL INNER JOIN
   personalities
-NATURAL LEFT JOIN
-  score_realms
-NATURAL LEFT JOIN
-  realms
-GROUP BY
-  score_id
 {$order_by}
 EOM;
         return $query;
@@ -536,7 +546,7 @@ EOM
     {
         if ($dead_place === FALSE) {
             return FALSE;
-}
+        }
         $stmt = $this->dbh->prepare(
             <<<EOM
 UPDATE scores
