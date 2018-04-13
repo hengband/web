@@ -120,7 +120,6 @@ EOM
         $rank = $rank_start + $idx + 1;
         $date = substr($score['date'], 0, 10); // 日時から日付部分を取り出す
         $sex_str = $score['sex'] ? "男" : "女";
-        $depth = !$score['winner'] ? $score['depth']."階, " : "";
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
         $dumpfile = new DumpFile($score['score_id']);
 
@@ -148,7 +147,7 @@ EOM
         } else {
             fwrite($fp, "<td>{$death_reason}");
         }
-        fwrite($fp, "<br>({$depth}".h($score['version']).")</td>\n".
+        fwrite($fp, "<br>(".h($score['version']).")</td>\n".
                "</tr>\n");
     }
     fwrite($fp, "</tbody>\n");
