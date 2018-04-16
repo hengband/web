@@ -19,7 +19,36 @@ table.score tbody td
 	  vertical-align: top;
 }
 
-table.score tbody tr:nth-child(odd) td
+table.score tbody td.rank
+{
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.score tbody td.player_name a span
+{
+	text-decoration: underline;
+}
+
+table.score tbody td.player_name span,
+table.score tbody td.class_name span
+{
+	white-space: nowrap;
+	display: inline-block;
+}
+
+table.score tbody td.race_name
+{
+	white-space: nowrap;
+}
+
+table.score tbody td.sex
+{
+	text-align: center;
+}
+
+table.score tbody tr:nth-child(4n+1) td,
+table.score tbody tr:nth-child(4n+2) td
 {
 	  background-color: #f9b69a;
 }

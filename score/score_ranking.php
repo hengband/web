@@ -101,14 +101,17 @@ function print_score_table($fp, $scores, $rank_start)
 <table class="score">
 <thead>
 <tr>
-<th>順位</th>
+<th rowspan="2">順位</th>
 <th>スコア</th>
 <th>日付</th>
 <th>名前</th>
 <th>種族</th>
 <th>職業</th>
 <th>性別</th>
-<th>死因</th>
+<th><nobr>バージョン</nobr></th>
+</tr>
+<tr>
+<th colspan="7">死因</th>
 </tr>
 </thead>
 
@@ -122,8 +125,9 @@ EOM
         $sex_str = $score['sex'] ? "男" : "女";
         $realms = isset($score['realms_name']) ? "(".$score['realms_name'].")" : "";
         $dumpfile = new DumpFile($score['score_id']);
+        $version = trim(str_replace("変愚蛮怒", "", h($score['version'])));
 
-        $name = h("{$score['personality_name']}{$score['name']}");
+        $name = "<span>".h("{$score['personality_name']}")."</span><span>".h("{$score['name']}")."</span>";
         if ($dumpfile->exists('dumps', 'txt')) {
             $name = "<a href=\"show_dump.php?score_id={$score['score_id']}\">{$name}</a>";
         }
@@ -131,24 +135,27 @@ EOM
             $fp,
             <<<EOM
 <tr>
-<td>$rank</td>
+<td class="rank" rowspan="2">$rank</td>
 <td class="number">{$score['score']}</td>
 <td><nobr>$date</nobr></td>
-<td>$name</td>
-<td>{$score['race_name']}</td>
-<td>{$score['class_name']}$realms</td>
-<td>$sex_str</td>
+<td class="player_name">$name</td>
+<td class="race_name">{$score['race_name']}</td>
+<td class="class_name"><span>{$score['class_name']}</span> <span>$realms</span></td>
+<td class="sex">$sex_str</td>
+<td>$version</td>
+</tr>
+<tr>
 
 EOM
         );
         $death_reason = h($score['death_reason']);
+        fwrite($fp, "<td colspan=\"7\">");
         if ($dumpfile->exists('screens', 'html')) {
-            fwrite($fp, "<td><a href=\"show_screen.php?score_id={$score['score_id']}\">{$death_reason}</a>");
+            fwrite($fp, "<a href=\"show_screen.php?score_id={$score['score_id']}\">{$death_reason}</a>");
         } else {
-            fwrite($fp, "<td>{$death_reason}");
+            fwrite($fp, "{$death_reason}");
         }
-        fwrite($fp, "<br>(".h($score['version']).")</td>\n".
-               "</tr>\n");
+        fwrite($fp, "</td>\n</tr>\n");
     }
     fwrite($fp, "</tbody>\n");
     fwrite($fp, "</table>\n");
