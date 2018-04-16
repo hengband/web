@@ -98,7 +98,7 @@ function print_score_table($fp, $scores, $rank_start)
     fwrite(
         $fp,
         <<<EOM
-<table class="score">
+<table class="score two_rows">
 <thead>
 <tr>
 <th rowspan="2">順位</th>

@@ -47,8 +47,13 @@ table.score tbody td.sex
 	text-align: center;
 }
 
-table.score tbody tr:nth-child(4n+1) td,
-table.score tbody tr:nth-child(4n+2) td
+table.two_rows tbody tr:nth-child(4n+1) td,
+table.two_rows tbody tr:nth-child(4n+2) td
+{
+	  background-color: #f9b69a;
+}
+
+table.one_row tbody tr:nth-child(odd) td
 {
 	  background-color: #f9b69a;
 }

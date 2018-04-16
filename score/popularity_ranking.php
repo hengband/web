@@ -15,7 +15,7 @@ function print_popularity_table($fp, $stat, $id_name, $name)
         $fp,
         <<<EOM
 <div id="{$id_name}">
-<table class="tablesorter score statistics_table">
+<table class="tablesorter score statistics_table one_row">
 <thead>
 <tr>
 <th>$name</th>
@@ -77,7 +77,7 @@ function print_realm_popularity_table($fp, $stat, $id_name)
         fwrite(
             $fp,
             <<<EOM
-<table class="tablesorter score statistics_table" id="${id_name}">
+<table class="tablesorter score statistics_table one_row" id="${id_name}">
 <thead>
 <tr>
 <th>{$class_name}</th>

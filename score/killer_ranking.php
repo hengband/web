@@ -28,7 +28,7 @@ fwrite(
     $fp,
     <<<EOM
 <h2>変愚蛮怒 死因ランキング</h2>
-<table class="score">
+<table class="score one_row">
 <thead>
 <tr>
 <th>回数</th>
