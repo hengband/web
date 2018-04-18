@@ -1,80 +1,100 @@
-table.score
-{
-    width: 100%;
+table.score {
+	width: 100%;
 }
 
 table.score thead tr th,
-table.score tfoot tr th
-{
-	  background-color: #302010;
-	  border: 1px solid #d27d00;
-	  padding: 4px;
+table.score tfoot tr th {
+	background-color: #302010;
+	border: 1px solid #d27d00;
+	padding: 4px;
 }
 
-table.score tbody td
-{
-	  color: black;
-	  padding: 4px;
-	  background-color: #e9967a;
-	  vertical-align: top;
+table.score tbody td {
+	color: black;
+	padding: 4px;
+	background-color: #e9967a;
+	vertical-align: top;
 }
 
-table.score tbody td.rank
-{
+table.score tbody td.rank {
 	text-align: center;
 	vertical-align: middle;
 }
 
-table.score tbody td.player_name a span
-{
+table.score tbody td.player_name a span {
 	text-decoration: underline;
 }
 
 table.score tbody td.player_name span,
-table.score tbody td.class_name span
-{
+table.score tbody td.class_name span {
 	white-space: nowrap;
 	display: inline-block;
 }
 
-table.score tbody td.race_name
-{
+table.score tbody td.race_name {
 	white-space: nowrap;
 }
 
-table.score tbody td.sex
-{
+table.score tbody td.sex {
 	text-align: center;
 }
 
 table.two_rows tbody tr:nth-child(4n+1) td,
-table.two_rows tbody tr:nth-child(4n+2) td
-{
-	  background-color: #f9b69a;
+table.two_rows tbody tr:nth-child(4n+2) td {
+	background-color: #f9b69a;
 }
 
-table.one_row tbody tr:nth-child(odd) td
-{
-	  background-color: #f9b69a;
+table.one_row tbody tr:nth-child(odd) td {
+	background-color: #f9b69a;
 }
 
-table.score tbody td.number
-{
-	  text-align: right;
+table.score tbody td.number {
+	text-align: right;
 }
 
-table.score tbody td a:link
-{
-    color: black;
+table.score tbody td a:link {
+	color: black;
 }
+
 table.score tbody td a:visited {
-    color: gray;
-}
-table.score tbody td a:hover {
-    color: red;
+	color: gray;
 }
 
-table.statistics_table
-{
-    display: none;
+table.score tbody td a:hover {
+	color: red;
+}
+
+table.statistics_table th.sort {
+	cursor: pointer;
+}
+
+table.statistics_table th.sort:after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 4px 4px 0;
+	border-style: solid;
+	border-color: #f9b69a transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+table.statistics_table th.sort.ascend:after {
+
+	border-width: 0 4px 4px;
+}
+
+table.statistics_table th.sort.ascend:after,
+table.statistics_table th.sort.descend:after {
+	visibility: visible;
+	opacity: 0.6;
+}
+
+table.statistics_table th.sort:hover:after {
+	visibility: visible;
+	opacity: 1;
 }
