@@ -49,9 +49,9 @@ print_select_form($fp, $defines['personality'], 'personality_id');
 fwrite($fp, "</p>\n");
 
 fwrite($fp, "<p>\n");
-fwrite($fp, "<label for=\"realm_id1\">領域1:</label>");
+fwrite($fp, "<label for=\"realm1_id\">領域1:</label>");
 print_select_form($fp, $defines['realm'], 'realm_id1');
-fwrite($fp, " <label for=\"realm_id2\">領域2:</label>");
+fwrite($fp, " <label for=\"realm2_id\">領域2:</label>");
 print_select_form($fp, $defines['realm'], 'realm_id2');
 fwrite($fp, "</p>\n");
 

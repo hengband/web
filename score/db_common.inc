@@ -94,7 +94,7 @@ class ScoreDB
             }
         }
 
-        foreach (['realm_id1', 'realm_id2'] as $idx => $key_column) {
+        foreach (['realm1_id', 'realm2_id'] as $idx => $key_column) {
             $val = filter_input(INPUT_GET, $key_column, FILTER_VALIDATE_INT);
             if ($val > 0) {
                 $seq = $idx + 1;
@@ -492,7 +492,7 @@ WHERE
   personality_name = :personality
 EOM
         );
- 
+
         $realm_insert_stmt = $this->dbh->prepare(
             <<<EOM
 INSERT INTO score_realms
