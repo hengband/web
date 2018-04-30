@@ -27,6 +27,19 @@ const columnOrder = [
     "max_score",
 ];
 
+const basicTables = [
+    "race",
+    "class",
+    "personality",
+];
+
+const realmTables = [
+    "realm1",
+    "realm2",
+];
+
+const allTables = basicTables.concat(realmTables);
+
 /**
  * 表示テーブル選択ボタンコンポーネントプロパティ
  */
@@ -49,19 +62,22 @@ class TableSelectButton extends React.Component<ITableSelectButtonProps> {
     }
 
     public render() {
-        if (this.props.selected) {
-            return (
+        const { selected, name, onClick } = this.props;
+
+        const button = (selected) ?
+            (
                 <b>
-                    {name2j[this.props.name]}
+                    {name2j[name]}
                 </b>
-            );
-        } else {
-            return (
-                <a href="javascript:void(0)" onClick={() => this.props.onClick()}>
-                    {name2j[this.props.name]}
+            )
+            :
+            (
+                <a href="javascript:void(0)" onClick={onClick}>
+                    {name2j[name]}
                 </a>
             );
-        }
+
+        return <span className="table-select-button">{button}</span>;
     }
 }
 
@@ -75,7 +91,7 @@ interface ITableSelectProps {
      * 選択テーブル切替時に呼び出されるコールバック関数
      * @param name 新たに選択されたテーブル名称
      */
-    onSelectChange: (name: string) => void;
+    onSelectedTableChange: (name: string) => void;
 }
 
 /**
@@ -83,21 +99,40 @@ interface ITableSelectProps {
  */
 // tslint:disable-next-line:max-classes-per-file
 class TableSelector extends React.Component<ITableSelectProps> {
+    private onSelectedTableChange: { [key: string]: () => void } = {};
+
+    constructor(props: ITableSelectProps) {
+        super(props);
+
+        allTables.forEach((t) =>
+            this.onSelectedTableChange[t] = () => this.props.onSelectedTableChange(t),
+        );
+    }
+
     public render() {
         return (
             <div>
-                [ {this.renderSelectButton("race")} | {this.renderSelectButton("class")} |
-                 {this.renderSelectButton("personality")} ]
-                [ {this.renderSelectButton("realm1")} | {this.renderSelectButton("realm2")} ]
+                [{this.renderSelectBussons(basicTables)}]
+                [{this.renderSelectBussons(realmTables)}]
             </div>
         );
     }
 
+    private renderSelectBussons(tables: string[]) {
+        return (
+            tables.map((t) => this.renderSelectButton(t)).
+                map((t, i) => <span key={i}>{t}{i === tables.length - 1 ? "" : "|"}</span>)
+        );
+    }
+
     private renderSelectButton(name: string) {
-        return <TableSelectButton
-            selected={this.props.selectedTableName === name}
-            name={name}
-            onClick={() => this.props.onSelectChange(name)} />;
+        return (
+            <TableSelectButton
+                selected={this.props.selectedTableName === name}
+                name={name}
+                onClick={this.onSelectedTableChange[name]}
+            />
+        );
     }
 }
 
@@ -122,22 +157,25 @@ interface ITableHeaderProps {
  * テーブルヘッダコンポーネント
  */
 function TableHeader(props: ITableHeaderProps) {
+    const tableHeaderColumns = columnOrder.map((col) => {
+        let className = "sort";
+        if (props.sortKeyColumn === col) {
+            className += " ";
+            className += (props.sortOrder === SortOrder.Ascend) ? "ascend" : "descend";
+        }
+        const onClick = () => props.onClick(col);
+        return (
+            <th className={className} onClick={onClick} key={col}>
+                {column2j[col]}
+            </th>
+        );
+    });
+
     return (
         <thead>
             <tr>
                 <th>{props.tableName}</th>
-                {columnOrder.map((col) => {
-                    let className = "sort";
-                    if (props.sortKeyColumn === col) {
-                        className += " ";
-                        className += (props.sortOrder === SortOrder.Ascend) ? "ascend" : "descend";
-                    }
-                    return (
-                        <th className={className} onClick={() => props.onClick(col)}>
-                            {column2j[col]}
-                        </th>
-                    );
-                })}
+                {tableHeaderColumns}
             </tr>
         </thead>
     );
@@ -159,15 +197,17 @@ interface ITableDataRowProps {
  * テーブル行データコンポーネント
  */
 function TableDataRow(props: ITableDataRowProps) {
+    const dataColumns = columnOrder.map((col) =>
+        <td className="number" key={col}>{props.row_data[col]}</td>);
+
     return (
-        <tr key={props.row_data.id}>
+        <tr>
             <td>
                 <a href={`score_ranking.php?${props.linkParam}`}>
                     {props.rowName}
                 </a>
             </td>
-            {columnOrder.map((col) =>
-                <td className="number">{props.row_data[col]}</td>)}
+            {dataColumns}
         </tr>
     );
 }
@@ -215,6 +255,16 @@ class PopuralityTable extends React.Component<IPopuralityTableProps, IPopurality
             sortKeyColumn: columnOrder[0],
             sortOrder: SortOrder.Descend,
         };
+
+        this.selectSortColumn = this.selectSortColumn.bind(this);
+    }
+
+    public shouldComponentUpdate(nextProps: IPopuralityTableProps, nextState: IPopuralityTableState) {
+        const { visible } = this.props;
+        const { sortKeyColumn, sortOrder } = this.state;
+        return (visible !== nextProps.visible) ||
+            (sortKeyColumn !== nextState.sortKeyColumn) ||
+            (sortOrder !== nextState.sortOrder);
     }
 
     public render() {
@@ -222,24 +272,25 @@ class PopuralityTable extends React.Component<IPopuralityTableProps, IPopurality
             return "";
         }
 
-        const data = this.get_sorted_data();
         const tableName = this.props.name;
+
+        const dataRows = this.get_sorted_data().map((row) => (
+            <TableDataRow
+                linkParam={`${tableName}_id=${row.id}`}
+                rowName={row.name}
+                row_data={row}
+                key={row.id}
+            />
+        ));
         return (
             <table className="score statistics_table one_row">
                 <TableHeader
                     tableName={name2j[tableName]}
                     sortKeyColumn={this.state.sortKeyColumn}
                     sortOrder={this.state.sortOrder}
-                    onClick={this.selectSortColumn.bind(this)}
+                    onClick={this.selectSortColumn}
                 />
-                <tbody>
-                    {data.map((row) =>
-                        <TableDataRow
-                            linkParam={`${tableName}_id=${row.id}`}
-                            rowName={row.name}
-                            row_data={row}
-                        />)}
-                </tbody>
+                <tbody>{dataRows}</tbody>
             </table>
         );
     }
@@ -263,19 +314,18 @@ class PopuralityTable extends React.Component<IPopuralityTableProps, IPopurality
 
     /**
      * ソートするカラムを選択する
-     * @param column ソートするカラムの名称
+     * @param sortKeyColumn ソートするカラムの名称
      */
-    protected selectSortColumn(column: string) {
-        let newSortOrder = SortOrder.Descend;
-        if (this.state.sortKeyColumn === column) {
-            newSortOrder =
+    protected selectSortColumn(sortKeyColumn: string) {
+        let sortOrder = SortOrder.Descend;
+
+        if (this.state.sortKeyColumn === sortKeyColumn) {
+            sortOrder =
                 (this.state.sortOrder === SortOrder.Ascend) ?
                     SortOrder.Descend : SortOrder.Ascend;
         }
-        this.setState({
-            sortKeyColumn: column,
-            sortOrder: newSortOrder,
-        });
+
+        this.setState({ sortKeyColumn, sortOrder });
     }
 }
 
@@ -289,24 +339,25 @@ class PopuralityRealmTable extends PopuralityTable {
             return "";
         }
 
-        const data = this.get_sorted_data();
         const realm = this.props.name;
+        const dataRows = this.get_sorted_data().map((row) => (
+            <TableDataRow
+                linkParam={`class_id=${row.class_id}&${realm}_id=${row.realm_id}`}
+                rowName={row.realm_name}
+                row_data={row}
+                key={row.realm_id}
+            />
+        ));
+
         return (
             <table className="score statistics_table one_row">
                 <TableHeader
                     tableName={this.props.data[0].class_name}
                     sortKeyColumn={this.state.sortKeyColumn}
                     sortOrder={this.state.sortOrder}
-                    onClick={this.selectSortColumn.bind(this)}
+                    onClick={this.selectSortColumn}
                 />
-                <tbody>
-                    {data.map((row) =>
-                        <TableDataRow
-                            linkParam={`class_id=${row.class_id}&${realm}_id=${row.realm_id}`}
-                            rowName={row.realm_name}
-                            row_data={row}
-                        />)}
-                </tbody>
+                <tbody>{dataRows}</tbody>
             </table>
         );
     }
@@ -328,33 +379,37 @@ interface IRankingTablesProps {
 // tslint:disable-next-line:max-classes-per-file
 class RankingTables extends React.Component<IRankingTablesProps> {
     public shouldComponentUpdate(nextProps: IRankingTablesProps) {
-        return (this.props.data === null && nextProps.data !== null) ||
+        return (Object.keys(this.props.data).length === 0 && Object.keys(nextProps.data).length > 0) ||
             (this.props.selectedTableName !== nextProps.selectedTableName);
     }
 
     public render() {
-        const tables = Object.keys(name2j).map((name) => {
-            if (!name.startsWith("realm")) {
-                return (
-                    <div id={name} key={name}>
-                        <PopuralityTable
-                            data={this.props.data[name]}
-                            visible={this.props.selectedTableName === name}
-                            name={name} />
-                    </div>
-                );
-            } else {
-                const realmTables = this.props.data[name].map((i) => {
-                    return <PopuralityRealmTable
-                        data={i}
-                        name={name}
-                        visible={this.props.selectedTableName === name}
-                        key={i[0].class_id} />;
-                });
-                return <div id={name} key={name}>{realmTables}</div>;
-            }
+        const { data, selectedTableName } = this.props;
+
+        const tableElements = basicTables.map((name) => (
+            <div id={name} key={name}>
+                <PopuralityTable
+                    data={data[name]}
+                    visible={selectedTableName === name}
+                    name={name}
+                />
+            </div>),
+        );
+
+        const realmTableElements = realmTables.map((name) => {
+            const classTables = data[name].map((i) => (
+                <PopuralityRealmTable
+                    data={i}
+                    name={name}
+                    visible={selectedTableName === name}
+                    key={i[0].class_id}
+                />),
+            );
+
+            return <div id={name} key={name}>{classTables}</div>;
         });
-        return <div>{tables}</div>;
+
+        return <div>{tableElements}{realmTableElements}</div>;
     }
 }
 
@@ -362,8 +417,8 @@ class RankingTables extends React.Component<IRankingTablesProps> {
  * 人気データ表示コンポーネントプロパティ
  */
 interface IPopuralityRankingProps {
-    /** 人気データ取得URL */
-    dataUrl: string;
+    /** データ取得URL */
+    url: string;
 }
 
 /**
@@ -372,10 +427,12 @@ interface IPopuralityRankingProps {
 interface IPopuralityRankingState {
     /** 表示選択中テーブル名称 */
     selectedTableName: string;
+    /** データ取得中かどうか */
+    isLoading: boolean;
     /** データ内容 */
     data: { [col: string]: any[] };
     /** データ表示状態を示すメッセージ */
-    stateMessage: string;
+    error: string;
 }
 
 /**
@@ -390,27 +447,30 @@ class PopuralityRanking extends React.Component<IPopuralityRankingProps, IPopura
 
         this.state = {
             data: {},
+            error: "",
+            isLoading: true,
             selectedTableName: selectedTableName !== null ? selectedTableName : "race",
-            stateMessage: "Loading...",
         };
+
+        this.changeTable = this.changeTable.bind(this);
     }
 
     public componentDidMount() {
-        fetch(this.props.dataUrl).then((response) => {
-            if (!response.ok) {
-                throw Error(`${response.status} ${response.statusText}`);
-            }
-            return response.json();
-        }).then((data) => {
-            data.realm1 = this.group_by_class(data.realm1);
-            data.realm2 = this.group_by_class(data.realm2);
-            this.setState({
-                data,
-                stateMessage: "Success",
-            });
-        }).catch((err) => {
-            this.setState({ stateMessage: err.message });
-        });
+        this.setState({ isLoading: true });
+        fetch(this.props.url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(`${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                // 魔法領域のデータを職業毎にグループ化する
+                data.realm1 = this.group_by_class(data.realm1);
+                data.realm2 = this.group_by_class(data.realm2);
+                this.setState({ data, isLoading: false });
+            })
+            .catch((err) => this.setState({ error: err.message, isLoading: false }));
     }
 
     public componentDidUpdate() {
@@ -420,19 +480,26 @@ class PopuralityRanking extends React.Component<IPopuralityRankingProps, IPopura
     }
 
     public render() {
-        if (Object.keys(this.state.data).length === 0) {
-            return <div>{this.state.stateMessage}</div>;
+        const { data, error, isLoading, selectedTableName } = this.state;
+        if (error !== "") {
+            return <p>{error}</p>;
+        }
+        if (isLoading) {
+            return <p>Loading...</p>;
+        }
+        if (Object.keys(data).length === 0) {
+            return <p />;
         }
 
         return (
             <div>
                 <TableSelector
-                    onSelectChange={this.selectTable.bind(this)}
-                    selectedTableName={this.state.selectedTableName}
+                    onSelectedTableChange={this.changeTable}
+                    selectedTableName={selectedTableName}
                 />
                 <RankingTables
-                    data={this.state.data}
-                    selectedTableName={this.state.selectedTableName}
+                    data={data}
+                    selectedTableName={selectedTableName}
                 />
             </div>
         );
@@ -461,10 +528,17 @@ class PopuralityRanking extends React.Component<IPopuralityRankingProps, IPopura
         }
     }
 
-    private selectTable(tableName: string) {
+    private changeTable(tableName: string) {
         this.setState({ selectedTableName: tableName });
     }
 
+    /**
+     * 魔法領域の統計データを職業IDごとにグループ化する
+     * グループ化した結果、職業IDに1種しか領域がない物は省く
+     *
+     * @param data 魔法領域の統計データ
+     * @return グループ化したデータ
+     */
     private group_by_class(data: any[]) {
         const result: any[] = [];
         data.forEach((i) => {
@@ -478,6 +552,6 @@ class PopuralityRanking extends React.Component<IPopuralityRankingProps, IPopura
 }
 
 ReactDOM.render(
-    <PopuralityRanking dataUrl="get_popularity_ranking.php" />,
+    <PopuralityRanking url="get_popularity_ranking.php" />,
     document.getElementById("content"),
 );
