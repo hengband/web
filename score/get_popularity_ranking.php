@@ -17,4 +17,5 @@ $statistics = $db->get_statistics_tables('total_count');
 
 $query_time = microtime(true) - $time_start;
 
+header('content-type: application/json; charset=utf-8');
 echo json_encode($statistics);
