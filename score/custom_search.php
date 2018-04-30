@@ -50,9 +50,9 @@ fwrite($fp, "</p>\n");
 
 fwrite($fp, "<p>\n");
 fwrite($fp, "<label for=\"realm1_id\">領域1:</label>");
-print_select_form($fp, $defines['realm'], 'realm_id1');
+print_select_form($fp, $defines['realm'], 'realm1_id');
 fwrite($fp, " <label for=\"realm2_id\">領域2:</label>");
-print_select_form($fp, $defines['realm'], 'realm_id2');
+print_select_form($fp, $defines['realm'], 'realm2_id');
 fwrite($fp, "</p>\n");
 
 fwrite(
