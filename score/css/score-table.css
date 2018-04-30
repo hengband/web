@@ -84,7 +84,6 @@ table.statistics_table th.sort:after {
 }
 
 table.statistics_table th.sort.ascend:after {
-
 	border-width: 0 4px 4px;
 }
 
@@ -97,4 +96,8 @@ table.statistics_table th.sort.descend:after {
 table.statistics_table th.sort:hover:after {
 	visibility: visible;
 	opacity: 1;
+}
+
+.table-select-button {
+	margin: 0 0.3em;
 }
