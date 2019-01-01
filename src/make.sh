@@ -32,7 +32,7 @@ for v in $score_list; do
 	 > ../web/${v}.html
 done
 
-history_list="history0.0.12 history0.1.0 history0.1.0post history0.1.1 history0.1.2 history0.1.3 history0.2.0 history0.2.1 history0.2.2 history0.2.3 history0.2.3pre history0.2.4 history0.2.5 history0.3.0 history0.3.1 history0.3.2 history0.3.3 history0.3.4 history0.3.5 history0.3.6 history0.4.0 history0.4.2 history0.4.5 history0.4.6 history0.4.7 history0.4.8 history0.4.10 history1.0.0 history1.0.1 history1.0.3 history1.0.4 history1.0.5 history1.0.6 history1.0.7 history1.0.8 "history1.0.9 history1.0.10 history1.0.11 "
+history_list="history0.0.12 history0.1.0 history0.1.0post history0.1.1 history0.1.2 history0.1.3 history0.2.0 history0.2.1 history0.2.2 history0.2.3 history0.2.3pre history0.2.4 history0.2.5 history0.3.0 history0.3.1 history0.3.2 history0.3.3 history0.3.4 history0.3.5 history0.3.6 history0.4.0 history0.4.2 history0.4.5 history0.4.6 history0.4.7 history0.4.8 history0.4.10 history1.0.0 history1.0.1 history1.0.3 history1.0.4 history1.0.5 history1.0.6 history1.0.7 history1.0.8 history1.0.9 history1.0.10 history1.0.11 history1.1.0c1 history1.1.0"
 
 for v in $history_list; do
 	echo ${v}

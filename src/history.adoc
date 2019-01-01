@@ -65,15 +65,15 @@
 
 ### Ver.1.2.0
 
-### Ver.1.1.0
+### link:/history/history1.1.0.html[Ver.1.1.0]
 
-### Ver.1.1.0c1
+### link:/history/history1.1.0c1.html[Ver.1.1.0c1]
 
-### Ver.1.0.11
+### link:/history/history1.0.11.html[Ver.1.0.11]
 
-### Ver.1.0.10
+### link:/history/history1.0.10.html[Ver.1.0.10]
 
-### Ver.1.0.9
+### link:/history/history1.0.9.html[Ver.1.0.9]
 
 ### link:/history/history1.0.8.html[Ver.1.0.8]
 

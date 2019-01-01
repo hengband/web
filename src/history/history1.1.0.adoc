@@ -3,6 +3,69 @@
 
 ## 2002/06/15 Ver.1.1.0 (開発版)
 
+### リリースノート
+
+Ver.1.1.0は2002/06/15に公開されました。1.1.0c1からの間に中間として1.1.0c2も存在しています。
+
 * ライトエリアは広い場所では大きく照らす
 * バグ修正やバランス調整などを行って正式版に
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。ご了承ください。
+
+* Sat Jun 15 12:22:08 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5f77b2425a75a71d08035f1a71c6a8d9094779e4[1.1.0対応。]
+* Sat Jun 15 12:20:48 2002 +0000: (hoge) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/50baa12b93a393d6ac2f112b46583e44faf4e04f[jversionライトエリア追加]
+* Sat Jun 15 12:09:55 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/46fd44744a61fde6c7adfe146be55aeb5538c3f0[1ｹﾔﾀ篶ﾀｽｭﾊﾑ､ｨ｡｣]
+* Sat Jun 15 11:55:07 2002 +0000: (hoge) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/37b647c231cdd776744c050771c4b296f89b72eb[jversion]
+* Sat Jun 15 11:37:31 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7ff522abbd2cda05a757a2eacecc978969cedda3[Zap -> Punishment]
+* Sat Jun 15 11:23:11 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e50184cc6be93435e95cbb117f040f7a8f2d61a6[魔法の簡易説明に関して, 英語の方が一文足りなかったのを修正. 修正前は Crusadeの説明がSongの説明になってしまっていた.]
+* Sat Jun 15 11:12:01 2002 +0000: (hoge) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bbfc1c44f1ac1a605146d93d02886029baa906e8[暗黒魔法の消費MPバグ修正 バージョンを1.1.0にする]
+* Sat Jun 15 06:05:45 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b1f701b4c307e6df0cbd40a964f7d8b4c2bf3d21[思い出のモンスターの速度について, 英語版の表現も日本語版と同程度に細かくし, 同時にちゃんと色を付けるようにした. 表現にそれほど自信があるわけではないので チェックよろしく > 自信のある人(主にMogamiさん(笑))]
+* Fri Jun 14 13:50:19 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/adb8c0a6891262947bbc2b917568ef2ac97f9b0b[武器匠でのスレイの倍率表示訂正。]
+* Fri Jun 14 05:54:08 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ac9f5f905f69e1e5ffd3c989119a5a175628fafb[k_info､ﾋ､篆､ﾀｵﾄﾉｲﾃ｡｣]
+* Fri Jun 14 05:42:47 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/30a4b0016f366cd2da03e62e09d627ca5032f2fc[RGRAでのJohn Q. Smithさんによる 英訳の修正、 k_info以外。]
+* Thu Jun 13 14:53:19 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/074dbb8804a4462f154cded2aec5c2c1eadf81e9[rgraの英語の間違いの指摘を反映させ, 修正案のうち妥当だと思われるものを採用してみた.]
+* Thu Jun 13 09:44:43 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5c74f557ee76e7d9878fb3f415e738818dde4e4d[ｽﾃｿﾍ､ﾇ･ｯ･､･ﾃ･ｯ･ｹ･ｿ｡ｼ･ﾈ､ｷ､ｿ､ﾈ､ｭ､ﾋﾊﾑｰﾛ､ｬｵｯ､ｭ､ﾊ､ｫ､ﾃ､ｿ･ﾐ･ｰｽ､ﾀｵ｡｣]
+* Wed Jun 12 11:45:54 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3454e3522fe98340d05cf8ebd34fe8b5b333c0c5[ｹｹｿｷ]
+* Wed Jun 12 11:43:28 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4349e9eaf10441afe0794f432a67c2b833e8988f[Vanillaにならって、キャラクターの状態を表わすグローバル変数の多くを p_ptr の中に移した。]
+* Tue Jun 11 15:25:00 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d5e0dc055bdaeab1a9c9843955c5ba9ff21567a[見習いパラディン(単独)とパラディンがGOODフラグを持っていなかったので追加。]
+* Tue Jun 11 15:23:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/44fc862c567d6c43a2f129577c303e14661de70a[聖戰を使ったとき善良なペットは判定なしで加速だけ受ける。]
+* Tue Jun 11 14:22:59 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a73364580928592eb777f734a5a2ccdc0b24d4f0[敵が敵に対しての行動として死者復活を使うとき、視界範囲外でもメッセージが 出ていたのを修正。]
+* Tue Jun 11 13:55:04 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7ce7eca570cb0393c4b48962bd6407d217a052a1[赤魔道師の熟練度が正しく表示されていないのを修正。魔法の熟練度のコードを整理。]
+* Tue Jun 11 13:14:19 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/30f1e29154da353dbae35ce440d10d8f6eaf6bed['m'コマンドで魔法書を選択するときラベル a) b) c) d)...を銘をに対応した 正しいラベル a) b)... e) f)... にした。ついでに、床上にアイテムがあるとき、 「'4'or'6' 床上」が間違って表示されていたバグ修正。]
+* Tue Jun 11 09:42:08 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6b7090812d89d45f12daf7f3181b65b7b91827a0[聖なる御言葉の英語名が間違っていたのを修正。]
+* Mon Jun 10 11:59:08 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ff36ff9a5363c2afc106c7ca5e0ce32f9779c091[ファイルの先頭/終端に移動コマンド'g'/'G'追加。 マクロ定義挿入'm'コマンド、キー配置定義挿入'c'コマンド追加。]
+* Mon Jun 10 06:30:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/de3ee06b99dbc81b3fd5524ebbd7d87db8b1f96a[バグ報告を"heng-ml@kmc.gr.jp"へ、という風に書き変え。]
+* Sun Jun 9 20:10:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f2845a6fb82bf83c8a0dc5c9f47ceb4fe2c036b9[､ｵ､ﾃ､ｭ､ﾎｽ､ﾀｵ､ﾇ､ﾞ､ｿ･ｨ･ﾐ･ｰ､ｷ､ﾆ､､､ｿ､ﾎ､ﾇ ｺﾆｽ､ﾀｵ｡｣]
+* Sun Jun 9 16:55:07 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4c35cb2757e76f9b1f5c84c7be39fb309d205a9d[カメレオンの処理の変更で、たぬきの処理に副作用が出てしまっていたので修正。]
+* Sun Jun 9 16:33:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4fddd248f6a4e7cf81c40f707868a3dd5a36425d[「アーティファクト生成の巻物」を名前に"生成の巻物"を含む★☆と認識して しまっていたので、名詞型のキーワードと同様の処理に変更した。 つまり、「:」なしで文字列が続くときに最初の「アーティファクト」を キーワードと認識しないようにした。]
+* Sun Jun 9 15:56:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/824f858c0e6d59ded2a70dbf3c76055ed9c8a67a[カメレオンの変身コード整理。get_mon_num_prep()の段階で条件を全部付けて get_mon_num()の呼び出しを1回にした。]
+* Sun Jun 9 15:01:03 2002 +0000: (_nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/43b8780947eced8472aa41b039740791828ab03e[summon_specific_who_for_chameleons､ﾏsummon_specific_who､ﾎﾎｮﾍﾑ､ﾇﾌ萃熙ﾊ､､､隍ｦ､ﾊ､ﾎ､ﾇ､ｽ､ﾎ､隍ｦ､ﾋﾊﾑｹｹ.]
+* Sun Jun 9 14:26:02 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c61c2e15dbf32744251db97a463b87b4d690acac[カメレオンの変身時に変身するモンスターの選択に失敗したとき「プレイヤー」に 変身するバグがあるようなので修正。]
+* Sun Jun 9 14:18:42 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dd2d4489f2111853186f33c3b58f6f6fc00699f1[内部で使う特殊キーコード 255 254 253 252 をマクロで定義。 main-mac.cの終了メニューも特殊キーを使用するようにした。]
+* Sun Jun 9 13:56:50 2002 +0000: (_nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/70380422752ac5416dee5a6fb90faa07ccc72e68[^Xにマクロを割り当てるとWindowsで[x\]やメニューを使った場合などで問題が出たので, Windowsのメニューか[x\]から終了させる場合は内部コード252を発行するようにした.]
+* Sun Jun 9 13:40:34 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/845632ee13c7fe273424f81d5f988fb247284957[マクロ等で射撃するとき、デフォルトのターゲットに実際の射程が 考慮されていなかったバグ修正。]
+* Sat Jun 8 23:51:14 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7ffc3ee6272c40a9a9a68c01eff1ed443a7609ea[チェンジモンスターのときにplace_monster_one()で使っている外部変数  monster_terrain_sensitive の役割を modeフラグに移した。]
+* Sat Jun 8 13:06:09 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/28a10cb53bc9fe7437a91610d339ec9fc40b708a['M'ap表示でトラップ未感知の地形の優先順位が高すぎて啓蒙した後で表示すると 'x'だけで潰れて見えていたのを修正。]
+* Fri Jun 7 09:18:48 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dc788249b3dffa43783ff579c76ad6125190bf07[Kuwaさんより、タイルグラフィックを外部のリソースファイルとして分離。]
+* Thu Jun 6 10:35:35 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/afd3af80ada0d1eb280c91e7eaed37aaafbaf3fa[24個以上のアイテムが床にあるとき、num <= 23 で floor_num[num\] に 書き込んでしまっていたので、num < 23 に修正。]
+* Wed Jun 5 07:22:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1ed968283ec680112e9aee836ae4d32eb522f070[lite_area()､240ｷｿ､ﾈVanillaｷｿ､酊ﾎ､ｷ､ｿ､筅ﾎ､ﾋ､ｷ､ｿ｡｣]
+* Wed Jun 5 05:09:31 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e03fecc74231ffc6959104e74d195d974d0ea3d3[旧タイルでトラップが間違ってlighting効果の対象になって、 表示がおかしくなってバグ修正。]
+* Tue Jun 4 19:07:59 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/627c80f26fa40dcb7a8b12010cf387085d30e34c[老ソーサラーのタイルの設定行がバグっていたので修正。]
+* Tue Jun 4 10:59:20 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4be2359a6027f5b47d464354e8d24193148d642b[play-recordに日付が2回づつ入るバグ修正。実際のゲームへの影響はひとつだけ、 nightmareモードで12時の悪夢が2回連続で起きていた。]
+* Mon Jun 3 20:04:02 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/70468bb4a839c3c15c20e690139efdaff8d71961[コメント文章がおかしいの修正。RC2アーカイブの方に変更する必要はなし。]
+* Mon Jun 3 19:49:35 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/72833dcc288ccb171d54691455e21cac1399912f[optimizeを遅らせるときの処理はちゃんとできていたが、遅らせないときの処理が エンバグしていたので再修正。]
+* Mon Jun 3 19:29:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/085a8ba38f23452c8ea316045add9b3ceca7068a[ｹｹｿｷ]
+* Mon Jun 3 17:15:18 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/877af6874ba99b7da692aa11d36675b8ac2907b5[バージョンを 1.1.0 RC2 にした。]
+* Mon Jun 3 17:12:04 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f6dd98bb91b67785f4568cb576e0f673a9b0edbb[鑑定した瞬間の自動破壊に根本的なバグがあった。 鑑定手段(巻物や杖)を消費する前に自動破壊によってスロットの位置が変わって 別のアイテムを消費(数を減らしたり、pvalを減らしたりしていた。 スロットのoptimizeを遅らせる事によって解決。]
+* Mon Jun 3 13:26:15 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/81a5a63c0658e8d7616cd6e5108272f93ba26949[･ｨ･ﾐ･ｰ､ｷ､ﾆ｡｢ｼｫﾆｰｽｦ､､､ﾋﾅﾐﾏｿ､ｷ､ｿ･｢･､･ﾆ･爨ﾊｰﾗｼｫﾆｰﾇﾋｲﾇｲｷ､ﾆ､､､ｿ､ﾎ､ﾇｺﾆｽ､ﾀｵ｡｣]
+* Mon Jun 3 09:02:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cd74a6e4e3d19af7aeb30b6b021c8932935d32c1[^G と ^O のコードがautopick.cの実装初期の古い形式のままだったので修正。 そこで使っていたstatic関数 insert_string()と delete_string() も削除。 特に insert_string() は配列溢れの危険があった。]
+* Mon Jun 3 08:38:46 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/81f94eeff74ad975a94cafacb397254a3d793239[画面下に説明文を表示するところで、あまりに多くのキーワードが付いていると 配列溢れを起す可能性があったので修正。]
+* Mon Jun 3 08:15:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ba0a809fffd5c4c6968137c71cf6215221fa7e55[さっきの修正でstrncat()の使い方を間違っていたので書き直し。 その他、コード整理。コメント追加。]
+* Mon Jun 3 07:07:03 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/940d8470dd8f62580e7f674ca4aab930dfee3d6a[大量の文字列を^Kで消したときに配列外に'\0'を書き込んでいたのを修正。 ^Y と ^H の動作をよりemacs likeに調整。]
+* Sun Jun 2 20:26:59 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/41ec0c69dfe5d1e9287ac1ddf2c65ff07f1b1d49[munchkin_deathオプションでセーブせずにデバッグモードで能力値上限を調べて、 新規キャラクター作成 → '='でmunchkin_deathをoff → 'S'で最初に戻る → 再度のquick startの質問に'y'、という手順で 先に調べた能力値上限でプレイ開始できてしまう抜け道があったので修正。]
+* Sun Jun 2 19:55:47 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e12b499f5f2f272273ec627989fb1390057a1270[always_pickupがオンのとき、自動拾い/破壊の設定による破壊だけを無視して 簡易自動破壊オプションの破壊は適用するようにするはず(したつもり)だったのに、 適用されていなかったので修正。]
+* Sun Jun 2 08:55:33 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a47713d29a94356dcb795db7184ac2c7ecbe9969[デバッグモードやチートオプション等を使用後のセーブ時に クイックスタートを使用不可にする。]
+* Sun Jun 2 08:19:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a7e5c60e319cac49934179e0c81c44db5a548633[最初から{%}等が刻んであるアイテムを*鑑定*したとき、その%を耐性刻みで展開する。]
 
