@@ -3,6 +3,10 @@
 
 ## 2002/09/09 Ver.1.2.1 (安定版)
 
+### リリースノート
+
+Ver.1.2.1は2002/09/09に公開されました。
+
 * 著作権表記、jlicence.txt を追加。
 * 大防御の守りの指輪のACを +7 増やした。
 * モンスターAIのバグを修正。
@@ -12,5 +16,56 @@
 * 自動拾いの修正値のキーワードを「修正値n以上の」に修正。
 * 『ウォーケン』に変更、アイテムを落とすように修正。
 * 他、小さなメモリリークや配列外アクセスの可能性など細かいバグ修正。
- 
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。リリース日期日上後になっている更新も混じっています。ご了承ください。
+
+* Sat Sep 14 10:31:37 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2e860490c08eda5c03d854cf2767f15fe4aa0556[ﾃ鋕｢ﾉｽｵｭ 1.2.1､ｫ､鬣ﾞ｡ｼ･ｸ｡｣]
+* Sat Sep 14 09:59:48 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9b0ad2585775b05a5141c8660f9899348e6c3a60[隠しトラップに隣接して走るコマンドを入力すると「その方向にはいけません」 と言われる事があったバグ修正。]
+* Thu Sep 12 12:30:49 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2a80498c1e9e17bec6eec72a15a310daf1d5b4cc[鑑定のロッドの使用後に自動破棄があったときのバグ修正。 さらにp_ptr->noticeの新しいフラグPN_AUTODESTROYを導入して いちいちoptimizeを遅らせるHackをしないで済むように書き変えた。]
+* Wed Sep 11 15:01:58 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/046ffc9b07abaa3d9eb86f485b75dc79a82ba712['l'ookコマンドでスペースキーで興味のある地形を巡っているとき、 隠し扉や隠しトラップの位置にもカーソルが来てしまっていたバグ修正。]
+* Tue Sep 10 15:19:22 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/31a91e7b33276c2477cc709cf9dc7a25da8e8a89[1.2.x以前のセーブデータをロードしたときにテレパシーの冠のテレパシーが 失われないように修正。]
+* Tue Sep 10 14:49:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/332bdde92b3ae5feefb568d66f45d939d0d55787[方法変更。さっきの方法よりスマート。 F:+:58:8:0:0:0:0:32 と書くと地形'+'は見掛けが花崗岩の壁(58)で、探索するとドア(32)が見付かる。]
+* Tue Sep 10 14:03:24 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a61986bf5f5c239318995488f211e071f6dca444[クエスト内で隠し扉が置かれる処理の変更を忘れていたので追加。]
+* Sun Sep 8 20:17:21 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/06daae64fd7ba665cb393170475aaccdc3b0cda1[初期設定ファイルが作成されていない状態でタイル表示をONにすると表示されなかった問題の修正。]
+* Sun Sep 8 17:07:14 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/31fc0fd22845806f59bb14170491607f6d61247e[コメント行のF9とF10のキーコードが入れ変っていたので修正。]
+* Sun Sep 8 17:00:59 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f0513053662289ce868dab597926c54bcbfadd88[F9とF10キーのコードが入れ変わっている問題の修正。]
+* Sun Sep 8 15:11:09 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/026af9ea44b6b1b12836119d2c5998ee76db0825[狂戦士の弓の熟練度を0に。鏡使いの報酬を警告の指輪に。]
+* Sun Sep 8 14:29:24 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/21f029d8e673d001a0ccfa6dfc2a877912160cb7[ｹｹｿｷ]
+* Sat Sep 7 17:05:51 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cb6cca011e3d6ae368dbf35656d05c983abb7e7c[地震が起きたときに未感知のトラップが勝手に感知済みになっていたので修正して 何も影響しないようにした。1.3.0までは未感知のトラップは問答無用で消滅して いたが、感知済みトラップは壁に潰されない限り消えないので、後者に合せて修正した。]
+* Sat Sep 7 15:09:56 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f81431cfb5293cad948a35650e24f6f431a3a49b[大防御の守りの指輪のACを +7 増やした。]
+* Sat Sep 7 12:12:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a644dff4786e076c50da74f46d7ec042250b1bc9[^Ajでダンジョン再生成を繰り返すとどんどん p_ptr->energy_need が減っていって 時止め状態になってしまうバグ修正。]
+* Fri Sep 6 17:54:56 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7a7fcc80663c7ff32344a5c2333923cab892061b[cave_info.whenの仕様が変わってモンスターが逃げるコード正しく機能していなかったので修正。]
+* Fri Sep 6 16:54:36 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c9afbbf08a2276a32339f88ecb8ffea2960e3bd4[c_ptr->mimicを活用する一連の改造： * トラップは各罠の地形をmimicで床に見せる→特定の場所に固有なトラップを配置可能。 * 隠しドアは普通のドアをmimicで壁に見せる→山脈や溶岩等にも隠しドアが存在可能。 * 鏡、守りのルーン、爆発のルーンは、CAVE_OBJECTフラグ+それぞれへのmimicで表現。]
+* Fri Sep 6 14:55:04 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3f94e3ad968d6d64f6d5cad2ff4d0f55486c8c88[理力の計算式を 倍率＝元の倍率×(1.5)+2 に変更。ゴルン・ノヴァにKILL_DEMON付加。]
+* Fri Sep 6 10:27:40 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/538bc2e325c7c3caa556b1d89e00b9594401c42f[モンスターが戦いを決意した時にヘルスバーが恐怖状態のまま更新されていなかったのを修正。]
+* Fri Sep 6 08:38:12 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4613acefe210a090651d89efda8d85137cdd1125[モンスターのプレイヤー追跡コードで、もはや使われていないflow_nが残っていたため、forget_flow()が動いていなかったのを修正。]
+* Fri Sep 6 07:31:24 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/82917fedb5ace2d007c4687327bc967aa90abecd[MPWでコンパイル出来なかった問題の修正。]
+* Thu Sep 5 18:05:07 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9dd3aaf17524ee2ffd3b2256bc1106e08708977b[塔のクエストの情報がダンプ等で間違った表示がされていたバグ修正。 q_info_j.txt を読む前に quest[\].info を使っていたため正しい値になっていなかった。]
+* Thu Sep 5 14:59:39 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3668e41346f55182ed5a50ff1e4236f51c3e230a[鏡の封印の説明の英語版がtypoがあり単語そのものも違った：vanich → eliminates]
+* Thu Sep 5 05:47:54 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a0d05bcaea60b03c07ffdc177d9c74a85d8f8ff2[鑑定のロッドで鑑定したアイテムが自動破壊がされた時に持ちもの欄がずれて関係ないアイテムが充電中になるのを修正。]
+* Wed Sep 4 19:36:56 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/75b62ecbc47a0ba609d96d2660f34e2157b0ed77[オプションの自動セーブ間隔の設定をする為に'F'を押すとヘルプが表示 されていたバグ修正。break;が一つ抜けていた。]
+* Tue Sep 3 09:02:42 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/04a393c5d331d8fe3d34d346f950c543aa338e5e[鋭敏のエゴのESP追加の仕様変更の時、鋭敏の冠のほうだけ変更して鋭敏の兜を変更し忘れていたので、兜のほうも冠と同じように変更した。]
+* Tue Sep 3 00:44:17 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/82df8fb3849c3c53093c50a94d1d36479e642850[killer文字列の"罠"の英語版を作るのを忘れていたので追加。]
+* Tue Sep 3 00:29:57 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7d9b78ad13cbaa4785f974b7d5e05925945379f2[project_p()内でwhoが-1(箱の爆発から発生したダメージ)の時にそのままモンスター配列を読んで配列外アクセスを起こしていたので修正し、罠で死んだ場合を考慮してkiller文字列にに"罠"を入れるようにした。]
+* Mon Sep 2 23:46:32 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2bf3a37ffe2c83ec801479e391828066566ab9f2[CPUが高負荷になる問題の修正。 タイル幅高の選択でクラッシュしていた問題の修正。 ゲーム中、ウェイトを大きくしてもアニメーションしていなかった問題の修正 透過処理の修正]
+* Mon Sep 2 23:10:45 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e6bf6e7299dc371aa1a3cf80d28f56b02344a576[モンスターソート用に確保した配列を開放していず、メモリリークしていたのを修正。]
+* Mon Sep 2 22:59:43 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/62ef5ee1d977975f78879fb207f7ef053606e5c3[who_nameを初期化していないためにkillerにstrcpyした時にバッファオーバーする事があったのでwho_nameをヌル文字列で初期化するように修正。]
+* Mon Sep 2 22:41:32 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7734d07b64a52a381d4ccfc857851b96706b3fec[win版でAdam Boltタイルをインストールしてない状態で読み込もうとすると ファイル名が文字化けしたエラーダイアログが出ていたバグ修正。]
+* Mon Sep 2 22:34:01 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f092dfd2a56cbe8d945a7b8ba6da6be538ea929d[モンスターボールや像などのアイテムはpvalからモンスター番号を取得しているが、すべてのアイテムでモンスター配列を見ていたため食糧などの巨大なpvalを持つアイテムで配列外アクセスが起こっていたのを修正。]
+* Mon Sep 2 12:37:28 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cfffe3728a4dfe08157f9a922b2e876c589f390c[罠ピットの開門トラップが感知前に解除可能だったバグ修正。]
+* Mon Sep 2 02:47:35 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7263b898238be6f610926a0c497dccd3566695e1[サブウィンドウを前面に固定する機能を追加。]
+* Sun Sep 1 19:52:26 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d858489e9e07e7f3fc241cd36a06ca5373921c1b[･ｦ･ｩ｡ｼ･ｱ･ﾋ｡ﾘ｡ﾙﾉﾕｲﾃ｡｣･｢･､･ﾆ･猩釥ｹ､隍ｦ､ﾋｽ､ﾀｵ｡｣]
+* Sun Sep 1 17:55:31 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f88bc1b15e312e960ea8eca336879c5afa47eb9b[隠密エッセンスの増殖バグ対策で、エルフのクロークと黒装束のpvalを標準で1にした。 通常は1d4で上書きされるから影響ないが、凡庸やエッセンス抽出すると(+1)になる。]
+* Sun Sep 1 14:57:51 2002 +0000: (xdd) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/82cd72e95d8684ae07c67e78198c27f18d0757e0[main-mac.cをCarbonに対応。2倍幅タイル表示可能]
+* Sun Sep 1 12:37:47 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bab1eeed14f988e814e04474874dd42051509544[モンスター調査で^Mを押して名前を入力せずにキャンセルすると画面が真っ暗になるバグ修正。]
+* Sat Aug 31 15:37:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/580a41a72f857540c453744220b962acbf1fffc8[射撃のときに*スレイ*が適用されていなったので修正。英語版でエッセンスを付加する ときのスレイのリストの順番をきれいに直した。]
+* Sat Aug 31 15:03:33 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f7b6d012ff50b88e31696b059d02744b403b0e3a[ものまねの実際の失敗率計算に器用等が考慮されてなかったので修正。]
+* Sat Aug 31 13:25:01 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2bc0b25cf529a1a9986989e1247b5df7d289b4cc[自動拾いの修正値のキーワードがautopick.txt等では「修正値nn以上の」と 書いてあるのに「修正値がnn以上の」でないと受け付けなかったので前者に統一。 元々pvalを持たないアイテムの場合は命中修正やダメージ修正で判定するように してあったが、エゴアイテムの中には切れ味の武器のようにmax_pvalが0なのに 実際はpvalを与えられているものがあり、キーワードが正常に動作しなかった のでmax_pvalを見ないように修正。]
+* Fri Aug 30 05:07:26 2002 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7ff2db9b7ac0f73e0df810d7354c95c0ab52846d[小手のpvalが0だと装備しても魔法が唱えにくくならなくなっていたバグを修正。have_flag()を使って書き直した時に間違って括弧を減らしてしまったのが原因らしい。]
+* Thu Aug 29 13:06:51 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e6a0af527cc477609e55ec19c301e20bfbf41154[メインウィンドウの幅を大きくしたとき、アイテムリスト及び装備リストを表示に おいて配列外アクセスが起きてwindowsでは a) の位置のアイテム名が途中で切れる という症状が出ていたバグを修正。]
+* Tue Aug 27 16:09:44 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/557a6b697450b6a3d9a0d56c0e20457a46ac6526[errr errr_tmp; というグローバル変数を以前にコード整理したときに消して しまったが、MPWでは一箇所でこれを使っていたのでエラーが出た。 ローカル変数に書き変えて修正。]
+* Tue Aug 27 16:03:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aa32ee159a1cc6432789a6bf0824b9a995e59a49[耐性銘刻みのデータ構造体の英語版の定義に一部日本語版の形式になってしまっ てたのを修正。]
+* Tue Aug 27 15:11:40 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/43da0d95358f8cf6aed92063ec16423bf79bb194[ｹｹｿｷ｡｣]
  

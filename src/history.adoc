@@ -59,7 +59,7 @@
 
 ### Ver.1.2.2
 
-### Ver.1.2.1
+### link:/history/history1.2.1.html[Ver.1.2.1]
 
 ### link:/history/history1.2.0and1.3.0.html[Ver.1.2.0 & 1.3.0]
 
