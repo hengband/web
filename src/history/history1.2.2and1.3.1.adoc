@@ -1,0 +1,91 @@
+:lang: ja
+:doctype: article
+
+### リリースノート
+
+Ver.1.2.2及びVer1.3.1は2002/10/31同時公開されました。
+
+## 2002/10/31 Ver.1.2.2 (安定版)
+
+* クローン地獄でlittle boyの代りにボーシン。
+* 剣術家の辞世の句がスクリーンショットに残るように修正。
+* 普通の光源と同様に、暗闇光源も*鑑定*で半径を数値表示。
+* 火炎オーラ+暗闇光源でも光源半径0になるように修正。
+* 払い抜けでパターン地形を越えられるバグ修正。
+* TOband teamから報告の細かいバグいろいろ修正。
+* 他バグ修正(ペットのユニークがいると同種の敵ユニークが出る事がある、
+* クエストを受けるとペットが消える、鑑定のロッド、王家の墓、その他)
+
+## 2002/10/31 Ver.1.3.1 (開発版)
+
+* win版でサブウィンドウを前面に固定する機能追加。
+* 耐性自動刻み{%}の結果が動的に変わるようにした。
+* 弱い簡易鑑定の文字列を{上質}から{上質以上}に変更。
+* 特殊罠の部屋：ピラニア・トラップとハルマゲドン・トラップ追加。
+* 守りのルーンや爆発のルーンを壊すと元の地形に戻る。
+* 未感知のトラップは地震で消滅しない。
+* 罠ピットが壁の中に孤立するバグ修正。
+* 小手が魔法を邪魔しない事があるバグ修正。
+* little boyとfat man廃止。将来のバージョンでデータ自体消す予定。
+* 新ユニーク『シアーハートアタック』
+* autoconfの設定法を変えてacconfig.hを不要にした。
+* 無双三段で壁に潜るバグ修正。
+* 1.2.0→1.2.2の変更点全て。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。また1.2.2と1.3.1のコミットが混ざっています。ご了承ください。
+
+* Thu Oct 31 14:12:08 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f19bb30216f6d7c50fac78c31ed50d16d155ea5e[jlicense.txtの追加忘れ修正。未使用変数削除。未定義の変数"kanji"参照を修正。]
+* Thu Oct 31 12:24:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/99719fe43dc9a77c760c40ebd57f85456969153b[version.txt･ﾞ｡ｼ･ｸ｡｣]
+* Thu Oct 31 12:23:59 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/53146c3f1c609c762a100664178d94240b751014[無双三段で壁に潜るバグ修正。 山や永久岩を考慮してモンスターが地形に入れるかどうか判定する関数が 無かったので作った。(monster_can_enter())]
+* Wed Oct 30 14:55:51 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/567cb41bfdc9da1a54c175defaf50a490f3daa12[狂戦士の殺戮の指輪に、to-damへのプラスを付加。 もともとあったto-hitへのマイナスと同じ式を使って o_ptr->to_d += 2+randint1(4); とした。 また指輪とアミュの価値判定のコードを修正、to_h + to_d + pval の合計がマイナス のときだけ無価値と判定するようにした。]
+* Mon Oct 28 22:29:19 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aa9f6c98068b5e0266149ede9e7b34693227f032[commit直前にコメントを書き加えたら */ を忘れていた。]
+* Mon Oct 28 22:01:18 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4a2c4f7688c7551de43f7b894da0290297d96a76[王家の墓のバグを直すときのエンバグを修正。INIT_SHOW_TEXTを使うときは、 事前にquest_text[\][\]やquest_text_lineを初期化しなくてはいけなかった。 また、cur_numをresetしてもいいときは、わざわざINIT_SHOW_TEXTに変更し なくても良いので間違って変えていたところを戻した。]
+* Sun Oct 27 05:32:04 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/60139ce3cb7890bcb1ff93adbf20db4f024cea67[ｹｹｿｷ]
+* Fri Oct 25 14:17:18 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/246aee71397cd9326807045fc294c9d06fa966f4[王家の墓がクリアできない事があるバグ修正。'C'コマンドで遂行中のクエストを 表示するときに init_flags を INIT_SHOW_TEXT(情報表示のみ)にするべきところで、 INIT_ASSIGN(クエストの初期化)にしてしまっていた。]
+* Wed Oct 23 12:54:24 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/af22f13d21cde801b4238d0c99d634992497b919[払い抜けでパターンを飛び越えられるバグ修正。]
+* Wed Oct 23 11:47:40 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f66eda8fb7cbacc1f08bc5e37fd59e8aadad69ef[辞世の句の画面でスクリーンショットを残すようにした。 ついでに辞世の句の画面でカーソルが出ているのを隠すようにした。]
+* Wed Oct 23 11:00:32 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e78a7aca43a979cbd570cb3b2cea1518d15d9179[Fat Man のレアリティを255にして, 生成されなくした. ※ 後で Fat Man という名前のモンスターは r_info から消える.]
+* Wed Oct 23 10:53:54 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0a0a90f4c955970517a595f7aaf1992a798f2cea[ピラニア・トラップの部屋とハルマゲドン・トラップの部屋実装。]
+* Wed Oct 23 10:52:32 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7d0a032783af48d564044bd94e83408f8177bec9[『Little Boy』 → 人々を爆死させてきた左手『シアーハートアタック』 (英語名 Sheer Heart Attack, the Bomb Hand)]
+* Wed Oct 23 10:02:26 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a9d169be97377201d500428f7bfd1bda7a1e0c3d[ピラニア・トラップの部屋とハルマゲドン・トラップの部屋実装。]
+* Wed Oct 23 07:40:44 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3bb56360b35fa0a3a69924fbbcd391ee9ea59976[罠ピットが壁の中に孤立している事があるバグ修正。 部屋の中のグリッドはCAVE_FLOORで埋めておかないとうまくトンネルが繋がらない。]
+* Tue Oct 22 15:27:12 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2d65e226315f56e675c8d3fa2be6e38461be01fb[typeｽ､ﾀｵ｡｣]
+* Tue Oct 22 15:24:52 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aaaac1143fc9ccddd0b2517a34d2871ab228b854[弱い簡易鑑定で{上質}と出る代わりに{上質以上}と出るようにした。]
+* Tue Oct 22 14:59:55 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/46f2f590d4c9179702f11d63ac36dcf23fa9a0bf[little boy引退。代りにBorshinを入れた。]
+* Tue Oct 22 13:42:12 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fdc5a881b04628d953649af69b4e089cc65fb423[skeleton → worthless skeleton これで像は拾わないはず]
+* Tue Oct 22 13:06:46 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b2544ea780d5f56ac23e92125d366cc8fa645c05[AC_DEFINE()の中でコメントを定義すれば、acconfig.h はいらないので削除。 これは、そもそもコメントを書く為のファイルだったらしい。]
+* Tue Oct 22 11:57:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b8f456e994c8f9ec517ea5d98af9499821761d94[偽壁のバグがまだ残っていたので修正。どうやらランダムvaultがトンネルに複雑に 侵食されていたようだ。部屋を繋ぐトンネルの途中のランダムなドアは1つの場所に 一回しか置かないから特に処置しなくていいだろうと思っていたが、実際は複数回 重なっていたようだ。]
+* Mon Oct 21 11:09:21 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/49b8ea5fc20e2daad6308776015c53362b50bf9b[ﾎﾎｰ雉ｰ･｢･ｯ･ｻ･ｹ､ﾎ･ﾐ･ｰ(inventory[INVEN_TOTAL\]､ﾋﾂﾐ､ｷ､ﾆｼｫﾆｰﾇﾋｲﾎ･ﾁ･ｧ･ﾃ･ｯ､ｷ､ﾆ､､､ｿ)､､ﾀｵ｡｣]
+* Sat Oct 19 13:18:16 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4063f4ca9580140fda7e3b38df61437261d850b3[Archerの項目：skeleton of → skeleton ofを付けるとユニークの骨にしかヒットしない. 像などにヒットするのは我慢する ことにして, このようにすべきだと思われる.]
+* Wed Oct 16 14:51:23 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/51e20ad1dc6b91702c7ae2ab431fb656dde82392[randart name､ﾎtypoｽ､ﾀｵ inteligence ｢ｪ intelligence]
+* Sun Oct 13 12:37:25 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/497b3d5916ccc90e9255c07ffe99c406d4d62273[偽の壁(壁に見えるが普通に通れる地形)が出現するバグ修正。ダンジョン生成時の バグだった。一度隠し扉が配置された位置に開いた/壊れたドアが重ねて配置されていた。]
+* Sun Oct 13 07:01:52 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2d594e07b1102fcdeeea950794bb4c9e9026729f[ｹｹｿｷ]
+* Sun Oct 13 05:59:45 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ad03e6ea43f2532cef4b21d14d3ceee17c023a2d[prevents -> interferes with]
+* Sun Oct 13 05:17:13 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/79a6c3173361ee73f9be6e8a5800d623626a67bf[You 動詞s → You 動詞]
+* Sat Oct 12 15:52:29 2002 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0120cea83b8c9b45151373ef2473f45d9b82cb89[日本語を英語に翻訳したときの訳し間違い修正.]
+* Thu Oct 10 07:44:47 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4f080564ceae422cdda1a980dd58aa81dee1ddef[#ifdef JP 付け忘れ。]
+* Thu Oct 10 07:40:01 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9bb6ba6f142b6f0d6cbf03f30564f075d08cf1f6[RGRA､ﾇﾏﾃﾂ熙ｬｽﾐ､ｿ･ﾕ･ｩ･ﾈ､ｬｸｫﾉﾕ､ｫ､鬢ﾊ､､､ﾈ､ｭ､ﾎﾌ萃熙､ﾀｵ｡｣ ､ﾁ､网ﾈ･ｨ･鬘ｼ･皈ﾃ･ｻ｡ｼ･ｸ､ﾐ､ｹ､隍ｦ､ﾋ､ｷ､ｿ｡｣･ｳ｡ｼ･ﾉ､ﾏZangband､隍遙｣]
+* Thu Oct 10 06:30:17 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8417fccec8bd4320ca4d28bc92ce2d18c03d7b60[耐性自動刻みが動的に実行されるようにした。鍛冶師の装備やエゴ能力の付与 等の後で自動的に自動刻みが更新される。(実際にはobject_desc()の中で処理) ランダムテレポートの抑制は{%}も{.}と同様の働きをするようにして解決。]
+* Tue Oct 8 14:36:03 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f374608ad2867230f25524ddd16fb2921ef118bb[ｷﾑｲﾈ､ﾎｳﾘｽｬ､ﾇ･ｿ｡ｼ･ﾃﾈｷ､ﾆ､ﾊ､ｫ､ﾃ､ｿ､ﾎ､､ﾀｵ｡｣]
+* Sat Oct 5 09:56:20 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5070c5a7afbddd0c6a1d847f4af57f78f243f260[火炎オーラ等でプレイヤーの体に光源があるとき、光源半径の計算が間違って いて暗闇の光源を装備しても半径0にできなかったバグ修正。 *鑑定*時の暗闇光源の説明に半径のマイナス数値を具体的に表記。]
+* Thu Oct 3 11:18:16 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4a85f5169acf336408b156f3517699010579c7a0[持ち物の中で隣りあった複数のスロットのアイテムが同時に簡易鑑定されたと きに全部同時に自動破壊するのに失敗していたので修正。一つが破壊された後 で持ち物内のスロットが1つずつずれるのを考慮し忘れていた。]
+* Wed Oct 2 10:34:34 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c25f72d844958f910eb627937c1961d4e7f77868[Emacs､ﾎﾁ犲釥ﾖｰ网ｨ､ﾆﾂ醫ﾌ､ﾎｹﾔ､ﾎ･､･ﾇ･ﾈ､ﾑｹｹ､ｷ､ﾆ､ｷ､ﾞ､ﾃ､ﾆ､､､ｿ､ﾎ､ﾇﾌ皃ｷ､ｿ｡｣]
+* Wed Oct 2 10:18:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ad7d76ed388686c6869d7e3d0467122e23f87f7e[クエストを引き受ける等した時に決してペットとはぐれないようにした。]
+* Fri Sep 27 16:44:23 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d58239352ecdaa1fbf02c358ee5ef75914399762[幽体ワイアームに毒、冷気耐性。]
+* Thu Sep 26 13:04:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3cf528bafa5f21b57c1157688f11c301fe216105[Bit tileモード用のカーソル表示コードを整理。main-xxx.cの中で地形情報の配列の 内容を直接参照してしまっていた所を、書き変えて参照せずに済むようにした。 既にVanilla用のパッチで適用していたもの。]
+* Thu Sep 26 01:23:03 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5b6d5de7c33ac34b444cfbc75be161ead337f7e4[ハーフエル→ハーフエルフ。 骸骨ドラゴンに耐冷と耐毒付加。]
+* Tue Sep 24 15:39:24 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/93af2ebdce030d7dad2bff5173e8c69c34b451ea[Thangorodrim のアドレス変更に対応。]
+* Tue Sep 24 15:27:06 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3c4c3c26430a703f0d56d39d5fa9f5c32838a334[TOband teamよりの報告で、monst_breath_monst() で半径0のボールを撃てない仕様 だったのを修正、しかし現在は使っていないので無関係。]
+* Tue Sep 24 12:14:54 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cdaf4288b159788c3e2079471c3d0b75623f590b[ｹｹｿｷ]
+* Tue Sep 24 12:10:37 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2fea829b09dc2fc99ee035cf821bb3706f701c24[「TOband dev-team からバグ報告」のバグいろいろ修正。全部ではない。d_infoの'M:'フラグ等は取り入れなかった。]
+* Tue Sep 24 12:10:37 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d8e2db788518783621949d6f4b95540508218e11[「TOband dev-team からバグ報告」のバグいろいろ修正。全部ではない。 d_infoの'M:'フラグ等は取り入れなかった。]
+* Tue Sep 24 08:53:16 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4217ab03cdfe368111749ed493d154115d3f26b1[トラップ感知のロッドを振ったときに方向指定 dir が0以外かどうかで未判明かどうか 調べていたが、魔法具術で使ったときはdirが未定義だった為に判定を間違っていたバグ修正。]
+* Tue Sep 24 08:44:25 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3f17a30474feb6c7e5660ac177ffb9cc54167603[床上のアイテムの自動破壊で一番上のアイテムを破壊した所でループが終って しまってその下のアイテムを破壊してくれなかったバグ修正。]
+* Fri Sep 20 00:29:29 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/74f8e9a9c220b2d94a3effbd69e61a6d051a3d0f[階の移動時にペットを置く処理で、m_ptr->r_idx に正しい値を代入する前に r_info[m_ptr->r_idx\] を参照していたバグ修正。]
+* Thu Sep 19 08:42:22 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/923b6be9eef3ef35632686bc43fe724f0c3bab9e[cave_set_feat関数導入で発生したearthquake関数のエンコードバグ(震源と全く違う位置での地形書き換え現象)を修正。]
+* Sat Sep 14 23:43:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4b151bf73c6090ef1319a7014b86016436cd2dde[c_ptr->mimic のコードさらにバグ取り。地形を操作する各コマンド disarm, open, close, bash, tunnel等、全部c_ptr->featを直接見てしまっていた。 また魔法効果 stone to mud等でc_ptr->mimicをちゃんと更新していなかった のを修正。直接 c_ptr->feat を設定するコードをほとんど全て cave_set_feat()で置き変えて自動的に mimic = 0 になるようにした。]
+
+
+
