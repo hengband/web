@@ -1,0 +1,133 @@
+﻿:lang: ja
+:doctype: article
+
+### リリースノート
+
+Ver.1.4.0及びVer1.5.0は2002/12/09同時公開されました。
+
+## 2002/12/09 Ver.1.4.0 (安定版)
+
+* 空腹充足の巻物と狂戦士の空腹充足レイシャル廃止
+** アンドロイドは油びんを飲める。
+** バルログは食べるコマンドで't','p','h'の死体を生贄にできる。
+** ゴーレム、ゾンビ、骸骨、幽霊は杖か魔法棒のチャージを食える。
+** エントは薬の水分で十分栄養が取れる。雑貨屋で水の薬を買える。
+* Eyangbandの既知のモンスター/アイテムリストを移植。(Thanks to So-Miyaさん)
+* lookコマンドやターゲット選択時に、シフトキーで高速移動。
+* easy_floorがオンの時、lookコマンド中で床の上のアイテムの山を見やすくした。
+* 武器匠でACの評価を表示するサービス導入。
+* 魔法道具支配のフラグの自動刻みが無かったので、{+道}{Md}に設定。
+* モンスターのHP表示バーに乗馬のHPだけ2列並ばないように修正。
+* オプション追加/削除
+** disturb_high 追加：レベルの高いモンスターが動いたら行動中止する
+** allow_debug_opts 追加：デバッグ/詐欺オプションの使用を許可/禁止する 
+** 初期オプション munchkin_death は詐欺オプションに cheat_save に変更。
+** 初期オプション terrain_streamsとstupid_monsters 廃止。
+* バグ修正
+** 大量のアイテムでロード不能、荒野の外周でクラッシュ、荒野の森で時止め、
+** 深い水の隠し扉、通れる壁、真・結界、ルーンが分解しない、新トラップ出ない、
+** 青魔道師の学習解除、血の呪いでアンバー復活、鏡魔法の消費エネルギー、
+** 複数のカメレオンの王、マクロが無効になるバグ等。
+** 英文修正。Typo等。(Thanks to John Mikulaさん)
+
+## 2002/12/09 Ver.1.5.0 (開発版)
+
+* フロア保存の仕様を実装
+** ダンジョン内で元来た階段を戻ると以前と全く同じフロアに戻る。
+** 地上に戻ると全ての保存フロアは消える。
+** レベルテレポート/トラップドア/階段生成の呪文は仕様変更。
+** (それぞれ、真上か真下の特定のフロアのみへ続く。)
+** dungeon_stairsとconfirm_stairsオプション廃止。
+** 一方通行の階段を警告するconfirm_questオプション新設。
+** 溶岩の壁や石英の壁の中に財宝が埋まっている確率を増した。
+** 財宝感知するか実際に掘るまで見えない財宝を含む壁を追加。
+** 全感知から壁の中の財宝感知能力を削除。(沢山感知されて煩わしいので)
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。また1.4.0と1.5.0のコミットが混ざっています。ご了承ください。
+
+* Sun Dec 8 15:02:28 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/247e77e21514c445708bbe602848fc2d96cf198d[version.txt ､ﾋ1.4.0､ﾈ1.5.0､ﾎｾﾉｲﾃ｡｣]
+* Thu Dec 5 15:29:55 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/857406998901c1c81618ba784998088204c8e959[・保存フロアのユニークとアーティファクトの扱いがアルゴリズム的に間違っ   ていたので書き直し。古いフロアに何かユニークがいる段階で、他のフロア   で出現したそのユニークをすぐに倒してしまうと、古いフロアのユニークが   消えないようになってしまっていた。 ・また、ダンジョンをロードしたときに、カメレオンのcur_numを正しく更新   していなかったバグ修正。さらに、r_ptrを補正する多数の Hack を一つの   関数 real_r_ptr()にまとめた。 ・大量のアイテム、モンスターによってセーブデータが読めなくなるバグが、   相変わらず残ってしまっていたので、それも直した。]
+* Sat Nov 30 15:37:28 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9756ce0a812ac9555953699c61fb67d70953b5fe[ヘルプコマンド'?'について言及。]
+* Sat Nov 30 14:57:46 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ef00ed042018f5580359e21be236f5bb776cb200[makefile.dosとmakefile.ibmも一応更新。古いコメント削除。]
+* Sat Nov 30 14:42:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1f4598ccf476ab192fd9221ac906029b073ba9b9[Python用のソースであった script.c を除き忘れていたので削除。]
+* Fri Nov 29 12:25:43 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/92c7a30d512f4bc8d45643c406fb3a2b329bc0f1[魔法道具支配の自動刻みの説明追加]
+* Fri Nov 29 10:51:09 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/81b34b4994ddb064e82278fc7f89e959a253ef15[魔法道具支配のフラグの自動刻みが無かったので、{+道}{Md}に設定。]
+* Fri Nov 29 10:29:20 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4a5d991855940b976c20b300154d96d687e6d7de[青魔道師の学習状態は混乱すると自動解除。]
+* Fri Nov 29 10:15:15 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a90db922bc4f3a6330edf991721eef4abadb40d7[雑貨屋で水の薬を売るようにした。代りに松明を減らした。]
+* Fri Nov 29 10:13:19 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5af6fb2cda3e73a9781eaf74125d6265860e8cb8[荒野で森の上を歩いたとき、energy_useが26400で、signed 16bit の最大値間近だった ので、ランダムなENERGY_NEED()を掛けたときにオーバーフローして時止め状態に なってしまう事があったバグ修正。]
+* Thu Nov 28 15:57:14 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3f024b3cd4875e938fd515fb2b1ff2ffc784148a[序盤のエントが餓死しそうなので、薬の栄養評価を増した。 また水やジュース等は特に栄養価があるようにした。]
+* Thu Nov 28 14:26:31 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d141510e643305928f5fcb7b44d95616ec99d229[グローバルにm_nameという変数があり、ローカルのm_nameの宣言を忘れても コンパイルエラーにならずにクラッシュするバグになっていたので修正。 グローバルのm_nameは無意味だったので削除。]
+* Wed Nov 27 13:31:24 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9cac24406f117917a6d12a82fc8c06d61d5f545f[ｶﾎﾋ簍｡ﾋﾀ/ｾﾎ･ﾁ･罍ｼ･ｸ､ｩ､ｪ､ｦ､ﾈ､ｷ､ﾆｼｺﾇﾔ､ｷ､ｿ､ﾈ､ｭ､ﾋ{ｶ､ﾈｰｬﾉﾕ､ｫ､ﾊ､ｫ､ﾃ､ｿ､ﾎ､ﾇ｡｢ﾉﾕ､ｯ､隍ｦ､ﾋｽ､ﾀｵ｡｣]
+* Wed Nov 27 12:33:18 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/720af12279673e32f4cc2dcf1963bf46159915c6[狂戦士の帰還が使えなくなっていたバグ修正。]
+* Tue Nov 26 15:35:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/99fb24e46a59bb3f44a9a4ef7c64a984ca20afe5[セーブデータのバージョンを比較するときに、1.3.2という数字を使っていたのを1.5.0に修正。]
+* Tue Nov 26 15:17:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/59df965ae61bbf6b95a0f99d05c6d7e907f7ffb4[フロア保存コードの中心となるファイル。commit 忘れてた。]
+* Tue Nov 26 14:39:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5354093f6e1a73b3ea03e372703fffdf4947d0e1[･ﾕ･愠｢ﾊﾝﾂｸ､ﾎｻﾅﾍﾍ､ﾂﾁ｣]
+* Tue Nov 26 14:32:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8e126aba73e972f91a341bfe6e9ada4f53ab2c04[1.4.x､ﾎｻﾞｺ鋿ｮﾁｰ､ﾋｹｹｿｷ｡｣]
+* Tue Nov 26 09:02:09 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/507799b08e8e82c0802a083dc1901de5891e362c[rooms.c 1.21 で vault 作成時にCAVE_ROOMフラグを付けていたのを不用意に削除 していた為に、vaultの中に岩石やら通路やらできてしまっていたバグ修正。 なぜ削除していたのか思い出せない。]
+* Tue Nov 26 08:40:17 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ba15f018ea240634c854c42f292475419f728551[Riv. 1.65 で、モンスターのHP表示を更新するとき、乗馬のHPだけ2列並ぶ事がない ように修正した際、m_idx == 0 でHP表示のキャンセルになっているのを考慮し忘れて キャンセル不能にしてしまっていたバグ修正。]
+* Tue Nov 26 07:43:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2b089205b30ba305e2c310824d7a4feccdbf1ea2[既知のモンスターリストでユニークの 生存/死亡 が見やすくなるように色を変えた。]
+* Tue Nov 26 07:42:55 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4a52e9d1e17d7e4750a30bab8872a1632a658ee0[アンバーの王族を倒したときに血の呪いの地震で消去前の倒したアンバーが潰 れて消えて、直後に新たに倒したのと同じアンバーの王族が召喚される事があっ たので修正。先にmax_num = 0の処理をするようにした。]
+* Sun Nov 24 08:41:45 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0747949b8df1a494a4e0f4e66896dbbc29390eb6[既知のモンスター/アイテム表示で、スペースキーと'-'キーで1画面スクールするようにした。]
+* Sun Nov 24 08:22:21 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0fb613dff83db2d15bdc9ac03a8399f3d09aad61[・乗馬中のユニークが消えたときに速度や表示のアップデートが正常に行われ ていなかったバグ修正。 ・モンスターのHP表示を更新するとき、乗馬のHPだけ2列並ぶ事がないように修正。]
+* Sat Nov 23 08:00:25 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/441456b82fe03a604ae20d4a4e0227ed76702afa[ｹｹｿｷ]
+* Sat Nov 23 07:29:25 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f2ebd1b5191e1858e68f96bd4c1bf6be10fada02[load.c 1.45 の修正と同様の物をモンスターの方にもするのを忘れていたので修正。]
+* Sat Nov 23 07:16:27 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/607bf3a7ca3deecba5c54911b6fdd49c279c612c[ｸｭｼﾔ､ﾎ･｢･ﾟ･螟ﾎESP､ﾎｿﾎﾀ篶ﾀﾊｸﾄ釥ｵ｡｣]
+* Sat Nov 23 07:09:58 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4e810af8fc101a1295444d80d1374d25c9e14eba[新しい既知のアイテムリストで、賢者のアミュレット等でacとpvalが無駄に表 示([+3\] (+0)等)されていたので表示しないように修正。またランダムに能力 追加を持つアイテムはランダムである事を説明行に追加。]
+* Sat Nov 23 05:43:05 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7a58669c340a99d8f26af751c59d7f42b6bfb8f8[lookコマンドの'x'の振舞いを微調整。射撃等のtarget指定時にはスペースキー は次のターゲットへカーソルを移動するが、'x'は足元のアイテムを表示する。 また、オプションのヘルプ更新。]
+* Sat Nov 23 04:17:06 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/88fe84ab397af8ecdf7b2511a7fbc1940675b0d0[広域マップで画面をスクロールすると右端の境界の外までスクロールできてしまうバグ修正。]
+* Thu Nov 21 14:13:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2194eb2a7e65d9ce5ceb9764eee9c07aef7941e5[easy_floorｻﾈﾍﾑﾃ讀ﾎ look/target ･ｳ･ﾞ･ﾉ､ﾈ､､､荀ｹ､ｯ､ｷ､ｿ｡｣]
+* Thu Nov 21 13:43:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dd77acfe35fda35f69e67901176631aaa96b67a3[アイテム名の頭に付いていたゴミ"& "を削除したが、flavor.cの一部が"& "の存在 を仮定して単純に2文字削除するような処理をしていた為、死体の名前の表示がおか しくなってしまっていたバグ修正。他にもflavor.cに残っていた"& "削除。]
+* Thu Nov 21 12:22:23 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9ba7822286ec6f1eb77388db5b9fc8d2149870e7[デバッグコマンドで大量のアイテムを一度に作成してアイテム数がmax(=1024個)の ときにすぐにセーブすると、ロード不可能になるバグ修正。]
+* Thu Nov 21 08:15:37 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dc233b55b3c5ee40a2572d5a15bed36035de7818[ただの杖を使ったときに、杖を食糧とする種族以外では「もったいない」メッセージが出ないように変更。]
+* Thu Nov 21 07:58:20 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/291861cea7f34ad667c2991fd1ed46a600ea52c1[変数の型違いによる警告を除去。既知のアイテムリストで1つも既知でないときに思い出を見ると空のアイテムの思い出を表示してたのを修正。]
+* Thu Nov 21 03:56:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/afd5e8c99ac112db55c2f6e2240959b16bb50ab0[青魔道師のレベルテレポートを地上で使うとモンスターが存在しない天井を破って宙に浮いていくバグ修正。]
+* Thu Nov 21 02:45:26 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9e9de5d094b62b8df4e2050869ac5c82b94fbb6d[Jaroslav Sladeさん報告の鏡使いの消費エネルギーのバグ修正。 テレポートの代りに光のしずく等が消費エネルギー50になっていた。]
+* Wed Nov 20 13:17:10 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8ce46e405ae60b56e2c9a8b8675d216be2fab8bf[John Mikula からの報告(heng-mlに転送済み)に従って英文をいろいろ修正。]
+* Wed Nov 20 07:41:14 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fc5aba43c68c1630612c199b0df19a3cbf590a59[lookコマンドやターゲット選択時に、次元の扉の位置選択と同様の高速移動モー ドを移植した。シフトキー+方向指定で大きく移動する。また次元の扉の方も 今までは斜め移動がちゃんと45度方向になっていなかったので、45度(もちろ んグリッドが正方形と仮定したときの値)になるように修正。]
+* Tue Nov 19 20:45:47 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a0c321eda969a3d7435fa3b9a369cfb9de82e484[だいぶ前からあった alloc_monster()の呼び方の間違え修正。 モンスターの召喚コードを多数のbool型引数からu32bのbit flagで置き換え た時に、alloc_monster()の呼び出しのコードだけ bit flag用に書き変え忘れ ていた。(ただし、TRUE == 0x01 == PM_ALLOW_SLEEP だったので偶然実害無し。)]
+* Mon Nov 18 07:53:33 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bdf4a26f55049ac6a0473e97bda04b026b1535c4[通れる壁が出来るmimicのバグ。依然として残っていたのを修正。 こんどは何万回もダンジョン生成テストを繰り返してデバッグコードで バグを探索して数ヶ所実際にバグの原因になっている所を確認して修正した。]
+* Mon Nov 18 06:11:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/73bd152522684135ad90ed91129b729fb597b45e[大量のマクロを連続実行してz-termのリングバッファが溢れると、 それ以降マクロだけが一切実行されなくなるバグ修正。]
+* Sun Nov 17 14:06:32 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8c64572ef2699932afd04a7f9b254c7fa68a15bd[日本語版のアイテム名データにある "& "は無駄なので削除。 英語版の場合は "a " "an "を追加可能である事を示す印だが、 Z以降のアイテムは一部間違っていたので修正。 (複数のpieceでできた armour には "a" "an" は付かない。)]
+* Sun Nov 17 14:03:46 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7e7d5938d0b1fcf790cffad1fd559b1cf7fd2366[Ey のモンスターのリスト表示/アイテムのリスト表示を移植。patch by So-Miya]
+* Sat Nov 16 16:49:16 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dab5f23161699ad4ede280c8da52b1d7d899965b[英語版でmsg_format()の引数が少かったバグ修正。]
+* Sat Nov 16 16:41:00 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b53b14e8879a0874803dc7af9fbbf68218d17bd7[バルログはスタート時にランダムな人間タイプの死体を持つ。]
+* Sat Nov 16 13:25:49 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aa005a79f80bee5a1a7aaca09df6ce86b7566a22[狂戦士の説明から空腹充足のクラスパワーの記述削除。]
+* Sat Nov 16 13:25:14 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/43ce15786338e0198449cca28ba8b5e6b6043b03[骸骨が杖/魔法棒の魔力を吸収するコードが働いていなかったバグ修正。]
+* Sat Nov 16 12:46:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7e26f654d3033da4a0454bf85e468e4856297d14[走るコマンドの処理で、mimicを考慮していない場所が残っていたために荒野の外周に 沿って走ったときの振舞いがおかしくなっていたバグ修正。]
+* Sat Nov 16 05:56:35 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2ddb82d563aa3fb2d40bb456ea967b9b03309dbd[heng-mlに届いた John Mikula さんのアドバイスに従って修行僧の構えの英語名 をローマ字にした。]
+* Fri Nov 15 14:24:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d5b5fd89afe665eb7d8f55a323b54a2e0cafbd2f[lib/edit/以下のファイル名から、"_j"を削除。]
+* Fri Nov 15 07:05:42 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/67d0906c3669458b8ef20c3beaddba89d9f4253d[魔力喰いで失敗してロッドが壊れたとき、残りのロッドのtimeoutが異常になるバグ修正。 またデバッグコマンド使用中に見付けたo_ptr->pvalをロッドの古い仕様に添って 書き変えていた古いコード削除。]
+* Tue Nov 12 03:42:25 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/eeeb4dbc13adaafcd34fb7a427aa5eb57c6f7a8e[rgraにて、古いDOSアプリを使ったために、t_info_j.txtの中の "%:t0000001_j.txt"が8文字制限にひっかかってファイルが読めず、 変愚蛮怒がクラッシュしていたが、エラーメッセージがないので原因の判明が遅れた。 そこでファイルが読めないときはエラーメッセージを出すように修正。 (なぜか読めなくてもエラーを出さないようにHACKしてあったが、 とっておく理由はないのでそのHACK部分を削除。)]
+* Tue Nov 12 03:14:39 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/60ab6004221a157ed156b4791d30d340a90c694d[値が未定義の変数というWarningに対応して修正。]
+* Sun Nov 10 16:01:01 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/716b3ba506d2ae748c179ba3ad6a7d4ca0aa6ef5[アンドロイドの油びんにapply_magic()を実行しなかった為、 pvalからxtra4へ燃料の量の値を移すコードが実行されず、 ランタンの燃料補充に使えない油びんになっていたバグ修正。]
+* Sun Nov 10 14:17:40 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6dc38bcd4d39ce75c77bdac10761855bb20d78b1[rr氏のmailアドレス更新。]
+* Sun Nov 10 14:03:22 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7d905e6954ab38338b88f50e8bbf10b95a7d6306[英語版で種族選択時の説明文が長すぎて切れる事があったので修正。]
+* Sun Nov 10 12:51:45 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bf2a58a4027b36801145dbd65120de0f1abddb9b[・魔道具術師が食糧の「杖」を吸収できないようにした。 ・「杖」を使用(u/Z)したときにメッセージを出す。]
+* Sun Nov 10 12:26:58 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/40bd0fb50f7d9643982e5dacd1a30699cf75e127[多少の誤訳に…、目をつぶって欲しくない、ので改訂。]
+* Sun Nov 10 12:25:43 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/58ba8f16d29f361b43eee0871806d283d40cdf68[離した→放した]
+* Sat Nov 9 22:42:29 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/583c56f862c5a6a90b67351cd6319105ef07f65f[錬金術の店で空腹充足の巻物を削った欄に、テレポート、ショート・テレポート、 武器ダメージ増加、武器命中率上昇を追加。]
+* Sat Nov 9 22:26:07 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e7630eb612a43db18beea57b012d1b1ec7fab174[空腹充足の巻物と狂戦士の空腹充足レイシャル廃止。 アンドロイドは油びんを飲める。バルログは'E'で't','p','h'の死体を犠にできる。 アンデッドは杖か魔法棒のチャージを食える。エントは薬の水分で十分栄養が取れる。]
+* Fri Nov 8 15:39:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1fe932f6649293ced69d78e81c7e536712d25160[ｹｹｿｷ]
+* Fri Nov 8 15:38:15 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/028ae25d0e94d687dcc48bb55bfdef348c63a87b[1.3.2に変え忘れていたところ変えた。 古い未使用のマクロいくつか削除。 オブジェクトフラグについてコメント付加。]
+* Fri Nov 8 11:35:00 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6133650734cb0e7a3835764b36b55898835bbbb8[未使用変数削除。]
+* Fri Nov 8 08:42:45 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fad8380a2752496ff488e5d4dd86d2e4bb9a5e8f[既に忘れた何かの理由によって、長い事tabをスペース8文字にする設定で コードを書いていたが、スペース4文字や2文字の人がいるので、全て まとめてtabコードに置き変えた。]
+* Fri Nov 8 08:03:38 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/48efb3a11c2e5d3c590ff38958fbd776150e0371[2chで作られた武器匠でACの評価を表示するパッチを改良して導入。]
+* Thu Nov 7 12:53:41 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2261b0df8dfb6cf63c51429280e58dfa7b4bca5a[ヌメノールで、壁扱いの深い水や浅い水に隠し扉が付く事があるバグ修正。]
+* Thu Nov 7 10:24:37 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d11c50110230acfff5944d1f9800106d116fbae[cheat_save､ﾈallow_debug_opts､ﾎﾀ篶ﾀﾄﾉｲﾃ｡｣]
+* Wed Nov 6 16:01:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3df8c82957adbdf3e78cbbc85401dc0371e46f22[「レベルの高いモンスターが動いたら行動中止する」オプションdisturb_highを導入。]
+* Wed Nov 6 14:27:49 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ed227cae82ee97c2803cd05435708375b8ab04b6[初期オプション terrain_streamsとstupid_monsters 廃止。]
+* Wed Nov 6 11:55:20 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4933dabe5062137db75d2aed27f1842d8152d704[ｼ｡､ﾎ･ﾐ｡ｼ･ｸ･逾ﾖｹ譯｢1.3.2､ﾘ｡｣]
+* Wed Nov 6 11:52:15 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e1fdc7d1357c4d445924ae6b71f9746c2796bd84[Implement allow_debug_opts. Fixed the bug that allows to change birth options before quick start]
+* Wed Nov 6 11:42:29 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9e58ace04fb8929257d41cce414da48eb0a0118a[Implement allow_debug_opts. Fixed the bug that allows to change birth options before quick start]
+* Tue Nov 5 09:29:17 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d0a27180492266057c008d8568519461d6f219d8[鏡やルーンのフラグCAVE_OBJECTが間違って残る事のないように、 cave_set_feat()の中で削除するようにした。]
+* Tue Nov 5 09:27:42 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/39ec3407437de0aa89c3982ee1905ebad8ff5fa5[荒野で外周の木を切れてしまって変愚が落ちるバグ修正。 木等にmimicしている永久岩が木として扱われてしまっていた。 また、ピラニア/ハルマゲ/開門の各特殊トラップの解除を困難にした。]
+* Tue Nov 5 09:24:50 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3d3636aa53dc77777733a3ef1c1e1201a05ea753[typoｽ､ﾀｵ｡｣]
+* Tue Nov 5 09:24:27 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c76f3a9036760acd8522621637809d13d1ff0cc2[ピラニア/ハルマゲドントラップの最低出現階を設定し忘れていたバグ修正。 ついてにvault生成のコードを少し整理。無駄にcave_set_feat()(プレイ中に使う為の関数) を呼んでいたところをset_cave_feat()(階生成中に使う関数)で置き換えた。]
+* Tue Nov 5 09:20:56 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bc5dee226800e2e98d454933cf4ece9aa45ac923[真・結界がプレイヤーの足元にしかルーンを作れなくなっていたバグ修正。 ルーンが分解の魔法で正常に壊れないバグ修正。]
+* Tue Nov 5 09:19:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4686854bb1446fbcdb4ce49467ae808fd394b0ca[選択可能な魔法領域のリストrealm_choice1[\]と2[\]で忍者の分が無く、 配列外アクセスしていたので修正。]
+* Tue Nov 5 09:13:48 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e1ff9ad00b50725c4f146de945d5e9dfb03cc367[自動耐性刻みのコードで型の間違い修正：u32b→int]
+
+
+
