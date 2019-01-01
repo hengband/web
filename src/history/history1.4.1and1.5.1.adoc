@@ -1,0 +1,61 @@
+:lang: ja
+:doctype: article
+
+## 2002/12/24 Ver.1.4.1 (安定版) / Ver.1.5.1 (開発版)
+
+### リリースノート
+
+Ver.1.4.1及びVer1.5.1は2002/12/24同時公開されました。
+
+#### 1.4.1更新内容
+
+* エルフの行糧は空腹充足と同等の滋養にした。雑貨屋で買える。
+* 塩水はアンデッド等には無効。
+* OAngbandから武器、防具等のアイテムの説明文を貰った。翻訳はまだ途中。
+* {!!}と刻んだアイテムの再充填時に、行動中止するように修正。
+* Bigtile時に情報コマンドと'%'コマンドのタイルの表示を改善。
+* バグ修正
+** 入口の無い vault。幽体化中にアリーナ。情報コマンド(a)でクラッシュ。
+** 鍛冶師のアイテムが発動不可。変身中に特殊食料を考慮。山の出現モンスター。
+** 英語版の「杖」の名前。モンスター闘技場でランダムテレポート。
+
+#### 1.5.1更新内容
+
+* 既知の～リスト中にシンボルエディタ'v'追加。Unangbandより。
+* 吟遊詩人の霊的感知で鉱脈を感知しないように修正。
+* バグ修正
+** 階段を登り降りでモンスターが眠りから起きる。セーブ時のエラー処理のバグ。
+** セーブコマンドによりモンスターデータ破壊→クラッシュ。
+** 謎のモンスターの正体がセーブ後にばれる。登り坑道で最上階より浅い階に出る。
+* その他、1.4.1 の全ての変更点。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。また1.4.1と1.5.1のコミットが混ざっています。ご了承ください。
+
+* Mon Dec 23 16:42:46 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cc29faea6ce8341617cf5292c1e11ef9acac2165[version.txtを1.4.1と1.5.1用に更新。]
+* Mon Dec 23 16:12:37 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/88303862806733bb57e443237f2fb40591c2ab03[魔道具術師は「杖」を吸収できないようにする為のHackの副作用で「杖」に 通常の充填等が出来なかったのを出来るように修正。その代りに魔道具術師は 「杖」を吸収しようとすると警告メッセージを出すようにした。]
+* Mon Dec 23 15:27:36 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ac5a763d6ef4537ecc40a9031aba5f637a16ca1f['v'isual modeでゴミを表示しないようにする条件式が間違っていたので修正。 (char型で0x7fと比較する式になっていた。) また、「'v'でシンボル変更」の説明文は 'v'isual mode が使用不可能なとき (flavorがあるアイテムの場合)は表示しないように修正。]
+* Mon Dec 23 14:56:02 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/48c1fbff51e914aef1fba47887c958927b33bb03[地形の表示文字/タイル の表示で、bigtileのときに2倍幅ASCIIを使い忘れていた所修正。 また、'v'isual mode で 0x80以上のattrと0x80以下のcharとの組み合せ等の無意味な 組み合わせを選択できないように修正。]
+* Mon Dec 23 09:09:52 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d4bb5b5f146a81bd0564fe6017fcdc188e948172[セーブ時に地上では忘れた明かりの再計算をしないようになってたのを修正。]
+* Fri Dec 20 14:22:43 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5ec6722e81b7323ff22a92c56d593982a6181f85[バージョン番号を1.5.1へ。]
+* Fri Dec 20 14:21:45 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/95205e1cb450eee3f3dc86cf332baba8bbb57c4e[情報メニューに(0)地形の文字/タイルの一覧 の項目タイトル追加。]
+* Fri Dec 20 05:22:26 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9da46c962e4d600ff90db2deb4f06778aab21167[greater vault の配置で、外壁の永久岩にぴったり沿ってしまって、 入口が塞がれる事があるのを修正。上下左右に1ブロック余裕を取るようにした。]
+* Thu Dec 19 13:29:17 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/658b236e06416e35c6c39f93d74f1ed018b7d6c9[英語版説明文で一箇所「D:$」の$を付け忘れていたので修正。]
+* Thu Dec 19 13:16:51 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cf3da5d5ac01c71c0fe8cf30973d91ff896ba735[エルフの行糧は空腹充足と同等の滋養、雑貨屋で小数売る。 塩水はアンデッド等には無効。 OAngbandから武器、防具等のアイテムの説明文を貰った。翻訳はまだ途中。 未訳には"#D:未訳#というコメントが付いているので少しずつでもやりたい(やって欲しい)]
+* Thu Dec 19 12:26:13 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d314c5ad2b3192c3a5af37458edd1e63e05a8e3[FAQｹｹｿｷ｡｣]
+* Thu Dec 19 12:25:04 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6d0b3a6b88a620bb5b718fde0a9864b9720dcaf2[clear_cave()でm_ptr->cdisやflow情報を消しているので、セーブ実行後に updateを再実行するように修正。 wr_dungeon()のエラー処理がバグっていてsave_floor()等でエラーがあると、 Segmentation Faultを起していたので修正。 セーブコマンドによるセーブデータで、光源のフラグが地形に残ってしまって いたのでforget_lite()等を入れて修正。]
+* Tue Dec 17 13:58:02 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6f0f47dd06ec836d346407317e94d3dabac3e593[{!!}と刻んだアイテムの再充填時に、行動中止するように修正。]
+* Tue Dec 17 13:57:22 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1736e245aea69de174719767ffa93af1165c9292[階段を登り降りして保存されたフロアに戻ると全ての眠っているモンスターが 起きてしまっていたバグ修正。]
+* Mon Dec 16 09:26:19 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9bd48db652c48f30e845e9242fc827200ff72560[ｾｳ･ﾞ･ﾉ､ﾎ(a)､ﾇ｡｢roff_to_buf()､ﾋﾅﾏ､ｹtemp[\]､ﾎ･ｵ･､･ｺ､ｬﾂｭ､熙ｺ､ﾋ ･ｯ･鬣ﾃ･ｷ･螟ｷ､ﾆ､､､ｿ･ﾐ･ｰｽ､ﾀｵ｡｣､ｵ､鬢ﾋ･ｵ･､･ｺ､惞ﾇﾅﾏ､ｹ､隍ｦ､ﾋ､ｷ､ｿ｡｣]
+* Fri Dec 13 15:25:01 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/16d8ce9c0d18472f10f3fc05f512a84335ddc95b[発動可能なアーティファクト以外のアイテムに発動が無い一般のタイプの鍛冶師の エッセンスを付けると発動不可能になるバグ修正。]
+* Fri Dec 13 09:14:16 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/28e1d10fed60ccc54729223aed09d37f54472d77[clear_cave()の中でwipe_o_list()とwipe_m_list()を簡易化した初期化コード を使っていたが、初期化が不十分で、モンスターのhold_o_idx等が残っていた 為、変なオブジェクト「(なし)」等が生成される事があったバグ修正。]
+* Wed Dec 11 13:00:57 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ffbd42ddae1284ec0edc9def13ac25841ec429df[ｶ耋ｷｻ暠ﾍ､ﾎﾎ鎤ｪｴｶﾃﾎ､ﾇｹﾛﾌｮ､ｶﾃﾎ､ｷ､ﾊ､､､隍ｦ､ﾋｽ､ﾀｵ｡｣]
+* Wed Dec 11 09:04:54 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/45f214d936a086f560d8a0124dd7578822fd6799[既知の?リスト及び、'%'コマンドでタイルの無いシンボルをちゃんと 倍角JISで表示するように修正。簡単愚より。]
+* Wed Dec 11 08:26:55 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/25b8ddb71ee4670880d4ae712d43a575e50bb166[bigtile使用時の既知のアイテムリスト表示がまだ少しバグっていたので修正。]
+* Wed Dec 11 06:02:52 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2490598bb4a62f7ed442d2f6074d371ffff1a567[TO開発チームからの報告を元にいろいろ修正。 wr_monster()で間違ってap_r_idxを書き変えていたゴミ削除。 「地上に戻った」のメッセージをダンジョンから出たときにも出す。 仮に間違って1階に登り坑道が出ても-1階に行かないように。 特殊食糧の判定に変身中の場合を考慮。 アリーナに入ったとき幽体化が解除されなかったバグ修正。 アイテム知識でmsg_print(NULL)忘れ修正。 乗馬成功した瞬間に乗馬に以前設定されていたヘルスバー表示は不要なのでキャンセル。 英語版で食糧用「杖」の名前の表示のバグ修正。 d_infoで、R_CHAR_%cの形式は複数行に対応しておらず、山でバグっていたので修正。 その際 R_CHAR_%s のような形式1つだけを使うように変更。]
+* Wed Dec 11 05:34:49 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/01f14043543d3a5e911660e6ecc6e60ddb7521d0[モンスター闘技場では突然変異の効果と同様に呪いの効果等(ランダムテレポート含む)を起きなくした。]
+* Wed Dec 11 03:20:30 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3ffad6281751dbaaf7cb414691294bb7aea663a4[Unangbandから、既知の?リストの中でモンスターやアイテムのシンボルを エディットするモードを移植。]
+* Mon Dec 9 03:22:50 2002 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5b10324e5b9d97c3148111774d6e1007add1dfaa[未使用変数による警告を除去。]
+* Sun Dec 8 15:56:20 2002 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6e30b6c5ddb1d9a91b64ccfb75caffa6811dbf4a[隠しドアが岩石で上書きされて、ドアがあるべき場所が壁のようになってしまうバグ修正。]
+
