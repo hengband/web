@@ -35,8 +35,6 @@
 
 ### Ver.1.5.3
 
-### Ver.1.5.2
-
 
 ### Ver.1.4.7
 
@@ -46,7 +44,7 @@
 
 ### Ver.1.4.3
 
-### Ver.1.4.2
+### link:/history/history1.4.2and1.5.2.html[Ver.1.4.2 & 1.5.2]
 
 ### link:/history/history1.4.1and1.5.1.html[Ver.1.4.1 & 1.5.1]
 
