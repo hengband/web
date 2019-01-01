@@ -1,0 +1,52 @@
+:lang: ja
+:doctype: article
+
+## 2003/07/20 Ver.1.4.3 (安定版) / 2003/07/20 Ver.1.5.3 (開発版)
+
+### リリースノート
+
+Ver.1.4.3及びVer1.5.3は2003/07/20同時公開されました。
+
+#### 1.4.3更新内容
+
+* バグ修正：
+** モンスターに止めを剌した時の経験値(全体の約半分)が0になっていた。
+** manual_haggleがOnの時に店で金額が異常で売却できない。
+** 明鏡止水等の使用後にMP表示のアップデート不備。
+** リピートコマンドで練気術を使うとき盲目になった直後だと異常動作。
+
+#### 1.5.3更新内容
+
+* 警告能力の機能改善。
+* バグ修正
+** 自動セーブした直後にクラッシュ。
+** 迷宮でview_unsafe_grids時に'x'を消した跡で道がわかってしまっていた。
+* その他、1.4.3 の全ての変更点。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。また1.4.2と1.5.2のコミットが混ざっています。ご了承ください。
+
+* Sat Jul 19 18:18:47 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/69085ee9feeb905df4755ae889adf98444b58f4d[ｹｹｿｷ｡｣]
+* Sat Jul 19 18:13:02 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6975f30dfe3af6b01204c72714e8732de25b8869[1.4.3､ﾈ1.5.3､ﾎﾊﾑｹｹﾅﾀ｡｣]
+* Sat Jul 19 17:57:59 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/79d18c50136e889745d9bf9169fdc4411ef60288[セーブファイルバージョン H_VER_* の付け方が違ったので付け直し。 最初の3桁はセーブファイルバージョンを変更した時点での プログラムバージョン(今回は1.5.3)と同じにするという ルールに従って、1.5.3.0 にした。]
+* Sat Jul 19 16:16:03 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a0cf810598a30d2048f3f683bd5ce3b22dccf013[Andy Chocoｻ皃ﾎﾋ簍｡ﾎﾎｰ霏篶ﾀﾊｸ､ﾎｽ､ﾀｵ｡｣]
+* Sat Jul 19 13:21:29 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cb0c285e47c1c388edde34480a5576eb29f685df[練気術を使用した直後に盲目になった状況で, その練気術を'n'や'['で繰り 返して使用しようとするとrepeat_pull()でのスタックの読み出し順序が狂 い, get_mind_power()が呪文番号INVEN_FORCEを返し, その結果配列外アクセ スを起こしたりMPが異常な値になったりしていたので, get_mind_power()で repeat_pull()された呪文番号がINVEN_FORCEだった場合はもう1度だけ repeat_pull()して正しい呪文番号を取得するように仮修正. その場しのぎに 過ぎないので, 後で別の方法を考える必要はある.]
+* Fri Jul 18 15:28:18 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a9696bd23c1859316bfc6bffdeedab530ac1c720[モンスターに止めを刺した際に経験値が全く入らなくなるというバグを修正. クエスト判定のバグ修正によるエンバグだった.]
+* Fri Jul 18 14:16:44 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b36ae4b4b3a259edd09c71cb2549f985faff26df[自宅/博物館内でpref読み込みが行われた際に, $TOWNを使う処理で誤った街 IDが返される可能性が考えられるので, それに対処した.]
+* Wed Jul 16 14:43:33 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3b64d74cc334f65fbdfbee3e0aa3c756d889d137[装備品の中で{@wf}等の銘があると、get_tag()が反応してしまい、持ちものリスト の中で 「f)」のタグが消えてしまうバグ修正。]
+* Wed Jul 16 08:09:19 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5189400927b6bd8013b19ff477b2c3b032f4b9b8[「換金する」→「報酬を受け取る」]
+* Tue Jul 15 20:48:09 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ee1a7297eb636860acb6382d9693655e3d2958ee[変数check_wraith_formは不要なので, ignore_wraith_formで統一. また, 幽体化時の閃光属性に対してはダメージ0の時のランダムな1ダメージがある ため, ignore_wraith_formを使わず "厳密な" 計算を使うことにした.]
+* Tue Jul 15 15:53:23 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/07be388ea6bb8c55297cc3595ef369b1ce23fcbc[1.91で殴りに対して幽体化が考慮されないバグへの修正を行ったが, この時 にACID, ELEC, FIRE, COLDの殴りに対しては2重に幽体化の判定を行ってし まっていたバグを修正.]
+* Tue Jul 15 15:35:41 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d66e97070bcb1eea0a01e47e66c02c86a3a18cef[ﾊﾑｿｾ､ﾎ･ﾟ･ｹ､ﾎｽ､ﾀｵ.]
+* Tue Jul 15 15:31:43 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/42976d36d19bbd1cf705bf61e7ed8c638e500bda[警告機能に対する修正と変更. * 幽体化時にダメージ0の場合わずか1ポイントのダメージを受ける場合と受   けない場合があるが, それが致命的になるという極めて稀な場合にも対応   するように修正. * ユニーク・モンスターが現れる際に警告アイテムが光るコードがあるが,   choose_warning_item()でNULLが返されても普通に動作するようにした. * 少々のコード整理. * 警告対象に純ログルスを追加.]
+* Tue Jul 15 10:43:46 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/58efda07c66dc8c9fdf4ade845a7239e20310c7d[達成クエスト表示でサーペントのクエストの行だけずれていたので, 階の表 示には%2dではなく%3dを使って桁を合わせた.]
+* Tue Jul 15 06:42:13 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2bdbdcfb53f8ba35bc895b10d9642612585bb325[価格オーバーフローバグの修正でエンバグしており, 手動交渉で魅力が極端 に低い場合などに提示価格がおかしくなるバグを修正. 売却時はadjustは負 になり得るのにu32bにしてしまっていたことが原因.]
+* Tue Jul 15 06:13:15 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/84edf1786ecb89eb20a2c5eb5d72ee1c0893f3cb[wiz_dark()で間違えて外周部にCAVE_UNSAFEを立てていたので修正.]
+* Tue Jul 15 06:03:27 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6a823744141805b43db03ffa354d06c1bed8bf1b[FORGETダンジョンでの行動後や記憶喪失などでwiz_dark()が呼ばれた場合は, CAVE_IN_DETECTを破棄しCAVE_UNSAFEを立て直すようにした. これにより, FORGETダンジョンで'x'だけで歩いた道筋がわかるバグを修正.]
+* Sun Jul 13 07:17:56 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5024a38cfb6717adcd3901c59c4b71e03117e590[Andy､ｵ､ﾘﾅｦ､ﾎtypo､､ﾀｵ｡｣]
+* Sat Jul 12 09:59:20 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/276c1039b73c4d778b8db6ca1897e009251ace6e[バージョンを1.5.3へ。]
+* Sat Jul 12 09:04:33 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/77a34b2cb90d341722c39ac7dcd22ac183d89fc2[変更履歴に書き忘れ：X11 portのcopy&paste機能。]
+* Fri Jul 11 13:50:17 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/921ed98a2d6e97d463d1813f74ac8ffe5be793a7[セーブした後に再ロードされる過程でモンスターの距離情報が0になってお り, 睡眠の計算の際に0除算で変愚蛮怒が落ちていたバグを修正.]
+* Fri Jul 11 04:28:51 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/393865e128bbe60c5fc69c2ed7a57cb961215724[MP操作が行われた後に再描画が必要な部分の修正.]
+
