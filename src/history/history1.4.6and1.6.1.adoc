@@ -1,0 +1,172 @@
+:lang: ja
+:doctype: article
+
+## 2004/05/31 Ver.1.4.6 (旧安定版ブランチ) / Ver.1.6.1 (安定版)
+
+### リリースノート
+
+Ver.1.4.5及びVer1.6.0は2004/01/09に公開されました。1.4.6は保存フロアの仕様を持たない1.4.xブランチの真の最終版、のようでしたがさらに1.4.7に延長しました。
+
+#### 1.4.6更新内容
+
+ * 一部職業のレベル別称号の変更。
+ * 変愚蛮怒を起動したままWindowsをシャットダウンした場合にセーブする。
+ * Windows版とMac版で、バグで強制終了した場合にゲームを緊急セーブする。
+ * 練気術師が魔法書を使えない場合に専用プロンプトを通す。
+ * ランダムクエスターはvaultには配置されない。
+ * 死亡時の墓碑から死因がはみ出さないように変更。
+
+#### 1.6.1更新内容
+
+* バグ修正
+** 同名複数モンスターが賞金首の場合に死体が自動拾い/破壊にヒットしないバグ。
+** 地上マップで乗馬の暗黒光源が有効になるバグ。
+** あやしい影が増殖した直後に正体が見えるバグ。
+** ランダムクエスト放棄直後に階段生成すると強制終了するバグ。
+** その他、各種文字化け、typo、表示アップデート不備、へルプ修正。
+* その他、1.4.6 の全ての変更点。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。ご了承ください。
+
+* Wed May 26 16:10:41 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/83016fd41e66a65a04d1f518097eebec3810e13b[1.4.6と1.6.1の変更内容リストを追加. 1.4.6と1.6.1のリリース予定日は31, May, 2004とした.]
+* Wed May 26 15:40:55 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/864c3ab284a8161307b729163a2cd9efd9223e09[feature_action_flags[\]に入っていないアクションがあったので追加.]
+* Wed May 26 14:08:05 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4547a34ff61f98cd191b958b1f00a36655508713[p_ptr->died_from､ﾘ､ﾎｻ牴ﾎ･ｳ･ﾔ｡ｼ､ﾇ･ｪ｡ｼ･ﾐ｡ｼ･ﾕ･悅ｼ､ｷ､ﾊ､､､隍ｦ､ﾋｽ､ﾀｵ.]
+* Wed May 26 13:38:02 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7b08f514a73ae7854e4e2b6a75b98de84ed5aed4[死亡時の墓碑表示で, "『』" や "「」" を含む死因の改行を適切にした. 次 の例のように改行される.]
+* Wed May 26 12:20:03 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/acec5ab324a8df2eda4e30d84b3cb1c9b1b0d3f7[死亡時の墓碑表示で, 死因が長い場合に改行を行い, 墓石からはみ出さない ように修正. また, 死因が2行で入り切らない場合は省略記号を入れるように 修正.]
+* Tue May 25 18:13:40 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/21521bb168e61728150471f300b6f0740edf094a[英語版のモンスターの思い出で, 炎と氷とスパークに包まれたモンスターと 炎と氷に包まれたモンスターの表記が違っており, 炎とスパークに包まれた という表記になっていたバグを修正.]
+* Tue May 25 17:57:55 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5723c959b8e622cc54ee3a908da90b2f0e40486f["Human" -> "human".]
+* Tue May 25 17:38:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e7de0c8bfc4baa0841f937da4f81ed6ccb7b6dc4[モンスターの粉砕打撃などによる地震で死ぬ場合, 誰が地震を起こしたかを 死因として残すように変更. XAngbandより. * 現時点では死亡時の墓碑表示から表示がはみ出てしまいやすいので, 墓碑   表示での対応コードを作成中.]
+* Tue May 25 13:01:20 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3b025a532a758735fecb0a161a4eef7ed5fdd65f[ASCII表示のモンスターの死体の設定色がTERM_DARK(文字の見えない黒)なら ば, 表示色をそのモンスターの設定色で表示するように変更し, デフォルト でこの設定とした. 死体を従来の単色表示に戻す場合は, シンボルエディタ で死体に黒以外の色を設定するか, prefで死体(K:579)の色設定を行う. なお 骨は従来のままであり, モンスターの設定色にはならない.]
+* Tue May 25 11:30:28 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d94c7a84e7ea14eb0997d674c846e5c5dbc178a0[アイテムのシンボルエディタで死体と財宝を編集できなかったバグを修正. 財宝にはA:エントリが設定されていないため, '%'からでのみ編集可能.]
+* Mon May 24 17:23:14 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cbeb4cfbd91f3851c785761cf8860455346add03[ｽ､ｹﾔﾁﾎ､ﾎｹｽ､ｨﾁｪﾂﾆ､ﾓｽﾐ､ｷ, ｷﾑｲﾈ､ﾎｷｿﾁｪﾂﾆ､ﾓｽﾐ､ｷ､ﾎｺﾙ､ｫ､､ｽ､ﾀｵ.]
+* Mon May 24 16:51:01 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3158564561bb65ce89f086545855d07ed1878f9d[乗馬/下馬しても剣術家の無想の型が維持されるバグを修正. 乗馬/下馬を試 みた時点で無想の型を解かれるように修正.]
+* Mon May 24 16:39:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/43ed08242dbcf7c02ddf430562f74dc8b5ee6241[乗馬中のマーシャルアーツに関する変更. * 素手の修行僧, 練気術師, 狂戦士が乗馬中ならばマーシャルアーツ技で攻   撃しないように変更. * 修行僧のレイシャルパワーは乗馬中は不可とした. 構えている間に乗馬す   ると構えは解かれる.]
+* Mon May 24 04:15:42 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f5c94cde5f8b8db6ce43ed694fc58d1d1f6d6b6b[モンスター対モンスターの魔力消去を, 以下の仕様で実装. * 相手が無敵もしくは加速している場合のみ用いる. ただし乗馬対象の場合   はプレイヤーの状態も考慮される. * 乗馬を標的とした場合は効果はプレイヤーにも及ぶ. * STUPIDモンスターのみ, 必要がなくても用いる. * ペットは攻撃魔法許可の場合のみ用いる.]
+* Sun May 23 10:24:48 2004 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2407cfd37010b41e34a72191cd56fdcf9dcb3864[Easy Auto-Destroyerのleave_equipの条件がなぜか逆になっていたので直した.]
+* Sun May 23 07:18:57 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b710a016bab9668342c839035e5ab7f595628d06[ｾ霽ﾏ､ｬWILD_WOOD､ﾊ､鬢ﾐﾌﾚ､ﾇﾄﾉｲﾃ･ｨ･ﾊ･ｸ｡ｼｾﾃﾈｬ､ﾊ､､､隍ｦ､ﾋﾊﾑｹｹ.]
+* Sun May 23 07:18:24 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f35fca6a489b10332f94f4d03e12511cc89151cc[意味のない比較があったので削除.]
+* Sun May 23 07:08:18 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3ca79e2f005574617dd7c9e525051ce3ccbf7df9[荒野の沼地で, 実際の地形としても沼地を出現させるように変更.]
+* Sun May 23 05:13:20 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1b35a4f475f46af4ade5364ad86d0fb9825a656c[剣術家が*勝利*の後に切腹した場合に, ダンプやplayrecordに正しく記述さ れるように修正. また, 幻覚状態で*勝利*後の切腹をすると "幻覚に歪んだ Seppuku" と記録され, スコアリストで*勝利*扱いにならないバグを修正.]
+* Thu May 20 00:59:22 2004 +0000: (macband) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/09fe126e0c5244c553daf36a330652c8b62e9281[掲示板で報告された賞金首のバグ修正。]
+* Sat May 15 07:19:22 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d1e160bf5509162a1c99212afb00e46bb2845f68[アリーナで抹殺系魔法を使えていたバグを修正. 固定クエストと同様に完全 に使用禁止とした.]
+* Sat May 15 06:25:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c90631441fced9c54220e4a8905bb5ec8bb6189e[死体と骨を両方落とす設定の非ユニークモンスターが骨を絶対に落とさない バグを修正.]
+* Fri May 7 06:00:06 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fda98d8a4e02ce3466dcddd27aecbf1dc29b1a5e[鉄獄以外でダンジョンの主が生存しているダンジョンでは, ダンジョン生成 時にダンジョンの主の生成に失敗したらダンジョン生成失敗扱いとするよう に修正.]
+* Fri May 7 05:17:53 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1b78d6133f4878a55fd5ae860c6004f4d714a3c8[ランダムクエスト, オベロン, サーペントといったクエスト時にクエスター の存在しないダンジョンが生成されるバグを修正. クエスター生成に失敗し た場合はplace_quest_monsters()がFALSEを返し, ダンジョン生成失敗扱いと するように修正.]
+* Mon May 3 14:21:12 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/25b98f2f396e69d48059effbef40c2c633dbad52[ワープ・デーモンにINVISIBLE追加.]
+* Thu Apr 29 09:48:28 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/46c0f9a034a4ebe103defa23d45f4cbbe2137817[動詞の "落す" について, "落さ" -> "落とさ", "落し" -> "落とし", "落す" -> "落とす". 関連して, "落し子" -> "落とし子".]
+* Mon Apr 26 21:25:55 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/89b9e1326f4367bb8f8b206e57d8e5f817b8def2[打撃の種類によってモンスター格闘場で攻撃手段がないのと同様なモンス ターが存在するため, それへの対処としてモンスター対モンスターの打撃の 仕様を一部変更. 盗む打撃, 食料を食べる打撃, 明かりを減らす打撃, 恐怖 打撃, 麻痺打撃で実際のダメージが与えられていなかったので変更した.]
+* Mon Apr 26 20:31:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/be30dd90eab2a394340506c2a510803c76f79bd1[モンスター対モンスターの魔法ターゲット選択時に自分自身を選んでしまう 場合があるバグを修正. 特にモンスター格闘場で発生しやすかった. projectable()の仕様変更によるエンバグだった.]
+* Wed Mar 31 11:04:15 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2e618060413e4e35bf080ab162e46fa8f5768fba[Mistype in description of Staff of Mana Storm]
+* Wed Mar 31 11:03:00 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ca5805f3d87f9bd312fbda40add6bcd7eee0053c[typo:inflavision -> infravision]
+* Mon Mar 29 15:45:19 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/355c1dab8e52f0788aa5f9068b7e1a9da8717f0b[revision 1.27の変更を取り消した。 マクロトリガのmod2-はLinuxではNumlockだから邪魔なだけだが、 MacOSXではalt(あるいはoption,command等)になっていた為。]
+* Sun Mar 28 13:29:05 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/497006e5c5ba5f93c82fd8d317a93e7f216800f1[荒野の4隅のmimicが実際の行き先の地形と異なるバグを修正. 4隅でも正式な 初期化を行う方法と, フラクタル処理後にフラクタルの種となった4隅だけを 書き戻して矛盾を起きなくする方法の2通りがあり, 後者を採った. 関連し て, cornerの時にはcave[\][\].feat全体の初期化を行わない仕様に戻し, 4隅 初期化の場合は配列外アクセスを起こさないように必要な4隅だけ terrain_table[\][\]で地形に変換するように修正.]
+* Sun Mar 28 08:35:24 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/27248311c615eaa830c24835df58e2b147a8e3a1[･｢･､･ﾆ･爨ﾎｾﾜｺﾙﾉｽｼｨ､ﾇ, ﾇｽﾎﾏﾃﾍ､ﾘ､ﾎｱﾆｶﾁ､荳ｵﾁﾇｹｶｷ筅ﾎﾀ篶ﾀ､ﾋ "｡｣" ､ｬﾂｭ､熙ﾊ ､ｫ､ﾃ､ｿ､ﾎ､ﾇﾄﾉｲﾃ.]
+* Sun Mar 28 08:19:35 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cf6a1b623cdaaa83385b78630a9f1ab993768e67[テレポート関数群のbool引数が増えているため, 今後のモード追加を行いや すいようにu32b mode引数でフラグを渡すように変更.]
+* Sun Mar 28 07:10:37 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7dac62827c9a75e34dd7db356d20cbb65fe0f6e6[プレイヤーが両手持ち可能な状態判定をマクロCAN_TWO_HANDS_WIELDING()に まとめた.]
+* Sat Mar 27 14:11:29 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/830dfc93d7ac64879e8ee0578c4b371ec3db8f69[現状では説明文だけのアイテムの説明を全く読めないので, コマンド'I'及び ウィザードモード時のアイテムの知識メニューの詳細参照でのみ説明文を表 示し, それ以外では表示しないように変更. 関連して, 以下の修正を含む. * クロスボウの矢と鋼鉄のクロスボウの矢のようにtvalとsvalの両方が同じ   アイテムがある場合, k_idxが大きいアイテムの説明文が正しく表示されな   いバグを修正.]
+* Sat Mar 27 05:52:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d2fcaff40b488154fe1235813a4bc30fbd670bdb["poleweapon" -> "hafted weapon".]
+* Sat Mar 27 03:45:21 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9179bc6c163be8b0298505e56535a67a02e1e414["Current action (if any) shown below:" が未訳だったので和訳.]
+* Sat Mar 27 03:26:05 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6de2774f7560c393b5012fa88a71c80c9b96098d[広域マップのキー説明行を英語版同様に薄緑にした.]
+* Sat Mar 27 02:28:16 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8b10c1d17f2b2c6332d74d3f3e2bab19dbec3eca[英語版のモンスター知識メニューの "Sym" の文字列の表示位置の調整.]
+* Sat Mar 27 02:14:11 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8c2e9b662b442500d55945601fa9b1212ec187c0[multiply_monster()でPM_MULTIPLYを立てた際にはplace_monster_one()内で フラグMFLAG2_KAGEのコピーも行うようにした. 増殖元/クローン元があやし い影の場合の指定をmultiply_monster()から削除.]
+* Fri Mar 26 14:51:48 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f87ab613203191a88b9f767eb0fc0f754e273032[使われていない関数cave_valid_grid()を削除.]
+* Fri Mar 26 14:27:00 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c992199f307931df5a15816d0422a89f3eeebefe[英語版の生存ユニーク表示の修正. * Totalの直前の区切り線が表示されないバグを修正. * 生存ユニークがいない場合のメッセージを英訳.]
+* Fri Mar 26 14:05:27 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f5231cce10a149275033b6126bfed23f508a296d[レア度101以上の通常出現しないモンスターの人形が生成されるバグを修正.]
+* Fri Mar 26 09:20:25 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d3288d144a2cb9ccca469642d5423976f19aeae2[too many argument for format.]
+* Fri Mar 26 09:13:26 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2933a2bcdb586db00e8fc321c71a6e9f5c306497[typo You ... curses -> You ... curse wip -> whip]
+* Fri Mar 26 02:13:21 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b201b3635c5a3f11444c6b78bc0ca85d6b85ded1["Emperror" -> "Emperor".]
+* Wed Mar 24 10:23:22 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/463eba1800733ec12a4feda34eb294bbe6f309ce[Archer､ﾎｾﾎｹ賁ﾑｹｹ｡｣Swordsman->Bowman]
+* Wed Mar 24 10:22:57 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/73d39c1b1a9175077b3d8bd4f4ab8b1c7cd13a77[Yukionnna->Yukionna]
+* Wed Mar 24 10:20:32 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f05bd59891bf9b61961a1776bcb15fc8ff7c1e58[鏡使い英語版。長すぎる称号を短かく変更。]
+* Wed Mar 24 10:11:42 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b35f5119d08a3290ba033328a5d6539c0013ae9a[falzeus氏のtypo修正ファイルや報告を元にメッセージ修正。]
+* Tue Mar 23 03:55:56 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/17dfef405a79bbd7253a4f5eaa88afeb146b4a72["Window" -> "Windows".]
+* Tue Mar 23 03:50:49 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/be58e984b2ede7081c0652efa7158e2b3130d06a["ATTR_DARK" -> "TERM_DARK".]
+* Tue Mar 23 03:46:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/48344b8495a45f5bfdb5018be71a39a58c070248[prefファイル読み込みで自分自身を読み込んでもクラッシュすることはない ので, prefファイルの説明から記述を削除.]
+* Tue Mar 23 03:34:33 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1179dc3adb05634b80f4e9b962f168f196c6e5a8[show_file()でのファイル表示時に'|'を使ってファイルに書き出すと, what == NULLでもsprintf()に渡されるバグを修正.]
+* Sun Mar 21 10:37:34 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/95891863ff432c1607265e9765da64f422151614[@の溜まり場IIで報告されたていたバグ。r_ptr->r_akillsの初期化忘れ修正。]
+* Mon Mar 15 05:12:45 2004 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d44f4174076589a44c364ee4df5bbb5d0371052e[英語版でシステムフォントを初期化するときに日本語フォントセットで初期化してしまうバグを修正。]
+* Mon Mar 15 04:42:37 2004 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/90107e6c397d189dcfaf66921858ae6c4a312111[英語版も日本語版と同様にwindowsのシステムフォントからフォントを選択できるように変更。]
+* Sat Mar 13 19:12:57 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5564804f0126d92905087e5ab19735be9ed9a6dd[Typo fix: "mignight" -> "midnight".]
+* Sat Mar 13 19:08:40 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7d98ee4eb1fd025ca6873c42ab18da612560a09b[Typo fix: "rivived" -> "revived".]
+* Sat Mar 13 19:01:05 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7f893cbda2a4093abf0686d103fddb3f7cb09236[Typo fix: "hullcinating" -> "hallucinating".]
+* Thu Mar 11 12:04:47 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ee332fdc487afa8fcfbee3c21177af9db37d2e53[inkey_special()で、既にASCIIキャラクターをトリガとするマクロを展開中の時に、 展開を中途で中断してしまうバグ修正。 inkey_special()内でASCIIキャラクターのマクロトリガーによるマクロを*開始* する事だけを禁止するのが正しい。]
+* Thu Mar 11 11:57:57 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e19f999432e3f2a8d9eab778d60dad6fcdd5846c[inkey_special()自体のバグを直すので、その前に取り敢えず 前回の変更点を戻す。]
+* Wed Mar 10 12:06:24 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3ad17ba010708f2cfe2e5210c372dbfacfdfa2ea[外見が異なるモンスターの処理に関する修正. * is_original_ap()でまとめられる部分の整理. * update_mon()内での狂気判定が正しく外見依存になっていなかったバグを   修正. * たぬきをクローンした直後に別のモンスターの外見が表示されてからク   ローン元のモンスターの外見になるバグを修正. 生成直後に2重に狂気判定   を行うことがないように, 召喚時にモンスター外見のコピーを行うための   モードPM_MUTIPLYを追加.]
+* Tue Mar 9 15:41:53 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/490edb11f6fb8b35222ea164adb7239783e75518[ASCII文字キーをトリガとするマクロがinkey_special()に入力された場合に マクロの展開を抑制しないモードを与えた. これにより, "\\R&\n" といった マクロを文字キーに割り振っても休憩時にマクロ入力が止まるバグを修正. 関連して, 以下の変更を含む. * askfor_aux(), get_string()に引数allow_ascii_macro_triggerを追加.   この引数がTRUEであれば, ASCII文字キーをトリガとするマクロが   inkey_special()で展開される. 数値入力が主となる部分ではこの引数を   TRUEに, 文字列入力が主体であればFALSEに設定している. * askfor()はaskfor_aux()の引数numpad_cursorをTRUEで固定する意味がある   が, allow_ascii_macro_triggerをFALSEで固定する意味も含む.]
+* Fri Mar 5 23:35:41 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f9a4f60c9d09b178fbecb33eccad416a555efa46[1.25の修正で, 英語版でコンパイルできなくなっていたので修正.]
+* Fri Mar 5 23:30:03 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/95c6270b0f0eafca0b635191923672c31a94ca7b[2chのスレッド "ローグ系のRPG地下29階" の248氏のパッチを取り込み, タイ ルなしのbigtileモードで表示が崩れる場合があるバグを修正.]
+* Fri Mar 5 21:26:09 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8f12348fa3ef3d9bb7f67ebb5b24f6e5cd9d9b40[ランダムクエストを階段を昇って放棄し, その階で下り階段を生成すると変 愚蛮怒が落ちる場合があるバグを修正. sf_ptr->lower_floor_idや sf_ptr->upper_floor_idが削除された階を示してしまっていた.]
+* Fri Mar 5 13:55:01 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/085fe6e8ee37ed6d2cf63cb2aa3c0c00c6e11992[発動効果名についての変更と修正. * "コールド" -> "アイス". * "ヒットポイント吸収" -> "生命力吸収". * "日本語版で, call chaos" -> "混沌召来". * "不死" -> "アンデッド". * "勇気回復" -> "恐怖除去". * "使い霊召喚" -> "幻霊召喚". * "全ステータスと経験値回復" -> "全ステータスと経験値復活". * "一時的な ESP" -> "テレパシー". * "temporary ESP" -> "telepathy". * "炎冷酸電毒への耐性" -> "全耐性". * "レイス化" -> "幽体化". * "無敵" -> "無敵化". * "爆発ルーン" -> "爆発のルーン". * "再充填" -> "魔力充填". * 英語版でのキャピタライズ修正.]
+* Thu Mar 4 07:31:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ff3b851a302c52f2a7b18c1cb941ca06986b3345[レブマの女王『モイア』はアンバーの王族に準じる存在らしく, アンバーの 王族がHUMANとして扱われているので, モイアにもHUMAN追加. また, 盗賊 『プアー』と盗賊『リッチ』の性別がないままだったのでMALE追加.]
+* Mon Mar 1 04:20:40 2004 +0000: (macband) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9b85474aace1e8caf9a822a73582c581723ead89[セーブファイルを開いたときにハイライトが消えなくなっていたので Carbonのみの修正]
+* Mon Mar 1 03:51:24 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a205f30f5e831dc7c90195d0db7692cf853626b6[Typo fix. * "ｱｲｴｬ､ｫｹ酊ﾎ､ｷ" -> "ｱｲｴｬ､ｬｹ酊ﾎ､ｷ". * "ｶｲ､ｷ､､" -> "ｶｲ､惕ｷ､､".]
+* Sun Feb 22 08:30:45 2004 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/71edd3154cb0cb4ae0ce6272c1272ada43dd99ee[見えない敵を倒したときにその殺害数もカウントする変数r_akillsをmonster_race構造体に追加した。 多数の敵を殺害したときに経験値ペナルティはr_akillsを参照するようにした。 モンスターの思い出で出てくる殺害数については、従来のr_pkillsのままにした。]
+* Fri Feb 20 10:07:04 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/98a7bb13c8b28077873a62a3a32594e8eb0052c9[博物館のアイテムを取り除き展示をやめるコマンドをTObandより移植. 取り 除かれたアイテムはゲームから消滅する.]
+* Fri Feb 20 10:06:48 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d3406263aa45fbba748fff081fd70d77705efec6[パッチ当てをミスしており, 英語版でコンパイルエラーになるバグを修正.]
+* Thu Feb 19 10:24:13 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aeb8e16350dc20b75d8e75259291c13fac6aa84c[EQU演算子の仕様変更に対応して説明を修正.]
+* Tue Feb 17 08:50:28 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1fe0c588f294b2eed61cbbf811efdd15aa91ca24[Kieron Dunbar氏のパッチを適用し, 以下の英語版のバグとTypoを修正. * "You are wielding (武器) on (左右) hand." -> "You are wielding   (武器) in your (左右) hand.". * 利き手の逆に持っていた武器を外す際に "You were wearing (武器)." と   表記されていたので, "You were wielding (武器)." と表記されるように   修正. * 無生物モンスターが自爆する際に文頭が大文字にならないバグを修正. * 1つの非ユニークの死体に単数冠詞が付かなかったり, 複数形の語尾設定の   '~' がそのまま見えるバグを修正.]
+* Sat Feb 14 15:01:41 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/51f5abd01dda2fdf9331cc2d076578a01df81e81[壁を掘れるモンスターに乗馬していると, 隣接した木が勝手に砕けてしまう バグを修正.]
+* Fri Feb 13 18:13:48 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2a57e149ff93e12e122ffbc7d972236623f5b4b9[内部的キー配置指定 "\\" の使用上の注意を追加.]
+* Fri Feb 13 05:34:34 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/34f06a669177d8772394acc6d2482219a96f24d9[既知生存ユニークリストの構成を変更. * XAngbandより階層別ユニーク生存数表示を移植. * 生存モンスターのレベルも表示するように変更. * レア度101以上のモンスターを表示しない変更があったが, この条件をレア   度101以上かつ非クエスターとした.]
+* Thu Feb 12 15:20:07 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4b553c56df74c129a2c6b38414103d663067f100["ﾉ､" -> "ﾂﾎ".]
+* Thu Feb 12 15:08:48 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/053383134765a89542a390121a22a5dc9b1a2c09["ｴﾙ､､､ﾃ､ｿ" -> "ｴﾙ､ﾃ､ｿ".]
+* Thu Feb 12 15:06:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c4247143d792a6e10054abffc2da34e1961a6087[ペットを攻撃すると敵に回るような記述が残っていたので修正.]
+* Thu Feb 12 14:54:36 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2f74f20958b09901f256a3596aaae9ab309f9445[既知生存ユニークリストにレア度101以上の一般出現しないモンスターを表示 しないように変更.]
+* Thu Feb 12 14:20:19 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e346e41dcd954338f30b515c51435c4cd1f37d68[オークの隊長『マウフル』のレア度が255のままで一般出現しなかったバグを 修正.]
+* Thu Feb 12 12:41:53 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b0cc93e81466000b652fd60d6dfb30d9fa38889b[モンスターの自動生成スポイラーで, 透明色, 万色, 準ランダム色なモンス ターをそれぞれ "Clear", "Multi", "S.Rand" と表記するように変更.]
+* Tue Feb 10 17:01:59 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fc750ec810a557d94b5721d9e9218bd9265327cc[吟遊詩人の歌に関する修正. * 食べ物を食べる, 魔法の笛を吹く, ブレスを吐くなどといった口を使う行   動の際にも歌が止まるように修正. * 吟遊詩人が何かの歌を歌っている判定をマクロmusic_singing_any()として   まとめた. music_singing()と違い, 番号の指定はない.]
+* Sun Feb 8 14:51:11 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4c9ee2c0245be98c0e781c984da2954fc2e44041[テレポート先候補が1マスしかない場合にcur_candidates == 0の状態で全候 補の50%以上と見なされ, ダンジョンの外壁を含む不正な位置にテレポートし て変愚蛮怒が落ちる場合があるバグを修正. また, teleport_player_aux()で の2番目のcave_player_teleportable_bold()の引数nonmagicalがFALSE固定 だったバグを修正.]
+* Sat Feb 7 14:02:02 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9683682c9cc0660e9cd7e2d527afdf46635bbe7f[水棲生物がドアを打ち破ったり壁を掘ったりする際に, 変化後の地形が陸地 であっても強制移動するバグを修正.]
+* Wed Feb 4 10:04:38 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1d908cc831e0c7d44c489fa57b4beac5ad02a0b9[モンスターの加速と減速が切れた際にPU_BONUSする処理は, フロア移動中, すなわちp_ptr->leaving時には行わないようにした. これにより, 加速/減速 したペットに乗馬したまま階を移動するとペットから一旦降りる処理がプレ イヤーに見えるバグを修正.]
+* Tue Feb 3 14:10:46 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/502f8f8d3b435af1f6984233b36c74a72b3d32c3[プレイヤーのテレポート関数をteleport_player()とteleport_player_aux() に分割. teleport_player_aux()で実際のテレポート処理を行い, teleport_player()はteleport_player_aux()を呼んでからモンスターの追尾 処理を行う. これを利用し, 以下の変更と修正を行った. * モンスターのテレポートアウェイでプレイヤーが飛ばされた際に, テレ   ポートアウェイを使ったモンスター自身が追尾してくるバグを修正. モン   スターがプレイヤーをテレポートさせる処理はteleport_player_away()と   してまとめ, teleport_player_aux()を呼ぶようにした. * spells3.c 1.134で, 広域マップまたは反テレポートでテレポートを禁止す   る処理が削除されてしまっていたので復帰させた. * アルコールで記憶が飛んで知らない場所に "歩いた" 場合のテレポートに   は追尾しないように変更. また, 非魔法的な移動と見て反テレポートや   CAVE_ICKYを無視するように変更. * テレポートしてプレイヤー位置が変わらない場合はupdateや効果音などの   処理を行わないように変更.]
+* Tue Feb 3 10:22:45 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fea1e5f9fa4debb34b0103c7a49d739049d3078a["イェティの怒り" -> "イエティの怒り".]
+* Tue Feb 3 10:20:29 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bc85aeb0f10e9d000ef315d7fde0e5a95d9fa5e8[ウィザードモードではteleport_player_to()による任意位置テレポートで壁 の中も許可しているが, モンスターのテレポートバックといった受動テレ ポートにはウィザードモードでも壁の中にテレポートしないように修正.]
+* Tue Feb 3 08:48:34 2004 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/65719eb85057bae9d340f46aefa57dc8abbdac50[Sound of disintegration(分解音波)の英語の説明が古かったのを修正.]
+* Mon Feb 2 12:15:52 2004 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/03c3a7348bd3191a7045762ee9c6fdd2956f881d[アンドロイドのレイシャルのロケットをfire_rocket(PROJECT_STOP付きのやつ)に変更.]
+* Tue Jan 27 13:01:38 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/469fa8d4b27d484aed4d1cf18d76761bb5f61236[Kuwa氏の指示により, Carbon用のdo_menu_file_open()をVanilla 3.0.3仕様 に置き換えた. コンパイルできる保証はないので, 検証を必要とする.]
+* Tue Jan 27 11:58:17 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e7f520f2f6ee81a86807af74d5d8888a523a25fc[剣術/忍術 "入身" でモンスターを倒してプレイヤーが実際に移動するまでの 間に血の呪いやカオスの守護悪魔の報酬などでテレポートすると, テレポー ト直後に元の位置に戻ってくるバグを修正.]
+* Tue Jan 27 02:13:50 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e261f3880a4dc501639a46c27c37680e46e6f50d[add_text()で英単語が繋がらないようにする処理がvaultマップデータにも影 響し, 崩れたvaultが生成されるバグを修正. なおlib/data/v_info_j.rawは 自動更新されないので, 手動で削除する必要がある.]
+* Tue Jan 27 01:44:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/30fd86e28b180f681503b09c8f6c32fbc7b3d763[複数出現モンスターや護衛を率いるモンスターの護衛がvaultに生成されて vaultに入りきらない場合に, 他の部屋の壁や近くの通路のドアに埋まって生 成される場合があるバグを修正. grid.hのplace_*_*()やgrid.c, rooms.cの ドア配置関数でモンスター削除処理を行うようにした. なお, 以下の変更を 含む. * 1.7.0ではFEAT_SECRETは隠しドアとしてそのまま処理することができ,   ロード時の変換の必要はないので該当処理を削除.]
+* Mon Jan 26 00:51:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/96b1c010bf010aa411c6cd3c05515645cb0c67c6[モンスタースポイラー出力に関する変更と修正. * spoil_out()に渡された文字列の終端が自動改行と重なると改行が多くなる   ので, そういった場合はファイルに書き出すタイミングを遅らせて次に入   力される文字列の先頭が改行であるかどうかを判定する仕様に変更. * mon-info.spo出力で, 思い出テキストと出現階の間に改行が入って出力さ   れるバグを修正. このバグは日本語版では "時を統べる者『リチャード・   ウォン』", 英語版では "The Vlasta" で確認できた. * spoil_out()の変数の型をいくつかbool型に変更. また, 変数iskanji2は同   名のextern関数があるため, 念のためiskanji_flagと変更.]
+* Sun Jan 25 18:25:01 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a4660dd5556b02184bb1512327383985129966f2["ボクルグ" -> "ボクラグ".]
+* Sat Jan 24 13:29:42 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/55b6250332b040f0f038b75337bb83f4719b2dbd[1.86の修正が日本語版にも影響し, 思い出テキスト中に余分な空白が混入し て文章がずれていたバグを修正. 日本語版では構築済みテキスト文末と新規 テキスト文頭のどちらかが日本語であれば空白追加処理を行わないように修 正. なお, lib/data/r_info_j.rawは自動更新されないので, 手動で削除する 必要がある.]
+* Fri Jan 23 16:22:20 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e94fc54dab275ae810cf1c0cb1e4c348b840ef33[ランダムクエストや通常ダンジョンを用いるクエストのクエスターの配置に 関する変更. * vault内に配置されないように変更. * 壁抜けモンスターであっても壁の中には配置されないように変更.]
+* Thu Jan 22 10:34:39 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2f7105302fd47dc64bd31e75ce88d6429b4bacad[自動拾いエディタのキーマップ定義挿入で、現在未定義なキーを挿入しようとした時に クラッシュしていたバグ修正。]
+* Wed Jan 21 20:10:38 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5c0ba20fb98b6157d74558943b2bb8b3d1b71784[匠魔法の属性付加で切れ味の隼の剣(+6攻撃)が出来ていたバグ修正。 (Thanks to lup1422.txtの名＠無＠しさん)]
+* Wed Jan 21 10:50:34 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2ebef95cbb0288f4ce8440ed80586ef65d6bd1b2[､ｫ､ﾟ､ﾄ､ｭ｢ｪ､ｯ､､､ﾄ､ｭ]
+* Wed Jan 21 09:26:19 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c54c66fc497e0d1759542670ac3d2996020d35a9[真実の祭壇(現実変容)で、change_floor_modeを設定し忘れていた為、 p_ptr->floor_idが0になってしまっていたバグ修正。]
+* Wed Jan 21 05:26:36 2004 +0000: (macband) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d37e939fb8c2c8bd7edf6c8f1fa9d2fb0507171[carbonでのファイルタイプ／クリエーターを保存できるように。Vanillaより]
+* Tue Jan 20 15:33:36 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ed678a3221697fa4c8486806a9b16bb5cb1e2ece[未使用変数削除。]
+* Tue Jan 20 15:26:21 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c51077bc9eb4360ce1b168ad3a66a766f809cf23[lookコマンドの改良で、最初のカーソルの位置がプレイヤーの位置になって いなかったので修正。また、ちゃんと優先する項目毎に比較するようにして、 レベルが同じなら同種のモンスターを一緒に並べるようにした。 (つまり同じレベルの他のモンスターと混じってカーソルがあっち行ったり こっち行ったりしない様にした。)]
+* Tue Jan 20 14:32:06 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/989b78df5b9bd52cead8d84f1f8eb8cd196791d1[モンスターのテレポートに次のようなバグがあった. * プレイヤーの視界に入っていない位置でテレポートしても, los()が通れば   追える. * 対プレイヤーでテレポートを使った場合は元位置を見るのに, モンスター   同士の戦いでテレポートを使った場合はテレポート先の位置を見て追撃を   判定していた. * 全身に呪われたアイテムを装備していた場合はテレポート制御の変異やも   のまね師の能力としてのテレポート追撃が無効になっていた. 追尾可能なモンスターのテレポートを関数にまとめ, これらのバグを修正.]
+* Tue Jan 20 14:22:35 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1ed3eafefbbf9af558b4fd4c0637212b80273016[lookコマンドでスペースキーを押すと(1)モンスター(レベルの高い順)、 (2)アイテム、(3)階段やドア、の順番に表示するようにした。]
+* Tue Jan 20 11:45:08 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b026dfb26aa67c38c74b44fa66a240028bb7e2fe[キャリオンからDROP_CORPSE削除.]
+* Mon Jan 19 19:25:08 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cd2a9643bf7f291ac379d9011aa13b5609d9283e[バグでhandle_signal_abort()が呼ばれて強制終了したことをplayrecordに残 すように変更. また, Windowsで変愚蛮怒実行中にログオフした場合は通常の 終了としてplayrecordに記録するように変更.]
+* Mon Jan 19 19:10:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a6197b7423d2b58f7bc589c026f3771a2aecf82f[セーブ時などのモンスター圧縮でcompact_monsters_aux()を呼んだ際に, get_mproc_idx()にi1を渡すべきなのにi2を渡してしまっていて, 結果として mprocシステムの配列の中身が異常になって変愚蛮怒が落ちる可能性のあるバ グを修正.]
+* Mon Jan 19 17:48:57 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/04115a9e8e4c326eb8503be04c8b2e10140bb375[mprocシステムの変更に関する話し合いの結果より, 以下のように変更. * polymorph_monster()でモンスターが変身に失敗して書き戻された時のhack   はやめたほうがよいという意見を受け, そのような状況ではmprocシステム   全体を再初期化するように変更. * 各モンスターにmproc_idx[MAX_MTIMED\]を持たせてスタック参照を高速化す   る意味がほとんどなく, ループで位置参照してもオーバヘッドが小さいこ   となどを受け, mproc_idx[MAX_MTIMED\]を削除. * process_monsters_*()系関数をprocess_monsters_mtimed()でまとめた. 実   際の処理はprocess_monsters_mtimed_aux()内でswitch分岐する.]
+* Mon Jan 19 11:10:55 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3b7fdddab408bb45ac3d74df8f446cf9868bdb2c[Typo修正等 (Thanks to falzeus)]
+* Mon Jan 19 10:35:32 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ac972acc48180ee4630a4e796fd7dcf320110132[1.108の修正を, ポインタを使って書き直した.]
+* Mon Jan 19 10:26:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/91e4019fa5cab05a272f1d64a1a41ab0b2666ce0[mproc_remove()でスタックの穴を埋める処理を行った際にモンスター側でス タックの位置情報を更新し忘れており, 変愚蛮怒が落ちていたバグを修正.]
+* Mon Jan 19 04:27:36 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0bde43e5538d992786ed521028f3a51b07feb93e[モンスターの状態変数7種を配列化し, 状態変数の変更を関数化. 各配列の値 は記述短縮のためマクロで参照する. csleep以外の6つはbyte型からs16bに変 更したが, 1.6.xに移植することを考慮し, セーブファイルでのこれら変数は 引き続きbyte型で読み書きする. 関連して, 以下の変更と修正を含む. * モンスタープロセス配列全体の初期化をmproc_init()で行うように変更.   floors.c, load.c, spells3.cからmproc_add()を削除. mproc_init()呼び   出しは最低限必要な2箇所 (dungeon()のメインループ直前と,   do_cmd_save_game()のhandle_staff()近く) のみに置いた. * dungeon.cにあったprocess_monsters_*()をprocess_monsters()の類型とみ   なし, melee2.cに移転. mproc関数群も移転. * mproc_add(), mproc_remove()に配列外アクセス防止処理追加. * 剣術 "みね打ち" を朦朧としているモンスターに使うと朦朧度が逆にいく   らか回復するバグを修正. * 位置交換テレポート成功時にモンスターが起きないバグを修正. * モンスターへの魔力消去とメッセージは関数dispel_monster_status()にま   とめた. これを用い, 乗馬がプレイヤーへの魔力消去の巻き添えになった   場合もメッセージを出すように変更.]
+* Sun Jan 18 07:35:21 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1a6082adaec524f87267377cb4ac7b5d74be587c[モンスターが戦いを決意した際にignore_unviewが有効だと, そのモンスター が見えていても徳が変化せず, ヘルスバー更新も行われなかったバグを修正.]
+* Sat Jan 17 16:42:53 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c970a6bec9db555b8322df8136dcee26692b8f47[floor_id及び、sf_ptrが0の時に落ちないようにparanoia処理追加。]
+* Sat Jan 17 15:17:24 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/943c5baf6792f9388a68c0e2dd59ccd30cfcfd8a[戦いを決意したモンスターがプレイヤーから見えていない場合に徳が変動し ない方が自然という意見があり, 元に戻した.]
+* Sat Jan 17 14:11:12 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1b4939aa68153d1b7eb52309508727c2a6700ae0[状態変数の処理ループをさらに細分化. その状態になっているモンスターが1 体もいない場合は処理しないようにした. なお, 以下の変更を含む. * 戦いを決意したモンスターがプレイヤーから見えていない場合に徳が変動   しないバグを修正. * 状態変数のオーバーフローの可能性のある部分の修正. 上限を200とした.]
+* Sat Jan 17 11:46:23 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/60c453220e69cd38b935768d39ea2c29ddd9e249[なぜかatol()の(古い形式の)プロトタイプ宣言が入っていてワーニングが出たが、winでもmacでもLinuxでも不要で、いったいどの環境で必要なのか不明なので削除。]
+* Sat Jan 17 11:43:34 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/735e3ccbb3040baa1d3c84c02597968549f6523d[X11 on MacOSXでサブウィンドウをマウスでリサイズすると再描画を繰り返して永久ループになるバグ修正。サブウィンドウを再描画する関数redraw_window()でメインウィンドウに関して何か操作をしていたのでその部分を廃止した。Linuxでは未テスト。実は何か意味があるという可能性のあるかも。]
+* Sat Jan 17 11:24:20 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c45f4bf788442ba49e9418fad6aff6505ab4b681[lx,lyの初期化に関するワーニング除け。]
+* Fri Jan 16 19:51:08 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/474b189da7c5db33313853912f3e9155f7f3f2de[モンスターの状態変化処理を標準ターンで行う際に, 処理の必要のある状態 変化を持つモンスターの分だけ行うように変更. これで処理が極端に重いこ とは少なくなると考えられるが, 詳細な検証が必要. 有効であれば1.6.xに マージする. なお, 以下の変更と修正を含む. * GF_CRUSADEで乗馬が加速してもPU_BONUSがないので追加した. * party_mon[\]をfloors.cに移転しstaticとした. また, MAX_PARTY_MONも併   せてfloors.cに移転. * カオス属性などで変身失敗した場合にもc_ptr->m_idxは変わる可能性があ   るため, 関連するポインタを再計算するように修正. * GF_CAPTUREの処理の微修正.]
+* Fri Jan 16 11:40:48 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/daf4aa62a42dca11f9868aad4ed42b690380f803[typo｡｣(Thanks to falzeus)]
+* Fri Jan 16 01:26:36 2004 +0000: (macband) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/deeac63921fc6b22d2f1281e6713c577b6884da5[hﾊﾑｹｹ･ﾟ･ｹ､ﾈ､ｫ]
+* Thu Jan 15 13:45:15 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e43cbf4ed2fa0a083f0fe9ce706b13055c9156b0[Kuwa氏より提供されたmain-mac.cを反映し, Mac版で初期設定が保存されない バグを修正.]
+* Thu Jan 15 12:26:21 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ac22ca30c94c957b8c9c69c7030956a41bb78625[モンスターのテレポートバックやテレポートで候補位置が同じだった場合に モンスターが消えてしまうバグを修正. また, グリッドのm_idxの移動操作は "新しい位置にm_idxを入れて古い位置は0にする" ではなく "古い位置を0に して新しい位置にm_idxを入れる" 順序に直した.]
+* Mon Jan 12 15:04:58 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b3c9d8252c645bb22d766645a8a57e2e19f62f9d[sigsetjmp()､ﾋｻﾈ､ｦ､ﾎ､ﾏjmp_buf､ﾇ､ﾏ､ﾊ､ｯ｡｢sigjmp_buf｡｣]
+* Mon Jan 12 14:34:46 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/35f956db72888c44a42f61626f6c3e49d18df0bd[Archon､ﾎﾀｸ､､ﾎｩ､ﾁ･皈ﾃ･ｻ｡ｼ･ｸ､ﾇ･ｹ･ﾚ｡ｼ･ｹ､ｬﾈｴ､ｱ､ﾆ､､､ｿ､ﾎ､､ﾀｵ｡｣(Thanks to alzagos)]
+* Sun Jan 11 13:03:30 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/016d00c3491e27dfe12fe41d790e986aef5657d7[クエスト "マイクロンフトの興亡" で, ドアが浅い溶岩の流れに変わってし まっていたバグを修正.]
+* Sat Jan 10 13:45:47 2004 +0000: (nsk) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bcbb5fec6ec65d316727841c6337237243a6385c[typoｽ､ﾀｵ｡｣]
+* Fri Jan 9 11:03:02 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/470262eced2b949def77d5812a62339ac3ffd643[ｿｩﾎﾁﾀｸﾀｮ､ﾎﾀ篶ﾀﾊｸｽ､ﾀｵ｡｣]
+* Thu Jan 8 14:59:45 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b9667a9e453e7dc39b2c4e4eaf1faab978e1e18c[壁系モンスターに関する変更. * 花崗岩の壁にCOLD_BLOOD追加. * 溶岩の壁からCOLD_BLOOD削除. * 石英の壁はQuartz veinに合わせて石英の鉱脈と改名.]
+
+ 

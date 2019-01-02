@@ -27,15 +27,11 @@
 
 ### Ver.1.6.2
 
-### Ver.1.6.1
-
-### Ver.1.6.0
-
-### Ver.1.5.4
-
 ### Ver.1.4.7
 
-### link:/history/history1.4.5.html[Ver.1.4.5]
+### link:/history/history1.4.6and1.6.1.html[Ver.1.4.6 & 1.6.1]
+
+### link:/history/history1.4.5and1.6.0.html[Ver.1.4.5 & 1.6.0]
 
 ### link:/history/history1.4.4and1.5.4.html[Ver.1.4.4 & 1.5.4]
 
