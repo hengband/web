@@ -1,0 +1,13 @@
+:lang: ja
+:doctype: article
+
+## 2009/09/15 Ver.1.7.2 (安定版)
+
+### リリースノート
+
+Ver.1.7.2は2009/09/15に指定されました。新領域「呪術」更新でほぼ占められています。
+
+### リポジトリ詳細
+
+* Tue Sep 15 13:21:06 2009 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/53ee2a21668383644dd58375dbc4d48b532f9dd8[branch-hexの変更をコミット。 -新領域「呪術」(ハイメイジ専用) -プレイ動画録画再生機能('\]'キー) -アーティファクト追加]
+
