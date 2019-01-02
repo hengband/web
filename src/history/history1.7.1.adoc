@@ -8,6 +8,8 @@ Ver.1.7.1は2009/09/03に指定されました。詳細は確認中ですが1.6.
 
 ### リポジトリ詳細
 
+一部文字化けは実リポジトリからの仕様です。ご了承ください。
+
 * Thu Sep 3 08:30:00 2009 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8eb2a9fdf0864fb2c0e995bcdef668dbfa02cf1d[見た目バージョン番号をいじるのを忘れていた(というか勘違いしていた)ので変更。]
 * Thu Sep 3 08:05:41 2009 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c2b8bc27041cd364f742344ee0c93d9b556d0f3f[新職業スナイパーといくつかの新or移植アーティファクトをマージ。]
 * Mon Mar 23 05:53:30 2009 +0000: (iks) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4defd1b6cda7ee864ce4449b56e6a5f32dd6cc3d[get_com関数で入力をトリガとするマクロを解釈しないようにした。]
