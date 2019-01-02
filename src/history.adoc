@@ -35,11 +35,11 @@
 
 ### Ver.1.4.7
 
-### Ver.1.4.5
+### link:/history/history1.4.5.html[Ver.1.4.5]
 
-### Ver.1.4.4
+### link:/history/history1.4.4and1.5.4.html[Ver.1.4.4 & 1.5.4]
 
-### link:/history/history1.4.2and1.5.2.html[Ver.1.4.3 & 1.5.3]
+### link:/history/history1.4.3and1.5.3.html[Ver.1.4.3 & 1.5.3]
 
 ### link:/history/history1.4.2and1.5.2.html[Ver.1.4.2 & 1.5.2]
 
