@@ -1,0 +1,41 @@
+:lang: ja
+:doctype: article
+## 2003/08/26 Ver.1.7.0 (開発版)
+
+### リリースノート
+
+Ver.1.7.0は2003/08/26に指定されました。1.5.4からの派生として進められたようです。
+
+### リポジトリ詳細
+
+実際の更新内容が1.4.X系と1.6.X系と混ざり合っている可能性があります。ご了承下さい。
+
+* Tue Aug 26 14:23:35 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/51fa02d90658a94e3536d8c08394a77b75dc863f[バージョン番号を1.7.0へ。]
+* Tue Aug 26 14:12:28 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/14f805ad0c8af266150c0a7d7836140c3d06d4bd[主語が無い不完全な文でも、どちらかというと大文字で開始した方が良い という意見(@#angband)だったので、全て大文字にした。]
+* Tue Aug 26 13:48:45 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/27c1f06ab4b1f6c36c275f8098390c985510dfb1[セーブファイルバージョンについて、コメント付加。]
+* Tue Aug 26 11:33:08 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3e1378cb633d8aa349a1764272ab728149e3322b[typo: for few turns -> for a few turns]
+* Tue Aug 26 07:32:19 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d597273877c26ca4d96868ff963e7b151cf220c[ダンジョンのフロア間を移動する際に鏡は爆発なしで消えるようにした.]
+* Tue Aug 26 05:27:52 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cf7cd56c44be592cf78ea65f034554b90f0ca6b5[2倍幅モード(タイルが有効かどうかは関係ない)かつ軌道表示有効時にシンボ ル'*'で表示されたモンスターを軌道に入れると文字化けが起きていたバグを 修正.]
+* Tue Aug 26 03:48:49 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1e44c1b896fba27921040a194bbd2c7eb57ab95a["クラコン" -> "クラッコン".]
+* Tue Aug 26 03:45:20 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/296bafaf535e700fff2ccb47bec8df1ac9afc0a6[Typo fix.]
+* Tue Aug 26 03:29:58 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2a441d5c63d6bf187565c18bbb079f5620163284[テレポート・モンスター魔法の説明を修正.]
+* Tue Aug 26 02:53:04 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b337ac23634519e5777d7b199b49d6cfe8fd86ba["生成する" -> "生成する。".]
+* Tue Aug 26 02:32:05 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6d9947686e3c913c317b96a2eaa5944d4fba7c30[スコア計算では最大の最大経験値を読むようにした. これにより, アイテム で経験値吸収されてもスコアが減らなくなった. なお, セーブデータバー ジョンは1.5.4.1に上がった.]
+* Sun Aug 24 11:16:04 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9c7238682d5a2a363be1767a4b4739a5e0675ed0[フラグp_ptr->to_m_chance, p_ptr->dec_mana, p_ptr->easy_spell, p_ptr->heavy_spellから導かれる魔法失敗率への影響を関数にまとめた. こ れにより, 消費魔力減少のある魔道具術師の魔法道具使用失敗率が-1%になり 得たバグを修正.]
+* Sat Aug 23 14:29:01 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bc83f94869fce6943beb603aa2267393c85b9de3[1.70では{!}という銘の場合にバグが残っていたので, get_item_allow()の最 初でcommand_cmd == 0ならばTRUEを返すように修正.]
+* Sat Aug 23 14:14:50 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/699c46d9586cdde0305ae1844f297f7ada38d2bd[{%!!}という銘が刻まれた場合に最後の'!'の右側が文字列終端の'\0'であり, command_cmd == 0にヒットした結果, 確認が出てしまうバグを修正. {!!}の 銘はget_item_allow()内では無視することとした. 1.68でのcommand_cmd = 0 とする変更によるエンバグであった.]
+* Thu Aug 21 02:30:23 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/084e72c4f833a563bcfb0f175b45117f6d81075b[銀のエンゼルを倒した時、4,9,14,...体目でおもちゃのカンヅメを出していたので、 ちゃんと5体目から出すように修正。]
+* Tue Aug 19 17:58:55 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/630572dcb91059ca4dab72271802c9c904e6978d[typo: parchement -> parchment]
+* Tue Aug 19 17:50:42 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6630010726babe988f52a25721c97df3f687833d[･ｳ･皈ﾈﾊ莇ｰ｡｣]
+* Tue Aug 19 17:45:36 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0c876106b8d670b2a8005e6bb07308c1dcfd8e73[typo: parchement -> parchment]
+* Tue Aug 19 17:22:52 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cc65e3c6e51eb001c2bb49b5002948a89ab69804[Typo: "Your feel your head clear." -> "You feel your head clear."]
+* Tue Aug 19 15:28:50 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4f0fb2f2e64055187686e3b0f72346b2a35aeb1d[ガンダルフの杖, 帯魔力ペンダントの発動の仕様変更.]
+* Tue Aug 19 11:00:54 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a6a2baba2b0b7789156328bf29c420f786c031be[ソースコードの方に残っていた「首飾」→「首飾り」]
+* Tue Aug 19 10:51:34 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/02c2715f31b938d8bb301d0b59c0e70d0a74298d[英語版, charmed pendantの表記がおかしかったので修正.]
+* Sun Aug 17 12:23:13 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6c973816fae2234337631996420a29854f5d4cee[一般形のナズグルに与えられるフラグUNIQUE_7をNAZGULと置き換えた. この 過程で, 以下の変更を含む. * 一般形のナズグルのmax_numである5を記号定数化. その記号定数が使われ   るのはユニークでない場合のみとした.]
+* Sun Aug 17 05:30:15 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3df2b2208ae4aece684f1ae496da45e0dc3f694b[ﾄｶ･ｨ･遙ｼ･ﾈ･ﾑ･鬣ﾇ･｣･｢ﾈｿｵﾕ･ﾑ･鬣ﾇ･｣･｢･ﾈ･鬣ﾃ･ﾗ･ﾞ･ｹ･ｿ｡ｼ｡｢･ｽ｡ｼ･ﾉ･ﾞ･ﾋHUMAN･ﾕ･鬣ｰﾉﾕｲﾃ｡｣]
+* Sun Aug 17 05:22:50 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6a1dc5b796f4a088115cc2399cffac260ae6896d[日替わり賞金首の換金で、集団型の見習いメイジと孤立型の見習いメイジ等を区別しないようにした。]
+* Sat Aug 16 09:46:08 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/abd737778385c1da6185f28a8787f36ba032ab04[自分中心で半径2以上の森の中で暁の戦士を倒すと必ず復活を阻止できるバグ を修正.]
+* Thu Aug 14 11:14:59 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/612630a27201f89d5d2be0ca10c4f45f56af3e6a[例えば, 鑑定の杖 {@ud} で鑑定する作業中には d) のアイテムを鑑定できな くなっていた. 他にもこういった2回以上アイテムを選ぶ作業がある場合に, 2回目以降のアイテム選択が最初のcommand_cmdに関係する銘で影響されてい たので, get_item()/get_item_floor()でアイテムを選択できてTRUEを返す場 合はcommand_cmd = 0とするように変更.]
+* Wed Aug 13 08:37:46 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1ece860245ae4e8808359db5049a9d6785202f41[保存階にいるアイテムを拾ったユニークモンスターが別の階に現れてから保 存階に戻った場合, lite_spot()が呼ばれた際に配列外アクセスを起こして強 制終了する場合があるバグを修正. また, monster_drop_carried_objects() 内でのo_ptr->held_m_idxの扱いがおかしく, モンスターがアイテムを落とす 度に座標(0,0)が再描画されていたバグも修正.]
+* Tue Aug 12 11:01:37 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b91e4e8b377e37ad3650a82b2c632adcdbeecc38[間違ってセーブファイルバージョン H_VER_PATCHの方を4にしてしまっていた ので、正しくプログラムバージョンFAKE_VER_PATCHの方を4にした。 セーブファイルバージョンはしょうがないので戻さないで4のまま。]
