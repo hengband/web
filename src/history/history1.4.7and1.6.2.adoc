@@ -1,0 +1,96 @@
+:lang: ja
+:doctype: article
+
+## 2004/07/13 Ver.1.4.7 (安定版) / Ver.1.6.2 (安定版)
+
+### リリースノート
+
+Ver.1.4.7及びVer1.6.2は2004/07/13に公開されました。
+
+### 1.4.7更新内容
+
+* 保存フロアの仕様を持たない1.4.xブランチの真の最終版に致命的なバグが
+* いくつも発見されたため修正リリース。
+* バグ修正
+** ダンジョンの主の生成時に無限ループに陥るバグ。
+** Mac版で日本語のファイル名を扱う際に異常終了するバグ。
+** 最大HP:0のカメレオンが生成され、異常終了の原因となるバグ。
+** ザックからあふれた装備品を繰り返しコマンドで装備するとアイテムが消えるバグ。
+** クエスト内で帰還を使うと "荒野" という名のダンジョンに飛ばされるバグ。
+** 酸の矢のエゴ指輪を発動すると火炎属性のボルトを放つバグ。
+** ザックからアイテムがあふれる判定のバグ。
+** ゲームターンがオーバーフローするバグ。
+** 悪夢モードでモンスターから経験値が異常に多く入手できたバグ。
+** その他、各種typo、へルプ修正。
+
+#### 1.6.2更新内容
+
+* その他、各種typo、へルプ修正。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。ご了承ください。
+
+* Mon Jul 12 06:28:44 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ee889fa0920c7eda90a99d69535052a902b9756e[1.4.7と1.6.2の変更内容リストを追加. 1.4.7と1.6.2のリリース予定日は13, Jul., 2004とした.]
+* Mon Jul 12 05:03:37 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/59ab23324877f57fa074ca8c301ff118c0b6192d[ダンプのセクション間の改行の調整.]
+* Mon Jul 12 04:06:16 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/32413cb9ea4f8496f25d7c458b4ec09c34c16635[ダンプにペット命令のうちいくつかの状況を記録するように変更.]
+* Mon Jul 12 02:20:38 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7f10a30a5bc8b6f094783062b18a99b5329b5a56[英語版ダンプの各セクションのキャピタライズ修正.]
+* Mon Jul 12 02:02:35 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7aa74c098d0747f609604e0d02ff128f59a5c0da[*勝利*メッセージや*勝利*後の辞世の句の入力後にはその内容でいいかどう かの確認を行うように変更.]
+* Sun Jul 11 12:36:16 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c0823930c7fcf255e35a0e8c4cc27a18306b7383[幻覚時の時刻別メッセージを和訳.]
+* Sun Jul 11 12:35:41 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d449286d296d83773e3e45ab76151e908c951d66["Zangband" -> "Hengband".]
+* Sun Jul 11 11:53:37 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/740aebb8e35a0656989de0174f20cfa7732fb4ad[ゲームターンがオーバーフローするバグを修正. このバグ修正に伴い, 以下 のように仕様を変更. * 20000日目に達したら, 20000日目を永久に繰り返すようにした. * 20000日目は*****日目と表記することとした. * 通常画面では1000日目以降は***日目と表記することとした.]
+* Sat Jul 10 15:50:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/065ee04577dec4c22895cc89a87eeb523491dd7e["バジリスク" -> "バシリスク".]
+* Thu Jul 8 23:58:28 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cca9898c2e43317cf665d732b1a837378cc506ae[クエストから帰還で脱出するとp_ptr->recall_dungeon = 0となり, その状態 でクエスト内で帰還を使っておいて地上に出てから帰還発動を待つと, "荒野" という最大 1 階のダンジョンに飛んでしまうバグを修正.]
+* Thu Jul 8 11:15:46 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c604646ea324593ac15733b70d4c0e4cfc699d38[悪夢モードでモンスターからの経験値が約2倍入手できていたバグを修正.]
+* Thu Jul 8 08:08:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/68a9a05458ceaa328bd7b0850f65b43801de51f9[悪夢モードでモンスターの自動生成スポイラーを出力しても, スピードとHP は通常モードの数値で出力するように修正.]
+* Sun Jul 4 10:00:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d5e97ab53b789d2a1e9d95f813015fa58c6bffe1[ザックからアイテムがあふれて床に落ちる判定を関数化し, 従来通りプレイ ヤーの行動直前に1回判定する他, 行動直後にも判定を追加. これにより, あふれている途中のアイテムが各種魔法の影響を受けなかったり, 帰還で1個 余計にアイテムを持ち運べるバグを修正.]
+* Sun Jul 4 08:46:38 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d340ed00f8d33c4272d2bce679bdf21b37133803[使われなくなった関数do_cmd_pray()を削除.]
+* Sun Jul 4 08:40:32 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8a1422ffd9d4ab98d0a9ed846cb74011a7ec6264[変数strの使い方の細かい修正.]
+* Sun Jul 4 08:21:00 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4cf97270b51c54f139fda4044ce6e9782e2c4868[現在MPが0ならば魔力吸収の呪いのメッセージが出ないように修正.]
+* Sun Jul 4 08:13:14 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0317420610ff539c4fefe427c1e1ace88c95300d[吟遊詩人, 狂戦士, 鍛冶師, 忍者のメニューで, "魔法/特殊能力" の表示が 職業に対応して変化するように修正.]
+* Sun Jul 4 07:31:33 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/674589ce4330837b638cf43d3398df6fba3225cc[ものまね能力の表示とコメントの修正. * 英語版での "まね" 表示が "Mane" のままだったので, "Imit" とした. * コメントについて, "Mane" -> "Imitation". * 記号定数について, "PR_MANE" -> "PR_IMITATION". * 関数名について, "prt_mane()" -> "prt_imitation()".]
+* Sun Jul 4 07:13:18 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/28d43565334daa402c1305d09f5e53bb6927ec58[･ｳ･皈ﾈ､ﾋ､ﾄ､､､ﾆ､ﾎｽ､ﾀｵ. * "Kihei" -> "Cavalry". * "Kaji" -> "Weaponsmith". * blows_table[\][\]､ﾎ･ｳ･皈ﾈ､ﾋｵｳﾊｼ､ﾋ､ﾄ､､､ﾆ､ﾎｵｭｽﾒ､ﾉｲﾃ. * ｹｶｷ箚ﾗｻｻ･ｳ｡ｼ･ﾉ､ﾎ･ｳ･皈ﾈ､ﾎｺﾙ､ｫ､､ｽ､ﾀｵ.]
+* Sun Jul 4 06:49:44 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/209a9158b92122641064cf50cdb615b6c8a67133[ﾅｹ､ﾎﾃ讀ﾇﾋ簍｡ｽﾊｳｰ､ﾎｿｦｶﾈﾊﾌﾇｽﾎﾏ､ﾎｸ嵂ﾌ､ｬｻｲｾﾈ､ﾇ､ｭ､ﾊ､ｫ､ﾃ､ｿ･ﾐ･ｰ､､ﾀｵ.]
+* Sun Jul 4 06:20:34 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cff817038a34b0e9df36600e0fb15b8e75e2d20f[･ｳ･皈ﾈ､ﾋ､ﾄ､､､ﾆ, "Imitation" -> "Imitator".]
+* Sun Jul 4 06:16:58 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/af613a11d403e718fa7297470bb49975462dd637[･ｳ･皈ﾈ､ﾋ､ﾄ､､､ﾆ, "Harper" -> "Bard".]
+* Sun Jul 4 06:01:52 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3dbb2b4616dc7d7f3a88abc5b8432c78d8d7f7f8[英語版のmagic.txtの表で, 観光客と魔獣使いが空欄だったのを修正.]
+* Sun Jul 4 05:23:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/857836a999b5f8b2209072d325314a8919151100[テレポート・レベルで名前付きペットが消された際にplayrecordに残るよう に修正.]
+* Sun Jul 4 04:27:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e228eca9aba67c98eebd477ae17670dddaec07b2[レベル15以上のハーフトロル狂戦士も戦士同様に遅消化が得られるのに, 'C' 表示に遅消化が現れないバグを修正.]
+* Sun Jul 4 04:20:32 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/fe9ff14940da7d4c328cb7e07b8ee9eeca235ad7[死亡データロード時に前回のランダムクエスターからQUESTORフラグを落とし てあるにもかかわらず, 新しいランダムクエスター決定時にQUESTORフラグを 落とし直す操作を行ってしまい, r_info.txtに直接記述されたQUESTORフラグ が無視され, そのモンスターがランダムクエスターに選ばれたり初回ロード のみ通常出現したりするバグを修正.]
+* Sun Jul 4 03:35:07 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f01da50d6e21536072c25fb19d2e0f559ef6e6c0[モンスターの最大HPに関する修正. * 吸血攻撃でモンスターの最大HPが1未満になるバグを修正. * 0d*, *d0というHPダイスを認めないようにした. これらはデータ読み込み   時にそれぞれ1d*, *d1に修正されるようにした. * HPダイスの面数が1の場合はモンスターの思い出にもFORCE_MAXHPと同様の   表示をするように修正. * 悪夢モードでのモンスターの思い出には最大HPも2倍にして表示するように   修正. ただし自動生成スポイラーでは標準の値を表示する. * 最大HPにダメージを受けたカメレオンがHPの低いモンスターに変化すると   最大HPが0になる場合があり, 0除算の原因となるバグを修正. * 悪夢モードでのカメレオンの変化時に最大HPが2倍にならないバグを修正.]
+* Sat Jul 3 23:49:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/729098d3bec0f9726f8ed724303e3df62347ca5a[object_desc_num()の使い方にミスがあり, アイテムに割引がある場合に {呪われている} といった銘を潰してしまうバグを修正.]
+* Sat Jul 3 23:49:15 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dc9f99ec10565691145230e9c9ac0539c72ebff7[ロング・ソード『ワーウィンドル』のSPEEDフラグが重複していたので修正.]
+* Sat Jul 3 23:48:52 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b3fd434d942a3da123245bf1904eeb9c2a2ee941["Saiayan" -> "Saiyan".]
+* Sat Jul 3 23:48:13 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/07f0c0ad46389cb1b72580bcf6ac772731f4b838[簡易鑑定の説明の修正. * 職業がZAngbandのままになっていたので修正. * 装飾品鑑定の説明を追加. * {上質以上}に対応.]
+* Sat Jul 3 23:47:04 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/da5bb8ff24d96d4c268347d2f148d8e91f3f4abe['n'や'['による繰り返しコマンド使用時に, get_item()にUSE_EQUIPを指定 して装備品からしかアイテムが選べないはずなのに床上のアイテムを選べる ように本来選べない対象を選べてしまっていた. このためアイテムが一杯の 時に腕に持てるアイテムや指輪を落とした直後に繰り返しコマンドを使って 床に落ちたアイテムを装備するとアイテムが不正な位置にコピーされてメモ リを破壊したり, アイテムが消滅するバグを修正.]
+* Sat Jul 3 23:46:36 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4f9e8fcb7cc93743f3f37573aaad4f9d125bc11a[酸の矢のエゴ指輪を発動すると火炎属性のボルトを放つバグを修正.]
+* Sat Jul 3 23:46:04 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/511cdc7a7e98c803d08baf0f5eafab879ca7cb99[ランダムテレポート装備を複数装備していてその中の最低1つに{.}がなく ランダムテレポートが可能な場合, {.}を刻んだランダムテレポート装備がテ レポートの力を発動させるメッセージが出る場合があるバグを修正. また, 能力を発動させるメッセージの出るランダムテレポート装備は候補の中から ランダムに選ばれるように変更.]
+* Tue Jun 22 12:57:55 2004 +0000: (nsk) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/379277bb1f823230635456ddf2e263b1b6543b39[Mac版で自動拾いを使うと異常終了することがあるバグを修正．]
+* Sun Jun 20 12:38:55 2004 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6cfa3e828f511599aa203ef5c96b8c2d09f490f8[warning､ｬｽﾐ､ｿ､ﾎ､ﾇｽ､ﾀｵ｡｣]
+* Thu Jun 3 00:04:02 2004 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ce00a85dd37326a6df262d5b916eb2c0bad11bd7[Feanorian lamp -> Feanorian Lamp.]
+* Mon May 31 17:57:46 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/99f225b5a2ff5c250293c4d5403bda8e2908b519[ﾈronman_rooms､ﾎﾅｷｳｦ､ﾎﾉｰ､ｬﾁｴ､ﾆｸﾉﾎｩ､ｷ､ﾆ､ｷ､ﾞ､ｦ･ﾐ･ｰ､､ﾀｵ.]
+* Mon May 31 12:21:05 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5bd9ad87c58b49e8ce0708f438b4648882cdc969[FAQから私を削除. これまでお世話になりました.]
+* Mon May 31 11:39:35 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7381245d0f269f89d1fc596c4ff7b8e650c4595f[is_outer_grid()と書くべき部分がis_inner_grid()と書かれており, ダン ジョン生成時に孤立した部屋が生成されていたバグを修正.]
+* Sun May 30 22:42:17 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/318a8314d1cc86c7975285b23955593da6e6fe3e[透明な地形のテスト用のダンジョン "ガラスの城" を追加. * 40-60階. * ガーディアンと報酬を置いていない. 後々追加される可能性はある. * 閃光攻撃, 暗黒攻撃, 光源, 暗黒光源, 透明のいずれかを持つモンスター   のみ出現する.]
+* Sun May 30 22:29:07 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e831d38891e439e43816b1c807be39b43a120166[ガラスの部屋の中心部分にCAVE_ICKYを付け忘れていたので修正.]
+* Sun May 30 22:13:27 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/eeef039af7848cd5532dd4e886db0ab729df8a28[ダンジョンフラグGLASS_ROOMを実装. このフラグを持つダンジョンでは低確 率でガラスの部屋が生成される. テスト運用として3種類を生成する.]
+* Sun May 30 18:14:10 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/dcf0707efa29408c3bdf05a8e93b90e56fc6f3d5[モンスター格闘場の観客席を永久ガラス張りに変更. モンスターの光源範囲 等も見えるようになる.]
+* Sun May 30 17:50:20 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/10b61dc2007f9524e109f6f952c66b2496678dff[ダンジョンフラグGLASS_DOORを実装. 通常のドアがガラスのドアになる. ガ ラスの壁の実験用のダンジョンに用いる.]
+* Sun May 30 17:25:42 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e40f32170de19868a873da863cebb7f1f0938dfd[地形に関する変更. * 固定vaultにガラスの壁, 永久ガラスの壁, ガラスのドア, カーテンを出現   させられるように変更. 対応文字をそれぞれ'$', 'Y', '-', '''とする.   これらをいくつかの固定vaultに適用した. * ドアの地形IDを格納する変数を構造体door_typeでまとめた. これに伴うド   ア配置関数群の変更. * 部屋のカーテン配置の変更.]
+* Sun May 30 13:25:47 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/55e68847df6339538b75e4eb1c3aaff4f89d941a[NO_CAVEダンジョンではランダムvaultのうち泡, 洞窟, エレメンタルvaultを 出さないように変更.]
+* Sun May 30 13:15:28 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/60c68a00172488eb57cb228d4d7468589c8b48ba[モンスターの閃光ブレスに関する修正. * カーテンの向こうからでもプレイヤーに対して閃光ブレスを吐こうとして   しまうバグを修正. ボールかすりの判定におけるバグも修正. * モンスター対モンスターで, 視線が通らない場合は閃光ブレスを選択肢か   ら外すように修正.]
+* Sun May 30 08:31:41 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/061226e2e3d57157813367e669d46a59515b29fd[カーテンの出現を許可するダンジョンフラグCURTAINを実験的に実装. 鉄獄と 城に与えた. NO_CAVEだと比較的出やすいが, 基本的にカーテンは出にくい. 関連して, 以下の変更を含む. * place_closed_door()のプロトタイプ宣言が2重になっていたので削除.]
+* Sat May 29 18:42:54 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/58fd741a688f2adce07de91405a55714d8eb0287[プレイヤーの光源半径が3以上の時, モンスター格闘場で光源範囲が永久岩を 突き抜けるバグを修正.]
+* Sat May 29 18:12:16 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3d0a8ddae308c11a4866dbc9974ba6254a79496f[ignore_unviewが有効だとモンスター格闘場の戦闘状況が表示されないバグを 修正.]
+* Sat May 29 18:00:25 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e4a5b628660529673dd122249ea584da4add6a02[ignore_unviewを地震でダメージを受けた/埋もれたモンスターのメッセージ にも対応.]
+* Sat May 29 17:38:10 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cec59b5aaf3377f533e4a30af3fa9ffff276a143[オプションignore_unview, disturb_nearは視界内であっても魔法が届かない 場所を視界外とみなすように修正.]
+* Sat May 29 15:46:48 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b7c91be275cdacbeb8f8e160b4650e918df1277e[地形に関する変更. * defines.hからFEAT_*マクロを削除. 必要な地形IDは起動時にタグから求め   て外部変数に代入しておく. * 参照する必要がない地形IDに関する部分を削除. * 地形のpowerとして扱っていた値をsubtypeとpowerに分割した. powerは地   形の耐久や抵抗に関わる値, subtypeは分類のみに使う値とする. * 鍵のかかった/くさびの打たれたドアがf_info中で連続している必要がない   ように, その種のドアのIDを起動時に配列に保存するようにした.]
+* Fri May 28 21:52:53 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/52d8caadddaeb5be6f50b891736aa652665c099d[ガラスのドアを破壊する際のHP判定が抜けていたので追加. 地形破壊の際の HP判定を関数check_hp_for_feat_destruction()にまとめた.]
+* Fri May 28 19:46:33 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bd1e3101e35b595d24369f30cd724283f2a684cc[モンスターが固有で落とす固定アーティファクトやダンジョン制覇時の報酬 の固定アーティファクトが生成スペース不足で消えた場合, 保存モードで あっても発見済みになるバグを修正.]
+* Fri May 28 18:26:12 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/330437bc57408ae318ba37ff0715a01f12c7d016[モンスターが固有で落とす固定アーティファクトやダンジョン制覇時の報酬 の固定アーティファクトの生成時にa_ptr->floor_idが記録されていなかった バグを修正.]
+* Thu May 27 20:55:43 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/84c58762171463d0e15000104057a55dff7b7158[プレイヤーの周囲にアイテムを置けない状況でアーティファクトを落とした 場合に配列外アクセスを起こして変愚蛮怒が落ちるバグを修正. また, 行き 止まりの階のようにアイテムを置けるスペースのないフロアでアーティファ クトを置いても無限ループに陥らないように修正.]
+* Thu May 27 19:01:31 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4418d073240543410aa68597db5f0c243404a1a7[保存フロアのロードに失敗して行き止まりフロアが生成される際に, ダン ジョン生成中のみのフラグを正しく処理していなかった部分の修正.]
+* Thu May 27 16:05:37 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2dabd068522a6433630194cea47785e2d680c294[ガラスの地形であることを示す地形フラグGLASSを実装. ガラスの地形は以下 の仕様とした. * ガラスの地形を叩き開ける (BASH), 掘る (TUNNEL), 岩石に効く魔法を使   う (HURT_ROCK), 分解する (HURT_DISI) と割れる. * ドアを叩き開ける時は通常のドアと違いOPENアクションは実行されず, 必   ずBASHアクションが実行される. * 破片で50ダメージ以上, 轟音で200ダメージ以上を与えると割れる. ダメー   ジが蓄積するわけではない. * ガラスの地形が割れると半径1の破片爆発が発生する. ダメージは中心部で   も25を上限とする. 破片爆発の "詠唱者" IDには特殊IDを用いる. * モンスターが地形を破壊した際のメッセージが変わる. * ガラスの地形が壊れる際のサウンドをlib/xtra/sound/sound.cfgのglass   エントリで設定できるようにした. このサウンドは鏡が割れた際にも用い   られる. なお, ガラスのドアを壊した場合は通常のopendoorエントリのサ   ウンドは用いられない. また, 地形を破壊しても元々メッセージのない部   分ではサウンドは鳴らない. * HPが少ない非STUPIDのモンスターはガラスの地形の破壊を試みない. * ガラスの地形を岩喰いで食べることはできない.]
+* Thu May 27 05:00:15 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f06282ac7dfadd5ccde337ac484bf89e0f6c6232[ハウンドはエレメンタルに準じる扱いとして, 骨と死体フラグを削除.]
+* Wed May 26 19:55:15 2004 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5cf2e957380ccbec2a22eb274fd99d26701beea2[超能力者の超能力や鏡使いの鏡魔法に失敗して "制御できない力の氾流" が 発生してそれが死因となる場合, 死因が表示されなかったり変愚蛮怒が落ち たりするバグを修正. project()に渡す特殊IDを用意して解決した.]
+
