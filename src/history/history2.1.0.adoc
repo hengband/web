@@ -1,0 +1,24 @@
+:lang: ja
+:doctype: article
+
+## 2012/04/27 Ver.2.1.0 (開発版)
+
+### リリースノート
+
+Ver.2.1.0は2012/11/09に更新されました。
+
+### リポジトリ詳細
+
+* Fri Nov 9 14:44:37 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7dc7b1c023471b46b64072130877df5aa6b0fe57[開発版2.1.0へ移行。 新規モンスター２件追加。]
+* Sat Sep 8 05:55:39 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b87eb07f1d5fe0bc3923868e2609b966a9c68a44[add type casting for fprintf]
+* Sat Sep 8 05:10:54 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/70787b78a91e0e00ecf064dd0e4c2da9da8c4817[add configure option --enable-c99]
+* Mon Aug 13 12:12:11 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/04e46eae696f1c3b3efb0c732fb7f7c0dbaf5b9b[msg_format文の修正。]
+* Tue Aug 7 08:02:13 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/26280f252025a95dc50284d4defa51ca19da27ee[呪文の巻物の効果がスナイパーにも一部付加されていた不具合を修正。]
+* Tue Aug 7 04:29:58 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f15d8139a9a3dc7760aab7bec243eeeef525c70a[モンスターの生成階層ブースト指向が２重になっていたため、「実質悪夢モード時意外の深層生成確率が倍＋さらに低確率で２重ブーストかかる可能性」であった状態を修正。 DEFINE上で明記した生成確率を実質倍にし、ブーストの限界値を若干上げて、なるべく元のままのバランスかつ、直感的に分かりやすい形に直した。]
+* Mon Aug 6 12:42:05 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4c7ac6eeee33d7d5cdaf7d2d3315e8e1d84602bb[dungeon_turnの過剰経過による、NASTY_MONSTER発生率と階層上昇を有効な形に実装し直した上で、若干調整。]
+* Tue Jun 12 12:52:30 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ed42707d8df16e914f16c8a93704b477cbdcd01a[先のコミットだとC99に完全対応していないコンパイラが対応できないので、プリプロセッサ「C99」で囲って以前のtypedef宣言も差し戻した。]
+* Tue Jun 12 12:29:52 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/30a6f24a8450636cb705ad54861ee8390a3db8cc[update typedef]
+* Mon Jun 11 22:33:25 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/26bf3dac9af41a56908c9fd50c59acdc884806ca[do_cmd_cast()時のMP消費を実際の影響処理より前に置き、 カマイタチなどで理力攻撃を行なった後のMP不足処理が発生しないように修正。]
+* Sun Apr 29 23:46:05 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5c2705fe9a0f12c5b07eff3df9e5685c9f014445[アブホースのシンボルを原典にのっとりJからjに修正。]
+* Sun Apr 29 10:20:35 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2a1c12e1820a72760b80ea7efc26d5a89f2d758f[ドラウグルイン、フェンリル、カルハロスの打撃ダイスを上方修正。]
+
