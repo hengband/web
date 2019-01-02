@@ -25,7 +25,7 @@ Ver.1.4.3及びVer1.5.3は2003/07/20同時公開されました。
 
 ### リポジトリ詳細
 
-一部文字化けは実リポジトリからの仕様です。また1.4.2と1.5.2のコミットが混ざっています。ご了承ください。
+一部文字化けは実リポジトリからの仕様です。また1.4.3と1.5.3のコミットが混ざっています。ご了承ください。
 
 * Sat Jul 19 18:18:47 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/69085ee9feeb905df4755ae889adf98444b58f4d[ｹｹｿｷ｡｣]
 * Sat Jul 19 18:13:02 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6975f30dfe3af6b01204c72714e8732de25b8869[1.4.3､ﾈ1.5.3､ﾎﾊﾑｹｹﾅﾀ｡｣]

@@ -1,0 +1,64 @@
+:lang: ja
+:doctype: article
+
+## 2003/08/12 Ver.1.4.4 (安定版) / Ver.1.5.4 (開発版)
+
+Ver.1.4.4及びVer1.5.4は2003/07/20同時公開されました。
+
+#### 1.4.4更新内容
+
+* バグ修正
+** タイル表示で隠し扉が'#'になっていた。
+** 歌を止める際1/10だけ時間を消費するはずが、消費していなかったので修正。
+** リピートコマンドで練気術を使うとき盲目になった直後だと異常動作。
+
+#### 1.5.4更新内容
+
+* 新アーティファクトアミュレット追加(古い城の報酬)。
+* {@ma}、{@0}等の銘の効果が装備や床の上のアイテムにも使えるように、
+* また、銘によるタグ「a)」等の変更をリスト表示に常に反映。
+* view_unsafe_grids時の'x'印はトラップ破壊の魔法でも消える。
+* バグ修正
+** pval付きの指輪等の通常アイテムの値段が非常に安くなっていた。
+** 飛び道具の熟練度が上らなかった。
+* その他、1.4.4 の全ての変更点。
+
+### リポジトリ詳細
+
+一部文字化けは実リポジトリからの仕様です。また1.4.4と1.5.4のコミットが混ざっています。ご了承ください。
+
+* Tue Aug 12 10:28:01 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/94098e42ddc6e8c0aeefc85eeb8caf687c1303ea[ｹｹｿｷ｡｣(1.4.4/1.5.4)]
+* Tue Aug 12 09:32:37 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f3b93023692d55c79cd52ac75fd67534a2e76da5[バージョン1.5.4用に更新。]
+* Tue Aug 12 09:26:32 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/35d0281fd75fc2ab145940750c534b05f8ff4f17[トラップ解除魔法の軌道が"見える"場合は必ずobviousを立てるように変更.]
+* Tue Aug 12 09:05:12 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/531ab6140bab7f607b5255c3d5fc2dc569faf07b[ホームページのアドレス変更。 hogeさんのアドレス変更忘れていた所もsourceforgeのメールアドレスに変更。]
+* Tue Aug 12 08:42:34 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c9dd2bdb0b8449de584c1a8df06482e0a0d29f1f[トラップ解除魔法を使って'x'が消えた場合のみにobviousを立てて, 元々'x' がなかったグリッドではobviousが立たないように変更.]
+* Tue Aug 12 08:34:05 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/009dca4db62f2c46c5d4d59d2dec2e7455f4eb8b[トラップ解除魔法を使って魔法の軌道が見えた場合は'x'を消すように変更. 盲目状態では軌道が見えないので'x'は消えない.]
+* Tue Aug 12 05:20:06 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/69bf66f2592ef39d4377bbc2a7ded1850a9a9130[ﾏｵ､ﾎﾂｲﾄｹ､ﾋANIMALﾄﾉｲﾃ.]
+* Tue Aug 12 00:22:08 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5335ad94d150ac1b6d2a52048b0bbb357017780f[バージョンを1.5.4へ。]
+* Sat Aug 9 15:35:35 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8913b3f5adb1a4b06f4576831bb1fe17261ef43c[聖騎士の首飾りにBLESSEDを付けて呪われにくくした。]
+* Wed Aug 6 03:08:55 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/89bd2eeb45f0c5f519c9cfb11048b6901540b896[メールアドレス更新。]
+* Tue Aug 5 15:27:15 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a06a995f567f4f64a8b4f919f825320a703db68a[{@(コマンド)(数字)} と刻んだ場合に選択肢が "(数字))" に変わるのが不評 だったため, 数字では選択肢の文字が変わらないようにした.]
+* Sun Aug 3 14:27:47 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a8579cd6cbdd9139647e486104a07241fae1fadd[★聖騎士強化, その他新★のレアリティ調整.]
+* Sat Aug 2 13:48:18 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8a7ccb0fedcd7452eb98084e456565d59acc14d4[首飾→首飾り]
+* Sat Aug 2 03:32:54 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2297e8f6f984ce1701bc3f9187887d1f62fa333d[微少な速度よりも混乱しないコードの方が良いという事で、 _nothereさんの一番最初(厳密には「細かい修正」が入った2番目)のコード に戻した。つまり、c_ptr->mimicを参照するときに byte feat = f_info[c_ptr->mimic ? c_ptr->mimic : c_ptr->feat\].mimic; を使うコード。]
+* Fri Aug 1 21:53:09 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6d6d15dda26b686f4d69c4f2ca973eb5c7bcbfe7[最初からf_info[\].mimicを見て代入する変更を破棄.]
+* Fri Aug 1 15:24:31 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7b1ba960c08ac00d59fbf3251fb316ad33406a61[･ｬ･ﾁ･罕ﾔ･ﾏpurple､ﾇ､ﾊ､ｯgreen.]
+* Thu Jul 31 12:23:47 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/110557ace89baee4288a274365f73516e85a5c4d[bound_walls_perm無効時に, 隠しではない財宝の鉱脈がダンジョンの外壁に 出ないように変更.]
+* Thu Jul 31 10:12:05 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f7c700a3b9077064571045b921e969a22c550577[通常のセーブ/ロード時以外でc_ptr->mimicに0以外の値を代入する際に, 最 初からf_info[\].mimicを見て代入しておくように変更. これにより, 実際に c_ptr->mimicを見る場合にそれ以上f_info[\].mimicを見る必要がなくなる.]
+* Tue Jul 29 15:55:12 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/3eed5c18313c113dedf6acfcfe0bd894a7571da6[grid.c 1.17にならい, 隠しドアをc_ptr->mimicで隠す時にf_info[\].mimicを 先に反映させるようにした.]
+* Tue Jul 29 15:48:52 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b3487d6604680d17036736eb4a597562ffc3e4e0[grid.c 1.17 の変更に従い、隠しドア等を表示するとき、 f_info[c_ptr->mimic\].mimicではなくc_ptr->mimicを見れば十分であるので、 以前の変更を戻した。(ただし、今後もc_ptr->mimicに何か代入するときに f_info[\].mimicを参照した後の値を代入するように注意する必要がある。)]
+* Tue Jul 29 15:41:38 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9d1b5b4747db1f071691742373418a4714999115[隠しドアをc_ptr->mimicで隠す時に、f_info[\].mimicを先に反映させるようにした。 したがって地形を表示する時にはf_info[c_ptr->mimic\].mimicではなく、 c_ptr->mimicを見れば十分。]
+* Tue Jul 29 07:09:44 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ade818bac231561f5d2cf5691012ab429a3d2c45["アルベリヒの息子『ハーゲン』" の説明テキストの修正.]
+* Tue Jul 29 01:02:55 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d7f9e6b5cef000c53bb5fcf8a9a889cb15f18468[mimicを用いるfeatの代入部分の細かい修正.]
+* Tue Jul 29 00:47:23 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/06228c2d0c0186b193580913fa93b24bf7945b52[mimicのあるグリッドのmimicの地形にさらにデフォルトのmimicがある場合 に, その地形に対応するタイルが使われない場合があったバグを修正. 部屋 外周の隠しドアがタイルモードで剥き出しになるバグも修正. また, mimicな しの場合にf_info[c_ptr->feat\].mimicを使う場合はc_ptr->mimicに対しても f_info[c_ptr->mimic\].mimicを使うようにした.]
+* Fri Jul 25 17:12:22 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bf74f758b98a5f1408700807b346627f923f07fd[･｢｡ｼ･ﾆ･｣･ﾕ･｡･ｯ･ﾈ､ﾎﾀ篶ﾀ､ﾉｲﾃ.]
+* Fri Jul 25 01:30:39 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0b13c2ca9a413cabe0bfe4ba38337735cd36d34a[射撃武器の熟練度の記号定数化を間違えており, 熟練度が[初心者\]から上が らなくなるバグを修正.]
+* Thu Jul 24 02:16:57 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8e20dd2c1d5569b1893e4357e2fd362464cf3a16[プレイヤーに装備的反感がある場合に, 友好的なモンスターが目を覚まして すぐには敵に回らない場合があったので, 反感によって起きる処理だけは process_monster()に戻し, 敵に回る処理とのタイミングを合わせた.]
+* Wed Jul 23 17:21:13 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7e8a60405c78f7f8bc938aa1e0dc6208dda57c46[レイシャルパワーに関する修正. * レイシャルパワーに失敗した際のflush_failureが他の場所と違ってメッ   セージの後にあったので修正. * 吟遊詩人で歌を止める際にenergy_use = 10があるが実際はreturn FALSEで   無効になっていたため, 歌や一時停止中の歌を止めた場合は本当に10だけ   エナジーを使うように修正.]
+* Tue Jul 22 16:36:03 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d37cfbebaad3b0d9e159410e2758c345eedccb8[デバッグモードの^A o でアイテムをいじっている時、costの表示が本物の値段 ではなく店主が認識する値段(無価値でも未鑑定なら売れる)になっていたが、 常に本物の値段を表示するようにした。]
+* Tue Jul 22 16:33:43 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/c27b45c863dd07816a675869427b850dca63ffb3[revision 1.89 で、pvalの値段評価が2個所あったものを1個所にまとめたが、 2個所にあったのはベースアイテムのpvalと、☆に付くpvalとで価値が違う為だった (さらに言えばベースアイテムのpvalの価値はある程度ベースコストに含まれている) ので、元に戻した。 また1.89でエゴでない指輪でpvalが値段に影響しないバグを作ってしまっていたので それも直った。]
+* Tue Jul 22 14:10:12 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ed6d3f92004dd268b4774e703d73cb012db8292f[C-q時のクエスト達成リスト、英語の方のレイアウト修正。]
+* Mon Jul 21 21:09:57 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/0e33967be74662b766ab21a8bff523387adf18e3[4つの新アーティファクト導入. 古い城の報酬に.]
+* Sun Jul 20 23:45:42 2003 +0000: (nothere) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/afc4a98bcd620628d31fe837badfa5b99371d7f8[タグ銘機能に関する変更. * 装備品にも{@(コマンド)(タグ)}や{@(数字)}によるアイテム選択を使える   ようにした. 先頭のラベルの変更も追従する. * 先頭のラベルの変更が数字のタグの場合でも反映されるようにした. * {@(コマンド)(タグ)}や{@(数字)}によるアイテム選択をeasy_floor使用時   の床上の積み重なったアイテムにも使用できるようにした.]
+
+
