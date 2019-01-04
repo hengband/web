@@ -1,0 +1,41 @@
+:lang: ja
+:doctype: article
+
+## 2012/04/27 Ver.2.1.1 (開発版)
+
+### リリースノート
+
+Ver.2.1.1は2012/12/07に更新されました。
+
+### リポジトリ詳細
+
+* Fri Dec 7 13:51:50 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8b07d5ccf920aff05f16fe2791a3e84d6e07f0ff[Updated version to 2.1.1]
+* Fri Dec 7 13:14:02 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/19e3f81a70a20a075e7bdd36a9acfefe3796bfb0[Add some Heavy Crossbow Artifacts.]
+* Fri Dec 7 12:40:04 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d1cbc22e17ddba0e8bf652607cf5220e43244d53[Merge water-cave branch into trunk.]
+* Tue Dec 4 12:33:57 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/f3fb197aaa62c544f8ad8078e60811488b6c9ae2[Bug fix -- Tower Quest failed, continue to the next quest.]
+* Sun Dec 2 09:59:08 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d4c867387fedcd5f2c1af9943405e97b6cecd0c9[Change rewards of Old Castle Quest.]
+* Sat Dec 1 12:39:13 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cfd1541a4984bea6918980c94e3f87126201ae38[Upgrade Arena. Stronger the monsters, and rewards.]
+* Mon Nov 26 11:21:22 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/cdc78db3415c6360272901026083c39488dcf1c0[アリーナのプレイヤーと出くわすバグを修正。]
+* Sun Nov 25 15:17:28 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/1923fd7eb17dc5c662c0f1b0817c83634d104d38[ウィザードモードに職業を変える機能を追加（ただし、魔法領域の再設定などは行われず不完全であるので注意）]
+* Sat Nov 24 05:08:52 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5d91b0fc111eb8e29ad8a262b66d983099eb11e5[VC++2008及び2010のソリューションファイルとプロジェクトファイルを追加。]
+* Sat Nov 24 04:58:26 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e45478ed318064d4209ae4eaaa87405035916ee3[table.c の店舗情報整理。]
+* Fri Nov 23 10:21:39 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e493019d043f61fcec5896cd0037eeca4e3b43c4[アーティファクト１件追加。]
+* Fri Nov 23 02:10:20 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/2d26c9f1556744b5e861843d48f09fec8957d844[table.c の整理。]
+* Fri Nov 23 01:20:27 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/aa35144d144bfb65110221b57a879e66b828d670[message_pain()関数を整理。]
+* Wed Nov 21 14:35:58 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/96029c115d1711a5245d9518e7c9ab86f654af32[Improve the reward of Haunted House -- Amulet of Telepathy. And makes it a little more difficult.]
+* Wed Nov 21 11:31:43 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/ba6f7a59052ec508ac71cfd4098ecc756fbc787d[Improve rewards of Logrus Master Quest. Some good items in the Quest, and rewards stuff of speed.]
+* Tue Nov 20 11:23:07 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/9f0664e6727093888d23b9a9cc216ecc47ce739c[Fixed some monsters in Tower Quest -- Poisonous Dragons.]
+* Mon Nov 19 14:23:10 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6fdd3df4410b792723ca4f6e9f566ca8b627594b[No more unlimited Multiply monster drops -- up to 1024.]
+* Sun Nov 18 16:54:59 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/e4ede688bf98e63d46110d113b411e3ecb96905f[Completely change TowerQuest. Try Once, Difficult, and Reward Ring of Poison Resistance.]
+* Sun Nov 18 13:43:54 2012 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/82565983d582ea28268eaa16a9d90527e488c318[autoconfから--enable-c99を削除し、stdint.hの有無で判定するよう変更]
+* Fri Nov 16 16:12:00 2012 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/00e6c734f66a6ebe115a7e174375823711115899[tag_type構造体に関する修正]
+* Fri Nov 16 16:11:58 2012 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/bf739225194e25f4e123f962e18f9fc397f23f3e[書式をlong intに指定]
+* Fri Nov 16 16:11:56 2012 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7c06338af3dddbc53cd17655e891f4a4169117f5[配列に対して行っている不要なNULLチェックを削除]
+* Fri Nov 16 16:11:55 2012 +0000: (habu) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/d35ce4aec281386ea3e96c7e2ae6d6b115637566[fprintf(fp, buf) を fputs(buf, fp) に修正]
+* Fri Nov 16 13:17:02 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/a4b117f8098e97cad8d0ee308b073e0f2716c3f7[bug fix: disable target of spreading shuriken with index 0]
+* Thu Nov 15 14:59:03 2012 +0000: (dis-) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5cf15a682d7377bfa5b3e98f4a1c7a01ae74b2d0[reset kata_muso at travel]
+* Sun Nov 11 00:19:26 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b120614b24e80dadb2dde3ba0aa613b11fe8c175[ウィザードモードの★生成インターフェイスの不具合を修正。 アーティファクト一件追加。]
+* Sat Nov 10 23:55:47 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/6fff81d35fc850c5bda23afe6e156c73cd015bd0[ウィザードモードの固定アーティファクト生成処理を修正。]
+* Fri Nov 9 23:05:11 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b2ff1cb7c4b88fc8aeae2a83e1da30b290dfe928[モンスターを１件追加。闘技場を修正。]
+* Fri Nov 9 15:15:14 2012 +0000: (deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/b817696cf5183715ff7e93b7ee111e586021aa7c[ユニーク感知をランダムアーティファクトならびに弱いESP付加の選択肢に加え、ダンプに表示する仕様を追加。]
+
