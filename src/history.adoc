@@ -5,13 +5,14 @@
 
 現在バージョンごとに整理し、時系列順に並べています。しばらくお待ちください。
 
-### Ver.2.2.1
 
-### Ver.2.2.0
+### link:/history/history2.2.1.html[Ver.2.2.1]
 
-### Ver.2.1.5
+### link:/history/history2.2.0.html[Ver.2.2.0]
 
-### Ver.2.1.4
+### link:/history/history2.1.5.html[Ver.2.1.5]
+
+### link:/history/history2.1.4.html[Ver.2.1.4]
 
 ### link:/history/history2.1.3.html[Ver.2.1.3]
 
