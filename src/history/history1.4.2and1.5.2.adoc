@@ -419,8 +419,11 @@ Ver.1.4.2及びVer1.5.2は2002/12/24同時公開されました。
 * Sun Feb 9 20:33:23 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/45dc17560c21ed20967910ef594246a228f81245[充填時間が長いロッドを多数重ねるとo_ptr->timeoutがoverflawするバグに対策。 重ねられるロッドの数を99より少く制限するようにした。]
 * Thu Feb 6 11:50:03 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/eaac4df8c0a956c79ba6c38c55b9fa7c5610c013[gccで -Wunused を付けても警告が出ないように無視している関数の引数等を(void)で明記。]
 * Tue Feb 4 18:17:12 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/98440bb9d39190075d65f81cd13195b37ed5229e[- lore_do_probe()で思い出情報を全て得るようにして、モンスター仙人でも この関数を使用するようにした。probing()の場合は新しい思い出情報を得られ たときにメッセージを出す。 - files.cのマクロトリガーのコードでmalloc()を使っていたので string_make()に書き変え、同時にコード整理。 inet.cとreport.cはそもそも環境依存なのでmalloc()のまま変更しなかった。]
-* Tue Feb 4 02:12:43 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7de814b1a3832f1f6c971033016093085020e8c8[s/子悪魔/小悪魔/]
-* Sat Feb 1 09:37:42 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4bf012963058e3af31155f47de15eacc9e78389f[サーペントに乗馬できる複合バグ(1)+(2)+(3)修正。 (1) レベルテレポートで繋った階を結ぶ階段を捜して、その階段の上にモンス ターを誘いこみ、レベルテレポで先回りして階段の反対側から元のフロアに戻 ると、その階段の上にいるモンスターに重なる事ができるバグ。 (2) 騎兵の荒馬馴らしで乗馬した直後に落馬する場合、まわりが敵で埋まって いてしかも元自分が居た場所もバグ(1)によって埋まっていたとき、落馬が失 敗して荒馬馴らしの対象の敵にp_ptr->ridingが設定されたままになるバグ。 (3) 階を移動してペットが付いてくる時、p_ptr->ridingが設定されていれば ペットフラグが無くても付いてくる上、ペットフラグが無いときに強制的に付 けていたバグ。]
+* Tue Feb 4 02:12:43 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/7de814b1a3832f1f6c971033016093085020e8c8[s/子悪魔\/小悪魔\]
+* Sat Feb 1 09:37:42 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/4bf012963058e3af31155f47de15eacc9e78389f[サーペントに乗馬できる複合バグ(1)(2)(3)修正。]
+** (1) レベルテレポートで繋った階を結ぶ階段を捜して、その階段の上にモンス ターを誘いこみ、レベルテレポで先回りして階段の反対側から元のフロアに戻ると、その階段の上にいるモンスターに重なる事ができるバグ。
+** (2) 騎兵の荒馬馴らしで乗馬した直後に落馬する場合、まわりが敵で埋まって いてしかも元自分が居た場所もバグ(1)によって埋まっていたとき、落馬が失 敗して荒馬馴らしの対象の敵にp_ptr->ridingが設定されたままになるバグ。
+** (3) 階を移動してペットが付いてくる時、p_ptr->ridingが設定されていれば ペットフラグが無くても付いてくる上、ペットフラグが無いときに強制的に付けていたバグ。
 * Sat Feb 1 05:33:31 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/06c9e75fedc76a557970129460eabaaa90d01791[･ﾉ･ｭ･螂皈ﾈｹｹｿｷ｡｣]
 * Sat Feb 1 03:48:42 2003 +0000: (mogami) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/abf3f5db604536460b54a103969c6d68fe1b5037[{@ma}等のようにアルファベットをタグに使う方法を全てのコマンドで使える ようにした。その代りに{@a}のようなコマンド名を指定しない形式は使用不可 にしたので、{@aa}等と書いてもおかしな振舞いはおこらない。 仕様がすっきりして、{@ma@ba@Ga}等も使えるので良いと思う。]
 * Sun Jan 26 14:03:17 2003 +0000: (henkma) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/8d07b6ab98291a3db6cde7988bd7643b03058699[匠の加速魔法の期間の表示が間違っていたので修正]

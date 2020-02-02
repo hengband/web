@@ -110,8 +110,6 @@
 
 ### link:/history/history0.2.4.html[Ver.0.2.4]
 
-### link:/history/history0.2.3pre.html[Ver.0.2.3pre]
-
 ### link:/history/history0.2.3.html[Ver.0.2.3]
 
 ### link:/history/history0.2.3.html[Ver.0.2.2]
@@ -129,9 +127,5 @@
 ### link:/history/history0.1.0post.html[Ver.0.1.0post]
 
 ### link:/history/history0.1.0.html[Ver.0.1.0]
-
-### link:/history/history0.0.12.html[Ver.0.0.12]
-
-### link:/history/history0.0.0.html[Ver.0.0.0]
 
 

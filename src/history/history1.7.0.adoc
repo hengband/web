@@ -1,5 +1,6 @@
 :lang: ja
 :doctype: article
+
 ## 2003/08/26 Ver.1.7.0 (開発版)
 
 ### リリースノート
