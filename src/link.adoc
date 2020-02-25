@@ -20,6 +20,8 @@
 |================
 |link:http://macband.s15.xrea.com/[*band Fan Page(?)]|桑崎(Kuwa)さんのページ。旧Mac版変愚蛮怒を配布しています。ディレクトリまる見えの様に見えるのは「ジョーク」だそうで。変愚蛮怒の拡張サウンドセットが入手できます。2005～2006年を最後に更新停止しています。掲示板も停止中です。
 |link:https://rlbuild.herokuapp.com/[ローグライク実験室]|shimitei氏の*band系ローグライク配布ページ。開発版も含めて常に更新は早い他、最近のMacOS版もビルドして下さっています。
+|link:http://hengbandforosx.osdn.io/index.html.en[Hengband Application for Mac OS X]|backwardseric氏が独自にOSDNプロジェクトを立ち上げて作成してくれたMacOSX(Cocoa純正版)公開サイトです。
+|link:http://tanguband.github.io/heng_mac.html[http://tanguband.github.io/heng_mac.html]|短愚蛮怒の人にも独自にMacOSX版を配布していただいています。
 |================
 
 ### コミュニティ
@@ -45,6 +47,7 @@
 |link:https://osdn.net/projects/xangband/[XAngband(旧名:簡単愚蛮怒)]|ZAngband2.4.0の純和製バリアント。iksさんが開発しています。比較的簡単。2018年リンク切れにつき、OSDNのリンクに変更しました。
 |link:https://osdn.net/projects/toband/[TOband]|変愚蛮怒から派生したオウガシリーズベースの全く新しい雰囲気の*bandバリアントです。開発を受け継ぐ人募集中とか。2018年リンク変更。
 |link:http://www.miyamasa.net/heng_th_katte.html[変愚蛮怒の勝手版]|2014年からみやまさ氏の公開、変愚蛮怒をベースとして上海アリス幻樂団の東方世界を丸ごと取り込んだ大型バリアントです。
+|link:http://tanguband.github.io/[短愚蛮怒]|変愚蛮怒を25Fに凝縮したバリアント「サクサク、スピーディー、楽しい、のコンセプトで開発しています」
 |================
 
 ### Angband系以外のローグライク

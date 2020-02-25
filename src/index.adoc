@@ -3,6 +3,14 @@
 
 ## 最近の告知
 
+### (2020/02/25) MacOSX対応版及びバリアントリンク追加
+
+backwardsEric氏が対応してくれたMacOSX版や関連配布先リンク追加しました。なお、現在MacOSX版の最新である2.2.1.7cはリファクタリングや発見済のバグ修正を行っているα版であるため、ゲーム進行上重大な問題が発生する可能性があります。予めご了承ください。
+主な配布先は
+link:http://hengbandforosx.osdn.io/index.html.en[Hengband Application for Mac OS X]とlink:http://tanguband.github.io/heng_mac.html[http://tanguband.github.io/heng_mac.html]です。
+
+link:http://tanguband.github.io/[短愚蛮怒]へのリンク張らせていただきました。
+
 ### (2018/05/17) Windows日本語版2.2.1rをリリースしました
 
 Windows10のアップデート後に発生していると思われる不具合を修正したものです。
