@@ -3,7 +3,7 @@
 mkdir -p ../web ../web/history
 cp -r image *.txt hengband.css ../web
 
-list="index web_update jlicense link download lists history"
+list="index web_update development jlicense link download lists history"
 
 for v in $list; do
 	echo ${v}

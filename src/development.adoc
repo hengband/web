@@ -1,0 +1,8 @@
+:lang: ja
+:doctype: article
+
+## 現在の開発状況について
+
+現在3.0.0Alphaのリリースを行うために、link:https://osdn.net/projects/hengband/[OSDN]のlink:https://osdn.net/projects/hengband/ticket[チケット]にて公開までに必要な作業工程をまとめています。常に最新の進捗を追いたい場合はこれらを参照ください。
+
+本ページで今後公式情報をまとめていきます。
