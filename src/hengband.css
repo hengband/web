@@ -1,4 +1,4 @@
-
+*, *:after, *:before { box-sizing: border-box; }
 a:link 		{ color: #E09990;}
 a:visited	{ color: #C09990;}
 a:active	{ color: #F0DDDD;}
@@ -37,21 +37,21 @@ body {
 /* ヘッダ/フッタ ////////////////////////////////////////////////// */
 
 header{
-	width: 100%;
 	background-color : #000000;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
 footer
 {
-	width: 100%;
 	background-color: #000000;
-	padding: 10px 10px;
+	padding: 1rem 1rem;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	width: 100%;
 }
 
 footer > section
@@ -120,7 +120,6 @@ img.tama1
 
 section#mainMenu
 {
-	width: 100vw;
 	margin-right : auto;
 	margin-left  : auto;
 	background-color: #000000;
