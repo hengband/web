@@ -3,7 +3,8 @@
 
 ## 現在の開発状況について
 
-現在3.0.0Alphaのリリースを行うために、link:https://osdn.net/projects/hengband/[OSDN]のlink:https://osdn.net/projects/hengband/ticket[チケット]にて公開までに必要な作業工程をまとめています。常に最新の進捗を追いたい場合はこれらを参照ください。
+* 現在3.0.0Alphaのリリースを行うために、link:https://osdn.net/projects/hengband/[OSDN]のlink:https://osdn.net/projects/hengband/ticket[チケット]にて公開までに必要な作業工程をまとめています。常に最新の進捗を追いたい場合はこれらを参照ください。
+* 2020/12/13現在link:https://osdn.net/projects/hengband/ticket/milestone/1909[マイルストーン上で残り工数の計算とリリース日の検討を行っています。]
 
 ## 開発に貢献したい方へ(改訂…2020/11/16)
 
@@ -36,8 +37,10 @@ link:/development/development201103.html[公式開発記事]で解説しまし�
 
 持ち込みは現在以下で募集しています。
 
- * link:https://osdn.net/projects/hengband/ticket/37285[チケット #37285 v3.0.0のモンスター追加/調整]
- * link:https://osdn.net/projects/hengband/ticket/37324[チケット #37324 v3.0.0のアイテム追加/調整]
+ * [line-through]#link:https://osdn.net/projects/hengband/ticket/37285[チケット #37285 v3.0.0のモンスター追加/調整]#
+ ** モンスターについては3.0.0Alpha分は一度締め切りました。今後は link:https://osdn.net/projects/hengband/ticket/41042[チケット #41042 Ver3.0.0Beta(仮)のモンスター追加]へお願いします。しばらくはAlpha下の調整を要するので当分対応は先になると思われますがご了承ください。
+ * [line-through]#link:https://osdn.net/projects/hengband/ticket/37324[チケット #37324 v3.0.0のアイテム追加/調整]#
+ ** こちらも3.0.0Alphaへの導入は一度締め切りました。Ver3.0.0Beta(仮)用のチケットは再度作成しますが、その間までは上記のチケットでも一応お待ちします。ただしモンスター同様当分実装は先になると思われますのでご了承ください。
  * これらの際、ソースコードの寄稿などが合わせて必要ならばOSDNアカウントを取りlink:https://osdn.net/docs/PullRequest[以下のヘルプに従いプルリクエストを行う]などと合わせて開発メンバーにご相談ください。
 
 ### いっそバリアントを作りたい
