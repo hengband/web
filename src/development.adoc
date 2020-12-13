@@ -6,7 +6,7 @@
 * 現在3.0.0Alphaのリリースを行うために、link:https://osdn.net/projects/hengband/[OSDN]のlink:https://osdn.net/projects/hengband/ticket[チケット]にて公開までに必要な作業工程をまとめています。常に最新の進捗を追いたい場合はこれらを参照ください。
 * 2020/12/13現在link:https://osdn.net/projects/hengband/ticket/milestone/1909[マイルストーン上で残り工数の計算とリリース日の検討を行っています。]
 
-## 開発に貢献したい方へ(改訂…2020/11/16)
+## 開発に貢献したい方へ(改訂…2020/12/13)
 
 ### バグの報告をしたい
 
