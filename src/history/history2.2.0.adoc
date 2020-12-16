@@ -9,8 +9,8 @@ Ver.2.2.0は2017/06/08に更新されました。
 
 ### 主要な変更点
 
-* 修行僧と錬気術師の初期所持品から軟革よろいを除いて、スピードの薬を追加した。(link:https://osdn.net/projects/hengband/ticket/35029[チケット #35029 参照])
-* モンスターの以下の細かな特性や記述を表記用法の統一、誤訳修正、原作イメージ合致の観点から変更した。(link:https://osdn.net/projects/hengband/ticket/35039[チケット #35039 参照])
+* 修行僧と錬気術師の初期所持品から軟革よろいを除いて、スピードの薬を追加した。(link:https://osdn.net/projects/hengband/ticket/35029[チケット #35029] 参照)
+* モンスターの以下の細かな特性や記述を表記用法の統一、誤訳修正、原作イメージ合致の観点から変更した。(link:https://osdn.net/projects/hengband/ticket/35039[チケット #35039] 参照)
 ** 「ブルーホラー」を「ブルー・ホラー」に修正
 ** よろめき歩く塊のシンボルを","から"#"に変更
 ** 「レッド・ジェリー」を「レッド・ゼリー」に修正
@@ -25,7 +25,17 @@ Ver.2.2.0は2017/06/08に更新されました。
 ** デス・クアシトの思い出の和訳「それは小さな彫像のデーモンだ」を「それは小さな背丈のデーモンだ」に修正
 ** グレイ・モルドのDROP_CORPSEを外す
 ** 『秩序のユニコーン』にFEMALEをつける
+* Mac/Linux環境で超能力等の解説が文字化けが起きていたので修正(link:https://osdn.net/projects/hengband/ticket/35138[チケット #35138] 参照)
+* Visual Studio 2015でのビルド不具合を修正(link:https://osdn.net/projects/hengband/ticket/35706[チケット #35706] 参照)
+* プレイヤーの名前がクイックスタート毎に空欄になる不具合を修正(link:https://osdn.net/projects/hengband/ticket/35739[チケット #35739] 参照)
+* Visual Studio 2015ビルド時に一時ファイルを出力する機能にバグがあったのを修正(link:https://osdn.net/projects/hengband/ticket/35747[チケット #35747] 及び link:https://osdn.net/projects/hengband/ticket/35754[チケット #35754] 参照)
 * (以下チケットから情報収集途中)
+
+### 謝辞
+
+* shimitei氏、habu氏には各種バグの報告と実際の修正を行っていただきました。
+
+(文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
 
 ### リポジトリ詳細
 
