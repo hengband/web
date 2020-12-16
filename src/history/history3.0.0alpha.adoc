@@ -23,6 +23,14 @@ Ver.3.0.0Alphaは2020/XX/XXにリリースされました。
 
 * (作成中)
 
+#### ソースコード面
+
+* 長年煩雑かつ恣意的に配置されていた関数や定数定義群を用途に応じたフォルダやファイルに整理(チケット link:https://osdn.net/projects/hengband/ticket/40532[#40532] link:https://osdn.net/projects/hengband/ticket/40534[#40534] link:https://osdn.net/projects/hengband/ticket/40535[#40535] link:https://osdn.net/projects/hengband/ticket/40542[#40542] 等参照)
+* (作成中)
+
 ### 謝辞
 
-* (作成中)
+* まずhourier氏には1年もの作業を通じて、メンテナが本来やりたかったソースコードの抜本的な整理をまとめてやっていただきました。今回のリリースは彼の貢献に拠る所が最も大です。強く感謝いたします。
+* (作成途中)
+
+(文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
