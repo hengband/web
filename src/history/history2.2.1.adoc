@@ -7,6 +7,14 @@
 
 Ver.2.2.1は2018/05/19に更新されました。
 
+### 更新内容
+
+* rumors_j.txtの和訳をkokabandから拝借 link:https://osdn.net/projects/hengband/ticket/36911[#36911]
+
+### 謝辞
+
+* ssakusha氏のアドバイスにより一部の和訳をkoka氏のkokabandから流用させていただきました。両人ともありがとうございます。
+
 ### リポジトリ詳細
 
 * Mon Mar 19 20:04:42 2018 +0900: (Deskull) link:https://osdn.net/projects/hengband/scm/git/hengband/commits/5e4acf90005915536cb067b1dac85e1f7d04924a[バージョン2.2.1付けへ。 / Version to 2.2.1.]
