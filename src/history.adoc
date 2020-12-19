@@ -5,6 +5,13 @@
 
 現在バージョンごとに整理し、時系列順に並べています。しばらくお待ちください。
 
+
+### link:/history/history3.2.0.html[Ver.3.2.0(予定)]
+
+### link:/history/history3.0.X.html[Ver.3.0.X(予定)]
+
+### link:/history/history3.0.0.html[Ver.3.0.0(予定)]
+
 ### link:/history/history3.0.0alpha.html[Ver.3.0.0alpha]
 
 ### link:/history/history2.2.1.html[Ver.2.2.1]
