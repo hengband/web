@@ -11,4 +11,6 @@
 
 将来変更、あるいは廃止される可能性もあります。
 
-* マインドフレアの食事仕様変更(チケット link:https://osdn.net/projects/hengband/ticket/36911[#36911] 参照)
+* マインドフレアの食事仕様変更(チケット link:https://osdn.net/projects/hengband/ticket/3248[#3248] 参照)
+* ヘルプファイルの再編成、もしくはチュートリアルなど導入システムに抜本的な変更(チケット link:https://osdn.net/projects/hengband/ticket/3250[#3250] 参照)
+* 一部Linuxディストリビューションへのパッケージ採用情報と更新ための交渉とか (link:https://osdn.net/projects/hengband/ticket/28222[#28222]参照)

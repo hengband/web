@@ -9,4 +9,5 @@
 
 ### 予定実装内容
 
-* SAngbandを参考に「themed chest」を実装する。
+* SAngbandを参考に「themed chest」を実装する(チケット link:https://osdn.net/projects/hengband/ticket/3249[#3249] 参照)
+* オリジナルキー配置時のマクロ登録バグに対応(チケット link:https://osdn.net/projects/hengband/ticket/29251[#29251] 参照)
