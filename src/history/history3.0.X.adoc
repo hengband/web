@@ -11,3 +11,4 @@
 
 * SAngbandを参考に「themed chest」を実装する(チケット link:https://osdn.net/projects/hengband/ticket/3249[#3249] 参照)
 * オリジナルキー配置時のマクロ登録バグに対応(チケット link:https://osdn.net/projects/hengband/ticket/29251[#29251] 参照)
+* ベースアイテムに「丸太」を追加してみる link:https://osdn.net/projects/hengband/ticket/32398[#32398] 参照)

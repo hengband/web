@@ -13,4 +13,5 @@
 
 * マインドフレアの食事仕様変更(チケット link:https://osdn.net/projects/hengband/ticket/3248[#3248] 参照)
 * ヘルプファイルの再編成、もしくはチュートリアルなど導入システムに抜本的な変更(チケット link:https://osdn.net/projects/hengband/ticket/3250[#3250] 参照)
-* 一部Linuxディストリビューションへのパッケージ採用情報と更新ための交渉とか (link:https://osdn.net/projects/hengband/ticket/28222[#28222]参照)
+* 一部Linuxディストリビューションへのパッケージ採用情報と更新ための交渉等 (link:https://osdn.net/projects/hengband/ticket/28222[#28222]参照)
+* 新タイル作成の模索(あるいは新インターフェースなどの抜本的改変)(link:https://osdn.net/projects/hengband/ticket/33108[#33108]参照)
