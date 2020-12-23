@@ -38,6 +38,7 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 #### 不具合修正
 
 * リファクタリング時エンバグしたものまねで使った光の剣の威力が0になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37907[#37907] 参照)
+* Vault内部に山脈等の意図しない地形が生成される不具合(https://osdn.net/projects/hengband/ticket/33649[#33649] 参照)
 
 ### 謝辞
 
