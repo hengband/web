@@ -21,6 +21,7 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 
 #### インターフェース面
 
+* プレイヤーの技能値表示について具体値を出す方針を進める。(link:https://osdn.net/projects/hengband/ticket/37270[#37270] 他参照)
 * 英語訳の修正 (link:https://osdn.net/projects/hengband/ticket/40006[#40006] 他参照)
 * Linux版TrueTypeフォント対応 (link:https://osdn.net/projects/hengband/ticket/24042[#24042] link:https://osdn.net/projects/hengband/ticket/40048[#40048] 参照)
 * MacOSX版がbackwardseric氏の協力により間接的に実現(チケット link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
@@ -37,6 +38,8 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 
 #### 不具合修正
 
+* 「帰還と上り階段無し」時に特定クエストに突入不可能になる問題を修正(link:https://osdn.net/projects/hengband/ticket/36930[#36930])
+* モンスターボールの発動時アンドロイドの経験値計算漏れ (link:https://osdn.net/projects/hengband/ticket/37226[#37226] 参照)
 * リファクタリング時エンバグしたものまねで使った光の剣の威力が0になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37907[#37907] 参照)
 * Vault内部に山脈等の意図しない地形が生成される不具合(https://osdn.net/projects/hengband/ticket/33649[#33649] 参照)
 
