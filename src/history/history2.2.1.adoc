@@ -11,6 +11,7 @@ Ver.2.2.1は2018/05/19に更新されました。
 
 * rumors_j.txtの和訳をkokabandから拝借 link:https://osdn.net/projects/hengband/ticket/36911[#36911]
 * isctype.cからのAssertionエラー link:https://osdn.net/projects/hengband/ticket/37304[#37304]
+* キー機能拡張 link:https://osdn.net/projects/hengband/ticket/37345[#37345]
 
 ### 謝辞
 

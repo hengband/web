@@ -19,4 +19,7 @@
 * 武器経験値の統合と調整 (チケット link:https://osdn.net/projects/hengband/ticket/37299[#37299]参照)
 * 新スコア計算導入検討 (チケット link:https://osdn.net/projects/hengband/ticket/37300[#37300]参照)
 * 乗騎システムのさらなるバランス調整 (チケット link:https://osdn.net/projects/hengband/ticket/37301[#37301]参照)
-
+* Angband4.X系のmonster_base実装 (チケット link:https://osdn.net/projects/hengband/ticket/37320[#37320]参照)
+* 知覚/探索能力の拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37332[#37332]参照)
+* 不人気種族調整 (チケット link:https://osdn.net/projects/hengband/ticket/37333[#37333]参照)
+* 新職追加検討 (チケット link:https://osdn.net/projects/hengband/ticket/37335[#37335]参照)
