@@ -9,10 +9,10 @@ Ver.2.2.1は2018/05/19に更新されました。
 
 ### 更新内容
 
-* rumors_j.txtの和訳をkokabandから拝借 link:https://osdn.net/projects/hengband/ticket/36911[#36911]
-* isctype.cからのAssertionエラー link:https://osdn.net/projects/hengband/ticket/37304[#37304]
-* キー機能拡張 link:https://osdn.net/projects/hengband/ticket/37345[#37345]
-
+* rumors_j.txtの和訳をkokabandから拝借 (チケット link:https://osdn.net/projects/hengband/ticket/36911[#36911] 参照)
+* isctype.cからのAssertionエラー (チケット link:https://osdn.net/projects/hengband/ticket/37304[#37304] 参照)
+* キー機能拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37345[#37345] 参照)
+* アリーナでの次の対戦相手の思い出をサブウィンドウに表示する (チケット link:https://osdn.net/projects/hengband/ticket/37338[#37338] 参照)
 ### 謝辞
 
 * ssakusha氏のアドバイスにより一部の和訳をkoka氏のkokabandから流用させていただきました。両人ともありがとうございます。

@@ -23,3 +23,5 @@
 * 知覚/探索能力の拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37332[#37332]参照)
 * 不人気種族調整 (チケット link:https://osdn.net/projects/hengband/ticket/37333[#37333]参照)
 * 新職追加検討 (チケット link:https://osdn.net/projects/hengband/ticket/37335[#37335]参照)
+* ダンジョンに関する仕様の分化 (チケット link:https://osdn.net/projects/hengband/ticket/37341[#37341]参照)
+* ダンジョン内店舗の仕様拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37342[#37342]参照)

@@ -21,3 +21,5 @@
 * スナイパー修正案 (チケット link:https://osdn.net/projects/hengband/ticket/37334[#37334]参照)
 * v_info.txtにアイテムの固定配置機能追加 (チケット https://osdn.net/projects/hengband/ticket/41074[#41074]参照)
 * Dumpのhtml出力 (チケット https://osdn.net/projects/hengband/ticket/37337[#37337]参照)
+* 餌付け効果の実装 (チケット https://osdn.net/projects/hengband/ticket/37339[#37339]参照)
+* アイテムに恒久的呪いフラグを追加 (チケット https://osdn.net/projects/hengband/ticket/37340[#37340]参照)
