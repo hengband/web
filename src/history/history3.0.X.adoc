@@ -23,3 +23,5 @@
 * Dumpのhtml出力 (チケット https://osdn.net/projects/hengband/ticket/37337[#37337]参照)
 * 餌付け効果の実装 (チケット https://osdn.net/projects/hengband/ticket/37339[#37339]参照)
 * アイテムに恒久的呪いフラグを追加 (チケット https://osdn.net/projects/hengband/ticket/37340[#37340]参照)
+* 未訳対応募集の検討 (チケット https://osdn.net/projects/hengband/ticket/37346[#37346]参照)
+* 二重通貨および変動相場制の導入 (チケット https://osdn.net/projects/hengband/ticket/37347[#37347]参照)

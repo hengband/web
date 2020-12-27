@@ -13,7 +13,8 @@
 
 * 当バージョンでの包括的なバランス調整 link:https://osdn.net/projects/hengband/ticket/36973[#36973]
 * マインドフレアの食事仕様変更(チケット link:https://osdn.net/projects/hengband/ticket/3248[#3248] 参照)
-* ヘルプファイルの再編成、もしくはチュートリアルなど導入システムに抜本的な変更(チケット link:https://osdn.net/projects/hengband/ticket/3250[#3250] 参照)
+* ヘルプファイルの再編成、もしくはチュートリアルなど導入システムに抜本的な変更 (チケット link:https://osdn.net/projects/hengband/ticket/3250[#3250] 参照)
+** 死亡時アドバイス機能の実装  (チケット link:https://osdn.net/projects/hengband/ticket/3250[#3250] 参照)
 * 一部Linuxディストリビューションへのパッケージ採用情報と更新ための交渉等 (link:https://osdn.net/projects/hengband/ticket/28222[#28222]参照)
 * 新タイル作成の模索(あるいは新インターフェースなどの抜本的改変) (チケット link:https://osdn.net/projects/hengband/ticket/33108[#33108]参照)
 * 武器経験値の統合と調整 (チケット link:https://osdn.net/projects/hengband/ticket/37299[#37299]参照)
@@ -21,6 +22,7 @@
 * 乗騎システムのさらなるバランス調整 (チケット link:https://osdn.net/projects/hengband/ticket/37301[#37301]参照)
 * Angband4.X系のmonster_base実装 (チケット link:https://osdn.net/projects/hengband/ticket/37320[#37320]参照)
 * 知覚/探索能力の拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37332[#37332]参照)
+* 新種族追加 (チケット https://osdn.net/projects/hengband/ticket/37344[#37344]参照)
 * 不人気種族調整 (チケット link:https://osdn.net/projects/hengband/ticket/37333[#37333]参照)
 * 新職追加検討 (チケット link:https://osdn.net/projects/hengband/ticket/37335[#37335]参照)
 * ダンジョンに関する仕様の分化 (チケット link:https://osdn.net/projects/hengband/ticket/37341[#37341]参照)
