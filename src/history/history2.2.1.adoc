@@ -14,6 +14,7 @@ Ver.2.2.1は2018/05/19に更新されました。
 * キー機能拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37345[#37345] 参照)
 * アリーナでの次の対戦相手の思い出をサブウィンドウに表示する (チケット link:https://osdn.net/projects/hengband/ticket/37338[#37338] 参照)
 * アンドロイドの経験値計算におけるオーバーフロー修正 (チケット link:https://osdn.net/projects/hengband/ticket/37358[#37358] 参照)
+* 帰還無し鉄人モード時のレベルテレポで詰みが発生する問題を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37399[#37399] 参照)
 
 ### 謝辞
 

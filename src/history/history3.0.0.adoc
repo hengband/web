@@ -10,5 +10,7 @@
 ### 予定実装内容
 
 * 帰還と階段昇降が同ターンに発生した時の不具合 (チケット link:https://osdn.net/projects/hengband/ticket/29960[#29960] 参照)
-* 騎乗可能モンスターの追加調整 (チケット link:https://osdn.net/projects/hengband/ticket#37291[#37291] 参照)
-* 古い城報酬の調整の正式確定 (チケット link:https://osdn.net/projects/hengband/ticket#37329[#37329] 参照)
+* 騎乗可能モンスターの追加調整 (チケット link:https://osdn.net/projects/hengband/ticket/37291[#37291] 参照)
+* 古い城報酬の調整の正式確定 (チケット link:https://osdn.net/projects/hengband/ticket/37329[#37329] 参照)
+* 小規模な街の施設もある程度通常通りに充実させる (チケット link:https://osdn.net/projects/hengband/ticket/37368[#37368] 参照)
+
