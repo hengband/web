@@ -15,10 +15,13 @@ Ver.2.2.1は2018/05/19に更新されました。
 * アリーナでの次の対戦相手の思い出をサブウィンドウに表示する (チケット link:https://osdn.net/projects/hengband/ticket/37338[#37338] 参照)
 * アンドロイドの経験値計算におけるオーバーフロー修正 (チケット link:https://osdn.net/projects/hengband/ticket/37358[#37358] 参照)
 * 帰還無し鉄人モード時のレベルテレポで詰みが発生する問題を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37399[#37399] 参照)
+* 乱数アルゴリズムをXoroshiro128+に変更 (チケット link:https://osdn.net/projects/hengband/ticket/37438[#37438] 参照)
+* ポーカーの役処理が正しく成立しない不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37454[#37454] 参照)
 
 ### 謝辞
 
 * ssakusha氏のアドバイスにより一部の和訳をkoka氏のkokabandから流用させていただきました。両人ともありがとうございます。
+* habu氏に乱数アルゴリズムの改良など今回も尽力いただきました。ありがとうございます。
 * 匿名の方にアーティファクト生成を日記に記録するパッチを提供していただきました。ありがとうございます。
 
 

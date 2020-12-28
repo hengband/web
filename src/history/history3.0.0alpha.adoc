@@ -16,6 +16,7 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 * モンスター大量追加と調整(link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
 * 固定アーティファクト大量追加(link:https://osdn.net/projects/hengband/ticket/37324[#37324] 参照)
 * ランダムアーティファクト生成強化(link:https://osdn.net/projects/hengband/ticket/37359[#37359] 参照)
+* 妖刀のペナルティ処理についてバグがあったが、このままに明白に維持する形として修正(link:https://osdn.net/projects/hengband/ticket/37476[#37476] 参照)
 
 #### ゲームシステム面
 
@@ -28,6 +29,7 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 * Linux版TrueTypeフォント対応 (link:https://osdn.net/projects/hengband/ticket/24042[#24042] link:https://osdn.net/projects/hengband/ticket/40048[#40048] 参照)
 * MacOSX版がbackwardseric氏の協力により間接的に実現(チケット link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
 * ダンプ自動保存機能(チケット https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
+* デフォルト効果音を少々追加(チケット https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
 
 #### ソースコード面
 

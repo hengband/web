@@ -25,3 +25,5 @@
 * アイテムに恒久的呪いフラグを追加 (チケット https://osdn.net/projects/hengband/ticket/37340[#37340]参照)
 * 未訳対応募集の検討 (チケット https://osdn.net/projects/hengband/ticket/37346[#37346]参照)
 * 二重通貨および変動相場制の導入 (チケット https://osdn.net/projects/hengband/ticket/37347[#37347]参照)
+* 開発規約のまとめ (チケット https://osdn.net/projects/hengband/ticket/37393[#37393]参照)
+* ウィザードモードの機能拡張 (チケット https://osdn.net/projects/hengband/ticket/37449[#37449]参照)
