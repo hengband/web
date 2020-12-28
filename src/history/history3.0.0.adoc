@@ -7,7 +7,7 @@
 
 正式版の3.0.0を2021年2月の間にリリース予定とします。
 
-### 予定実装内容
+### 予定実装及び修正内容
 
 * 帰還と階段昇降が同ターンに発生した時の不具合 (チケット link:https://osdn.net/projects/hengband/ticket/29960[#29960] 参照)
 * 騎乗可能モンスターの追加調整 (チケット link:https://osdn.net/projects/hengband/ticket/37291[#37291] 参照)
@@ -15,4 +15,6 @@
 * 小規模な街の施設もある程度通常通りに充実させる (チケット link:https://osdn.net/projects/hengband/ticket/37368[#37368] 参照)
 * メッセージ容量の拡張と調整 (チケット link:https://osdn.net/projects/hengband/ticket/37466[#37466] 参照)
 * 街のBGM処理調整 (チケット link:https://osdn.net/projects/hengband/ticket/37474[#37474] 参照)
+* 折れ剣修復時の折れたダガーのベースアイテム選択バグ (チケット link:https://osdn.net/projects/hengband/ticket/37549[#37549] 参照)
+
 

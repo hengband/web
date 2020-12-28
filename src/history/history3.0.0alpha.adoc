@@ -12,11 +12,12 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 
 #### ゲームバランス面
 
-* nasty生成の再度見直し(link:https://osdn.net/projects/hengband/ticket/37284[#37284] 参照)
-* モンスター大量追加と調整(link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
-* 固定アーティファクト大量追加(link:https://osdn.net/projects/hengband/ticket/37324[#37324] 参照)
-* ランダムアーティファクト生成強化(link:https://osdn.net/projects/hengband/ticket/37359[#37359] 参照)
-* 妖刀のペナルティ処理についてバグがあったが、このままに明白に維持する形として修正(link:https://osdn.net/projects/hengband/ticket/37476[#37476] 参照)
+* nasty生成の再度見直し (link:https://osdn.net/projects/hengband/ticket/37284[#37284] 参照)
+* モンスター大量追加と調整 (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+* 固定アーティファクト大量追加 (link:https://osdn.net/projects/hengband/ticket/37324[#37324] 参照)
+* ランダムアーティファクト生成強化 (link:https://osdn.net/projects/hengband/ticket/37359[#37359] 参照)
+* 妖刀のペナルティ処理についてバグがあったが、このままに明白に維持する形として修正 (link:https://osdn.net/projects/hengband/ticket/37476[#37476] 参照)
+* 鏡使いの幻惑の光でスタン処理が重複している部分について若干の修正 (link:https://osdn.net/projects/hengband/ticket/37550[#37550] 参照)
 
 #### ゲームシステム面
 
@@ -49,7 +50,10 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 * 「帰還と上り階段無し」時に特定クエストに突入不可能になる問題を修正(link:https://osdn.net/projects/hengband/ticket/36930[#36930])
 * モンスターボールの発動時アンドロイドの経験値計算漏れ (link:https://osdn.net/projects/hengband/ticket/37226[#37226] 参照)
 * リファクタリング時エンバグしたものまねで使った光の剣の威力が0になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37907[#37907] 参照)
-* Vault内部に山脈等の意図しない地形が生成される不具合(https://osdn.net/projects/hengband/ticket/33649[#33649] 参照)
+* Vault内部に山脈等の意図しない地形が生成される不具合 (link:https://osdn.net/projects/hengband/ticket/33649[#33649] 参照)
+* 武器匠の命中率計算バグを修正 (link:https://osdn.net/projects/hengband/ticket/37481[#37481] 参照)
+* 折れ剣修復の余計なダイスブーストを修正 (link:https://osdn.net/projects/hengband/ticket/37482[#37482] 参照)
+* 折れ剣修復のベースアイテム変更時に総重量加減算（及びアンドロイド強化度計算）を行わないバグ (link:https://osdn.net/projects/hengband/ticket/37551[#37551] 参照)
 
 ### 謝辞
 
