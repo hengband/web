@@ -26,7 +26,10 @@ Ver.2.2.1は2018/05/19に更新されました。
 ** GF_HYPODYNAMIAによる最大HP減少を含めたダメージのみ→衰弱/Hypodynamia
 ** GF_HYPODYNAMIAによる最大HP減少を含めたダメージ＋使い手の同量HP回復→吸収/Drain
 ** GF_HYPODYNAMIAによる最大HP減少を含めたダメージ＋使い手の同量HP回復＋滋養度回復(+レイシャルのみ滋養度が満腹未満でないと利用できない)→吸血/Vampiric Drain
-
+* ALLOW_UNIQUEがないにもかかわらず、ユニークがsummon_specific()処理で生成される問題を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37784[#37784] 参照)
+* 突然変異の薬で全突然変異が消えた場合などの自然回復量修正更新抜けを修正 (チケット link:https://osdn.net/projects/hengband/ticket/37785[#37785] 参照)
+* 攻撃のブレス処理、ボール処理が実装上紛らわしい部分を改善 (チケット link:https://osdn.net/projects/hengband/ticket/37786[#37786] 参照)
+* Wine上のWindows動作で落ちる不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37853[#37853] 参照)
 
 ### 謝辞
 
@@ -34,6 +37,7 @@ Ver.2.2.1は2018/05/19に更新されました。
 * habu氏に乱数アルゴリズムの改良やバグ修正など今回も尽力いただきました。ありがとうございます。
 * hradish氏にはこの頃にバグ報告、各種の処理に関する検証をいくつか行っていだだきました。感謝いたします。
 * 匿名の方にアーティファクト生成を日記に記録するパッチを提供していただきました。ありがとうございます。
+* sagawa_aki氏にLinuxのWine下Windowsで変愚が落ちる問題を発見いただき、修正しました。ありがとうございます。
 
 
 ### リポジトリ詳細

@@ -34,3 +34,4 @@
 ** calc_expect_crit()によるクリティカル見積もりの際、display_player_various()での呼び出しではdamに通常の100倍の値を代入している。
 ** display_player_various()の武器ダメージ期待値計算の順がクリティカル→切れ味→理力と本来の理力→クリティカル→切れ味と食い違っている。
 * ダンジョン～地上昇降間のターン経過処理の不具合 (チケット https://osdn.net/projects/hengband/ticket/37656[#37656]参照)
+* 突然変異の名称と獲得、喪失時のメッセージが紛らわしかったりわかりづらい問題を整理 (チケット https://osdn.net/projects/hengband/ticket/37854[#37854]参照)

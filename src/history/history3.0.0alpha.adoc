@@ -28,9 +28,11 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 * プレイヤーの技能値表示について具体値を出す方針を進める。(link:https://osdn.net/projects/hengband/ticket/37270[#37270] 他参照)
 * 英語訳の修正 (link:https://osdn.net/projects/hengband/ticket/40006[#40006] 他参照)
 * Linux版TrueTypeフォント対応 (link:https://osdn.net/projects/hengband/ticket/24042[#24042] link:https://osdn.net/projects/hengband/ticket/40048[#40048] 参照)
-* MacOSX版がbackwardseric氏の協力により間接的に実現(チケット link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
-* ダンプ自動保存機能(チケット https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
-* デフォルト効果音を少々追加(チケット https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
+* MacOSX版がbackwardseric氏の協力により間接的に実現 (チケット link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
+* ダンプ自動保存機能 (チケット https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
+* デフォルト効果音を少々追加 (チケット https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
+* スナイパーの専用インターフェース改善 (チケット https://osdn.net/projects/hengband/ticket/37756[#37756] 参照)
+
 
 #### ソースコード面
 
@@ -59,6 +61,7 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 ** モンスターの混乱攻撃が、対象モンスターに耐性があっても通用する問題はバグなので修正
 ** 各種の呪文詠唱の失敗の確率が対象がモンスターである場合、朦朧などでない限り必ず成功する件については現状仕様に留める。
 * モンスターから最終的に得られる経験値の表記と実際の食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/37674[#37674] 参照)
+* FORCE_MAXでない限り高確率で発生する忍者ヴォーパルを修正 (link:https://osdn.net/projects/hengband/ticket/37745[#37745] 参照)
 
 ### 謝辞
 

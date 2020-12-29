@@ -18,4 +18,4 @@
 * 折れ剣修復時の折れたダガーのベースアイテム選択バグ (チケット link:https://osdn.net/projects/hengband/ticket/37549[#37549] 参照)
 * 所持していない魔法書の呪文を唱えられてしまう不具合 (チケット link:https://osdn.net/projects/hengband/ticket/37558[#37558] 参照)
 * アリーナ勝利後の死亡時処理挙動がおかしくなる不具合 (チケット link:https://osdn.net/projects/hengband/ticket/37587[#37587] 参照)
-
+* 懐柔の魔法棒時の魅力参照テーブルの問題修正 (チケット link:https://osdn.net/projects/hengband/ticket/37783[#37783] 参照)
