@@ -54,6 +54,11 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 * 武器匠の命中率計算バグを修正 (link:https://osdn.net/projects/hengband/ticket/37481[#37481] 参照)
 * 折れ剣修復の余計なダイスブーストを修正 (link:https://osdn.net/projects/hengband/ticket/37482[#37482] 参照)
 * 折れ剣修復のベースアイテム変更時に総重量加減算（及びアンドロイド強化度計算）を行わないバグ (link:https://osdn.net/projects/hengband/ticket/37551[#37551] 参照)
+* 塔クエストなどで、配置されたモンスターに強制的に騎乗してしまう不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37557[#37557] 参照)
+* モンスターがモンスターに攻撃した場合の挙動についての修正 (link:https://osdn.net/projects/hengband/ticket/37600[#37600] 参照)
+** モンスターの混乱攻撃が、対象モンスターに耐性があっても通用する問題はバグなので修正
+** 各種の呪文詠唱の失敗の確率が対象がモンスターである場合、朦朧などでない限り必ず成功する件については現状仕様に留める。
+* モンスターから最終的に得られる経験値の表記と実際の食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/37674[#37674] 参照)
 
 ### 謝辞
 

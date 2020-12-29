@@ -27,3 +27,10 @@
 * 二重通貨および変動相場制の導入 (チケット https://osdn.net/projects/hengband/ticket/37347[#37347]参照)
 * 開発規約のまとめ (チケット https://osdn.net/projects/hengband/ticket/37393[#37393]参照)
 * ウィザードモードの機能拡張 (チケット https://osdn.net/projects/hengband/ticket/37449[#37449]参照)
+* ＊破壊＊処理後に突然@の隣に沸くダンジョンの主問題に対応 (チケット https://osdn.net/projects/hengband/ticket/37588[#37588]参照)
+* ダメージ計算処理のバグ修正と整理 (チケット https://osdn.net/projects/hengband/ticket/37626[#37626]参照)
+** table.cで修行僧の打撃情報を定義するmartial_arts型ma_blowsのダメージダイスなどが日本語版と英語版で食い違っている。
+** file.cでプレイヤーのステータス表示を行うdisplay_player_various()内で修行僧/錬気術師/狂戦士の素手打撃ダメージ期待値にはcalc_expect_crit()によるクリティカル修正による見積もりが加算されていない。
+** calc_expect_crit()によるクリティカル見積もりの際、display_player_various()での呼び出しではdamに通常の100倍の値を代入している。
+** display_player_various()の武器ダメージ期待値計算の順がクリティカル→切れ味→理力と本来の理力→クリティカル→切れ味と食い違っている。
+* ダンジョン～地上昇降間のターン経過処理の不具合 (チケット https://osdn.net/projects/hengband/ticket/37656[#37656]参照)

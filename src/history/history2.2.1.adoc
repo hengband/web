@@ -21,6 +21,12 @@ Ver.2.2.1は2018/05/19に更新されました。
 * ダンプのクエスト表示順の変更 (チケット link:https://osdn.net/projects/hengband/ticket/37486[#37486] 参照)
 * 呪術のスペル停止処理に関する不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37523[#37523] 参照)
 * ものまね倍返し時の失率表示ミス修正 (チケット link:https://osdn.net/projects/hengband/ticket/37527[#37527] 参照)
+* sanity_blast()処理で魔法防御が高いほど深刻なマイナス変異に陥りやすい不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37580[#37580] 参照)
+* 「吸血」「生命力吸収」などの効果が紛らわしかったり、同名なのに異なる効果を持っていた呼称を以下に統一sanity_blast()処理で魔法防御が高いほど深刻なマイナス変異に陥りやすい不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37582[#37582] 参照)
+** GF_HYPODYNAMIAによる最大HP減少を含めたダメージのみ→衰弱/Hypodynamia
+** GF_HYPODYNAMIAによる最大HP減少を含めたダメージ＋使い手の同量HP回復→吸収/Drain
+** GF_HYPODYNAMIAによる最大HP減少を含めたダメージ＋使い手の同量HP回復＋滋養度回復(+レイシャルのみ滋養度が満腹未満でないと利用できない)→吸血/Vampiric Drain
+
 
 ### 謝辞
 
