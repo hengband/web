@@ -22,3 +22,7 @@
 * 落馬後に騎乗モンスターのブレスを受けて死亡する問題 (チケット link:https://osdn.net/projects/hengband/ticket/37869[#37869] 参照)
 * パターンvaultによるRQ飛ばし対策 (チケット link:https://osdn.net/projects/hengband/ticket/37917[#37917] 参照)
 * 用語修正 (チケット link:https://osdn.net/projects/hengband/ticket/38509[#38509] 参照)
+* マーフォークの仕様追加や修正 (チケット link:https://osdn.net/projects/hengband/ticket/41086[#41086] 参照)
+* 「盾技能」追加仕様 (link:https://osdn.net/projects/hengband/ticket/41087[#41087] 参照)
+* ☆生成の再度見直し (link:https://osdn.net/projects/hengband/ticket/38860[#38860] 参照)
+* player_teleport_to()処理の仕様確認 (link:https://osdn.net/projects/hengband/ticket/38922[#38922] 参照)

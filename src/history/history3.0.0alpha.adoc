@@ -23,7 +23,12 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 
 * vaultを拡張して固定部屋生成追加 (link:https://osdn.net/projects/hengband/ticket/37336[#37336] 参照)
 * 新地形の追加 (link:https://osdn.net/projects/hengband/ticket/38635[#38635] 参照)
+** 新地形追加に伴うバグを修正 (link:https://osdn.net/projects/hengband/ticket/38869[#38869] 
+link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * 新性格「チャージマン」実装 (link:https://osdn.net/projects/hengband/ticket/38790[#38790] 参照)
+* 新種族「マーフォーク」実装 (link:https://osdn.net/projects/hengband/ticket/38796[#38796] 参照)
+** エンバグで宿屋での食事規制が取り払われた問題を修正 (link:https://osdn.net/projects/hengband/ticket/38921[#38921] 参照)
+* 「盾技能」追加 (link:https://osdn.net/projects/hengband/ticket/38807[#38807] 参照)
 
 #### インターフェース面
 
@@ -40,10 +45,16 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 
 * VC++警告に応じたリファクタリング (link:https://osdn.net/projects/hengband/ticket/37287[#37287] 参照)
 * 今後の機能拡張のためのリファクタリング (link:https://osdn.net/projects/hengband/ticket/37353[#37353]
-** 長年煩雑かつ恣意的に配置されていた関数や定数定義群を用途に応じたフォルダやファイルに整理(チケット link:https://osdn.net/projects/hengband/ticket/40392[#40392] link:https://osdn.net/projects/hengband/ticket/40399[#40399] link:https://osdn.net/projects/hengband/ticket/40413[#40413] link:https://osdn.net/projects/hengband/ticket/40414[#40414] link:https://osdn.net/projects/hengband/ticket/40415[#40415] link:https://osdn.net/projects/hengband/ticket/40416[#40416] link:https://osdn.net/projects/hengband/ticket/40457[#40457] link:https://osdn.net/projects/hengband/ticket/40460[#40460]link:https://osdn.net/projects/hengband/ticket/40532[#40532] link:https://osdn.net/projects/hengband/ticket/40534[#40534] link:https://osdn.net/projects/hengband/ticket/40535[#40535] link:https://osdn.net/projects/hengband/ticket/40542[#40542]  link:https://osdn.net/projects/hengband/ticket/40561[#40561] link:https://osdn.net/projects/hengband/ticket/#40567[#40567] link:https://osdn.net/projects/hengband/ticket/40569[#40569] link:https://osdn.net/projects/hengband/ticket/40570[#40570] link:https://osdn.net/projects/hengband/ticket/40571[#40571] link:https://osdn.net/projects/hengband/ticket/40572[#40572] link:https://osdn.net/projects/hengband/ticket/40573[#40573] link:https://osdn.net/projects/hengband/ticket/40574[#40574] link:https://osdn.net/projects/hengband/ticket/40575[#40575] link:https://osdn.net/projects/hengband/ticket/40577[#40577] link:https://osdn.net/projects/hengband/ticket/40581[#40581] 他参照)
-** Zangband当時に追加された仕様を切り離すためのプリプロセッサが煩雑に思われたので削除(チケット link:https://osdn.net/projects/hengband/ticket/38766[#38766] 参照)
-
+** 長年煩雑かつ恣意的に配置されていた関数や定数定義群を用途に応じたフォルダやファイルに整理(チケット link:https://osdn.net/projects/hengband/ticket/38862[#38862] link:https://osdn.net/projects/hengband/ticket/40392[#40392] link:https://osdn.net/projects/hengband/ticket/40399[#40399] link:https://osdn.net/projects/hengband/ticket/40413[#40413] link:https://osdn.net/projects/hengband/ticket/40414[#40414] link:https://osdn.net/projects/hengband/ticket/40415[#40415] link:https://osdn.net/projects/hengband/ticket/40416[#40416] link:https://osdn.net/projects/hengband/ticket/40457[#40457] link:https://osdn.net/projects/hengband/ticket/40460[#40460]link:https://osdn.net/projects/hengband/ticket/40532[#40532] link:https://osdn.net/projects/hengband/ticket/40534[#40534] link:https://osdn.net/projects/hengband/ticket/40535[#40535] link:https://osdn.net/projects/hengband/ticket/40542[#40542]  link:https://osdn.net/projects/hengband/ticket/40561[#40561] link:https://osdn.net/projects/hengband/ticket/#40567[#40567] link:https://osdn.net/projects/hengband/ticket/40569[#40569] link:https://osdn.net/projects/hengband/ticket/40570[#40570] link:https://osdn.net/projects/hengband/ticket/40571[#40571] link:https://osdn.net/projects/hengband/ticket/40572[#40572] link:https://osdn.net/projects/hengband/ticket/40573[#40573] link:https://osdn.net/projects/hengband/ticket/40574[#40574] link:https://osdn.net/projects/hengband/ticket/40575[#40575] link:https://osdn.net/projects/hengband/ticket/40577[#40577] link:https://osdn.net/projects/hengband/ticket/40581[#40581] 他参照)
+** Zangband当時に追加された仕様を切り離すためのプリプロセッサが煩雑に思われたので削除 (チケット link:https://osdn.net/projects/hengband/ticket/38766[#38766] 参照)
+** get_item()周りの整備 (チケット link:https://osdn.net/projects/hengband/ticket/38824[#38824] 参照)
+** 各構造体の整理 (チケット link:https://osdn.net/projects/hengband/ticket/38844[#38844] 参照)
+*** floor_type構造体の作成とフロア情報の整理 (チケット link:https://osdn.net/projects/hengband/ticket/38993[#38993] 参照)
+* コミット追加し損ねたファイルを追加 (link:https://osdn.net/projects/hengband/ticket/38818[#38818]
+* 型の定義をC++11準拠にしていることを再確認 (link:https://osdn.net/projects/hengband/ticket/38843[#38843]
 * 英語版に関するビルドから運用までの各不具合の修正 (link:https://osdn.net/projects/hengband/ticket/40005[#40005] 参照)
+* ソースの文字コードをUTF-8 BOMに統一 (link:https://osdn.net/projects/hengband/ticket/38932[#38932] 参照)
+* RES_ALLの煩雑な処理を整理 (link:https://osdn.net/projects/hengband/ticket/38972[#38972] 参照)
 
 link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 
@@ -68,10 +79,19 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 * キャラクタダンプの死因表示不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38205[#38205] 参照)
 * xコマンドでモンスター下の床に落ちているアイテムの一覧を確認できなくなった不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38217[#38217] 参照)
 * 青魔導士コマンドの繰り返しエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38259[#38259] 参照)
-* Windows10でプレイヤー名に日本語が使用できないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38270[#38270] 参照)
+* Windows10でプレイヤー名に日本語が使用できないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38270[#38270] link:https://osdn.net/projects/hengband/ticket/38270[#38791] link:https://osdn.net/projects/hengband/ticket/38836[#38836] 参照)
 * 視界内のモンスターリスト表示の自動更新 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/39673[#39673] 参照)
 * 鍛冶師で武器/防具強化ができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38613[#38613] 参照)
 * セーブファイルのロードができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38768[#38768] 参照)
+* バルログの初期食糧配布でプレイヤーの死体が生成されることがある場合を修正 (link:https://osdn.net/projects/hengband/ticket/38813[#38813] 参照)
+* エンバグで調査を行った際のモンスター速度表示のアンダーフローが起きていたので修正 (link:https://osdn.net/projects/hengband/ticket/38827[#38827] 参照)
+* エンバグに拠る売却アイテムの食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/38852[#38852] 参照)
+* エンバグに拠る文字化け修正 (link:https://osdn.net/projects/hengband/ticket/38923[#38923] 参照)
+* スターライトの杖の処理エンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38934[#38934] 参照)
+* 二刀流が必中するエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38935[#38935] 参照)
+** 命中率計算がまだおかしい問題を修正 (link:https://osdn.net/projects/hengband/ticket/38946[#38946] 参照)
+* 敵行動が停止するエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38936[#38936] 参照)
+* 剣術家の気合いため処理を飛ばしていたエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38965[#38965] 参照)
 
 ### 謝辞
 

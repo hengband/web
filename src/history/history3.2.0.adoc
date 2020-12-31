@@ -27,3 +27,8 @@
 * 新職追加検討 (チケット link:https://osdn.net/projects/hengband/ticket/37335[#37335]参照)
 * ダンジョンに関する仕様の分化 (チケット link:https://osdn.net/projects/hengband/ticket/37341[#37341]参照)
 * ダンジョン内店舗の仕様拡張 (チケット link:https://osdn.net/projects/hengband/ticket/37342[#37342]参照)
+* コマンド処理とゲーム中のアクションの実行処理を分離する (チケット link:https://osdn.net/projects/hengband/ticket/38833[#38833]参照)
+* レギュレーションバージョンの追加 (チケット link:https://osdn.net/projects/hengband/ticket/38835[#38835]参照)
+* モンスター集団生成データ「group_info」の追加 (チケット link:https://osdn.net/projects/hengband/ticket/38842[#38842]参照)
+* ダンジョン毎の部屋バイアス作成拡張 (チケット link:https://osdn.net/projects/hengband/ticket/38851[#38851] link:https://osdn.net/projects/hengband/ticket/41007[#41007] 参照)
+* saved_floor_type構造体とfloor_type構造体の統一 (チケット link:https://osdn.net/projects/hengband/ticket/41088[#41088]参照)

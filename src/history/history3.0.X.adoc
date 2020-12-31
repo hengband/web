@@ -38,3 +38,5 @@
 * ボール処理とブレス処理をソース上ではっきり分離する (チケット https://osdn.net/projects/hengband/ticket/37914[#37914]参照)
 * 鏡使いと鏡アーティファクトのシナジー強化 (チケット https://osdn.net/projects/hengband/ticket/38418[#38418]参照)
 * 体格オートローラーの基準を日本語版でもcm/kgに変更する (チケット https://osdn.net/projects/hengband/ticket/38704[#38704]参照)
+* detect_monsters_*()系の感知処理を関数ポインタ等で統合する (チケット https://osdn.net/projects/hengband/ticket/38829[#38829]参照)
+* 生成テーブル周りの整理 (チケット https://osdn.net/projects/hengband/ticket/38841[#38841]参照)
