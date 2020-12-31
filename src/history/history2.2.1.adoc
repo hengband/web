@@ -30,6 +30,10 @@ Ver.2.2.1は2018/05/19に更新されました。
 * 突然変異の薬で全突然変異が消えた場合などの自然回復量修正更新抜けを修正 (チケット link:https://osdn.net/projects/hengband/ticket/37785[#37785] 参照)
 * 攻撃のブレス処理、ボール処理が実装上紛らわしい部分を改善 (チケット link:https://osdn.net/projects/hengband/ticket/37786[#37786] 参照)
 * Wine上のWindows動作で落ちる不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37853[#37853] 参照)
+* 悪夢モード時に太古の怨念が複数回発現する問題を修正 (チケット link:https://osdn.net/projects/hengband/ticket/37875[#37875] 参照)
+* 悪夢モードにモンスターの加速値を正しく表示するよう修正 (チケット link:https://osdn.net/projects/hengband/ticket/37908[#37908] 参照)
+* 剣術家のカウンター反撃時相手の名前が文字化けする不具合を修正 (チケット link:https://osdn.net/projects/hengband/ticket/38221[#38221] 参照)
+* スコア表示画面の再描画がおかしい問題を修正 (チケット link:https://osdn.net/projects/hengband/ticket/38223[#38223] 参照)
 
 ### 謝辞
 

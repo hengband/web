@@ -21,7 +21,9 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 
 #### ゲームシステム面
 
-* vaultを拡張して固定部屋生成追加(link:https://osdn.net/projects/hengband/ticket/37336[#37336] 参照)
+* vaultを拡張して固定部屋生成追加 (link:https://osdn.net/projects/hengband/ticket/37336[#37336] 参照)
+* 新地形の追加 (link:https://osdn.net/projects/hengband/ticket/38635[#38635] 参照)
+* 新性格「チャージマン」実装 (link:https://osdn.net/projects/hengband/ticket/38790[#38790] 参照)
 
 #### インターフェース面
 
@@ -62,6 +64,14 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 ** 各種の呪文詠唱の失敗の確率が対象がモンスターである場合、朦朧などでない限り必ず成功する件については現状仕様に留める。
 * モンスターから最終的に得られる経験値の表記と実際の食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/37674[#37674] 参照)
 * FORCE_MAXでない限り高確率で発生する忍者ヴォーパルを修正 (link:https://osdn.net/projects/hengband/ticket/37745[#37745] 参照)
+* モンスターの自爆死後に不正なモンスター情報の残骸が残る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37856[#37856] 参照)
+* キャラクタダンプの死因表示不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38205[#38205] 参照)
+* xコマンドでモンスター下の床に落ちているアイテムの一覧を確認できなくなった不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38217[#38217] 参照)
+* 青魔導士コマンドの繰り返しエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38259[#38259] 参照)
+* Windows10でプレイヤー名に日本語が使用できないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38270[#38270] 参照)
+* 視界内のモンスターリスト表示の自動更新 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/39673[#39673] 参照)
+* 鍛冶師で武器/防具強化ができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38613[#38613] 参照)
+* セーブファイルのロードができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38768[#38768] 参照)
 
 ### 謝辞
 
@@ -70,6 +80,7 @@ link:https://osdn.net/projects/hengband/ticket/40463[#40463]
 * hradish氏にはnasty生成やsanity_blastに関する確率計算の問題などを定量的に示していただき、オートローラー機能の確率表示拡張パッチを提供していただきました。ありがとうございます。対応が遅れて申し訳ありません。
 * iks氏にはリファクタリング時に発生したバグの調査と実際の修正を長く地道になっていただきました。ありがとうございます。
 * phonohawk氏にLinux版ビルドオプションのバグに関する修正をプルリクエストしていただき受理しました。ありがとうございます。
+* taotao氏に視界内のモンスターリスト表示の自動更新パッチを提供いただきました。ありがとうございます。
 * (作成途中)
 
 (文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
