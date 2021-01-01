@@ -41,3 +41,5 @@
 * detect_monsters_*()系の感知処理を関数ポインタ等で統合する (チケット https://osdn.net/projects/hengband/ticket/38829[#38829]参照)
 * 生成テーブル周りの整理 (チケット https://osdn.net/projects/hengband/ticket/38841[#38841]参照)
 * 魔法道具の失率表示機能の追加 (チケット https://osdn.net/projects/hengband/ticket/39026[#39026]参照)
+* 敵モンスターがアイテムを拾う数を制限したり、一覧表示できるようにする (チケット https://osdn.net/projects/hengband/ticket/39343[#39343]参照)
+* モンスターの思い出を1行簡易表記する手段の検討 (チケット https://osdn.net/projects/hengband/ticket/39469[#39469]参照)
