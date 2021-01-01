@@ -32,3 +32,4 @@
 * モンスター集団生成データ「group_info」の追加 (チケット link:https://osdn.net/projects/hengband/ticket/38842[#38842]参照)
 * ダンジョン毎の部屋バイアス作成拡張 (チケット link:https://osdn.net/projects/hengband/ticket/38851[#38851] link:https://osdn.net/projects/hengband/ticket/41007[#41007] 参照)
 * saved_floor_type構造体とfloor_type構造体の統一 (チケット link:https://osdn.net/projects/hengband/ticket/41088[#41088]参照)
+* handle_stuff()などのステータス更新タイミング整理 (チケット link:https://osdn.net/projects/hengband/ticket/39075[#39075]参照)
