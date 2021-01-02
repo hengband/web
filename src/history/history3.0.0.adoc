@@ -29,3 +29,4 @@
 * 一部再描画処理オプションが正しく動作していない問題を修正 (link:https://osdn.net/projects/hengband/ticket/39221[#39221] 参照)
 * 釣りの描画処理が怪しいのを確認、場合によっては修正 (link:https://osdn.net/projects/hengband/ticket/39222[#39222] 参照)
 * 武器以外を２つ持っている場合の盾の持ち替え仕様の変更 (link:https://osdn.net/projects/hengband/ticket/39462[#39462] 参照)
+* player-status.h からplayer-type-definition.h の分離 (link:https://osdn.net/projects/hengband/ticket/40498[#40498] 参照)

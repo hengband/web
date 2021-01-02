@@ -43,3 +43,7 @@
 * 魔法道具の失率表示機能の追加 (チケット https://osdn.net/projects/hengband/ticket/39026[#39026]参照)
 * 敵モンスターがアイテムを拾う数を制限したり、一覧表示できるようにする (チケット https://osdn.net/projects/hengband/ticket/39343[#39343]参照)
 * モンスターの思い出を1行簡易表記する手段の検討 (チケット https://osdn.net/projects/hengband/ticket/39469[#39469]参照)
+* ウィザードモードのステータス変更機能改良 (チケット https://osdn.net/projects/hengband/ticket/39839[#39839]参照)
+* disturb()タイミングの調査と生理 (チケット https://osdn.net/projects/hengband/ticket/40023[#40023]参照)
+* monster-sweep-grid.c の整理 (チケット https://osdn.net/projects/hengband/ticket/40235[#40235]参照)
+* 敵側朦朧処理調整 (チケット https://osdn.net/projects/hengband/ticket/40636[#40636]参照)
