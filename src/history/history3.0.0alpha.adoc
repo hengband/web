@@ -1,14 +1,13 @@
 :lang: ja
 :doctype: article
 
-## 2020年中(予定) Ver.3.0.0Alpha (アルファ版)
+## 2021年1月中旬(予定) Ver.3.0.0Alpha (アルファ版)
 
 ### 概要
 
-Ver.3.0.0Alphaを2020年中にリリース予定です。
+Ver.3.0.0Alphaを2021年1月中旬中にリリース予定です。
 
 ### 主な修正事項
-
 
 #### ゲームバランス面
 
@@ -28,7 +27,6 @@ Ver.3.0.0Alphaを2020年中にリリース予定です。
 link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * 新性格「チャージマン」実装 (link:https://osdn.net/projects/hengband/ticket/38790[#38790] 参照)
 * 新種族「マーフォーク」実装 (link:https://osdn.net/projects/hengband/ticket/38796[#38796] 参照)
-** エンバグで宿屋での食事規制が取り払われた問題を修正 (link:https://osdn.net/projects/hengband/ticket/38921[#38921] 参照)
 * 「盾技能」追加 (link:https://osdn.net/projects/hengband/ticket/38807[#38807] 参照)
 * 宿で時間をまたいでも日替わり賞金首が変わるよう変更 (link:https://osdn.net/projects/hengband/ticket/39008[#39008] 参照)
 * ウィザードモードに任意のスペル効果を引き起こすコマンドを基礎実装 (link:https://osdn.net/projects/hengband/ticket/39832[#39832] 参照)
@@ -37,33 +35,34 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 
 #### インターフェース面
 
-* プレイヤーの技能値表示について具体値を出す方針を進める。(link:https://osdn.net/projects/hengband/ticket/37270[#37270] 他参照)
+* プレイヤーの技能値表示について具体値を出す方針を進める。(link:https://osdn.net/projects/hengband/ticket/37270[#37270] 参照)
 * 英語訳、レイアウトの修正 (link:https://osdn.net/projects/hengband/ticket/39533[#39533] link:https://osdn.net/projects/hengband/ticket/39548[#39548] link:https://osdn.net/projects/hengband/ticket/39551[#39551] link:https://osdn.net/projects/hengband/ticket/39556[#39556] link:https://osdn.net/projects/hengband/ticket/39557[#39557] link:https://osdn.net/projects/hengband/ticket/39560[#39560] link:https://osdn.net/projects/hengband/ticket/39561[#39561] link:https://osdn.net/projects/hengband/ticket/39575[#39575] link:https://osdn.net/projects/hengband/ticket/39576[#39576] link:https://osdn.net/projects/hengband/ticket/39577[#39577] link:https://osdn.net/projects/hengband/ticket/39587[#39587] link:https://osdn.net/projects/hengband/ticket/39596[#39596] link:https://osdn.net/projects/hengband/ticket/39617[#39617] link:https://osdn.net/projects/hengband/ticket/39618[#39618] link:https://osdn.net/projects/hengband/ticket/39691[#39691] link:https://osdn.net/projects/hengband/ticket/40006[#40006] link:https://osdn.net/projects/hengband/ticket/40282[#40282] link:https://osdn.net/projects/hengband/ticket/40292[#40292] link:https://osdn.net/projects/hengband/ticket/40294[#40294] link:https://osdn.net/projects/hengband/ticket/40520[#40520] link:https://osdn.net/projects/hengband/ticket/40521[#40521] link:https://osdn.net/projects/hengband/ticket/40667[#40667] 他参照)
 * Linux版TrueTypeフォント対応 (link:https://osdn.net/projects/hengband/ticket/24042[#24042] link:https://osdn.net/projects/hengband/ticket/40048[#40048] 参照)
-* MacOSX版がbackwardseric氏の協力により間接的に実現 (チケット link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
-* ダンプ自動保存機能 (チケット https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
-* デフォルト効果音を少々追加 (チケット https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
-* スナイパーの専用インターフェース改善 (チケット https://osdn.net/projects/hengband/ticket/37756[#37756] 参照)
-* スレイ情報表示について「巨人」「ジャイアント」の表記を「巨人」に統一 (チケット https://osdn.net/projects/hengband/ticket/39563[#39563] 参照)
-* 敵に与えたカオス効果のメッセージが紛らわしいのを修正 (チケット https://osdn.net/projects/hengband/ticket/39603[#39603] 参照)
-* GCU UTF-8コンソール対応 (チケット https://osdn.net/projects/hengband/ticket/39671[#39671] 参照)
-* 撃破したユニークモンスター一覧表示 (チケット https://osdn.net/projects/hengband/ticket/40465[#40465] 参照)
-* 錬気術師と忍者の「煉獄火炎」表記ダブりに対応 (チケット https://osdn.net/projects/hengband/ticket/40701[#40701] 参照)
-* オートローラーの停止確率表示機能を追加 (チケット https://osdn.net/projects/hengband/ticket/41001[#41001] 参照)
+* MacOSX版がbackwardseric氏の協力により間接的に実現 (link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
+* ダンプ自動保存機能 (https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
+* デフォルト効果音を少々追加 (https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
+* スナイパーの専用インターフェース改善 (https://osdn.net/projects/hengband/ticket/37756[#37756] 参照)
+* スレイ情報表示について「巨人」「ジャイアント」の表記を「巨人」に統一 (https://osdn.net/projects/hengband/ticket/39563[#39563] 参照)
+* 敵に与えたカオス効果のメッセージが紛らわしいのを修正 (https://osdn.net/projects/hengband/ticket/39603[#39603] 参照)
+* 視界内のモンスターリスト表示の自動更新 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/39637[#39637] 参照)
+* GCU UTF-8コンソール対応 (https://osdn.net/projects/hengband/ticket/39671[#39671] 参照)
+* 撃破したユニークモンスター一覧表示 (https://osdn.net/projects/hengband/ticket/40465[#40465] 参照)
+* 錬気術師と忍者の「煉獄火炎」表記ダブりに対応 (https://osdn.net/projects/hengband/ticket/40701[#40701] 参照)
+* オートローラーの停止確率表示機能を追加 (https://osdn.net/projects/hengband/ticket/41001[#41001] 参照)
 
 #### ソースコード面
 
 * VC++警告に応じたリファクタリング (link:https://osdn.net/projects/hengband/ticket/37287[#37287] 参照)
-* 今後の機能拡張のためのリファクタリング (link:https://osdn.net/projects/hengband/ticket/37353[#37353]
-** do_cmd_throw()の修正 (link:https://osdn.net/projects/hengband/ticket/39010[#39010]
-** 長年煩雑かつ恣意的に配置されていた関数や定数定義群を用途に応じたフォルダやファイルに整理(チケット link:https://osdn.net/projects/hengband/ticket/38862[#38862] link:https://osdn.net/projects/hengband/ticket/39962[#39962] link:https://osdn.net/projects/hengband/ticket/39963[#39963] link:https://osdn.net/projects/hengband/ticket/39964[#39964] link:https://osdn.net/projects/hengband/ticket/39970[#39970] link:https://osdn.net/projects/hengband/ticket/39971[#39971] link:https://osdn.net/projects/hengband/ticket/40014[#40014] link:https://osdn.net/projects/hengband/ticket/40030[#40030] link:https://osdn.net/projects/hengband/ticket/40233[#40233] https://osdn.net/projects/hengband/ticket/40236[#40236] https://osdn.net/projects/hengband/ticket/40275[#40275] link:https://osdn.net/projects/hengband/ticket/40392[#40392] link:https://osdn.net/projects/hengband/ticket/40399[#40399] link:https://osdn.net/projects/hengband/ticket/40413[#40413] link:https://osdn.net/projects/hengband/ticket/40414[#40414] link:https://osdn.net/projects/hengband/ticket/40415[#40415] link:https://osdn.net/projects/hengband/ticket/40416[#40416] link:https://osdn.net/projects/hengband/ticket/40430[#40430] link:https://osdn.net/projects/hengband/ticket/40457[#40457] link:https://osdn.net/projects/hengband/ticket/40459[#40459] link:https://osdn.net/projects/hengband/ticket/40460[#40460] link:https://osdn.net/projects/hengband/ticket/40466[#40466] link:https://osdn.net/projects/hengband/ticket/40467[#40467] link:https://osdn.net/projects/hengband/ticket/40477[#40477] link:https://osdn.net/projects/hengband/ticket/40478[#40478] link:https://osdn.net/projects/hengband/ticket/40479[#40479] link:https://osdn.net/projects/hengband/ticket/40480[#40480] link:https://osdn.net/projects/hengband/ticket/40481[#40481] link:https://osdn.net/projects/hengband/ticket/40482[#40482] link:https://osdn.net/projects/hengband/ticket/40483[#40483] link:https://osdn.net/projects/hengband/ticket/40532[#40532] link:https://osdn.net/projects/hengband/ticket/40534[#40534] link:https://osdn.net/projects/hengband/ticket/40535[#40535] link:https://osdn.net/projects/hengband/ticket/40542[#40542]  link:https://osdn.net/projects/hengband/ticket/40561[#40561] link:https://osdn.net/projects/hengband/ticket/#40567[#40567] link:https://osdn.net/projects/hengband/ticket/40569[#40569] link:https://osdn.net/projects/hengband/ticket/40570[#40570] link:https://osdn.net/projects/hengband/ticket/40571[#40571] link:https://osdn.net/projects/hengband/ticket/40572[#40572] link:https://osdn.net/projects/hengband/ticket/40573[#40573] link:https://osdn.net/projects/hengband/ticket/40574[#40574] link:https://osdn.net/projects/hengband/ticket/40575[#40575] link:https://osdn.net/projects/hengband/ticket/40577[#40577] link:https://osdn.net/projects/hengband/ticket/40581[#40581] link:https://osdn.net/projects/hengband/ticket/40617[#40617] link:https://osdn.net/projects/hengband/ticket/40585[#40585] link:https://osdn.net/projects/hengband/ticket/40617[#40617] link:https://osdn.net/projects/hengband/ticket/40624[#40624] link:https://osdn.net/projects/hengband/ticket/40626[#40626] link:https://osdn.net/projects/hengband/ticket/40634[#40634] link:https://osdn.net/projects/hengband/ticket/40635[#40635] link:https://osdn.net/projects/hengband/ticket/40635[#40645] link:https://osdn.net/projects/hengband/ticket/40647[#40647] link:https://osdn.net/projects/hengband/ticket/40650[#40650] link:https://osdn.net/projects/hengband/ticket/40653[#40653] link:https://osdn.net/projects/hengband/ticket/40716[#40716] link:https://osdn.net/projects/hengband/ticket/40717[#40717] link:https://osdn.net/projects/hengband/ticket/40734[#40734] link:https://osdn.net/projects/hengband/ticket/39945[#39945] link:https://osdn.net/projects/hengband/ticket/40737[#40737] link:https://osdn.net/projects/hengband/ticket/40742[#40742] link:https://osdn.net/projects/hengband/ticket/40743[#40743] link:https://osdn.net/projects/hengband/ticket/40843[#40843] link:https://osdn.net/projects/hengband/ticket/41053[#41053] 参照)
-** Zangband当時に追加された仕様を切り離すためのプリプロセッサが煩雑に思われたので削除 (チケット link:https://osdn.net/projects/hengband/ticket/38766[#38766] 参照)
-** get_item()周りの整備 (チケット link:https://osdn.net/projects/hengband/ticket/38824[#38824] 参照)
-** 各構造体の整理 (チケット link:https://osdn.net/projects/hengband/ticket/38844[#38844] 参照)
-*** floor_type構造体の作成とフロア情報の整理 (チケット link:https://osdn.net/projects/hengband/ticket/38993[#38993] 参照)
-*** world_type構造体の作成とゲーム全体情報の整理 (チケット link:https://osdn.net/projects/hengband/ticket/38995[#38995] 参照)
-*** 引数渡しの整理 (チケット link:https://osdn.net/projects/hengband/ticket/38997[#38997] 参照)
-*** グローバル変数渡しの修正 (チケット link:https://osdn.net/projects/hengband/ticket/39068[#39068] 参照)
+* 今後の機能拡張のためのリファクタリング (link:https://osdn.net/projects/hengband/ticket/37353[#37353] 参照)
+** do_cmd_throw()の修正 (link:https://osdn.net/projects/hengband/ticket/39010[#39010] 参照)
+** 長年煩雑かつ恣意的に配置されていた関数や定数定義群を用途に応じたフォルダやファイルに整理(link:https://osdn.net/projects/hengband/ticket/38862[#38862] link:https://osdn.net/projects/hengband/ticket/39962[#39962] link:https://osdn.net/projects/hengband/ticket/39963[#39963] link:https://osdn.net/projects/hengband/ticket/39964[#39964] link:https://osdn.net/projects/hengband/ticket/39970[#39970] link:https://osdn.net/projects/hengband/ticket/39971[#39971] link:https://osdn.net/projects/hengband/ticket/40014[#40014] link:https://osdn.net/projects/hengband/ticket/40030[#40030] link:https://osdn.net/projects/hengband/ticket/40233[#40233] https://osdn.net/projects/hengband/ticket/40236[#40236] https://osdn.net/projects/hengband/ticket/40275[#40275] link:https://osdn.net/projects/hengband/ticket/40392[#40392] link:https://osdn.net/projects/hengband/ticket/40399[#40399] link:https://osdn.net/projects/hengband/ticket/40413[#40413] link:https://osdn.net/projects/hengband/ticket/40414[#40414] link:https://osdn.net/projects/hengband/ticket/40415[#40415] link:https://osdn.net/projects/hengband/ticket/40416[#40416] link:https://osdn.net/projects/hengband/ticket/40430[#40430] link:https://osdn.net/projects/hengband/ticket/40457[#40457] link:https://osdn.net/projects/hengband/ticket/40459[#40459] link:https://osdn.net/projects/hengband/ticket/40460[#40460] link:https://osdn.net/projects/hengband/ticket/40466[#40466] link:https://osdn.net/projects/hengband/ticket/40467[#40467] link:https://osdn.net/projects/hengband/ticket/40477[#40477] link:https://osdn.net/projects/hengband/ticket/40478[#40478] link:https://osdn.net/projects/hengband/ticket/40479[#40479] link:https://osdn.net/projects/hengband/ticket/40480[#40480] link:https://osdn.net/projects/hengband/ticket/40481[#40481] link:https://osdn.net/projects/hengband/ticket/40482[#40482] link:https://osdn.net/projects/hengband/ticket/40483[#40483] link:https://osdn.net/projects/hengband/ticket/40532[#40532] link:https://osdn.net/projects/hengband/ticket/40534[#40534] link:https://osdn.net/projects/hengband/ticket/40535[#40535] link:https://osdn.net/projects/hengband/ticket/40542[#40542]  link:https://osdn.net/projects/hengband/ticket/40561[#40561] link:https://osdn.net/projects/hengband/ticket/#40567[#40567] link:https://osdn.net/projects/hengband/ticket/40569[#40569] link:https://osdn.net/projects/hengband/ticket/40570[#40570] link:https://osdn.net/projects/hengband/ticket/40571[#40571] link:https://osdn.net/projects/hengband/ticket/40572[#40572] link:https://osdn.net/projects/hengband/ticket/40573[#40573] link:https://osdn.net/projects/hengband/ticket/40574[#40574] link:https://osdn.net/projects/hengband/ticket/40575[#40575] link:https://osdn.net/projects/hengband/ticket/40577[#40577] link:https://osdn.net/projects/hengband/ticket/40581[#40581] link:https://osdn.net/projects/hengband/ticket/40617[#40617] link:https://osdn.net/projects/hengband/ticket/40585[#40585] link:https://osdn.net/projects/hengband/ticket/40617[#40617] link:https://osdn.net/projects/hengband/ticket/40624[#40624] link:https://osdn.net/projects/hengband/ticket/40626[#40626] link:https://osdn.net/projects/hengband/ticket/40634[#40634] link:https://osdn.net/projects/hengband/ticket/40635[#40635] link:https://osdn.net/projects/hengband/ticket/40635[#40645] link:https://osdn.net/projects/hengband/ticket/40647[#40647] link:https://osdn.net/projects/hengband/ticket/40650[#40650] link:https://osdn.net/projects/hengband/ticket/40653[#40653] link:https://osdn.net/projects/hengband/ticket/40716[#40716] link:https://osdn.net/projects/hengband/ticket/40717[#40717] link:https://osdn.net/projects/hengband/ticket/40734[#40734] link:https://osdn.net/projects/hengband/ticket/39945[#39945] link:https://osdn.net/projects/hengband/ticket/40737[#40737] link:https://osdn.net/projects/hengband/ticket/40742[#40742] link:https://osdn.net/projects/hengband/ticket/40743[#40743] link:https://osdn.net/projects/hengband/ticket/40843[#40843] link:https://osdn.net/projects/hengband/ticket/41053[#41053] 参照)
+** Zangband当時に追加された仕様を切り離すためのプリプロセッサが煩雑に思われたので削除 (link:https://osdn.net/projects/hengband/ticket/38766[#38766] 参照)
+** get_item()周りの整備 (link:https://osdn.net/projects/hengband/ticket/38824[#38824] 参照)
+** 各構造体の整理 (link:https://osdn.net/projects/hengband/ticket/38844[#38844] 参照)
+*** floor_type構造体の作成とフロア情報の整理 (link:https://osdn.net/projects/hengband/ticket/38993[#38993] 参照)
+*** world_type構造体の作成とゲーム全体情報の整理 (link:https://osdn.net/projects/hengband/ticket/38995[#38995] 参照)
+*** 引数渡しの整理 (link:https://osdn.net/projects/hengband/ticket/38997[#38997] 参照)
+*** グローバル変数渡しの修正 (link:https://osdn.net/projects/hengband/ticket/39068[#39068] 参照)
 ** コミット追加し損ねたファイルを追加 (link:https://osdn.net/projects/hengband/ticket/38818[#38818] 参照)
 ** 冗長かつ無意味なコメントを全体的に削除してDoxygen系に還元するように整理 (link:https://osdn.net/projects/hengband/ticket/39076[#39076] 参照)
 ** 変数型の整理 (link:https://osdn.net/projects/hengband/ticket/39077[#39077] 参照)
@@ -74,7 +73,7 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 ** term.c/hの改名（→gameterm.c/h）(link:https://osdn.net/projects/hengband/ticket/40339[#40339] 参照)
 ** 一部エゴ装備処理判定を*_infoに追い出す (link:https://osdn.net/projects/hengband/ticket/40662[#40662] link:https://osdn.net/projects/hengband/ticket/40728[#40728] 参照)
 ** calc_bonuses()の整理 (link:https://osdn.net/projects/hengband/ticket/40514[#40514] link:https://osdn.net/projects/hengband/ticket/40942[#40942] link:https://osdn.net/projects/hengband/ticket/40943[#40943] link:https://osdn.net/projects/hengband/ticket/40944[#40944] 参照)
-* 型の定義をC++11準拠にしていることを再確認 (link:https://osdn.net/projects/hengband/ticket/38843[#38843]
+* 型の定義をC++11準拠にしていることを再確認 (link:https://osdn.net/projects/hengband/ticket/38843[#38843] 参照)
 * 英語版に関するビルドから運用までの各不具合の修正 (link:https://osdn.net/projects/hengband/ticket/39492[#39492] link:https://osdn.net/projects/hengband/ticket/39494[#39494] link:https://osdn.net/projects/hengband/ticket/39505[#39505] link:https://osdn.net/projects/hengband/ticket/39524[#39524] link:https://osdn.net/projects/hengband/ticket/40005[#40005] link:https://osdn.net/projects/hengband/ticket/40330[#40330] link:https://osdn.net/projects/hengband/ticket/40940[#40940] link:https://osdn.net/projects/hengband/ticket/40948[#40948] link:https://osdn.net/projects/hengband/ticket/40949[#40949] 参照)
 * ソースの文字コードをUTF-8 BOMに統一 (link:https://osdn.net/projects/hengband/ticket/38932[#38932] 参照)
 * RES_ALLの煩雑な処理を整理 (link:https://osdn.net/projects/hengband/ticket/38972[#38972] 参照)
@@ -87,13 +86,12 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 
 #### 不具合修正
 
-* 「帰還と上り階段無し」時に特定クエストに突入不可能になる問題を修正(link:https://osdn.net/projects/hengband/ticket/36930[#36930])
+* 「帰還と上り階段無し」時に特定クエストに突入不可能になる問題を修正(link:https://osdn.net/projects/hengband/ticket/36930[#36930] 参照)
 * モンスターボールの発動時アンドロイドの経験値計算漏れ (link:https://osdn.net/projects/hengband/ticket/37226[#37226] 参照)
-* リファクタリング時エンバグしたものまねで使った光の剣の威力が0になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37907[#37907] 参照)
 * Vault内部に山脈等の意図しない地形が生成される不具合 (link:https://osdn.net/projects/hengband/ticket/33649[#33649] 参照)
 * 武器匠の命中率計算バグを修正 (link:https://osdn.net/projects/hengband/ticket/37481[#37481] 参照)
-* 折れ剣修復の余計なダイスブーストを修正 (link:https://osdn.net/projects/hengband/ticket/37482[#37482] 参照)
-* 折れ剣修復のベースアイテム変更時に総重量加減算（及びアンドロイド強化度計算）を行わないバグ (link:https://osdn.net/projects/hengband/ticket/37551[#37551] 参照)
+** 折れ剣修復の余計なダイスブーストを修正 (link:https://osdn.net/projects/hengband/ticket/37482[#37482] 参照)
+** 折れ剣修復のベースアイテム変更時に総重量加減算（及びアンドロイド強化度計算）を行わないバグ (link:https://osdn.net/projects/hengband/ticket/37551[#37551] 参照)
 * 塔クエストなどで、配置されたモンスターに強制的に騎乗してしまう不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37557[#37557] 参照)
 * モンスターがモンスターに攻撃した場合の挙動についての修正 (link:https://osdn.net/projects/hengband/ticket/37600[#37600] 参照)
 ** モンスターの混乱攻撃が、対象モンスターに耐性があっても通用する問題はバグなので修正
@@ -103,38 +101,59 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * モンスターの自爆死後に不正なモンスター情報の残骸が残る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37856[#37856] 参照)
 * キャラクタダンプの死因表示不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38205[#38205] 参照)
 * xコマンドでモンスター下の床に落ちているアイテムの一覧を確認できなくなった不具合を修正 (link:https://osdn.net/projects/hengband/ticket/38217[#38217] 参照)
-* 青魔導士コマンドの繰り返しエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38259[#38259] 参照)
-* Windows10でプレイヤー名に日本語が使用できないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38270[#38270] link:https://osdn.net/projects/hengband/ticket/38270[#38791] link:https://osdn.net/projects/hengband/ticket/38836[#38836] 参照)
-* 視界内のモンスターリスト表示の自動更新 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/39637[#39637] 参照)
-* 鍛冶師で武器/防具強化ができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38613[#38613] 参照)
-* セーブファイルのロードができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38768[#38768] 参照)
-* バルログの初期食糧配布でプレイヤーの死体が生成されることがある場合を修正 (link:https://osdn.net/projects/hengband/ticket/38813[#38813] 参照)
-* エンバグで調査を行った際のモンスター速度表示のアンダーフローが起きていたので修正 (link:https://osdn.net/projects/hengband/ticket/38827[#38827] 参照)
-* エンバグに拠る売却アイテムの食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/38852[#38852] 参照)
-* エンバグに拠る文字化け修正 (link:https://osdn.net/projects/hengband/ticket/38923[#38923] 参照)
-* スターライトの杖の処理エンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38934[#38934] 参照)
-* 二刀流が必中するエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38935[#38935] 参照)
-** 命中率計算がまだおかしい問題を修正 (link:https://osdn.net/projects/hengband/ticket/38946[#38946] 参照)
-* 敵行動が停止するエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/38936[#38936] link:https://osdn.net/projects/hengband/ticket/40840[#40840] 参照)
-* 剣術家の気合いため処理を飛ばしていたエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/38965[#38965] 参照)
+* リファクタリングに伴う以下の各種エンバグ修正
+** 青魔導士コマンドを繰り返しキーで実行しようとしても繰り返せない (link:https://osdn.net/projects/hengband/ticket/38259[#38259] 参照)
+** Windows10でプレイヤー名に日本語が使用できない (link:https://osdn.net/projects/hengband/ticket/38270[#38270] link:https://osdn.net/projects/hengband/ticket/38270[#38791] link:https://osdn.net/projects/hengband/ticket/38836[#38836] 参照)
+** 鍛冶師で武器/防具強化ができない (link:https://osdn.net/projects/hengband/ticket/38613[#38613] 参照)
+** セーブファイルのロードができない (link:https://osdn.net/projects/hengband/ticket/38768[#38768] 参照)
+** バルログの初期食糧配布でプレイヤー(ID:0)の死体が生成されることがある (link:https://osdn.net/projects/hengband/ticket/38813[#38813] 参照)
+** 調査を行った際のモンスター速度表示のアンダーフローが起きる (link:https://osdn.net/projects/hengband/ticket/38827[#38827] 参照)
+** 売却対象アイテムの食い違いを修正 (link:https://osdn.net/projects/hengband/ticket/38852[#38852] 参照)
+** 文字化け修正 (link:https://osdn.net/projects/hengband/ticket/38923[#38923] 参照)
+** スターライトの杖の処理を修正 (link:https://osdn.net/projects/hengband/ticket/38934[#38934] 参照)
+** 二刀流が必中する (link:https://osdn.net/projects/hengband/ticket/38935[#38935] 参照)
+*** さらに命中率計算がまだおかしい (link:https://osdn.net/projects/hengband/ticket/38946[#38946] 参照)
+** 敵行動が停止する (link:https://osdn.net/projects/hengband/ticket/38936[#38936] link:https://osdn.net/projects/hengband/ticket/40840[#40840] 参照)
+** 剣術家の気合いため処理が手順通り実行されない (link:https://osdn.net/projects/hengband/ticket/38965[#38965] 参照)
+** ＊鑑定＊後に表示、自動破壊の対象になるアイテムがずれる不具合 (link:https://osdn.net/projects/hengband/ticket/39061[#39061] link:https://osdn.net/projects/hengband/ticket/39684[#39684] 参照)
+** ペットによるプレイヤーのアライメント変化が動作しなくなった (link:https://osdn.net/projects/hengband/ticket/39073[#39073] 参照)
+** ＠のマップ移動後配置 (link:https://osdn.net/projects/hengband/ticket/39410[#39410] 参照)
+** 第一領域を学習対象として認識しない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39571[#39571] 参照)
+** ダンジョンスタート階層生成時に上り階段生成が無限に失敗したり、階段先に行き止まりが生成されたりする (link:https://osdn.net/projects/hengband/ticket/39748[#39748] link:https://osdn.net/projects/hengband/ticket/39943[#39943] link:https://osdn.net/projects/hengband/ticket/39956[#39956] 参照)
+** Linuxビルドできなくなっていた (link:https://osdn.net/projects/hengband/ticket/39669[#39669] link:https://osdn.net/projects/hengband/ticket/39670[#39670] link:https://osdn.net/projects/hengband/ticket/39673[#39673] link:https://osdn.net/projects/hengband/ticket/39493[#39493] link:https://osdn.net/projects/hengband/ticket/39507[#39507] link:https://osdn.net/projects/hengband/ticket/39619[#39619] link:https://osdn.net/projects/hengband/ticket/39632[#39632] link:https://osdn.net/projects/hengband/ticket/39944[#39944] link:https://osdn.net/projects/hengband/ticket/40382[#40382] link:https://osdn.net/projects/hengband/ticket/40383[#40383] link:https://osdn.net/projects/hengband/ticket/40644[#40644] 参照)
+** floor_type の非互換性対応 (link:https://osdn.net/projects/hengband/ticket/39976[#39976] 参照)
+** 呪文書が消滅する不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40051[#40051] 参照)
+** 不自然な永久壁が生成される不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40326[#40326] 参照)
+** プレイヤーが一切行動不能になる (link:https://osdn.net/projects/hengband/ticket/40256[#40256] 参照)
+** 寝ている敵が動いてしまう不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40384[#40384] 参照)
+** ドアが追加で設置されることがある不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40422[#40422] 参照)
+** 古いテストプレイデータロード時無限ループに陥る不具合修正 (link:https://osdn.net/projects/hengband/ticket/39954[#39954] 参照)
+** コマンド、オプション、ステータス表示各種ミスの修正 (link:https://osdn.net/projects/hengband/ticket/40301[#40301] 参照)
+** 川などによるマップ生成周りのバグ (link:https://osdn.net/projects/hengband/ticket/40302[#40302] 参照)
+** 魔法棒を振った跡の更新処理ミスを修正 (link:https://osdn.net/projects/hengband/ticket/40304[#40304] 参照)
+** エルドリッチホラー処理がエディタの開閉毎に起きるという不具合の報告を受けたが再現できず (link:https://osdn.net/projects/hengband/ticket/40327[#40327] 参照)
+** ヒーロー状態で恐慌魔法を受けると恐怖状態に陥る (link:https://osdn.net/projects/hengband/ticket/40810[#40810] 参照)
+** calc_speed() に過積載が反映されていない (link:https://osdn.net/projects/hengband/ticket/40852[#40852] 参照)
+** 閃光/暗黒耐性があっても盲目になる (link:https://osdn.net/projects/hengband/ticket/40853[#40853] 参照)
+** Linux以外で新規セーブデータの作成に失敗する (link:https://osdn.net/projects/hengband/ticket/40913[#40913] 参照)
+** プレイヤーの死亡後、ロードしても即死に続けてクイックスタートができない (link:https://osdn.net/projects/hengband/ticket/40916[#40916] 参照)
+** 赤外線視力の可視判定不具合 (link:https://osdn.net/projects/hengband/ticket/40937[#40937] 参照)
+** 装備を外すコマンドでインベントリが表示される (link:https://osdn.net/projects/hengband/ticket/40938[#40938] 参照)
+** ダメージ計算時に配列外アクセスでソフトウェアが落ちる可能性がある (link:https://osdn.net/projects/hengband/ticket/40946[#40946] 参照)
+** 素手で攻撃できなくなる (link:https://osdn.net/projects/hengband/ticket/40955[#40955] 参照)
+** ペットに攻撃される (link:https://osdn.net/projects/hengband/ticket/40962[#40962] 参照)
+** 耐元素エゴ盾を発動しても二重耐性が付かない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41079[#41079] 参照)
+** 突然変異の精神薄弱による知能、賢さ-4の修正がキャラクタ情報やdumpに表示されないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/41080[#41080] 参照)
+** 矢弾のダメージ表示の数値がおかしい (link:https://osdn.net/projects/hengband/ticket/41081[#41081] 参照)
+** X11ウィンドウの立ち上げに関するバグ (link:https://osdn.net/projects/hengband/ticket/40040[#40040] 参照)
+** 宿屋での食事規制が取り払われた問題を修正 (link:https://osdn.net/projects/hengband/ticket/38921[#38921] 参照)
+** ものまねで使った光の剣の威力が0になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/37907[#37907] 参照)
+** 武器匠で武器を比較したあと、一部コマンドで武器しか選択できない (link:https://osdn.net/projects/hengband/ticket/40954[#40954] 参照)
 * sanity_blast()再修正 (link:https://osdn.net/projects/hengband/ticket/38998[#38998] 参照)
-* エンバグにより＊鑑定＊後に表示、自動破壊の対象になるアイテムがずれる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39061[#39061] link:https://osdn.net/projects/hengband/ticket/39684[#39684]参照)
-* ペットによるプレイヤーのアライメント変化がエンバグで動作しなくなった不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39073[#39073] 参照)
-* エンバグに拠り古いテストプレイデータロード時無限ループに陥る不具合修正 (link:https://osdn.net/projects/hengband/ticket/39954[#39954] 参照)
 * Win版BGM設定に関するバッファがオーバーフローを起こす可能性がある部分を修正 (link:https://osdn.net/projects/hengband/ticket/39106[#39106] 参照)
-* ＠のマップ移動後配置エンバグ (link:https://osdn.net/projects/hengband/ticket/39410[#39410] 参照)
 * リファクタリングの機械的置換による際に起きた英語版のミスを修正 (link:https://osdn.net/projects/hengband/ticket/39506[#39506] link:https://osdn.net/projects/hengband/ticket/39525[#39525] 参照)
-* エンバグによる第一領域を学習対象として認識しない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39571[#39571] 参照)
-* エンバグによりダンジョンスタート階層生成時に上り階段生成が無限に失敗したり、階段先に行き止まりが生成されたりする (link:https://osdn.net/projects/hengband/ticket/39748[#39748] link:https://osdn.net/projects/hengband/ticket/39943[#39943] link:https://osdn.net/projects/hengband/ticket/39956[#39956] 参照)
 * 武器を取り落とす変異で広域マップで起こすバグ (link:https://osdn.net/projects/hengband/ticket/39581[#39581] 参照)
 * モンスターに射撃能力があるのに表記されていない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39604[#39604] link:https://osdn.net/projects/hengband/ticket/40891[#40891] 参照)
-* エンバグでLinuxビルドできなくなっていた不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39669[#39669] link:https://osdn.net/projects/hengband/ticket/39670[#39670] link:https://osdn.net/projects/hengband/ticket/39673[#39673] link:https://osdn.net/projects/hengband/ticket/39493[#39493] link:https://osdn.net/projects/hengband/ticket/39507[#39507] link:https://osdn.net/projects/hengband/ticket/39619[#39619] link:https://osdn.net/projects/hengband/ticket/39632[#39632] link:https://osdn.net/projects/hengband/ticket/39944[#39944] link:https://osdn.net/projects/hengband/ticket/40382[#40382] link:https://osdn.net/projects/hengband/ticket/40383[#40383] link:https://osdn.net/projects/hengband/ticket/40644[#40644] 参照)
-* エンバグによりfloor_type の非互換性対応 (link:https://osdn.net/projects/hengband/ticket/39976[#39976] 参照)
-* エンバグにより呪文書が消滅する不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40051[#40051] 参照)
-* エンバグにより不自然な永久壁が生成される不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40326[#40326] 参照)
-* プレイヤーが一切行動不能になるエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40256[#40256] 参照)
-* エンバグにより寝ている敵が動いてしまう不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40384[#40384] 参照)
-* エンバグによりドアが追加で設置されることがある不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40422[#40422] 参照)
 * Mac版のメモリリークを修正  (link:https://osdn.net/projects/hengband/ticket/39815[#39815] 参照)
 * 追加モンスターの性質上闘技場の戦闘力計算でゼロ除算が発生する不具合 (link:https://osdn.net/projects/hengband/ticket/39526[#39526] 参照)
 * Linux版の各種修正
@@ -142,40 +161,23 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 ** main-gcu.c でバッファオーバーランが起きる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40041[#40041] 参照)
 * Windows 10 で終了時のウィンドウサイズが正しく保存されない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/39969[#39969] 参照)
 * モンスター撃破時の固定アーティファクト生成が常にa_info.txtの最終行しか適用されない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40013[#40013] 参照)
-* X11ウィンドウの立ち上げに関するエンバグ修正 (link:https://osdn.net/projects/hengband/ticket/40040[#40040] 参照)
-* エンバグに拠るコマンド、オプション、ステータス表示各種ミスの修正 (link:https://osdn.net/projects/hengband/ticket/40301[#40301] 参照)
-* エンバグに拠る川などによるマップ生成周りのバグ (link:https://osdn.net/projects/hengband/ticket/40302[#40302] 参照)
-* 魔法棒を振った跡の更新処理ミスを修正 (link:https://osdn.net/projects/hengband/ticket/40304[#40304] 参照)
-* エルドリッチホラー処理がエディタの開閉毎に起きるという不具合の報告を受けたが再現できず (link:https://osdn.net/projects/hengband/ticket/40327[#40327] 参照)
 * アーチャーレイシャル「弾/矢の製造」によるエラー落ちを修正 (link:https://osdn.net/projects/hengband/ticket/40343[#40343] 参照)
 * うっかり別バリアントの流れをpushしてしまったものをリバート (link:https://osdn.net/projects/hengband/ticket/40659[#40659] 参照)
-* ヒーロー状態で恐慌魔法を受けると恐怖状態に陥るエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40810[#40810] 参照)
-* calc_speed() に過積載が反映されていないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40852[#40852] 参照)
-* 閃光/暗黒耐性があっても盲目になるエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40853[#40853] 参照)
-* Linux以外で新規セーブデータの作成に失敗するエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40913[#40913] 参照)
-* プレイヤーの死亡後、ロードしても即死に続けてクイックスタートができないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40916[#40916] 参照)
-* 赤外線視力の可視判定不具合のエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40937[#40937] 参照)
-* 装備を外すコマンドでインベントリが表示されるエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40938[#40938] 参照)
-* ダメージ計算時に配列外アクセスでソフトウェアが落ちる可能性があるエンバグを修正　(link:https://osdn.net/projects/hengband/ticket/40946[#40946] 参照)
 * 自動拾いで配列外アクセスでソフトウェアが終了する場合がある不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40945[#40945] 参照)
 * RasberryPI OS中動作にてゲーム開始直後の施設の情報が空表示になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/40932[#40932] 参照)
-* 武器匠で武器を比較したあと、一部コマンドで武器しか選択できないエンバグを修正　(link:https://osdn.net/projects/hengband/ticket/40954[#40954] 参照)
-* 素手で攻撃できなくなるエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40955[#40955] 参照)
-* ペットに攻撃されるエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/40962[#40962] 参照)
-* 耐元素エゴ盾を発動しても二重耐性が付かない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41079[#41079] 参照)
-* 突然変異の精神薄弱による知能、賢さ-4の修正がキャラクタ情報やdumpに表示されないエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/41080[#41080] 参照)
-* 矢弾のダメージ表示の数値がおかしいエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/41081[#41081] 参照)
 
 ### 謝辞
 
-* まずhourier氏には1年もの作業を通じて、メンテナが本来やりたかったソースコードの抜本的な整理をまとめてやっていただきました。今回のリリースは彼の貢献に拠る所が最も大です。強く感謝いたします。
-* 続けて、backwardseric氏は英語版にあった追いきれない問題を解決するためのパッチを多数提供していただき、英訳の修正にも多く関わっていただきました。さらに我々のリポジトリと常に相互参照しながらMacOSX版を作成していただいています。多数の貢献誠に感謝いたします。
-* hradish氏にはnasty生成やsanity_blastに関する確率計算の問題などを定量的に示していただき、オートローラー機能の確率表示拡張パッチを提供していただきました。ありがとうございます。対応が遅れて申し訳ありません。
-* iks氏にはリファクタリング時に発生したバグの調査と実際の修正を長く地道になっていただきました。ありがとうございます。
-* phonohawk氏にLinux版ビルドオプションのバグに関する修正をプルリクエストしていただき受理しました。ありがとうございます。
-* taotao氏に視界内のモンスターリスト表示の自動更新パッチ、Linuxのコンパイルミス修正パッチを提供いただきました。ありがとうございます。
-* osakanataro氏にも同様にLinux版ビルドのミスを訂正いただきました。加えてGCU UTF-8コンソール対応にも貢献いただきました。ありがとうございます。
-* hdns氏には引き続き用語統一やバグチェックに貢献していただきました。ありがとうございます。
-* (作成途中)
+* まずhourier氏には1年もの作業を通じて、メンテナが本来やりたかったソースコードの抜本的な整理をまとめてやっていただきました。今回のリリースは彼の貢献に拠る所が最も大です。
+* 続けて、backwardseric氏は英語版にあった追いきれない問題を解決するためのパッチを多数提供していただき、英訳の修正にも多く関わっていただきました。さらに我々のリポジトリと常に相互参照しながらMacOSX版を作成していただいています。
+* hradish氏にはnasty生成やsanity_blastに関する確率計算の問題などを定量的に示していただき、オートローラー機能の確率表示拡張パッチを提供していただきました。対応が遅れて申し訳ありません。
+* iks氏にはリファクタリング時に発生したバグの調査と実際の修正を長く地道になっていただきました。
+* phonohawk氏にLinux版ビルドオプションのバグに関する修正をプルリクエストしていただき受理しました。
+* taotao氏に視界内のモンスターリスト表示の自動更新パッチ、Linuxのコンパイルミス修正パッチを提供いただきました。
+* osakanataro氏にも同様にLinux版ビルドのミスを訂正いただきました。加えてGCU UTF-8コンソール対応にも貢献いただきました。
+* shimitei氏に前バージョンに引き続きバグ報告をパッチを提示していただきました。
+* hdns氏には引き続き用語統一やバグチェックに貢献していただきました。
+* フォーラムより、hidom氏、hayan氏、ミート氏、worpal氏、lesser yeek氏、Miyamasa氏、カーマイン氏、kanu氏、PHO氏、Levin氏、x68氏、lhopital氏、zaza(CS)氏、silvercat氏にバグ報告をしていただきました。
 
+以上、IRCぐりっどばぐの皆様含めてありがとうございました。
 (文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
