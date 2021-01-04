@@ -36,3 +36,4 @@
 * main-win.c の分割/整理 (チケット link:https://osdn.net/projects/hengband/ticket/40274[#40274]参照)
 * 店の中で記念撮影すると異常なデータが生成される不具合の修正 (チケット link:https://osdn.net/projects/hengband/ticket/40342[#40342]参照)
 * ゲームシステム上のコンフィグとキャラクターデータの分離 (チケット link:https://osdn.net/projects/hengband/ticket/40455[#40455]参照)
+* saved_floor_type構造体とfloor_type構造体の統一 (チケット link:https://osdn.net/projects/hengband/ticket/41088[#41088]参照)
