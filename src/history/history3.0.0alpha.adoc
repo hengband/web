@@ -32,6 +32,7 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * ウィザードモードに任意のスペル効果を引き起こすコマンドを基礎実装 (link:https://osdn.net/projects/hengband/ticket/39832[#39832] 参照)
 * 乱数生成アルゴリズムxoshiro128**をバージョン1.1にする (link:https://osdn.net/projects/hengband/ticket/40237[#40237] 参照)
 * WIERD_MIND持ちモンスターに対するテレパシー仕様の調整 (link:https://osdn.net/projects/hengband/ticket/40375[#40735] 参照)
+* 量子的生物の特性について仕様変更 (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
 
 #### インターフェース面
 
@@ -168,7 +169,7 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 
 ### 謝辞
 
-* まずhourier氏には1年もの作業を通じて、メンテナが本来やりたかったソースコードの抜本的な整理をまとめてやっていただきました。今回のリリースは彼の貢献に拠る所が最も大です。
+* まずHourier氏には1年もの作業を通じて、メンテナが本来やりたかったソースコードの抜本的な整理をまとめてやっていただきました。今回のリリースは彼の貢献に拠る所が最も大です。
 * 続けて、backwardseric氏は英語版にあった追いきれない問題を解決するためのパッチを多数提供していただき、英訳の修正にも多く関わっていただきました。さらに我々のリポジトリと常に相互参照しながらMacOSX版を作成していただいています。
 * hradish氏にはnasty生成やsanity_blastに関する確率計算の問題などを定量的に示していただき、オートローラー機能の確率表示拡張パッチを提供していただきました。対応が遅れて申し訳ありません。
 * iks氏にはリファクタリング時に発生したバグの調査と実際の修正を長く地道になっていただきました。
