@@ -100,9 +100,9 @@ Linuxなら ./hengband -- -a という風にオプションを付けて実行し
 
 ### 開発版
 
-現在開発版2.2.1.x()を検討しています。
-
 shimitei氏が、link:https://rlbuild.herokuapp.com/[ローグライク実験室]にて開発版を頻繁にビルドされています。ただし安定性は保証できませんのでセーブデータの破損などの問題も自己責任でよろしくお願いします。
+
+現在3.0.0.0Alpha版を公開しています。詳細についてはまた後日追加いたします。
 
 * link:https://sourceforge.jp/projects/hengband/files/?release_id=6619#6619[新開発版 Windows用バイナリ (Old Development Version Windows Ports)]
 ** hengband-2.1.x-win.zip
