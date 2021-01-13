@@ -27,6 +27,7 @@ IRCチャンネルに「#ぐりっどばぐ」があります。現在も活発�
 
 * link:https://twitter.com/deskull[deskull]
 * link:https://twitter.com/habu1010[habu]
+* link:https://twitter.com/hiromi_yuh[Hourier]
 
 ### Twitterの関連bot
 
