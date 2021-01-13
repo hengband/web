@@ -7,32 +7,52 @@
 
 Ver.3.0.0.0Alphaを2021年1月11日にリリースしました。
 
+2021/1/14記述が足りなかったものを追記しました。
+
 ### 主な修正事項
 
 #### ゲームバランス面
 
 * nasty生成の再度見直し (link:https://osdn.net/projects/hengband/ticket/37284[#37284] 参照)
 * モンスター大量追加と調整 (link:https://osdn.net/projects/hengband/ticket/37285[#37285] link:https://osdn.net/projects/hengband/ticket/40907[#40907] link:https://osdn.net/projects/hengband/ticket/40909[#40909] link:https://osdn.net/projects/hengband/ticket/40910[#40910] link:https://osdn.net/projects/hengband/ticket/41091[#41091] 参照)
+** アリーナに登場するモンスター種別とその強さを調整した (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+** 一部の既存ユニークについて、RQ出現地帯を変更した(38F→44Fなど) (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+** 一部の新規ユニークについて、特殊な救援召喚を実装した (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+** 一部の新規モンスターについて、一定フロア以上の階層ならば倒した時に必ず靴をドロップする処理を追加した (#37285)
+*** v2.2.1以前からのセーブデータを引き継ぐと、v3.0.0の想定モンスターとは異なる相手と戦闘する可能性があります
+*** セーブデータの新規作成またはQy@でのやり直しを推奨しますが、これ自体ではゲーム進行に障害はありません
 * 固定アーティファクト大量追加 (link:https://osdn.net/projects/hengband/ticket/37324[#37324] link:https://osdn.net/projects/hengband/ticket/40906[#40906] 参照)
+** 騎兵でプレイ時の「古い城」の報酬を差し替えた (link:https://osdn.net/projects/hengband/ticket/#40906[#40906])
+** アーティファクトの発動効果を2つ (死者復活、森林生成)追加した (#37324)
 * ランダムアーティファクト生成強化 (link:https://osdn.net/projects/hengband/ticket/37359[#37359] 参照)
 * 妖刀のペナルティ処理についてバグがあったが、このままに明白に維持する形として修正 (link:https://osdn.net/projects/hengband/ticket/37476[#37476] 参照)
 * 鏡使いの幻惑の光でスタン処理が重複している部分について若干の修正 (link:https://osdn.net/projects/hengband/ticket/37550[#37550] 参照)
 * 充填魔力吸収打撃の軽減 (link:https://osdn.net/projects/hengband/ticket/40911[#40911] 参照)
+* 盲目・混乱・恐怖・麻痺・毒・劣化・病気・各種能力低下・時間逆転・遅鈍・生命力吸収・経験値吸収を、それぞれ対応する耐性で若干軽減できるようにした (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
 
 #### ゲームシステム面
 
 * vaultを拡張して固定部屋生成追加 (link:https://osdn.net/projects/hengband/ticket/37336[#37336] 参照)
 * 新地形の追加 (link:https://osdn.net/projects/hengband/ticket/38635[#38635] 参照)
+** 低温帯、電圧帯、酸の沼、毒の沼など
+** 一部は水や溶岩と同様な地形生成に取り上げられます
 ** 新地形追加に伴うバグを修正 (link:https://osdn.net/projects/hengband/ticket/38869[#38869] link:https://osdn.net/projects/hengband/ticket/39580[#39580] 参照)
 link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * 新性格「チャージマン」実装 (link:https://osdn.net/projects/hengband/ticket/38790[#38790] 参照)
+** 戦士寄りのパラメータ構成を持ち、最初からアレなので幻覚を見ない分、一定確率で人型に近い種族をジュラル星人に誤認します。
 * 新種族「マーフォーク」実装 (link:https://osdn.net/projects/hengband/ticket/38796[#38796] 参照)
+** ベースはハーフエルフ。現在レアな水流耐性を持ち、浮遊を持たないと陸上で減速する代わりに、水泳可能な地形では加速します。
 * 「盾技能」追加 (link:https://osdn.net/projects/hengband/ticket/38807[#38807] 参照)
 * 宿で時間をまたいでも日替わり賞金首が変わるよう変更 (link:https://osdn.net/projects/hengband/ticket/39008[#39008] 参照)
 * ウィザードモードに任意のスペル効果を引き起こすコマンドを基礎実装 (link:https://osdn.net/projects/hengband/ticket/39832[#39832] 参照)
 * 乱数生成アルゴリズムxoshiro128**をバージョン1.1にする (link:https://osdn.net/projects/hengband/ticket/40237[#40237] 参照)
 * WIERD_MIND持ちモンスターに対するテレパシー仕様の調整 (link:https://osdn.net/projects/hengband/ticket/40375[#40735] 参照)
+** (内部的な)モンスター番号ではなく、＠のターン経過ごとに1/10の確率で表示させるように修正しました。これによりpit/nestなど同一モンスターが生成されたときも格子状に並ぶ現象が発生しなくなりました。
 * 量子的生物の特性について仕様変更 (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+** 数ターンに1回程度の確率で、ユニークから見て半径10のショートテレポを行うか、＠を半径10でテレポアウェイします
+** これらは魔法扱いではなく、反魔法結界及び反テレポートを貫通します
+* 既存モンスターでデッドアタックを行う場合、その攻撃処理メッセージを追加した(新規モンスターにはなし) (link:https://osdn.net/projects/hengband/ticket/40581[#40581] 参照)
+* 量子生物であってもユニークならば「○○もどき」としてモンスター闘技場へ出場できるようにした (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
 
 #### インターフェース面
 
@@ -40,16 +60,21 @@ link:https://osdn.net/projects/hengband/ticket/38937[#38937] 参照)
 * 英語訳、レイアウトの修正 (link:https://osdn.net/projects/hengband/ticket/39533[#39533] link:https://osdn.net/projects/hengband/ticket/39548[#39548] link:https://osdn.net/projects/hengband/ticket/39551[#39551] link:https://osdn.net/projects/hengband/ticket/39556[#39556] link:https://osdn.net/projects/hengband/ticket/39557[#39557] link:https://osdn.net/projects/hengband/ticket/39560[#39560] link:https://osdn.net/projects/hengband/ticket/39561[#39561] link:https://osdn.net/projects/hengband/ticket/39575[#39575] link:https://osdn.net/projects/hengband/ticket/39576[#39576] link:https://osdn.net/projects/hengband/ticket/39577[#39577] link:https://osdn.net/projects/hengband/ticket/39587[#39587] link:https://osdn.net/projects/hengband/ticket/39596[#39596] link:https://osdn.net/projects/hengband/ticket/39617[#39617] link:https://osdn.net/projects/hengband/ticket/39618[#39618] link:https://osdn.net/projects/hengband/ticket/39691[#39691] link:https://osdn.net/projects/hengband/ticket/40006[#40006] link:https://osdn.net/projects/hengband/ticket/40282[#40282] link:https://osdn.net/projects/hengband/ticket/40292[#40292] link:https://osdn.net/projects/hengband/ticket/40294[#40294] link:https://osdn.net/projects/hengband/ticket/40520[#40520] link:https://osdn.net/projects/hengband/ticket/40521[#40521] link:https://osdn.net/projects/hengband/ticket/40667[#40667] 他参照)
 * Linux版TrueTypeフォント対応 (link:https://osdn.net/projects/hengband/ticket/24042[#24042] link:https://osdn.net/projects/hengband/ticket/40048[#40048] 参照)
 * MacOSX版がbackwardseric氏の協力により間接的に実現 (link:https://osdn.net/projects/hengband/ticket/28488[#28488] 参照)
-* ダンプ自動保存機能 (https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
-* デフォルト効果音を少々追加 (https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
-* スナイパーの専用インターフェース改善 (https://osdn.net/projects/hengband/ticket/37756[#37756] 参照)
-* スレイ情報表示について「巨人」「ジャイアント」の表記を「巨人」に統一 (https://osdn.net/projects/hengband/ticket/39563[#39563] 参照)
-* 敵に与えたカオス効果のメッセージが紛らわしいのを修正 (https://osdn.net/projects/hengband/ticket/39603[#39603] 参照)
+* ダンプ自動保存機能 (link:https://osdn.net/projects/hengband/ticket/37323[#37323] 参照)
+* デフォルト効果音を少々追加 (link:https://osdn.net/projects/hengband/ticket/37468[#37468] 参照)
+* スナイパーの専用インターフェース改善 (link:https://osdn.net/projects/hengband/ticket/37756[#37756] 参照)
+* スレイ情報表示について「巨人」「ジャイアント」の表記を「巨人」に統一 (link:https://osdn.net/projects/hengband/ticket/39563[#39563] 参照)
+* 敵に与えたカオス効果のメッセージが紛らわしいのを修正 (link:https://osdn.net/projects/hengband/ticket/39603[#39603] 参照)
 * 視界内のモンスターリスト表示の自動更新 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/39637[#39637] 参照)
-* GCU UTF-8コンソール対応 (https://osdn.net/projects/hengband/ticket/39671[#39671] 参照)
-* 撃破したユニークモンスター一覧表示 (https://osdn.net/projects/hengband/ticket/40465[#40465] 参照)
-* 錬気術師と忍者の「煉獄火炎」表記ダブりに対応 (https://osdn.net/projects/hengband/ticket/40701[#40701] 参照)
-* オートローラーの停止確率表示機能を追加 (https://osdn.net/projects/hengband/ticket/41001[#41001] 参照)
+* GCU UTF-8コンソール対応 (link:https://osdn.net/projects/hengband/ticket/39671[#39671] 参照)
+* 撃破したユニークモンスター一覧表示 (link:https://osdn.net/projects/hengband/ticket/40465[#40465] 参照)
+* 錬気術師と忍者の「煉獄火炎」表記ダブりに対応 (link:https://osdn.net/projects/hengband/ticket/40701[#40701] 参照)
+* オートローラーの停止確率表示機能を追加 (link:https://osdn.net/projects/hengband/ticket/41001[#41001] 参照)
+* 狂気を誘う形容詞の選択ルーチンを追加した (link:https://osdn.net/projects/hengband/ticket/40020[#40020] 参照)
+* マクロ登録可能な文字数の最大値を約16 kBに拡大した (link:https://osdn.net/projects/hengband/ticket/39962[#39962] 参照)
+* 宿屋に泊まったときのメッセージを、＠が生きているかアンデッドかで分けた(日本語版のみ) (link:https://osdn.net/projects/hengband/ticket/40275[#40275] 参照)
+* アーティファクトの発動でユニークを検知した時、一部モンスターについてメッセージを出力する処理を追加した (link:https://osdn.net/projects/hengband/ticket/37285[#37285] 参照)
+* 武器匠の「武器を比較する」で、現在表示中の武器を選択できないようにした (by iks氏/チケット不明)
 
 #### ソースコード面
 
