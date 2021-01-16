@@ -3,6 +3,16 @@
 
 ## 最近の告知
 
+### (2021/01/16) 変愚蛮怒3.0.0Alpha1公開
+
+いただきました不具合報告、調整案のうちいくつかをこなしたものを3.0.0Alpha1として以下で公開いたします。
+
+* link:https://osdn.net/projects/hengband/downloads/74265/hengband-3.0.0alpha1.zip/[Windowsバイナリ]
+* https://osdn.net/projects/hengband/downloads/74264/hengband-3.0.0alpha1-src.tar.gz/[ソースファイル]
+* 修正履歴や関連チケットなどは link:history/history3.0.0alpha1.html[こちら] をどうぞ。
+
+依然Alpha版ですので各種の不具合やバランスの不均衡について、しばらくの対処を要します。
+
 ### (2021/01/14) 変愚蛮怒3.0.0.0Alphaの初期ビルドミス版について。
 
 1/11の最初期に公開した、リンク(現在はDL不可)link:https://osdn.net/projects/hengband/downloads/74223/Hengband-3.0.0.0alpha.zip/[https://osdn.net/projects/hengband/downloads/74223/Hengband-3.0.0.0alpha.zip/]はファイル構成などに失敗したWindowsバイナリであり、実際に動いているようでいくつものバグも内在していることが判明しています。プレイ、バグ報告ともに現在の下記の方で改めてダウンロードの上でお願いします。

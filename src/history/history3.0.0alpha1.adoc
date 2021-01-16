@@ -1,0 +1,36 @@
+:lang: ja
+:doctype: article
+
+## 2021年1月11日 Ver.3.0.0Alpha1 (アルファ版)
+
+### 概要
+
+Ver.3.0.0Alpha1を2021年1月16日にリリースしました。
+
+### 主な修正事項
+
+#### ゲームバランス面
+
+* 各種モンスターを調整 (link:https://osdn.net/projects/hengband/ticket/41165[#41165] link:https://osdn.net/projects/hengband/ticket/41042[#41042] 参照・詳細は後日まとめます)
+
+#### インターフェース面
+
+* Alpha版のバージョン表記を変更(「3.0.0.1Alpha」から「3.0.0Alpha1」表記へ) (link:https://osdn.net/projects/hengband/ticket/41179/[#41179] 参照)
+
+#### ソースコード面
+
+* switch case文における意図しないfall throughを修正 (link:https://osdn.net/projects/hengband/ticket/40340/[#40340] 参照)
+
+#### 不具合修正
+
+* 盗み逃げ打撃でモンスターが逃げない現象を修正 (link:https://osdn.net/projects/hengband/ticket/41132[#41132] 参照)
+* たいまつ/ランタンの燃料が残り0でも光る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41140[#41140] 参照) 
+* 反テレポート効果が無効になる不具合を治すため、teleport_player_aux() の引数順ミスを修正 (link:https://osdn.net/projects/hengband/ticket/41155[#41155] 参照)
+* 魔力充填の破壊判定後の分岐が逆になっていたために破壊が頻発していた不具合を修正. (link:https://osdn.net/projects/hengband/ticket/41157[#41157] 参照)
+* アリーナの景品が意図しない内容になっていた不具合を修正（列挙子の設定ミスが原因） (link:https://osdn.net/projects/hengband/ticket/41162[#41162] 参照)
+* ウィンドウフラグに装備を表示した状態で射撃武器を装備すると強制終了する不具合を修正. (link:https://osdn.net/projects/hengband/ticket/41173[#41173] 参照)
+
+### 謝辞
+(すみません、近日まとめます)
+
+(文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
