@@ -3,6 +3,14 @@
 
 ## 最近の告知
 
+### (2021/01/25) 変愚蛮怒3.0.0Alpha3(HotFix)アップ
+
+お待たせしました。ひとまず隠密システムが正常に機能する状態のものを3.0.0Alpha3としてアップしました。ひとまずWindowsバイナリのみ公開します。
+
+* link:https://osdn.net/projects/hengband/downloads/74506/hengband-3.0.0alpha3.zip/[Windowsバイナリ]
+
+引き続き何か問題が発生次第修正しますので、今後共よろしくお願いします。
+
 ### (2021/01/25) 変愚蛮怒3.0.0Alpha2のHotFix予定
 
 先ほどアップしたAlpha2ですが、隠密が皆無なレベルでモンスターが起き出す症状を確認しました。原因解明の上、修正でき次第即更新を予定しています。
@@ -13,7 +21,7 @@
 
 今週中に対応できたバグフィックスを反映した3.0.0Alpha2をリリースしました。
 
-* link:https://osdn.net/projects/hengband/downloads/74501/hengband-3.0.0alpha2.zip//[Windowsバイナリ]
+* link:https://osdn.net/projects/hengband/downloads/74501/hengband-3.0.0alpha2.zip/[Windowsバイナリ]
 * link:https://osdn.net/projects/hengband/downloads/74500/hengband-3.0.0alpha2-src.tar.gz/[ソースファイル]
 * 修正履歴や関連チケットなどは link:history/history3.0.0alpha2.html[こちら] をどうぞ。
 
