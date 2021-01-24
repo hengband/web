@@ -1,18 +1,98 @@
 :lang: ja
 :doctype: article
 
-## 2021年1月23日 Ver.3.0.0Alpha2 (アルファ版)
+## 2021年1月24日 Ver.3.0.0Alpha2 (アルファ版)
 
 ### 概要
 
-Ver.3.0.0Alpha2を2021年1月24日にリリース予定です。現在まとめ中です。
+Ver.3.0.0Alpha2は021年1月24日にリリースされました。
 
 ### 主な修正事項
 
-現在進行中です。締め切りまでに間に合ったできた既存のバグ修正が対象となります。
+#### システム変更面
+
+* ゲームシステム中バージョン番号表記の変更 (link:https://osdn.net/projects/hengband/ticket/41179[#41179] 参照)
+* 発動処理IDの変数サイズを8bitから16bitに拡張 (link:https://osdn.net/projects/hengband/ticket/41230[#41230] 参照)
+
+#### ソース管理面
+
+* gitignore更新 (link:https://osdn.net/projects/hengband/ticket/41301[#41301] 参照)
+
+#### バランス調整面
+
+* モンスターについて以下の修正 (link:https://osdn.net/projects/hengband/ticket/41042[#41042] 参照)
+** 古代万色ドラゴン、グレート・インフェルノ・ドレイクのHPを調整
+** 殺人イタチのシンボルをr→fと変更しましたが、rに戻す
+** 『ゴライアス』の経験値、レアリティ及び魔法使用率を調整しました
+** 泡の出現率を低下させました。特に、特大の泡はやや出にくくした
+** 2周目の泡について、それぞれ標準出現階層を5F深くした
+** 『ヴァイフ』の打撃値を修正した
+** クリスタル・キューブのパラメータを調整した
+** 『アポロ』、『サーロクニル』、『オダハヴィーング』の加速値を増やしました
+** 『パーサーナックス』の打撃値を調整
+** ドラウグル類の打撃値を調整
+** ファルメル類のHP及び索敵範囲を調整
+** 『ヘルハウンド』の打撃値を調整
+** 『ソラリス』の出現率を調整
+** アイ・ホーンに電気オーラを付与
+** 以下のモンスターが喋る内容を追加・調整
+*** 『ブル・ゲイツ』
+*** 『スティーヴン・ジョーブツ』
+*** インターネット・エクスプローダー
+*** エッヂ
+*** アイ・ホーン
+** シヴァ靴 (モンスター)の経験値を増加
+** 『久遠』のパラメータを全面調整
+* ミミックnestに出現するミミックを現状に合わせて追加
+* アーティファクトについて以下の修正
+** エスカリボルグの弱体化
+
+#### バグ修正
+
+* 以下のモンスターに関する不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41042[#41042] 参照)
+** ユニコーンのフレーバーテキストが日英両方表示されていた不具合を修正
+** 『アポロ』が射撃しない不具合を修正
+** 『ダーネヴィール』、『アルドゥイン』に打撃値が定義されていない不具合を修正
+** グレーター・ファルメル・スクルカーに不要なPOWERFULフラグが付いていた不具合を修正
+** 『ヤマト』に男性属性が付いていなかった不具合を修正
+** 『リュキアのキマイラ』に騎乗フラグが二重に付与されていた不具合を修正
+** 死亡時召喚を行う新規モンスターについて、効果音が鳴っていなかった不具合を修正
+** 『スティーヴン・ジョーブツ』がエッヂを召喚する不具合を修正
+* 一部職業で麻痺耐性がある表記なのに麻痺する (link:https://osdn.net/projects/hengband/ticket/41174[#41174] 参照)
+* モンスターからの充填魔力吸収の打撃でクラッシュする (link:https://osdn.net/projects/hengband/ticket/41192[#41192] 参照)
+* 熟練度やレベル差や馬に関係なく被弾時に落馬 (link:https://osdn.net/projects/hengband/ticket/41149[#41149] 参照)
+* モンスターの簡易一覧スポイラーの文字コード不具合 (link:https://osdn.net/projects/hengband/ticket/41325[#41325] 参照)
+* スペルマスター＆プリーストにとって素手が相応しくない武器として扱われる (link:https://osdn.net/projects/hengband/ticket/41320[#41320] 参照)
+* spoil_out 関数におけるバッファオーバーラン (link:https://osdn.net/projects/hengband/ticket/41312[#41312] 参照)
+* 指輪の発動がキャンセルにも関わらず耐性を与えてしまう (link:https://osdn.net/projects/hengband/ticket/41302[#41302] 参照)
+* 善良ESPで無生物が感知できてしまう (link:https://osdn.net/projects/hengband/ticket/41299[#41299] 参照)
+* 青魔法がターン消費しない (link:https://osdn.net/projects/hengband/ticket/41298[#41298] 参照)
+* 破片耐性の傷無効が効かないことがある (link:https://osdn.net/projects/hengband/ticket/41297[#41297] 参照)
+* 狂戦士で地震を撃ったら画面中の敵以外のマスが@で埋め尽くされる (link:https://osdn.net/projects/hengband/ticket/41295[#41295] 参照)
+* r_info.txt における高級品を落とすモンスターのドロップフラグについて「DROP_GOOD」なしの「DROP_GREAT」のみでは通常のアイテムしか落とさない問題を修正(link:https://osdn.net/projects/hengband/ticket/41268[#41268] 参照)
+* 長い名前のモンスターがモンスター検索で常に検出される (link:https://osdn.net/projects/hengband/ticket/41266[#41266] 参照)
+* 鏡の上で光のしずくを使うとほぼモンスターが行動しない (link:https://osdn.net/projects/hengband/ticket/41265[#41265] 参照)
+* 混沌属性武器によるカオス効果で高確率で地震が発生する (link:https://osdn.net/projects/hengband/ticket/41261[#41261] 参照)
+* 影フェアリーの反感装備ペナが機能していない (link:https://osdn.net/projects/hengband/ticket/41188[#41188] 参照)
+* 耐盲目があるのに盲目になる場合がある (link:https://osdn.net/projects/hengband/ticket/41185[#41185] 参照)
+* アイテム「(なし)」を拾うことがある (link:https://osdn.net/projects/hengband/ticket/41183[#41183] 参照)
+** 関連してスリングで射撃し残弾0になった直後にクラッシュ (link:https://osdn.net/projects/hengband/ticket/41308[#41308] 参照)
+* 装備によっては攻撃回数が0回になることがある (link:https://osdn.net/projects/hengband/ticket/41180[#41180] 参照)
+* 飛び道具に関するバージョンインポート後データのクラッシュ (link:https://osdn.net/projects/hengband/ticket/41178[#41178] 参照)
+* アーティファクトIDが正しく保存されず、デモニカスーツ以降のアーティファクトがおかしくなる (link:https://osdn.net/projects/hengband/ticket/41158[#41158] 参照)
+* 壁抜け時のモンスター挙動が従来通りにならない (link:https://osdn.net/projects/hengband/ticket/41148[#41148] 参照)
+* Linux で忍者/修行僧/練気術師で始め、オートローラーを回すと落ちる (link:https://osdn.net/projects/hengband/ticket/41144[#41144] 参照)
+* 扉の鍵を開けた時点で視界が広がる不具合 (link:https://osdn.net/projects/hengband/ticket/41141[#41141] 参照)
+* 鍛冶師で武器/防具強化ができない不具合 (link:https://osdn.net/projects/hengband/ticket/38613[#38613] 参照)
+* l/x で辺りを見回してもWEIRD_MINDの表示/非表示判定が発生する不具合(link:https://osdn.net/projects/hengband/ticket/41176[#41176] 参照)
+* 英語版に関するバグ修正 (link:https://osdn.net/projects/hengband/ticket/41324[#41324] link:https://osdn.net/projects/hengband/ticket/40947[#40947] link:https://osdn.net/projects/hengband/ticket/41309[#41309] link:https://osdn.net/projects/hengband/ticket/41306[#41306] link:https://osdn.net/projects/hengband/ticket/41304[#41304] link:https://osdn.net/projects/hengband/ticket/41136[#41136] link:https://osdn.net/projects/hengband/ticket/41231[#41231] link:https://osdn.net/projects/hengband/ticket/41303[#41303] 参照)
 
 ### 謝辞
 
-近日まとめます
+* フォーラムやチケットにて以下の方々にバグ報告や修正案をいただきました。
+** long氏、zazaCS氏、oihagi氏、iyukyo氏、exp7氏、NGDC氏、meetname氏、Miyamasa氏(変愚蛮怒勝手版の人)、silvercat氏、rruikkuriryu氏、tanguband氏(短愚蛮怒の人)、amamori氏、TX105氏、taotao氏
+* 以下のスタッフに具体的な修正を行ってもらいました。
+** Hourier氏、habu氏、dis-氏、backwardseric氏
+今回のご協力感謝いたします。
 
 (文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
