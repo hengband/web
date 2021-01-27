@@ -19,7 +19,11 @@ link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/proje
 
 ### IRCチャンネル
 
-IRCチャンネルに「#ぐりっどばぐ」があります。現在も活発に意見交換や雑談が行われていますのでお気軽にお越しください。
+IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。現在も活発に意見交換や雑談が行われていますのでお気軽にお越しください。
+
+### Discord
+
+Discordサーバ link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へどうぞ。
 
 ### 現在活動を行なっている開発者のTwitter
 
@@ -28,10 +32,12 @@ IRCチャンネルに「#ぐりっどばぐ」があります。現在も活発�
 * link:https://twitter.com/deskull[deskull]
 * link:https://twitter.com/habu1010[habu]
 * link:https://twitter.com/hiromi_yuh[Hourier]
+* link:https://twitter.com/dis-[dis-]
 
 ### Twitterの関連bot
 
 * link:https://twitter.com/hengband_speak[変愚セリフbot]
+* link:https://twitter.com/hengscore[変愚蛮怒 新着スコア]
 
 ### 動画サイト
 
