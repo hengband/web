@@ -1,0 +1,14 @@
+:lang: ja
+:doctype: article
+
+## 2021年1月25日 Ver.3.0.0Alpha3 (アルファ版/Hotfix)
+
+### 概要
+
+Ver.3.0.0Alpha3は2021年1月25日にHotfixリリースされました。
+
+### 主な修正事項
+
+#### バグ修正
+
+* 反感フラグ処理が逆になっていた (link:https://osdn.net/projects/hengband/ticket/41330[#41330] 参照)

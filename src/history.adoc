@@ -12,6 +12,8 @@
 
 ### link:/history/history3.0.0.html[Ver.3.0.0(予定)]
 
+### link:/history/history3.0.0alpha3.html[Ver.3.0.0alpha3]
+
 ### link:/history/history3.0.0alpha2.html[Ver.3.0.0alpha2]
 
 ### link:/history/history3.0.0alpha1.html[Ver.3.0.0alpha1]
