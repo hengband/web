@@ -3,6 +3,16 @@
 
 ## 最近の告知
 
+### (2021/01/31) 変愚蛮怒3.0.0Alpha4リリース
+
+恒例のAlpha版更新を行いました。
+
+* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4-jp.zip/[Windows(日本語版)]
+* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4-en.zip/[Windows(English Version)]
+* link:https://osdn.net/projects/hengband/downloads/74543/hengband-3.0.0alpha4-src.tar.gz/[Source]
+
+また前回のHotfixであったAlpha3のソースはlink:https://osdn.net/projects/hengband/downloads/74542/hengband-3.0.0alpha3-src.tar.gz/[こちら]です
+
 ### (2021/01/27) Discord始めました。
 
 そろそろIRCだけででは限界と思い、試しに設置してみました。
