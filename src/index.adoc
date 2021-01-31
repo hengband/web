@@ -20,7 +20,7 @@
 
 また前回のHotfixであったAlpha3のソースはlink:https://osdn.net/projects/hengband/downloads/74542/hengband-3.0.0alpha3-src.tar.gz/[こちら]です
 
-3.0.0Alpha0について盾技能の仕様追加を行いました。
+3.0.0Alpha0のリリースノートについて盾技能の仕様追記を行いました。
 
 ### (2021/01/27) Discord始めました。
 
