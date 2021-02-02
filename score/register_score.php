@@ -194,11 +194,13 @@ function validate_screen_dump($screen_dump_lines)
 
 $recv_encoding = get_mb_encoding();
 if ($recv_encoding === false) {
+    error_log("get_mb_encoding() FAILED");
     exit;
 }
 
 $recv_contents = file_get_contents('php://input');
 if (strlen($recv_contents) !== filter_input(INPUT_SERVER, 'CONTENT_LENGTH', FILTER_VALIDATE_INT)) {
+    error_log("CONTENT_LENGTH does not match");
     exit;
 }
 
@@ -206,6 +208,9 @@ $recv_contents = mb_convert_encoding($recv_contents, "UTF-8", $recv_encoding);
 
 $split_contents = split_recv_contents($recv_contents);
 if ($split_contents === false) {
+    error_log("split_recv_contents() FAILED");
+    error_log("recv_contents:");
+    error_log($recv_contents);
     exit;
 }
 
@@ -215,6 +220,8 @@ $db = new ScoreDB();
 $score_id = $db->register_new_score(create_db_insert_score_data($char_info));
 
 if ($score_id === false) {
+    error_log("register_new_score() FAILED!");
+    error_log(print_r($char_info, true));
     exit;
 }
 
