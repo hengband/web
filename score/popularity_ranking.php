@@ -11,7 +11,7 @@ require_once "web_template.inc";
 $wt = new WebTemplate();
 
 $wt->add_head_contents('<meta name="robots" content="none" />');
-$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
+$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="./css/score-table.css">');
 $wt->add_head_contents(
     <<<EOM
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>

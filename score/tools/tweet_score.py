@@ -141,9 +141,9 @@ def create_score_tweet(score_id):
                u"{death_reason_detail}"
                ).format(death_reason_detail=death_reason_detail, **score_data)
 
-    dump_url = ("https://hengband.osdn.jp/score/show_dump.php?score_id={}"
+    dump_url = ("http://mars.kmc.gr.jp/~dis/heng_score/show_dump.php?score_id={}"
                 ).format(score_data['score_id'])
-    screen_url = ("https://hengband.osdn.jp/score/show_screen.php?score_id={}"
+    screen_url = ("http://mars.kmc.gr.jp/~dis/heng_score/show_screen.php?score_id={}"
                   ).format(score_data['score_id'])
 
     tweet = (u"{summary}\n\n"
@@ -171,7 +171,7 @@ def create_daily_stats_tweet(year, month, day):
     daily_stats = get_daily_score_stats(year, month, day)
 
     score_url = (
-        u"https://hengband.osdn.jp/score/score_ranking.php"
+        u"http://mars.kmc.gr.jp/~dis/heng_score/score_ranking.php"
         u"?fd={target_date}&td={target_date}"
         .format(target_date=datetime.date(year, month, day).isoformat())
     )
