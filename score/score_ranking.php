@@ -172,7 +172,7 @@ $pageinfo = calc_page_info($search_result['total_data_count'], $start_num, 50);
 $wt = new WebTemplate();
 $wt->set_title("変愚蛮怒 スコアランキング");
 $wt->add_head_contents('<meta name="robots" content="none" />');
-$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="css/score-table.css">');
+$wt->add_head_contents('<link rel="stylesheet" type="text/css" href="./css/score-table.css">');
 $fp = $wt->main_contents_fp();
 fprintf($fp, "<h2>変愚蛮怒 歴代スコア (%s)</h2>\n", $db->get_sort_mode_name());
 fprintf(

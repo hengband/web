@@ -510,7 +510,7 @@ EOM
             $this->dbh->beginTransaction();
             if ($insert_stmt->execute($score_data['character_info']) === false ||
                 $insert_stmt->rowCount() !== 1) {
-                $dbh->rollBack();
+                $this->dbh->rollBack();
                 return false;
             }
 
@@ -521,7 +521,7 @@ EOM
             foreach ($score_data['realm_info'] as $realm_seq => $realm_name) {
                 if ($realm_insert_stmt->execute([$score_id, $realm_seq + 1, $realm_name]) === false ||
                     $realm_insert_stmt->rowCount() !== 1) {
-                    $dbh->rollBack();
+                    $this->dbh->rollBack();
                     return false;
                 }
             }
@@ -533,7 +533,7 @@ EOM
 
             return $score_id;
         } catch (PDOException $e) {
-            $dbh->rollBack();
+            $this->dbh->rollBack();
         }
 
         return false;
