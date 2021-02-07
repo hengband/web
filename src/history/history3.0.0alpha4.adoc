@@ -1,0 +1,61 @@
+:lang: ja
+:doctype: article
+
+## 2021年1月31日 Ver.3.0.0Alpha4 (アルファ版)
+
+### 概要
+
+Ver.3.0.0Alpha4は2021年1月31日にリリースされました。
+
+### 主な修正事項
+
+#### システム変更面
+
+* マクロの長さを拡張 (link:https://osdn.net/projects/hengband/ticket/41338[#41338] 参照)
+
+#### バランス調整面
+
+* モンスターについて以下の修正 (link:https://osdn.net/projects/hengband/ticket/41042[#41042] 参照)
+** 『Q』の感知範囲を100フィートから200フィートに広げた
+** デイドラ級ドラゴンのアイテムドロップ量を若干上昇させた
+** (略)『ゾート』の痛恨打撃を粉砕打撃に変更 
+** 『閻魔大王』に盲目魔法を追加した
+** 『迷宮のミノタウロス』のレベルを40から18に変更した
+** マイクロンフトの興亡クエストにて、インターネット・エクスプローダーをエッヂに変更した
+** 『カブラックス』『P』の経験値修正
+** シヴァ靴に重力ブレスと重力耐性を追加した
+** ファッキントッシュとSM-DOSの仁義なき戦いについてセリフを追加した
+** 『閻魔大王』と『ソラリス』の打撃を調整した
+** 『パーサーナックス』のドロップが上質かつ金も落としていたのを高級品オンリーに修正した
+
+#### バグ修正
+
+* 0:00の日替わり賞金首更新時にモンスター候補がないために永遠にループしつづけることに伴う種々の問題を修正 (link:https://osdn.net/projects/hengband/ticket/41316[#41316] link:https://osdn.net/projects/hengband/ticket/41327[#41327] 参照)
+* 盾を装備すると隠密が低下する=忍者の盾なし隠密修正が全職業にかかっていた不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41342[#41342] 参照)
+* 指輪の殺戮修正が両手にかかる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41264[#41264] 参照)
+* 視界内のモンスターリスト表示の自動更新がコード管理上のミスで正しく繁栄されていなかったので修正 (link:https://osdn.net/projects/hengband/ticket/38280[#38280] link:https://osdn.net/projects/hengband/ticket/41321[#41321] link:https://osdn.net/projects/hengband/ticket/341337[#41337] link:https://osdn.net/projects/hengband/ticket/41336[#41336] 参照)
+* ダンジョン内クエストでクエスト標準BGMがならない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41383[#41383] link:https://osdn.net/projects/hengband/ticket/41351[#41351]  link:https://osdn.net/projects/hengband/ticket/41138[#41138]  link:https://osdn.net/projects/hengband/ticket/41351[#41134] 参照)
+* 矢を撃つと軌跡の位置にアイコンが残るのを修正 (link:https://osdn.net/projects/hengband/ticket/41382[#41382] 参照)
+* サブウィンドウの高さが狭いとauto_moreオプションをはいにしてもメッセージの-続く-送りが表示されるのを修正 (link:https://osdn.net/projects/hengband/ticket/41361[#41361] 参照)
+* 我が家、店舗へのアイテムスタック処理がおかしくなっていたのを修正 (link:https://osdn.net/projects/hengband/ticket/41360[#41360] 参照)
+* ハウンドの挙動が以前と異なるのを修正 (link:https://osdn.net/projects/hengband/ticket/41359[#41359] 参照)
+* 経験値復活の薬が割れたときの効果がクローンモンスターになっていた不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41350[#41350] 参照)
+* 職業の攻撃回数上限の設定がテーブルの不整合により起こっていたので修正 (link:https://osdn.net/projects/hengband/ticket/41347[#41347] 参照)
+* アイテムpval上昇に多重表記が発生していたので修正 (link:https://osdn.net/projects/hengband/ticket/41341[#41341] 参照)
+* 修行僧が仕様通りの加速を得られなくなっていたので修正 (link:https://osdn.net/projects/hengband/ticket/41340[#41340] 参照)
+* 薬を投擲しても割れなくなっていた不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41335[#41335] 参照)
+* Linux版で魔法一覧を表示した時に文字化ける不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41334[#41334] 参照)
+* マーシャルアーツの技能値が命中率に反映されなくなった不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41190[#41190] 参照)
+* 光源範囲外のモンスターにテレポアウェイした場合の呼称がおかしくなっていたのを修正 (link:https://osdn.net/projects/hengband/ticket/41182[#41182] 参照)
+* 英語ロケール下Windows上での動作不具合の把握と修正。恐らく現在の時点で英語版Windowsでも正しく動作する（はず）(link:https://osdn.net/projects/hengband/ticket/41358[#41358] 参照)
+* 英語版に関するおかしな表現やバグ修正 (link:https://osdn.net/projects/hengband/ticket/41326[#41326] link:https://osdn.net/projects/hengband/ticket/41349[#41349] link:https://osdn.net/projects/hengband/ticket/41353[#41353] link:https://osdn.net/projects/hengband/ticket/41354[#41354] link:https://osdn.net/projects/hengband/ticket/41365[#41365] link:https://osdn.net/projects/hengband/ticket/41380[#41380] link:https://osdn.net/projects/hengband/ticket/41385[#41385] link:https://osdn.net/projects/hengband/ticket/41386[#41386] 参照)
+
+### 謝辞
+
+* フォーラムやチケットにて以下の方々にバグ報告や修正案をいただきました。
+** zazaCS氏、iyukyo氏、exp7氏、NGDC氏、77t氏、amamori氏、meetname氏、vol氏、clocq氏、oihagi氏、rryukkuriryu氏、daradarach氏、tx105氏
+* 以下のスタッフに具体的な修正を行ってもらいました。
+** Hourier氏、habu氏、dis-氏、backwardseric、taotao氏
+その他、discordなどでテストプレイや不具合報告をしてくださった多数の方、今回のご協力に感謝いたします。
+
+(文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
