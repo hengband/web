@@ -3,6 +3,26 @@
 
 ## 最近の告知
 
+### (2021/02/07) 変愚蛮怒3.0.0Alpha5リリース及びサーバ移設に伴う2.2.1r2公開
+
+Alpha版定期更新として3.0.0Alpha5をリリースしました。今回からサーバ移設に対応しましたので、それに伴い現在の安定版である2.2.1についてもサーバ移設に対応した2.2.1r2を公開し、2.2.1rは公開停止と致します。リンク先は以下のとおりです。
+
+* link:https://osdn.net/projects/hengband/downloads/74587/Hengband-3.0.0Alpha5-jp.zip/[3.0.0Alpha5 Windows(日本語版)]
+* link:https://osdn.net/projects/hengband/downloads/74587/Hengband-3.0.0Alpha5-en.zip/[3.0.0Alpha5 Windows(English Version)]
+* link:https://osdn.net/projects/hengband/downloads/74585/hengband-3.0.0alpha5-src.tar.gz/[3.0.0Alpha5 ソース]
+* link:https://osdn.net/projects/hengband/downloads/74586/hengband-2.2.1r2.zip/[2.2.1r2 Windows(日本語版)]
+
+また本バージョンを最後にメインのリモートリポジトリをOSDNからGitHubに移行する予定です。開発体制の移行なども含めて後日追加します。
+
+### (2021/02/01) 変愚蛮怒3.0.0Alpha4リリースミスに伴う修正版アップ
+
+昨日アップしたバイナリ版についてr_info.txtの内容がAlpha3から更新されていない不具合がありました。バイナリパッケージ作成時の手順ミスですので、Hotfix扱いせず修正版のみをアップします。
+
+* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4r-jp.zip//[Windows(日本語版)]
+* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4r-en.zip/[Windows(English Version)]
+
+から、よろしくお願いします。下記リンク先のものは消します。
+
 ### (2021/02/01) スコアサーバの不調調査と移設の検討について
 
 最近になってスコアサーバに内容が送られない不具合が報告されたため、調査しました。その結果OSDNのサーバメンテナンスに伴う仕様変更で大きなPOST制限がかかり、
