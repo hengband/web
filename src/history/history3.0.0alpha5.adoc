@@ -7,7 +7,8 @@
 
 Ver.3.0.0Alpha5は2021年2月7日にリリースされました。
 
-一部詳細のリンク先追加、謝辞は明日に追加します。ご了承ください。
+* 一部詳細のリンク先追加、謝辞は明日に追加します。ご了承ください。
+* 2/9不足分を追加しました。
 
 ### 主な修正事項
 
@@ -16,17 +17,17 @@ Ver.3.0.0Alpha5は2021年2月7日にリリースされました。
 * スコアサーバ移設 (link:https://osdn.net/projects/hengband/ticket/41432[#41432] 参照)
 * スコア送信機能のHTTPS対応 (link:https://osdn.net/projects/hengband/ticket/41124[#41124] 参照)
 * デバッグ向け効果音設定ファイル追加 (link:https://osdn.net/projects/hengband/ticket/41487[#41487] 参照)
-** gitへのコミットを避けるためのsound_debug.cfgファイルの優先読み込み機能を追加
-* デバッグ向けBGM設定ファイル追加
-** gitへのコミットを避けるためのmusic_debug.cfgファイルの優先読み込み機能を追加
-* auto_debug_save機能追加
-** Alpha版でデフォルトオン
+** gitへのコミットを避けるためのsound_debug.cfgファイルの優先読み込み機能を追加した
+* デバッグ向けBGM設定ファイル追加 (link:https://osdn.net/projects/hengband/ticket/41415[#41415] 参照)
+** gitへのコミットを避けるためのmusic_debug.cfgファイルの優先読み込み機能を追加した
+* auto_debug_save機能追加 (link:https://osdn.net/projects/hengband/ticket/41390[#41390] link:https://osdn.net/projects/hengband/ticket/41479[#41479] 参照)
+** Alpha版ではデフォルトオンになる．デバッグ報告の必要がないかつ重いと思ったらオプションの設定の(4)ゲームプレイに追加されているのでオフに．
 ** save/logに行動ごとの状態がセーブされる
 
 #### リファクタリング/プロジェクト管理
 
 * 未使用ファイル削除 (link:https://osdn.net/projects/hengband/ticket/41493[#41493] 参照)
-* Windows版リリース用パッケージを作成するスクリプトの作成
+* Windows版リリース用パッケージを作成するスクリプトの作成 (link:https://osdn.net/projects/hengband/ticket/41409[#41409] 参照)
 
 #### バランス調整面
 
@@ -53,30 +54,35 @@ Ver.3.0.0Alpha5は2021年2月7日にリリースされました。
 * デバッグセーブ処理にLinux上ビルドエラーがあったため修正 (link:https://osdn.net/projects/hengband/ticket/41494[#41494] 参照)
 * 攻撃回数計算のバグ修正とリファクタリング (link:https://osdn.net/projects/hengband/ticket/41491[#41491] 参照)
 * 武器(悪魔)エゴのAC修正が常に+1になるバグを変数型変更に伴う処理修正により解決 (link:https://osdn.net/projects/hengband/ticket/41486[#41486] 参照)
-* 錬気によるダメージブーストが正しく動作していない不具合を修正
-* 装備変更時、器用さ修正がACに即時反映されない不具合を修正
-* 階段を上ったときにクラッシュする不具合を修正
-* 街移動の際に一瞬移動前の街が表示される不具合を修正
-* ~9(我が家のアイテム一覧確認処理)から我が家のアイテムを^sで検索しようとしても効かない不具合を修正
-* 光の剣のダメージがまた０になっていた不具合を修正
-* 騎乗した状態で攻撃した騎乗可能モンスターに乗ってしまう不具合を修正
-* fresh-afterオフ時のターゲットの挙動がおかしい不具合を修正
-* 買い物時にアイテムウィンドウが自動更新されないことがある不具合を修正
-* escでメッセージを流せない不具合とそこからさらに発生したエンバグを修正
-* fresh_beforeの値に関わらず再描画し続ける不具合を修正
-* ダンジョン「迷宮」の壁の外側にドアが生成される不具合を修正
-* ゲーム内ヘルプを上方向にスクロールすると見出しが二重になる不具合を修正
-* 矢を撃つと軌跡の位置にアイコンが残る不具合を修正
-* ファイル→開くの挙動が2.xから変わった問題を修正
-* auto_moreをはいにしても続くが表示される問題を修正
-* ダメージ修正のある武器以外の装備が表記上反映されない問題を修正
-* ゾートの文字列長さでソフトウェアが落ちる問題を本バージョンまでで解決したと判断
-* 二刀流のダメージが片手より増えることがある殺戮修正のミスを修正
-* アングウィルにてチャージマンが1F以上の生成モンスターを誤認しない不具合を修正
-* その他英語版の問題、誤字脱字を修正
+* 錬気によるダメージブーストが正しく動作していない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41486[#41486] 参照)
+* 装備変更時、器用さ修正がACに即時反映されない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41485[#41485] 参照)
+* 階段を上ったときにクラッシュする不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41478[#41478] 参照)
+* 街移動の際に一瞬移動前の街が表示される不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41472[#41472] 参照)
+* ~9(我が家のアイテム一覧確認処理)から我が家のアイテムを^sで検索しようとしても効かない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41461[#41461] 参照)
+* 光の剣のダメージがまた０になっていた不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41436[#41436] 参照)
+* 騎乗した状態で攻撃した騎乗可能モンスターに乗ってしまう不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41430[#41430] 参照)
+* fresh_afterオフ時のターゲットの挙動がおかしい不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41426[#41426] 参照)
+* 買い物時にアイテムウィンドウが自動更新されないことがある不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41416[#41416] 参照)
+* escでメッセージを流せない不具合とそこからさらに発生したエンバグを修正 (link:https://osdn.net/projects/hengband/ticket/41412[#41412] 参照)
+* fresh_beforeの値に関わらず再描画し続ける不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41403[#41403] 参照)
+* ダンジョン「迷宮」の壁の外側にドアが生成される不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41396[#41396] 参照)
+* ゲーム内ヘルプを上方向にスクロールすると見出しが二重になる不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41389[#41389] 参照)
+* 矢を撃つと軌跡の位置にアイコンが残る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41382[#41382] 参照)
+* ファイル→開くの挙動が2.xから変わった問題を修正 (link:https://osdn.net/projects/hengband/ticket/41362[#41362] 参照)
+* auto_moreをはいにしても続くが表示される問題を修正 (link:https://osdn.net/projects/hengband/ticket/41361[#41361] 参照)
+* ダメージ修正のある武器以外の装備が表記上反映されない問題を修正 (link:https://osdn.net/projects/hengband/ticket/41344[#41344] 参照)
+* ゾートの名前の文字列長さでソフトウェアが落ちる問題を本バージョンまでで解決したと判断 (link:https://osdn.net/projects/hengband/ticket/41296[#41296] 参照)
+* 二刀流のダメージが片手より増えることがある殺戮修正のミスを修正 (link:https://osdn.net/projects/hengband/ticket/41181[#41181] 参照)
+* アングウィルにてチャージマンが1F以上の生成モンスターを誤認しない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41356[#41356] 参照)
+* その他英語版の問題、誤字脱字を修正 (link:https://osdn.net/projects/hengband/ticket/41466[#41466] link:https://osdn.net/projects/hengband/ticket/41464[#41464] link:https://osdn.net/projects/hengband/ticket/41458[#41458] link:https://osdn.net/projects/hengband/ticket/41455[#41455] link:https://osdn.net/projects/hengband/ticket/41442[#41442] link:https://osdn.net/projects/hengband/ticket/41421[#41421] link:https://osdn.net/projects/hengband/ticket/41420[#41420] link:https://osdn.net/projects/hengband/ticket/41419[#41419] link:https://osdn.net/projects/hengband/ticket/41407[#41407] link:https://osdn.net/projects/hengband/ticket/41406[#41406] link:https://osdn.net/projects/hengband/ticket/41405[#41405] link:https://osdn.net/projects/hengband/ticket/41404[#41404] link:https://osdn.net/projects/hengband/ticket/41401[#41401] 参照)
 
 ### 謝辞
 
-現在まとめ中です、しばらくお待ちください。
+* フォーラムやチケットにて以下の方々にバグ報告や修正案をいただきました。
+** daradarach氏、ironside氏、tanguband氏、meetname氏、iyukyo氏、tokumeikibou氏、clocq氏、oihagi氏、77t氏、onion氏、rryukkuriryu氏
+* 以下のスタッフに具体的な修正を行ってもらいました。
+** Hourier氏、habu氏、dis-氏、backwardseric氏、taotao氏
+
+その他、discordなどでテストプレイや不具合報告をしてくださった多数の方、今回のご協力に感謝いたします。今後はGitHubでの開発体制を整えて、さらに順調に進めて行きたいと思います。今後ともよろしくお願いします。
 
 (文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
