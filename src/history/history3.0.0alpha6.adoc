@@ -23,6 +23,14 @@ Ver.3.0.0Alpha6は2021年2月14日にリリースされました。
 * 2.2.1からのマクロ挙動の変化を修正 (link:https://osdn.net/projects/hengband/ticket/41506[OSDN#41506] 参照)
 ** ESCでメッセージが全て流れず、一部マクロキーがメッセージ送りに食われてしまうのが原因だった。
 * ソースコード中プリプロセッサ(WORLD_SCORE)によるスコア送信機能停止が機能しない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41444[OSDN#41444] link:https://github.com/hengband/hengband/issues/12[Issue#12] link:https://github.com/hengband/hengband/pull/13[PullReq#13] link:https://github.com/hengband/hengband/pull/104[PullReq#104] 参照)
+* 英語版のみ、有用な情報となる噂が聞けなかった不足を修正 (link:https://osdn.net/projects/hengband/ticket/41422[OSDN#41422] link:https://github.com/hengband/hengband/issues/39[Issue#39] link:https://github.com/hengband/hengband/pull/40[PullReq#40] 参照)
+* BGMについて、我が家から出たときのみとBasicに指定したBGMが鳴る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41477[OSDN#41477] link:https://github.com/hengband/hengband/issues/42[Issue#42] link:https://github.com/hengband/hengband/pull/114[PullReq#114] 参照)
+
+#### 英語翻訳追加/修正
+
+* 性格がコンバットorチャージマン時の特別なメッセージの差し替え追加 (link:https://osdn.net/projects/hengband/ticket/41414[OSDN#41414] 参照)
+
+
 
 ### 謝辞
 
