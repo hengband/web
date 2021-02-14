@@ -9,9 +9,13 @@
 
 link:http://hengband.sourceforge.jp/wiki/index.php?FrontPage[http://hengband.sourceforge.jp/wiki/index.php?FrontPage] で最新の攻略情報を追加、編集可能になっています。
 
+### GitHubのDiscussion
+
+link:https://github.com/hengband/hengband/discussions[https://github.com/hengband/hengband/discussions] にて、現在アカウント必須になりますが開発への提案にお越しください。
+
 ### OSDNフォーラム
 
-link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/projects/hengband/forums/] にフォーラムが置かれています。現在、不具合報告と追加要素募集を行っています。
+link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/projects/hengband/forums/] にフォーラムが置かれていますが、OSDNでの開発は2021年2月以降停止予定になっています。今後はGitHubの利用を想定していますが、アカウントを取らずに書き込めるメリットの観点から利用し続けるかもしれません。
 
 ### 掲示板
 
@@ -19,7 +23,7 @@ link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/proje
 
 ### IRCチャンネル
 
-IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。現在も活発に意見交換や雑談が行われていますのでお気軽にお越しください。
+IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。Discordに移行したため、現在過疎気味ですが現在も主だったスタッフとbotは存続中です。
 
 ### Discord
 

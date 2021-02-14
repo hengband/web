@@ -74,7 +74,10 @@ Linuxなら ./hengband -- -a という風にオプションを付けて実行し
 
 ## ダウンロード
 
-ソースファイル及び実行ファイルはlink:https://sourceforge.jp/projects/hengband/files[OSDN] からダウンロードできます。ファイル名は以下の通りです。
+ソースファイル及び実行ファイルは からダウンロードできます。ファイル名は以下の通りです。
+
+ソースコードはlink:https://github.com/hengband/hengband/[GitHub]からダウンロードして下さい。
+3.0.0Alpha5まではlink:https://sourceforge.jp/projects/hengband/files[OSDN]をメインでやっていましたがこちらは以後凍結されます。ご了承下さい。下記の古いバージョンのリンク先も今後変わるかもしれません。
 
 ### 安定版
 
