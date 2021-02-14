@@ -9,6 +9,13 @@ Alpha版定期更新として3.0.0Alpha6をリリースしました。
 
 リリースノートは link:/history/history3.0.0alpha6.html[こちら] です。
 
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha6/Hengband-3.0.0Alpha6-jp.zip[3.0.0Alpha6 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha6/Hengband-3.0.0Alpha6-en.zip[3.0.0Alpha6 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha6.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha6.tar.gz[ソース(tar.gz)]
+
+※現在Alpha5含めて一部のバイナリZIPがWindowsのアーカイバで解凍できない症状を確認しています。原因確認次第差し替えますのでお待ち下さい。
+
 ### (2021/02/13) GitHub以降に伴うリンクや指針について修正
 
 （本Webも含めて）まだ、過渡的にOSDNに依存する部分もありますが、GitHubをメインにしていく方向で指針やリンク先を変更しています。今後も随時変えてきますのでよろしくお願いします。
