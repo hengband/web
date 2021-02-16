@@ -7,7 +7,9 @@
 
 Ver.3.0.0Alpha6は2021年2月14日にリリースされました。
 
-一部ISSUEの関連付け、謝辞は後日追加します。ご了承下さい。
+具体的な修正の動向などは以下のGitHubコミュニティをご覧ください。
+
+* link:https://github.com/hengband/hengband/milestone/1?closed=1[3.0.0Alpha6マイルストーンのIssue一覧]
 
 ### 既知のバグについて
 
@@ -19,20 +21,23 @@ Ver.3.0.0Alpha6は2021年2月14日にリリースされました。
 
 #### システム変更面
 
-* キー待ちしないで全メッセージを流すオプションの作成 (link:https://osdn.net/projects/hengband/ticket/41510[OSDN#41510] link:https://github.com/hengband/hengband/issues/7[Issue#7] link:https://github.com/hengband/hengband/pull/9[PullReq#9] 参照)
-* 変わり身失敗時のメッセージを分かりやすくした (link:https://github.com/hengband/hengband/pull/72[PullReq#72] 参照)
-* モンスター一覧表示の画面ちらつき改善 (link:https://github.com/hengband/hengband/pull/97[PullReq#97] 参照)
+* キー待ちしないで全メッセージを流すオプションの作成
+* 変わり身失敗時のメッセージを分かりやすくした
+* モンスター一覧表示の画面ちらつき改善
+* auto_debug_saveの処理の重さを軽減
 
 #### リファクタリング/プロジェクト管理
 
-* GitHubにおいて、Linuxビルドテストを行うWorkFlowを追加 (link:https://github.com/hengband/hengband/pull/11[PullReq#11] 参照)
-* GitHubにおける、ビルドテストの並列実行化 (link:https://github.com/hengband/hengband/pull/62[PullReq#62] 参照)
-* FORCE_SLEEPフラグが誤解を呼ぶので改名(PREVENT_SUDDEN_MAGIC/MFLAG_PREVENT_MAGIC) (link:https://github.com/hengband/hengband/pull/71[PullReq#71] 参照)
-* mon_type、monap_type の ap_cnt メンバを除去 (link:https://github.com/hengband/hengband/pull/94[PullReq#94] 参照)
+* GitHubにおいて、Linuxビルドテストを行うWorkFlowを追加
+* GitHubにおける、ビルドテストの並列実行化
+* FORCE_SLEEPフラグが誤解を呼ぶので改名(PREVENT_SUDDEN_MAGIC/MFLAG_PREVENT_MAGIC)
+* mon_type、monap_type の ap_cnt メンバを除去
+* fix_monster_listの副作用を分離
+* モンスターの思い出表示モードの定義をenumん。
 
 #### バランス調整面
 
-* 以下のモンスターを調整 (link:https://github.com/hengband/hengband/pull/94[PullReq#132] 参照)
+* 以下のモンスターを調整
 ** 二周目の泡に関するモンスターの表記ゆれを修正した
 ** 『アルドゥイン』のパラメータを調整した
 ** lainのパラメータを調整した
@@ -45,38 +50,55 @@ Ver.3.0.0Alpha6は2021年2月14日にリリースされました。
 
 #### バグ修正
 
-* カメレオン洞に通常モンスターが生成される不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41507[OSDN#41507] link:https://github.com/hengband/hengband/issues/20[Issue#20] link:https://github.com/hengband/hengband/pull/35[PullReq#35] 参照)
-* 2.2.1からのマクロ挙動の変化を修正 (link:https://osdn.net/projects/hengband/ticket/41506[OSDN#41506] 参照)
+* カメレオン洞に通常モンスターが生成される不具合を修正
+* 2.2.1からのマクロ挙動の変化を修正
 ** ESCでメッセージが全て流れず、一部マクロキーがメッセージ送りに食われてしまうのが原因だった。
-* ソースコード中プリプロセッサ(WORLD_SCORE)によるスコア送信機能停止が機能しない不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41444[OSDN#41444] link:https://github.com/hengband/hengband/issues/12[Issue#12] link:https://github.com/hengband/hengband/pull/13[PullReq#13] link:https://github.com/hengband/hengband/pull/104[PullReq#104] 参照)
-* 英語版のみ、有用な情報となる噂が聞けなかった不足を修正 (link:https://osdn.net/projects/hengband/ticket/41422[OSDN#41422] link:https://github.com/hengband/hengband/issues/39[Issue#39] link:https://github.com/hengband/hengband/pull/40[PullReq#40] 参照)
-* BGMについて、我が家から出たときのみとBasicに指定したBGMが鳴る不具合を修正 (link:https://osdn.net/projects/hengband/ticket/41477[OSDN#41477] link:https://github.com/hengband/hengband/issues/42[Issue#42] link:https://github.com/hengband/hengband/pull/114[PullReq#114] 参照)
-* Clangの警告修正 (link:https://github.com/hengband/hengband/pull/34[PullReq#34])
-* 打撃回避判定のバグ修正 (link:https://github.com/hengband/hengband/pull/36[PullReq#36])
-* 画面再描画処理整理 (link:https://github.com/hengband/hengband/pull/38[PullReq#38])
-* center_playerオプションの描画ミス修正 (link:https://github.com/hengband/hengband/pull/62[PullReq#66] 参照)
-* 未初期化変数参照修正 (link:https://github.com/hengband/hengband/pull/70[PullReq#70] 参照)
-* X11でのvalgrid警告阻止 (link:https://github.com/hengband/hengband/pull/74[PullReq#74] 参照)
-* s64b_RSHIFT(64bit演算)の未定義動作修正 (link:https://github.com/hengband/hengband/pull/76[PullReq#76] 参照)
-* X11で発生する日本語入力時のゴミを修正 (link:https://github.com/hengband/hengband/pull/78[PullReq#78] 参照)
-* spell_is_inate()の未定義動作を修正 (link:https://github.com/hengband/hengband/pull/80[PullReq#80] 参照)
-* 横幅を大きくしたときのインベントリ表示崩れを修正 (link:https://github.com/hengband/hengband/pull/87[PullReq#87] 参照)
-* HTMLスクリーンショットのバッファ不足を修正 (link:https://github.com/hengband/hengband/pull/90[PullReq#90] 参照)
-* rumors_j.txtの改行忘れを修正 (link:https://github.com/hengband/hengband/pull/94[PullReq#94] 参照)
-* 一部パス指定ミスでセーブデータ指定起動ができない不具合を修正 (link:https://github.com/hengband/hengband/pull/101[PullReq#101] 参照)
-* 床置きアイテム自動破壊時メッセージウィンドウが遅れる不具合を修正 (link:https://github.com/hengband/hengband/pull/103[PullReq#103] 参照)
-* Linuxビルド時のpkg-configバグ修正 (link:https://github.com/hengband/hengband/pull/104[PullReq#104] 参照)
-* 噂一覧の誤字修正 (link:https://github.com/hengband/hengband/pull/109[PullReq#109] 参照)
-* 打撃効果RBE_NONEの警告メッセージバグを修正 (link:https://github.com/hengband/hengband/pull/109[PullReq#109] 参照)
-* 青魔道師のファイア・ボルトがターン消費しない不具合修正 (link:https://github.com/hengband/hengband/pull/115[PullReq#115] 参照)
+* ソースコード中プリプロセッサ(WORLD_SCORE)によるスコア送信機能停止が機能しない不具合を修正
+* 英語版のみ、有用な情報となる噂が聞けなかった不足を修正
+* BGMについて、我が家から出たときのみとBasicに指定したBGMが鳴る不具合を修正
+* Clangの警告修正
+* 打撃回避判定のバグ修正
+* 画面再描画処理整理 
+* center_playerオプションの描画ミス修正 
+* 未初期化変数参照修正
+* X11でのvalgrid警告阻止
+* s64b_RSHIFT(64bit演算)の未定義動作修正 
+* X11で発生する日本語入力時のゴミを修正
+* spell_is_inate()の未定義動作を修正
+* 横幅を大きくしたときのインベントリ表示崩れを修正
+* HTMLスクリーンショットのバッファ不足を修正
+* rumors_j.txtの改行忘れを修正
+* 一部パス指定ミスでセーブデータ指定起動ができない不具合を修正
+* 床置きアイテム自動破壊時メッセージウィンドウが遅れる不具合を修正
+* Linuxビルド時のpkg-configバグ修正
+* 噂一覧の誤字修正
+* 打撃効果RBE_NONEの警告メッセージバグを修正
+* 青魔道師のファイア・ボルトがターン消費しない不具合修正
+* 位置条件下で投擲のターゲットを正しく選べない不具合修正
+* Mac版X11ビルドで自動拾いが機能しない不具合修正
+* mbe_infoの配列外参照を修正
 
 #### 英語翻訳追加/修正
 
-* 性格がコンバットorチャージマン時の特別なメッセージの差し替え追加 (link:https://osdn.net/projects/hengband/ticket/41414[OSDN#41414] 参照)
-* その他英語の修正 (link:https://osdn.net/projects/hengband/ticket/41504[OSDN#41504] link:https://osdn.net/projects/hengband/ticket/41502[OSDN#41502] link:https://osdn.net/projects/hengband/ticket/41501[OSDN#41501] link:https://osdn.net/projects/hengband/ticket/41500[OSDN#41500] link:https://osdn.net/projects/hengband/ticket/41485[OSDN#41485] link:https://osdn.net/projects/hengband/ticket/41399[OSDN#41399] link:https://github.com/hengband/hengband/pull/6[PullReq#6] link:https://github.com/hengband/hengband/pull/8[PullReq#8] link:https://github.com/hengband/hengband/pull/22[PullReq#22] link:https://github.com/hengband/hengband/pull/23[PullReq#23] link:https://github.com/hengband/hengband/pull/24[PullReq#24] link:https://github.com/hengband/hengband/pull/25[PullReq#25] link:https://github.com/hengband/hengband/pull/29[PullReq#29] link:https://github.com/hengband/hengband/pull/32[PullReq#32] link:https://github.com/hengband/hengband/pull/29[PullReq#29] link:https://github.com/hengband/hengband/pull/32[PullReq#32] link:https://github.com/hengband/hengband/pull/34[PullReq#34] link:https://github.com/hengband/hengband/pull/37[PullReq#37] link:https://github.com/hengband/hengband/pull/58[PullReq#58] link:https://github.com/hengband/hengband/pull/59[PullReq#59] link:https://github.com/hengband/hengband/pull/60[PullReq#60] link:https://github.com/hengband/hengband/pull/61[PullReq#61] link:https://github.com/hengband/hengband/pull/81[PullReq#81] link:https://github.com/hengband/hengband/pull/84[PullReq#84] link:https://github.com/hengband/hengband/pull/85[PullReq#85] link:https://github.com/hengband/hengband/pull/99[PullReq#99] link:https://github.com/hengband/hengband/pull/100[PullReq#100] link:https://github.com/hengband/hengband/pull/121[PullReq#121] link:https://github.com/hengband/hengband/pull/122[PullReq#122] 参照)
+* 性格がコンバットorチャージマン時の特別なメッセージの差し替え追加
+* その他英語の表現、綴りミス修正
+** モンスターの魔法テーブル
+** アイテム効果、発動、特性の記述
+** 薬の効果、実行処理記述
+** プレイヤーの能力値、攻撃処理、霊シャル
+** ペットの乗馬時処理記述
+** 部屋生成処理のデバッグ記述
+** 魔法の領域、解説
+** モンスター攻撃時の回避
+** 店の記述
 
 ### 謝辞
 
-(確認中です)
+* コミッター、テスト
+** dis-氏、taotao氏、Hourier氏、habu氏、backwardseric氏、tanguband氏
+* プロジェクト整理等
+** daradarach氏
+* バグ報告及びアイデア提供
+** Aquashrimp氏、iyukyo氏、oihagi氏、meetname氏、_ao_i氏、rryukkuriryu氏
 
 (文責:Deskull・全て追いきれていない可能性がありますので他に修正や謝辞すべき方がありましたらお知らせください)
