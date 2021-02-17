@@ -9,7 +9,8 @@
 
 [cols="h,d"]
 |================
-|link:https://sourceforge.jp/projects/hengband/[OSDN]|SourceForge.jp改めOSDNにおける変愚蛮怒のプロジェクトページ
+|link:https://github.com/hengband/hengband[GitHub]|GitHubによる現在の変愚蛮怒のプロジェクトページです。
+|link:https://sourceforge.jp/projects/hengband/[OSDN]|SourceForge.jp改めOSDNにおける変愚蛮怒のプロジェクトページ。2021年2月以降、現在こちらの運営は停止し、GitHubに移行しました。
 |link:http://www.asahi-net.or.jp/~kh4s-smz/heng/[変*愚蛮怒メモ]|Windows用の変愚蛮怒旧コンパイルキットがあります。他にもシステムに関する情報がありますがいずれも古いため、あくまで参考までに。
 |link:https://www.chiark.greenend.org.uk/~sgtatham/bugs-jp.html[効果的にバグを報告するには]|*bandに限らず、多くの人に読んでもらいたい(笑)。2018年3月リンク変更しました。
 |================
