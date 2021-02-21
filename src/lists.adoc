@@ -8,7 +8,7 @@
 ### スポイラー・攻略Wiki
 
 * link:http://hengband.sourceforge.jp/wiki/index.php?FrontPage[変愚蛮怒攻略 Wiki] - 最新の攻略情報を追加、編集可能になっています。
-* link:https://habu1010.github.io/GitHubPagesTest/[全自動スポイラー] - GitHubの更新に伴い自動生成されるスポイラー情報です。
+* link:https://hengband.github.io/spoiler/[全自動スポイラー] - GitHubの更新に伴い自動生成されるスポイラー情報です。
 
 ### GitHubのDiscussion
 
