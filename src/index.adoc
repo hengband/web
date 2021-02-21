@@ -3,9 +3,9 @@
 
 ## 最近の告知
 
-### (2021/02/21) 変愚蛮怒3.0.0Alpha6リリースと全自動スポイラー追加
+### (2021/02/21) 変愚蛮怒3.0.0Alpha7リリースと全自動スポイラー追加
 
-Alpha版定期更新として3.0.0Alpha6をリリースしました。
+Alpha版定期更新として3.0.0Alpha7をリリースしました。
 
 リリースノートは今後GitHubのReleaseにてまとめます。 link:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha7[こちら] です。
 
