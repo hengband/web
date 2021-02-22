@@ -40,7 +40,7 @@ history1.0.10 history1.0.11 history1.1.0c1 history1.1.0 history1.2.0and1.3.0 his
 history1.4.0and1.5.0 history1.4.1and1.5.1 history1.4.2and1.5.2 history1.4.3and1.5.3 history1.4.4and1.5.4 \
 history1.4.5and1.6.0 history1.4.6and1.6.1 history1.4.7and1.6.2 history1.7.0 history1.7.1 history1.7.2 \
 history2.0.0 history2.1.0 history2.1.1 history2.1.2 history2.1.3 history2.1.4 history2.1.5 history2.2.0 history2.2.1 \
-history3.0.0alpha history3.0.0alpha1 history3.0.0alpha2 history3.0.0alpha3 history3.0.0alpha4 history3.0.0alpha5 history3.0.0 history3.0.X history3.2.0"
+history3.0.0alpha history3.0.0alpha1 history3.0.0alpha2 history3.0.0alpha3 history3.0.0alpha4 history3.0.0alpha5 history3.0.0alpha6 history3.0.0 history3.0.X history3.2.0"
 development_list="development201103 development201110"
 
 for v in $history_list; do

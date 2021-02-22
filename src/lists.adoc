@@ -7,11 +7,16 @@
 
 ### スポイラー・攻略Wiki
 
-link:http://hengband.sourceforge.jp/wiki/index.php?FrontPage[http://hengband.sourceforge.jp/wiki/index.php?FrontPage] で最新の攻略情報を追加、編集可能になっています。
+* link:http://hengband.sourceforge.jp/wiki/index.php?FrontPage[変愚蛮怒攻略 Wiki] - 最新の攻略情報を追加、編集可能になっています。
+* link:https://hengband.github.io/spoiler/[全自動スポイラー] - GitHubの更新に伴い自動生成されるスポイラー情報です。
+
+### GitHubのDiscussion
+
+link:https://github.com/hengband/hengband/discussions[https://github.com/hengband/hengband/discussions] にて、現在アカウント必須になりますが開発への提案にお越しください。
 
 ### OSDNフォーラム
 
-link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/projects/hengband/forums/] にフォーラムが置かれています。現在、不具合報告と追加要素募集を行っています。
+link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/projects/hengband/forums/] にフォーラムが置かれていますが、OSDNでの開発は2021年2月以降停止予定になっています。今後はGitHubの利用を想定していますが、アカウントを取らずに書き込めるメリットの観点から利用し続けるかもしれません。
 
 ### 掲示板
 
@@ -19,7 +24,7 @@ link:http://sourceforge.jp/projects/hengband/forums/[http://sourceforge.jp/proje
 
 ### IRCチャンネル
 
-IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。現在も活発に意見交換や雑談が行われていますのでお気軽にお越しください。
+IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。Discordに移行したため、現在過疎気味ですが現在も主だったスタッフとbotは存続中です。
 
 ### Discord
 
@@ -30,7 +35,7 @@ Discordサーバ link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へど�
 意見や要望など直接に送れば、一番早く対応が来るかも知れません。以下HNアルファベット順敬称略。
 
 * link:https://twitter.com/deskull[deskull]
-* link:https://twitter.com/dis-[dis-]
+* link:https://twitter.com/dis_[dis-]
 * link:https://twitter.com/habu1010[habu]
 * link:https://twitter.com/hiromi_yuh[Hourier]
 

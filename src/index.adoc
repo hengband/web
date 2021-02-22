@@ -3,13 +3,63 @@
 
 ## 最近の告知
 
+### (2021/02/22) HotFixにより変愚蛮怒3.0.0Alpha8リリース
+
+Alpha7にて重大なバグが発見されましたので、同バージョンリリース後午後に加えられた修正も含めてすぐリリースをかけました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha8[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha8/Hengband-3.0.0Alpha8-jp.zip[3.0.0Alpha8 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha8/Hengband-3.0.0Alpha8-en.zip[3.0.0Alpha8 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.tar.gz[ソース(tar.gz)]
+
+
+### (2021/02/21) 変愚蛮怒3.0.0Alpha7リリースと全自動スポイラー追加
+
+Alpha版定期更新として3.0.0Alpha7をリリースしました。
+
+リリースノートは今後GitHubのReleaseにてまとめます。 link:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha7[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha7/Hengband-3.0.0Alpha7-jp.zip[3.0.0Alpha7 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha7/Hengband-3.0.0Alpha7-en.zip[3.0.0Alpha7 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha7.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha7.tar.gz[ソース(tar.gz)]
+
+また近日公式WebもGitHubに移設する予定です。ご了承下さい。
+
+### (2021/02/17) 変愚蛮怒3.0.0Alpha6リリースノート整理
+
+煩雑になった同リリースノートを整理しました。
+
+### (2021/02/14) 変愚蛮怒3.0.0Alpha6リリース
+
+Alpha版定期更新として3.0.0Alpha6をリリースしました。
+
+リリースノートは link:/history/history3.0.0alpha6.html[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha6/Hengband-3.0.0Alpha6-jp.zip[3.0.0Alpha6 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha6/Hengband-3.0.0Alpha6-en.zip[3.0.0Alpha6 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha6.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha6.tar.gz[ソース(tar.gz)]
+
+※現在Alpha5含めて一部のバイナリZIPがWindowsのアーカイバで解凍できない症状を確認しています。原因確認次第差し替えますのでお待ち下さい。
+
+### (2021/02/13) GitHub以降に伴うリンクや指針について修正
+
+（本Webも含めて）まだ、過渡的にOSDNに依存する部分もありますが、GitHubをメインにしていく方向で指針やリンク先を変更しています。今後も随時変えてきますのでよろしくお願いします。
+
 ### (2021/02/09) 変愚蛮怒3.0.0Alpha5リリースノート補完
 
 主に、不足していたチケットリンク先と謝辞を追加しました。
 
 ### (2021/02/07) 変愚蛮怒3.0.0Alpha5リリース及びサーバ移設に伴う2.2.1r2公開
 
-Alpha版定期更新として3.0.0Alpha5をリリースしました。今回からサーバ移設に対応しましたので、それに伴い現在の安定版である2.2.1についてもサーバ移設に対応した2.2.1r2を公開し、2.2.1rは公開停止と致します。リンク先は以下のとおりです。
+Alpha版定期更新として3.0.0Alpha5をリリースしました。
+
+リリースノートは link:/history/history3.0.0alpha5.html[こちら] です。
+
+今回からサーバ移設に対応しましたので、それに伴い現在の安定版である2.2.1についてもサーバ移設に対応した2.2.1r2を公開し、2.2.1rは公開停止と致します。リンク先は以下のとおりです。
 
 * link:https://osdn.net/projects/hengband/downloads/74587/Hengband-3.0.0Alpha5-jp.zip/[3.0.0Alpha5 Windows(日本語版)]
 * link:https://osdn.net/projects/hengband/downloads/74587/Hengband-3.0.0Alpha5-en.zip/[3.0.0Alpha5 Windows(English Version)]
