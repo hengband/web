@@ -41,7 +41,6 @@ Discordサーバ link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へど�
 
 ### Twitterの関連bot
 
-* link:https://twitter.com/hengband_speak[変愚セリフbot]
 * link:https://twitter.com/hengscore[変愚蛮怒 新着スコア]
 
 ### 動画サイト
