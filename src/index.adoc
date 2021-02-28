@@ -3,6 +3,15 @@
 
 ## 最近の告知
 
+### (2021/02/28) 変愚蛮怒3.0.0Alpha9リリース
+
+Alpha版定期更新として3.0.0Alpha9をリリースしました。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-jp.zip[3.0.0Alpha9 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-en.zip[3.0.0Alpha9 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha9.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha9.tar.gz[ソース(tar.gz)]
+
 ### (2021/02/22) HotFixにより変愚蛮怒3.0.0Alpha8リリース
 
 Alpha7にて重大なバグが発見されましたので、同バージョンリリース後午後に加えられた修正も含めてすぐリリースをかけました。
@@ -13,7 +22,6 @@ Alpha7にて重大なバグが発見されましたので、同バージョン�
 * link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha8/Hengband-3.0.0Alpha8-en.zip[3.0.0Alpha8 Windows(English Version)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.zip[ソース(zip)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.tar.gz[ソース(tar.gz)]
-
 
 ### (2021/02/21) 変愚蛮怒3.0.0Alpha7リリースと全自動スポイラー追加
 
