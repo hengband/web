@@ -7,6 +7,8 @@
 
 Alpha版定期更新として3.0.0Alpha9をリリースしました。
 
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha9[こちら] です。
+
 * link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-jp.zip[3.0.0Alpha9 Windows(日本語版)]
 * link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-en.zip[3.0.0Alpha9 Windows(English Version)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha9.zip[ソース(zip)]
