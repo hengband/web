@@ -58,10 +58,6 @@ XFree86 4.0 でXIMを使うときは、環境変数 XMODIFIERS に "@im=skkinput
 16x16タイル(heng-graf-16x16.tar.gz)は別配布になっています。
 lib/xtra/graf/以下に展開して、追加オプション -- -a を付けると使用できます。
 
-### MacOS版の導入方法
-
-shimitei氏が、link:https://rlbuild.herokuapp.com/[ローグライク実験室]にて配布されています。
-
 ### 16x16タイルの使い方
 
 WindowsとUNIX/Linuxなら heng-graf-16x16.tar.gz をダウンロードしてください。
@@ -129,9 +125,5 @@ shimitei氏が、link:https://rlbuild.herokuapp.com/[ローグライク実験室
 
 ### 派生物
 
-* link:http://towisweb.hp.infoseek.co.jp[Linux用 RPMパッケージはこちら(TOWさんのページ)]
-* link:http://www.coins.tsukuba.ac.jp/~iks/angband/index.html[変愚蛮怒 Windows用バイナリはこちら(iksさんのページ)]
-* link:http://www.boreas.dti.ne.jp/~xdd/index.html[変愚蛮怒 Mac OS X用バイナリはこちら(阿部さんのページ)]
 * link:http://macband.s15.xrea.com/[変愚蛮怒 Mac 68k, PPC用バイナリはこちら(桑崎さんのページ)]
-* link:http://mournblade.tripod.co.jp/[DOS(PC)用バイナリ(by mournblade?さん)]
 
