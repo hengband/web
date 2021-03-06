@@ -28,7 +28,7 @@ IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。Discord�
 
 ### Discord
 
-Discordサーバ link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へどうぞ。
+Discordサーバ link:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ] へどうぞ。(コード VvDTvb4ewH)
 
 ### Twitterの関連bot
 
