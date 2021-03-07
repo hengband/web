@@ -1,7 +1,35 @@
 :lang: ja
 :doctype: article
 
+## クイックアクセス
+
+* 現在開発中の3.0.0Alpha11は3/14リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/issues?q=milestone%3A%223.0.0Alpha11Release%22[マイルストーン]にてご確認下さい。
+* 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
+* またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
+
 ## 最近の告知
+
+### (2021/03/07) 変愚蛮怒3.0.0Alpha10リリース
+
+Alpha版定期更新として3.0.0Alpha10をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha10[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha10/Hengband-3.0.0Alpha10-jp.zip[3.0.0Alpha10 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha10/Hengband-3.0.0Alpha10-en.zip[3.0.0Alpha10 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha10.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha10.tar.gz[ソース(tar.gz)]
+
+### (2021/02/28) 変愚蛮怒3.0.0Alpha9リリース
+
+Alpha版定期更新として3.0.0Alpha9をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha9[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-jp.zip[3.0.0Alpha9 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha9/Hengband-3.0.0Alpha9-en.zip[3.0.0Alpha9 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha9.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha9.tar.gz[ソース(tar.gz)]
 
 ### (2021/02/22) HotFixにより変愚蛮怒3.0.0Alpha8リリース
 
@@ -13,7 +41,6 @@ Alpha7にて重大なバグが発見されましたので、同バージョン�
 * link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha8/Hengband-3.0.0Alpha8-en.zip[3.0.0Alpha8 Windows(English Version)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.zip[ソース(zip)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha8.tar.gz[ソース(tar.gz)]
-
 
 ### (2021/02/21) 変愚蛮怒3.0.0Alpha7リリースと全自動スポイラー追加
 
@@ -83,62 +110,6 @@ Alpha版定期更新として3.0.0Alpha5をリリースしました。
 終盤まで進んで大量の情報を持ったダンプや、大きくウィンドウを取ったスクリーンショットが取れないことが判明しました。
 
 これに伴い、スコアサーバを再度移設することを決定し、移設先はほぼ整えました。近いバージョン更新のうちにゲームクライアント側の送信先も切り替えますので、しばらくお待ちください。
-
-### (2021/01/31) 変愚蛮怒3.0.0Alpha4リリース
-
-恒例のAlpha版更新を行いました。
-
-* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4-jp.zip/[Windows(日本語版)]
-* link:https://osdn.net/projects/hengband/downloads/74541/hengband-3.0.0alpha4-en.zip/[Windows(English Version)]
-* link:https://osdn.net/projects/hengband/downloads/74543/hengband-3.0.0alpha4-src.tar.gz/[Source]
-
-また前回のHotfixであったAlpha3のソースはlink:https://osdn.net/projects/hengband/downloads/74542/hengband-3.0.0alpha3-src.tar.gz/[こちら]です
-
-3.0.0Alpha0のリリースノートについて盾技能の仕様追記を行いました。
-
-### (2021/01/27) Discord始めました。
-
-そろそろIRCだけででは限界と思い、試しに設置してみました。
-
-* Discordサーバー link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へどうぞ。
-
-### (2021/01/25) 変愚蛮怒3.0.0Alpha3(HotFix)アップ
-
-お待たせしました。ひとまず隠密システムが正常に機能する状態のものを3.0.0Alpha3としてアップしました。ひとまずWindowsバイナリのみ公開します。
-
-* link:https://osdn.net/projects/hengband/downloads/74506/hengband-3.0.0alpha3.zip/[Windowsバイナリ]
-
-引き続き何か問題が発生次第修正しますので、今後共よろしくお願いします。
-
-### (2021/01/25) 変愚蛮怒3.0.0Alpha2のHotFix予定
-
-先ほどアップしたAlpha2ですが、隠密が皆無なレベルでモンスターが起き出す症状を確認しました。原因解明の上、修正でき次第即更新を予定しています。
-
-大変申し訳ありませんが、しばらくお待ちください。
-
-### (2021/01/24) 変愚蛮怒3.0.0Alpha2リリース
-
-今週中に対応できたバグフィックスを反映した3.0.0Alpha2をリリースしました。
-
-* link:https://osdn.net/projects/hengband/downloads/74501/hengband-3.0.0alpha2.zip/[Windowsバイナリ]
-* link:https://osdn.net/projects/hengband/downloads/74500/hengband-3.0.0alpha2-src.tar.gz/[ソースファイル]
-* 修正履歴や関連チケットなどは link:history/history3.0.0alpha2.html[こちら] をどうぞ。
-
-やはりAlpha版ですので各種の不具合やバランスの不均衡について、もうしばらくの対処を要します。ご了承ください。
-
-### (2021/01/24) 変愚蛮怒3.0.0Alpha1リリースノート整理と3.0.0Alpha2予定
-
-遅れまして申し訳ありません。3.0.0Alpha1のリリースノートを補完しました。予定通り本日中にAlpha2のリリースも行いますのでお待ちください。
-
-### (2021/01/16) 変愚蛮怒3.0.0Alpha1公開
-
-いただきました不具合報告、調整案のうちいくつかをこなしたものを3.0.0Alpha1として以下で公開いたします。
-
-* link:https://osdn.net/projects/hengband/downloads/74265/hengband-3.0.0alpha1.zip/[Windowsバイナリ]
-* link:https://osdn.net/projects/hengband/downloads/74264/hengband-3.0.0alpha1-src.tar.gz/[ソースファイル]
-* 修正履歴や関連チケットなどは link:history/history3.0.0alpha1.html[こちら] をどうぞ。
-
-依然Alpha版ですので各種の不具合やバランスの不均衡について、しばらくの対処を要します。
 
 ## 変愚蛮怒とは
 

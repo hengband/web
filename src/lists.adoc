@@ -28,20 +28,10 @@ IRCチャンネルに「#ぐりっどばぐ」(UTF-8)があります。Discord�
 
 ### Discord
 
-Discordサーバ link:https://discord.gg/8xW6q5SqXY[#ぐりっどばぐ] へどうぞ。
-
-### 現在活動を行なっている開発者のTwitter
-
-意見や要望など直接に送れば、一番早く対応が来るかも知れません。以下HNアルファベット順敬称略。
-
-* link:https://twitter.com/deskull[deskull]
-* link:https://twitter.com/dis_[dis-]
-* link:https://twitter.com/habu1010[habu]
-* link:https://twitter.com/hiromi_yuh[Hourier]
+Discordサーバ link:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ] へどうぞ。(コード VvDTvb4ewH)
 
 ### Twitterの関連bot
 
-* link:https://twitter.com/hengband_speak[変愚セリフbot]
 * link:https://twitter.com/hengscore[変愚蛮怒 新着スコア]
 
 ### 動画サイト
