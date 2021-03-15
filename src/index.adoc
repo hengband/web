@@ -3,11 +3,22 @@
 
 ## クイックアクセス
 
-* 現在開発中の3.0.0Alpha12は3/21リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/issues?q=milestone%3A%223.0.0Alpha12Release%22[マイルストーン]にてご確認下さい。
+* 現在開発中の3.0.0Alpha13は3/21リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/issues?q=milestone%3A%223.0.0Alpha13Release%22[マイルストーン]にてご確認下さい。
 * 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
 * またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
 
 ## 最近の告知
+
+### (2021/03/15) 変愚蛮怒3.0.0Alpha12リリース
+
+Hotfixとして3.0.0Alpha12をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha12[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha12/Hengband-3.0.0Alpha12-jp.zip[3.0.0Alpha12 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha12/Hengband-3.0.0Alpha12-en.zip[3.0.0Alpha12 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha12.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha12.tar.gz[ソース(tar.gz)]
 
 ### (2021/03/14) 変愚蛮怒3.0.0Alpha11リリース
 
