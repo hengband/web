@@ -3,18 +3,29 @@
 
 ## クイックアクセス
 
-* 現在開発中の3.0.0Alpha16は4/4リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/issues?q=milestone%3A%223.0.0Alpha16Release%22[マイルストーン]にてご確認下さい。
+* 現在開発中の3.0.0Alpha17は4/11リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/issues?q=milestone%3A%223.0.0Alpha17Release%22[マイルストーン]にてご確認下さい。
 * 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
 * 正式なバグ報告などはGitHubのIssueとしてlink:https://github.com/hengband/hengband/issues/new?assignees=&labels=bug&template=bug_report.md&title=%E3%80%90%E3%83%90%E3%82%B0%E3%80%91+%E3%83%90%E3%82%B0%E5%A0%B1%E5%91%8A%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E7%B7%A8%E9%9B%86[このテンプレート]を用いてよろしくお願いします
 * またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
 
 ## 最近の告知
 
-### (2021/04/01) エイプリルフールネタ完了と共に公式WebをGitHubへ移行
+### (2021/04/04) 変愚蛮怒3.0.0Alpha16リリース
 
-各位への相談の上、馬鹿馬鹿蛮怒の最初期Alphaリリースの公開をさせていただきました。
-極端な「例のアレ」ネタは変愚では決してやりませんが、常に変愚からのマージを受けつつ、一部まともな機能拡張をフィードバックする実験場とて運用する予定です。
-馬鹿馬鹿蛮怒のリンクは今後はlink:https://sikabane-works.github.io/bakabakaband/[こちら]になります。
+Alpha版定期更新として3.0.0Alpha16をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha16[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha16/Hengband-3.0.0Alpha16-jp.zip[3.0.0Alpha16 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha16/Hengband-3.0.0Alpha16-en.zip[3.0.0Alpha16 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha16.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha16.tar.gz[ソース(tar.gz)]
+
+### (2021/04/01) エイプリルフールネタ完了
+
+各位への相談の上、馬鹿馬鹿蛮怒の最初期Alphaリリースをさせていただきました。「例のアレ」ネタは今後変愚ではまずやりません。
+馬鹿馬鹿蛮怒は常に変愚からのマージを行いつつ、一部まともな拡張機能をフィードバックする実験場とて運用する予定です。
+リンクは今後はlink:https://sikabane-works.github.io/bakabakaband/[こちら]になります。
 
 ### (2021/03/29) 変愚蛮怒3.0.0Alpha15リリース
 
