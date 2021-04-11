@@ -1,7 +1,9 @@
 #!/bin/bash
 
-mkdir -p ../web ../web/history ../web/development
-cp -r image *.txt hengband.css ../web
+HTDOCS=../../hengband.github.io
+
+mkdir -p $HTDOCS $HTDOCS/history $HTDOCS/development
+cp -r image *.txt hengband.css $HTDOCS
 
 list="index web_update development jlicense link download lists history"
 
@@ -14,7 +16,7 @@ for v in $list; do
 	 | sed '/<!--head-->/r head.html' \
 	 | sed '/<!--header-->/r header.html' \
 	 | sed '/<!--footer-->/r footer.html' \
-	 > ../web/${v}.html
+	 > $HTDOCS/${v}.html
 done
 
 score_list="score"
@@ -29,7 +31,7 @@ for v in $score_list; do
 	 | sed '/<!--head-->/r head_score.html' \
 	 | sed '/<!--header-->/r header.html' \
 	 | sed '/<!--footer-->/r footer.html' \
-	 > ../web/${v}.html
+	 > $HTDOCS/${v}.html
 done
 
 history_list="history0.1.0 history0.1.0post history0.1.1 history0.1.2 history0.1.3 history0.2.0 history0.2.1 \
@@ -52,7 +54,7 @@ for v in $history_list; do
 	 | sed '/<!--head-->/r head.html' \
 	 | sed '/<!--header-->/r header.html' \
 	 | sed '/<!--footer-->/r footer.html' \
-	 > ../web/history/${v}.html
+	 > $HTDOCS/history/${v}.html
 done
 
 for v in $development_list; do
@@ -64,7 +66,7 @@ for v in $development_list; do
 	 | sed '/<!--head-->/r head.html' \
 	 | sed '/<!--header-->/r header.html' \
 	 | sed '/<!--footer-->/r footer.html' \
-	 > ../web/development/${v}.html
+	 > $HTDOCS/development/${v}.html
 done
 
 rm tmp.txt
