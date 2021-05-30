@@ -49,6 +49,9 @@
 |link:https://osdn.net/projects/toband/[TOband]|変愚蛮怒から派生したオウガシリーズベースの全く新しい雰囲気の*bandバリアントです。開発を受け継ぐ人募集中とか。2018年リンク変更。
 |link:http://www.miyamasa.net/heng_th_katte.html[変愚蛮怒の勝手版]|2014年からみやまさ氏の公開、変愚蛮怒をベースとして上海アリス幻樂団の東方世界を丸ごと取り込んだ大型バリアントです。
 |link:http://tanguband.github.io/[短愚蛮怒]|変愚蛮怒を25Fに凝縮したバリアント「サクサク、スピーディー、楽しい、のコンセプトで開発しています」
+|link:http://ironhell.sakura.ne.jp/angband/tome/[日本語版 T.o.M.E.(旧名：PernAngband)]|Dark God さん作、何でもありのバリアント。非常に派手。先進的で実験的なシステムを多く取り入れ、もはやAngbandバリアントの域をはみ出しているとも。日本語版は楠瀬さん。
+|link:http://ironhell.sakura.ne.jp/angband/eyangband/[日本語版 EyAngband]|Eytan Zweig さんが開発しているバリアント。耐性が 有る/無い の二値ではなく百分率になっている事等、独特な戦闘システム。日本語版は楠瀬さん。
+|link:http://ironhell.sakura.ne.jp/angband/unangband/[日本語版 UnAngband]|Andrew Doullさんが開発しているバリアント。雰囲気は地味ですが先進的なシステムを持ち、本当に指輪世界を冒険してる気分です。日本語版は楠瀬さん。
 |================
 
 ### Angband系以外のローグライク
@@ -75,12 +78,6 @@
 |link:http://isweb41.infoseek.co.jp/play/towisweb/[変愚蛮怒 RPM パッケージ]|TOWさんのページ。変愚蛮怒のRPMパッケージを配布していらっしゃいましたが、同じくInfoseekのWEBサービス終了につき消滅しました。
 |link:http://felicity-web.hp.infoseek.co.jp/indax.shtml[Closing the door]|ストレイツォ復活。各種Angband日記等。(現在は掲示板だけみたい)例によってInfoseekのWEBサービス終了につき消滅しました。
 |link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD]|Macで各種Angbandを日本語化している阿部さんのページ。MacOSX用の変愚蛮怒はここで。2018年404確認。
-|link:http://www.hcn.zaq.ne.jp/kusunose/tome/[日本語版 T.o.M.E.(旧名：PernAngband)]|Dark God さん作、何でもありのバリアント。非常に派手。先進的で実験的なシステムを多く取り入れ、もはやAngbandバリアントの域をはみ出しているとも。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
-終了につき消滅しました。
-|link:http://www.hcn.zaq.ne.jp/kusunose/eyangband/[日本語版 EyAngband]|Eytan Zweig さんが開発しているバリアント。耐性が 有る/無い の二値ではなく百分率になっている事等、独特な戦闘システム。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
-終了につき消滅しました。
-|link:http://www.goodkey.net/~kusunose/unangband/[日本語版 UnAngband]|Andrew Doullさんが開発しているバリアント。雰囲気は地味ですが先進的なシステムを持ち、本当に指輪世界を冒険してる気分です。日本語版は楠瀬さん。J:COM NET加入者向けホームページサービス
-終了につき消滅しました。
 |link:http://web.sfc.keio.ac.jp/~alba/DB/[*鑑定*の巻物]|Albaさんのページ。アーティファクトデータベースがあります。2018年404確認。
 |================
 
