@@ -3,14 +3,25 @@
 
 ## クイックアクセス
 
-* 現在開発中の3.0.0Alpha27は6/13リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/27[マイルストーン]にてご確認下さい。
+* 現在開発中の3.0.0Alpha28は6/20リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/28[マイルストーン]にてご確認下さい。
 * 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
 * 正式なバグ報告などはGitHubのIssueとしてlink:https://github.com/hengband/hengband/issues/new?assignees=&labels=bug&template=bug_report.md&title=%E3%80%90%E3%83%90%E3%82%B0%E3%80%91+%E3%83%90%E3%82%B0%E5%A0%B1%E5%91%8A%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E7%B7%A8%E9%9B%86[このテンプレート]を用いてよろしくお願いします
 * またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
 
 ## 最近の告知
 
-### (2021/06/07) 変愚蛮怒3.0.0Alpha26リリース
+### (2021/06/13) 変愚蛮怒3.0.0Alpha27リリース
+
+Alpha版定期更新として3.0.0Alpha27をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha27[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha27/Hengband-3.0.0Alpha27-jp.zip[3.0.0Alpha27 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha27/Hengband-3.0.0Alpha27-en.zip[3.0.0Alpha27 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha27.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha27.tar.gz[ソース(tar.gz)]
+
+### (2021/06/06) 変愚蛮怒3.0.0Alpha26リリース
 
 Alpha版定期更新として3.0.0Alpha26をリリースしました。
 
