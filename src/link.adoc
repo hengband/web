@@ -42,7 +42,7 @@
 
 [cols="h,d"]
 |================
-|link:http://www.thangorodrim.net/[Thangorodrim - The Angband Page]|全てのAngbandバリアントの総本山です。総数50個近くのバリアントがあります。
+|link:https://rephial.org/[Home of Angband]|全てのAngbandバリアントの総本山です。総数50個近くのバリアントがあります。
 |link:http://www.zangband.org/[www.zangband.org]|最新のZAngbandのページです。変愚蛮怒のフォーク元であったZAngband2.2.8から大きな変更がありましたが、2003年を最後に更新を停止しています。
 |link:http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/index.html[Zangband 日本語版ＨＱ]|板倉氏による変愚蛮怒のフォーク元となった日本語版Zangband。2003年を最後に更新停止しています。
 |link:https://osdn.net/projects/xangband/[XAngband(旧名:簡単愚蛮怒)]|ZAngband2.4.0の純和製バリアント。iksさんが開発しています。比較的簡単。2018年リンク切れにつき、OSDNのリンクに変更しました。
