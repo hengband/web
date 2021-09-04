@@ -20,9 +20,9 @@
 [cols="h,d"]
 |================
 |link:http://macband.s15.xrea.com/[*band Fan Page(?)]|桑崎(Kuwa)さんのページ。旧Mac版変愚蛮怒を配布しています。ディレクトリまる見えの様に見えるのは「ジョーク」だそうで。変愚蛮怒の拡張サウンドセットが入手できます。2005～2006年を最後に更新停止しています。掲示板も停止中です。
-|link:https://rlbuild.herokuapp.com/[ローグライク実験室]|shimitei氏の*band系ローグライク配布ページ。開発版も含めて常に更新は早い他、最近のMacOS版もビルドして下さっています。
-|link:http://hengbandforosx.osdn.io/index.html.en[Hengband Application for Mac OS X]|backwardseric氏が独自にOSDNプロジェクトを立ち上げて作成してくれたMacOSX(Cocoa純正版)公開サイトです。
-|link:http://tanguband.github.io/heng_mac.html[http://tanguband.github.io/heng_mac.html]|短愚蛮怒の人にも独自にMacOSX版を配布していただいています。
+|link:https://rlbuild.herokuapp.com/[ローグライク実験室]|shimitei氏の*band系ローグライク配布ページ。開発版も含めて常に更新は早い他、最近のmacOS版もビルドして下さっています。
+|link:https://backwardseric.github.io/hengband/[Hengband Application for macOS]|backwardsEric氏が独自にGitHubプロジェクトを立ち上げて作成してくれたmacOS (Cocoa純正版)公開サイトです。
+|link:http://tanguband.github.io/heng_mac.html[http://tanguband.github.io/heng_mac.html]|短愚蛮怒の人にも独自にmacOS版を配布していただいています。
 |================
 
 ### コミュニティ
@@ -79,5 +79,6 @@
 |link:http://felicity-web.hp.infoseek.co.jp/indax.shtml[Closing the door]|ストレイツォ復活。各種Angband日記等。(現在は掲示板だけみたい)例によってInfoseekのWEBサービス終了につき消滅しました。
 |link:http://www.boreas.dti.ne.jp/~xdd/index.html[耐酸性のXDD]|Macで各種Angbandを日本語化している阿部さんのページ。MacOSX用の変愚蛮怒はここで。2018年404確認。
 |link:http://web.sfc.keio.ac.jp/~alba/DB/[*鑑定*の巻物]|Albaさんのページ。アーティファクトデータベースがあります。2018年404確認。
+|link:http://hengbandforosx.osdn.io/index.html.en[Hengband Application for Mac OS X]|backwardseric氏が独自にOSDNプロジェクトを立ち上げて作成してくれたMacOSX(Cocoa純正版)公開サイトです。閲覧は可能ですが更新は停止しました。
 |================
 
