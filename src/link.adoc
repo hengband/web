@@ -30,7 +30,7 @@
 |link:https://jbbs.shitaraba.com/game/9358/[＠の溜まり場II]|ローグライク総合掲示板「＠の溜まり場」の後継。
 |link:http://angband.oook.cz/[angband.oook.cz]|各種バリアントのキャラクターダンプやスクリーンショットの投稿を受け付けています。
 |link:https://groups.google.com/forum/#!forum/rec.games.roguelike.angband[rec.games.roguelike.angband]|アングバンド関連のUSENETニュースグループ改め、Googleグループとなりました。
-|link:http://hccweb1.bai.ne.jp/pekokichi/[不思議なホームページ]|RogueLike狂騒曲にプレイヤーから寄稿された各種ローグライクゲームの日記があります。2018年現在も20世紀めいたレトロなページとして存続中。未だ一部界隈で伝説となっているあのプレイヤーの日記も-more-
+|link:http://hccweb1.bai.ne.jp/pekokichi/[不思議なホームページ]|RogueLike狂騒曲にプレイヤーから寄稿された各種ローグライクゲームの日記があります。2021年現在も20世紀めいたレトロなページとして存続中。未だ一部界隈で伝説となっているあのプレイヤーの日記も-more-
 |================
 
 
@@ -44,13 +44,28 @@
 |link:http://www.thangorodrim.net/[Thangorodrim - The Angband Page]|全てのAngbandバリアントの総本山です。総数50個近くのバリアントがあります。
 |link:https://rephial.org/[Home of Angband]|Angbandのページです。macOS版の開発を行っているbackwardsEric氏も開発に関わっています。
 |link:https://umoria.org/[Umoria - a free roguelike video game]|Angbandの更にご先祖様、Umoriaのページです。何と現在も保守が引き継がれ開発が継続しています。
-|link:http://www.miyamasa.net/heng_th_katte.html[変愚蛮怒の勝手版]|2014年からみやまさ氏の公開、変愚蛮怒をベースとして上海アリス幻樂団の東方世界を丸ごと取り込んだ大型バリアントです。
+|link:http://www.miyamasa.net/heng_th_katte.html[変愚蛮怒の勝手版]|2014年からみやまさ氏の公開、変愚蛮怒をベースとして上海アリス幻樂団の東方Project世界を丸ごと取り込んで幻想郷を冒険する大型バリアントです。
 |link:https://tanguband.github.io/[短愚蛮怒]|変愚蛮怒を25Fに凝縮したバリアント「サクサク、スピーディー、楽しい、のコンセプトで開発しています」
 |link:https://te4.org/[Tales of Maj'Eyal]|旧ToME (Tales of Middle Earth)が改名と大幅なアップデートを経て大変身しました。ほぼ別物になったシステムとコンセプトで新たなるローグライクの世界へ旅立ちましょう。
 |================
 
 
-### Angband系バリアント関連 (更新停止)
+### Angband系以外のローグライク
+
+[cols="h,d"]
+|================
+|link:https://www.nethack.org/[NetHack]|本家Rogueの正当発展型とも言えるバリアント、NetHackです。*bandとは似て非なる重厚なシステムを楽しみましょう。
+|link:http://nethack-users.osdn.jp/[JNetHack]|NetHackの日本語版配布及び攻略サイトです。
+|link:https://crawl.develz.org/[Dungeon Crawl Stone Soup]|下記Dungeon Crawlのバリアント、DCSSことDungeon Crawl Stone Soupです。現在はこちらが主に開発されています。
+|link:http://crawlj.osdn.jp/[ぬるぽ堂 日本語版DungeonCrawl]|Dungeon Crawl。*bandバリアントでは無いけれど、雰囲気は似ています。2018年現在本体zipのリンク先が404なので次のページでダウンロードしましょう。
+|link:http://sakusha.s26.xrea.com/x/FHS/DC.html[Dungeon Crawl 日本語版 (勝手にミラー)]|上記のページでダウンロードできなくなった本体をダウンロードできます。
+|link:http://ylvania.style.coocan.jp/[Elona]|*bandとよく似たシステムですが全く別のゲームです。様々な神に仕え、お使いをこなし、グランドピアノを持ち運んでおひねりをもらいましょう。
+|================
+
+
+### 古いリンク
+
+### 更新停止サイト
 
 [cols="h,d"]
 |================
@@ -69,22 +84,7 @@
 |================
 
 
-### Angband系以外のローグライク
-
-[cols="h,d"]
-|================
-|link:https://www.nethack.org/[NetHack]|本家Rogueの正当発展型とも言えるバリアント、NetHackです。*bandとは似て非なる重厚なシステムを楽しみましょう。
-|link:http://nethack-users.osdn.jp/[JNetHack]|NetHackの日本語版配布及び攻略サイトです。
-|link:https://crawl.develz.org/[Dungeon Crawl Stone Soup]|下記Dungeon Crawlのバリアント、DCSSことDungeon Crawl Stone Soupです。現在はこちらが主に開発されています。
-|link:http://crawlj.osdn.jp/[ぬるぽ堂 日本語版DungeonCrawl]|Dungeon Crawl。*bandバリアントでは無いけれど、雰囲気は似ています。2018年現在本体zipのリンク先が404なので次のページでダウンロードしましょう。
-|link:http://sakusha.s26.xrea.com/x/FHS/DC.html[Dungeon Crawl 日本語版 (勝手にミラー)]|上記のページでダウンロードできなくなった本体をダウンロードできます。
-|link:http://ylvania.style.coocan.jp/[Elona]|*bandとよく似たシステムですが全く別のゲームです。様々な神に仕え、お使いをこなしましょう。
-|================
-
-
-### 古いリンク
-
-現在、リンク先が停止しているサイトですが資料として残しておきます。
+### 404/サーバアクセス不能
 
 [cols="h,d"]
 |================
