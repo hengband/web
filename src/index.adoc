@@ -3,12 +3,23 @@
 
 ## クイックアクセス
 
-* 現在開発中の3.0.0Alpha43は10/31リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/41[マイルストーン]にてご確認下さい。
+* 現在開発中の3.0.0Alpha44は10/31リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/41[マイルストーン]にてご確認下さい。
 * 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
 * 正式なバグ報告などはGitHubのIssueとしてlink:https://github.com/hengband/hengband/issues/new?assignees=&labels=bug&template=bug_report.md&title=%E3%80%90%E3%83%90%E3%82%B0%E3%80%91+%E3%83%90%E3%82%B0%E5%A0%B1%E5%91%8A%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E7%B7%A8%E9%9B%86[このテンプレート]を用いてよろしくお願いします
 * またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
 
 ## 最近の告知
+
+### (2021/10/19) 変愚蛮怒3.0.0Alpha43リリース
+
+度々リファクタリングによるエンバグが頻出して申し訳ない。2件修正し3.0.0Alpha43をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha43[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha43/Hengband-3.0.0Alpha43-jp.zip[3.0.0Alpha43 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha43/Hengband-3.0.0Alpha43-en.zip[3.0.0Alpha43 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha43.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha43.tar.gz[ソース(tar.gz)]
 
 ### (2021/10/18) 変愚蛮怒3.0.0Alpha42リリース
 
@@ -16,21 +27,11 @@
 
 リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha42[こちら] です。
 
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha42/Hengband-3.0.0Alpha42-jp.zip[3.0.0Alpha42 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha42/Hengband-3.0.0Alpha42-en.zip[3.0.0Alpha42 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha42.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha42.tar.gz[ソース(tar.gz)]
-
 ### (2021/10/17) 変愚蛮怒3.0.0Alpha41リリース
 
 Alpha版定期更新として3.0.0Alpha41をリリースしました。
 
 リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha41[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha41/Hengband-3.0.0Alpha41-jp.zip[3.0.0Alpha41 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha41/Hengband-3.0.0Alpha41-en.zip[3.0.0Alpha41 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha41.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha41.tar.gz[ソース(tar.gz)]
 
 ### (2021/10/03) 公式タイトルロゴ/アイコン更新
 
@@ -79,121 +80,6 @@ Alpha版定期更新として3.0.0Alpha37をリリースしました。
 * link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha37/Hengband-3.0.0Alpha37-en.zip[3.0.0Alpha37 Windows(English Version)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha37.zip[ソース(zip)]
 * link:https://github.com/hengband/hengband/archive/3.0.0Alpha37.tar.gz[ソース(tar.gz)]
-
-### (2021/08/22) 変愚蛮怒3.0.0Alpha36リリース
-
-Alpha版定期更新として3.0.0Alpha36をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha36[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha36/Hengband-3.0.0Alpha36-jp.zip[3.0.0Alpha36 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha36/Hengband-3.0.0Alpha36-en.zip[3.0.0Alpha36 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha36.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha36.tar.gz[ソース(tar.gz)]
-
-### (2021/08/10) 変愚蛮怒3.0.0Alpha35リリース
-
-Alpha34のリリースミスにより、3.0.0Alpha35を改めてリリースしました。各方面にお騒がせしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha35[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha35/Hengband-3.0.0Alpha35-jp.zip[3.0.0Alpha35 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha35/Hengband-3.0.0Alpha35-en.zip[3.0.0Alpha35 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha35.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha35.tar.gz[ソース(tar.gz)]
-
-### (2021/08/09) 変愚蛮怒3.0.0Alpha34リリース
-
-HotFixとして3.0.0Alpha34をリリースしましたが、作業ミスにより不具合修正が全く反映されていませんでした。
-
-### (2021/08/08) 変愚蛮怒3.0.0Alpha33リリース
-
-Alpha版定期更新として3.0.0Alpha33をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha33[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha33/Hengband-3.0.0Alpha33-jp.zip[3.0.0Alpha33 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha33/Hengband-3.0.0Alpha33-en.zip[3.0.0Alpha33 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha33.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha33.tar.gz[ソース(tar.gz)]
-
-### (2021/07/25) 変愚蛮怒3.0.0Alpha32リリース
-
-Alpha版定期更新として3.0.0Alpha32をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha32[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha32/Hengband-3.0.0Alpha32-jp.zip[3.0.0Alpha32 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha32/Hengband-3.0.0Alpha32-en.zip[3.0.0Alpha32 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha32.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha32.tar.gz[ソース(tar.gz)]
-
-### (2021/07/11) 変愚蛮怒3.0.0Alpha31リリース
-
-Alpha版定期更新として3.0.0Alpha31をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha31[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha31/Hengband-3.0.0Alpha31-jp.zip[3.0.0Alpha31 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha31/Hengband-3.0.0Alpha31-en.zip[3.0.0Alpha31 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha31.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha31.tar.gz[ソース(tar.gz)]
-
-### (2021/07/04) 変愚蛮怒3.0.0Alpha30リリース
-
-Alpha版定期更新として3.0.0Alpha30をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha30[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha30/Hengband-3.0.0Alpha30-jp.zip[3.0.0Alpha30 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha30/Hengband-3.0.0Alpha30-en.zip[3.0.0Alpha30 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha30.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha30.tar.gz[ソース(tar.gz)]
-
-### (2021/06/27) 変愚蛮怒3.0.0Alpha29リリース
-
-Alpha版定期更新として3.0.0Alpha29をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha29[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha29/Hengband-3.0.0Alpha29-jp.zip[3.0.0Alpha29 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha29/Hengband-3.0.0Alpha29-en.zip[3.0.0Alpha29 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha29.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha29.tar.gz[ソース(tar.gz)]
-
-### (2021/06/20) 変愚蛮怒3.0.0Alpha28リリース
-
-Alpha版定期更新として3.0.0Alpha28をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha28[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha28/Hengband-3.0.0Alpha28-jp.zip[3.0.0Alpha28 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha28/Hengband-3.0.0Alpha28-en.zip[3.0.0Alpha28 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha28.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha28.tar.gz[ソース(tar.gz)]
-
-
-### (2021/06/13) 変愚蛮怒3.0.0Alpha27リリース
-
-Alpha版定期更新として3.0.0Alpha27をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha27[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha27/Hengband-3.0.0Alpha27-jp.zip[3.0.0Alpha27 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha27/Hengband-3.0.0Alpha27-en.zip[3.0.0Alpha27 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha27.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha27.tar.gz[ソース(tar.gz)]
-
-### (2021/06/06) 変愚蛮怒3.0.0Alpha26リリース
-
-Alpha版定期更新として3.0.0Alpha26をリリースしました。
-
-リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha26[こちら] です。
-
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha26/Hengband-3.0.0Alpha26-jp.zip[3.0.0Alpha26 Windows(日本語版)]
-* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha26/Hengband-3.0.0Alpha26-en.zip[3.0.0Alpha26 Windows(English Version)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha26.zip[ソース(zip)]
-* link:https://github.com/hengband/hengband/archive/3.0.0Alpha26.tar.gz[ソース(tar.gz)]
 
 ## 変愚蛮怒とは
 
