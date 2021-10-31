@@ -3,12 +3,23 @@
 
 ## クイックアクセス
 
-* 現在開発中の3.0.0Alpha42は10/31リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/41[マイルストーン]にてご確認下さい。
+* 現在開発中の3.0.0Alpha43は10/31リリース予定です。進捗内容の確認はlink:https://github.com/hengband/hengband/milestone/41[マイルストーン]にてご確認下さい。
 * 何かすぐに確認したい質問、要望などがありましたらDiscussionのlink:https://github.com/hengband/hengband/discussions/356[開発への質問はこちらまで]へどうぞ。
 * 正式なバグ報告などはGitHubのIssueとしてlink:https://github.com/hengband/hengband/issues/new?assignees=&labels=bug&template=bug_report.md&title=%E3%80%90%E3%83%90%E3%82%B0%E3%80%91+%E3%83%90%E3%82%B0%E5%A0%B1%E5%91%8A%E3%81%AE%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%E3%82%92%E7%B7%A8%E9%9B%86[このテンプレート]を用いてよろしくお願いします
 * またコミュニティとしてはDiscordのlink:https://discord.gg/VvDTvb4ewH[#ぐりっどばぐ]が現在一番活発です。
 
 ## 最近の告知
+
+### (2021/10/18) 変愚蛮怒3.0.0Alpha42リリース
+
+エンバグにより、モンスターのファイア・ボール使用時クラッシュする不具合が報告されたため、緊急に修正の上、3.0.0Alpha42をリリースしました。
+
+リリースノートはlink:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha42[こちら] です。
+
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha42/Hengband-3.0.0Alpha42-jp.zip[3.0.0Alpha42 Windows(日本語版)]
+* link:https://github.com/hengband/hengband/releases/download/3.0.0Alpha42/Hengband-3.0.0Alpha42-en.zip[3.0.0Alpha42 Windows(English Version)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha42.zip[ソース(zip)]
+* link:https://github.com/hengband/hengband/archive/3.0.0Alpha42.tar.gz[ソース(tar.gz)]
 
 ### (2021/10/17) 変愚蛮怒3.0.0Alpha41リリース
 
