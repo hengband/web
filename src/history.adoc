@@ -12,6 +12,8 @@
 
 ### link:/history/history3.0.0.html[Ver.3.0.0(予定)]
 
+### link:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha48[Ver.3.0.0alpha48]
+
 ### link:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha47[Ver.3.0.0alpha47]
 
 ### link:https://github.com/hengband/hengband/releases/tag/3.0.0Alpha46[Ver.3.0.0alpha46]
