@@ -31,6 +31,7 @@ fwrite(
 <table class="score one_row">
 <thead>
 <tr>
+<th>順位</th>
 <th>回数</th>
 <th>彫像・<br>麻痺状態</th>
 <th>死因</th>
@@ -41,13 +42,16 @@ EOM
 );
 
 fwrite($fp, "<tboby>\n");
+$killer_rank = 0;
 foreach ($killers as $k) {
     //$freeze = $k['killer_count_freeze'] > 0 ? "(".$k['killer_count_freeze'].")" : "";
+    $killer_rank++;
     $killer_name = h($k['killer_name']);
     fwrite(
         $fp,
         <<<EOM
 <tr>
+<td>$killer_rank</td>
 <td class="number">{$k['killer_count_total']}</td>
 <td class="number">{$k['killer_count_freeze']}</td>
 <td>$killer_name</td>
